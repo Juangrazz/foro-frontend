@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@500&display=swap');
+
+body {
+  font-family: 'Comfortaa', cursive;
+  background-color: rgb(233, 233, 233);
+}
+
+.va-f {
+  display: table;
+  height: 200px;
+}
+
+.va-s {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.main-container{
+    min-height: 625px;
+}
+
+/* NAVBAR */
+.navbar-style {
+  background-color: rgb(255, 102, 102);
+  padding: 0 1.5em;
+  height: 4em;
+}
+
+.navbar-button {
+    color: white;
+    border-color: white;
+}
+
+.navbar-button:focus{
+    border: none;
+}
+
+.navbar-icon-container{
+    display: inline-block;
+    text-align: center;
+    width: 2.2em;
+}
+
+/* FOOTER */
+.footer-style {
+  background-color: rgb(255, 102, 102);
+  width: 100%;
+  height: 5em;
+  color: white;
+  text-align: center;
+}
+
+.footer-style a {
+  color: rgba(255, 255, 255, .5);
+}
+
+.footer-style a:hover {
+  color: white;
+}
+
+/* INSTRUCTIONES SECTION */
+.inst-title {
+  font-size: 2.5em;
+  font-weight: bold;
+  color: rgb(109, 109, 109);
+  margin: 0;
+}
+
+.myhyv-list {
+  background-color: rgb(245, 245, 245);
+}
+
+.inst-card-header {
+  background-color: rgb(255, 102, 102);
+  color: white;
+}
+
+.inst-card-body-big {
+  height: 21em;
+}
+
+.inst-card-body-small {
+  height: 13em;
+}
+
+/* MANDANOS UN MENSAJE SECTION */
+.msg-title{
+    font-size: 2.5em;
+    font-weight: bold;
+    color: rgb(109, 109, 109);
+    margin: 0;
+}
+
+.text-area-format{
+    resize: none;
+    height: -webkit-fill-available;
+    width: -webkit-fill-available;
+    min-height: 10em;
+    border-color: rgb(170, 170, 170);
+    padding: 1em;
+}
+
+@media only screen and (max-width: 450px) {
+  .inst-card-body-big {
+    height: auto;
+  }
+
+  .inst-card-body-small {
+    height: auto;
+  }
+
+  .inst-title {
+    font-size: 1.5em;
+  }
+
+  .msg-title {
+    font-size: 1.5em;
+  }
+}
+
+@media only screen and (max-width: 991px) {
+  .inst-card-body-big {
+    height: 26em;
+  }
+
+  .inst-card-body-small {
+    height: 16em;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .inst-card-body-big {
+    height: auto;
+  }
+
+  .inst-card-body-small {
+    height: auto;
+  }
+}
