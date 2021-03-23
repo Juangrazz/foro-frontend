@@ -14,6 +14,7 @@ import { MymyvComponent } from './components/views/mymyv/mymyv.component';
 import { FooterComponent } from './components/share/footer/footer.component';
 import { NoPostsComponent } from './components/views/index/no-posts/no-posts.component';
 import { StadisticsComponent } from './components/views/stadistics/stadistics.component';
+import { SearchMymyvComponent } from './components/views/search-mymyv/search-mymyv.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { StadisticsComponent } from './components/views/stadistics/stadistics.co
     FooterComponent,
     NoPostsComponent,
     StadisticsComponent,
+    SearchMymyvComponent,
   ],
   imports: [
     BrowserModule,

@@ -54,6 +54,9 @@ const keys = {
     search_input_2: "Lugar",
     search_send_button: "Buscar",
 
+    // BÚSQUEDA MyMyV SECTION
+    search_mymyv_title: "Búsqueda - MyMyV",
+
     // MyMyV SECTION
     mymyv_title: "Mozos y mozas y viceversa",
     mymyv_input_1: "Edad",

@@ -7,6 +7,7 @@ import { MessagesComponent } from './components/views/messages/messages.componen
 import { MymyvComponent } from './components/views/mymyv/mymyv.component';
 import { SearchComponent } from './components/views/search/search.component';
 import { StadisticsComponent } from './components/views/stadistics/stadistics.component';
+import { SearchMymyvComponent } from './components/views/search-mymyv/search-mymyv.component';
 
 const routes: Routes = [
   { path: 'index', component: IndexComponent },
@@ -14,6 +15,7 @@ const routes: Routes = [
   { path: 'messages', component: MessagesComponent },
   { path: 'mymyv', component: MymyvComponent },
   { path: 'search', component: SearchComponent },
+  { path: 'search_mymyv', component: SearchMymyvComponent },
   { path: 'stadistics', component: StadisticsComponent },
   { path: '**', component: IndexComponent }
 ];

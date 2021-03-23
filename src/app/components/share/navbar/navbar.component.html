@@ -15,14 +15,18 @@
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           <div class="navbar-icon-container"><i class="fas fa-comment-alt fa-lg mr-1"></i></div>{{keys.nav_option_3}}
         </a>
-        <div class="dropdown-menu max-content-width pr-2 animated fadeInDown fast" aria-labelledby="navbarDropdown">
+        <div class="dropdown-menu max-content-width animated fadeInDown fast" aria-labelledby="navbarDropdown">
           <a class="nav-link navbar-options" [routerLink]="['messages']">
             <div class="navbar-icon-container"><i class="fas fa-paper-plane fa-lg mr-1"></i></div>{{keys.nav_drop_option_1}}
           </a>
+          <a class="nav-link navbar-options" [routerLink]="['search']">
+            <div class="navbar-icon-container"><i class="fas fa-search fa-lg mr-1"></i></div>{{keys.nav_drop_option_3}}
+          </a>
+          <div class="dropdown-divider"></div>
           <a class="nav-link navbar-options" [routerLink]="['mymyv']">
             <div class="navbar-icon-container"><i class="fas fa-fire fa-lg mr-1"></i></div>{{keys.nav_drop_option_2}}
           </a>
-          <a class="nav-link navbar-options" [routerLink]="['search']">
+          <a class="nav-link navbar-options" [routerLink]="['search_mymyv']">
             <div class="navbar-icon-container"><i class="fas fa-search fa-lg mr-1"></i></div>{{keys.nav_drop_option_3}}
           </a>
         </div>
