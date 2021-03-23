@@ -8,23 +8,10 @@ import keys from '../../../../keys';
 })
 export class NavbarComponent implements OnInit {
 
-   title: string;
-   nav_option_1: string;
-   nav_option_2: string;
-   nav_option_3: string;
-   nav_option_4: string;
-   nav_option_5: string;
+  keys = keys;
 
 
-  constructor() { 
-    this.title = keys.nav_title;
-    this.nav_option_1 = keys.nav_option_1;
-    this.nav_option_2 = keys.nav_option_2;
-    this.nav_option_3 = keys.nav_option_3;
-    this.nav_option_4 = keys.nav_option_4;
-    this.nav_option_5 = keys.nav_option_5;
-
-  }
+  constructor() {}
 
   ngOnInit(): void {
   }

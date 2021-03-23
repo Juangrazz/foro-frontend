@@ -10,8 +10,10 @@ import { IndexComponent } from './components/views/index/index.component';
 import { SearchComponent } from './components/views/search/search.component';
 import { MessagesComponent } from './components/views/messages/messages.component';
 import { InstructionsComponent } from './components/views/instructions/instructions.component';
-import { MyhyvComponent } from './components/views/myhyv/myhyv.component';
+import { MymyvComponent } from './components/views/mymyv/mymyv.component';
 import { FooterComponent } from './components/share/footer/footer.component';
+import { NoPostsComponent } from './components/views/index/no-posts/no-posts.component';
+import { StadisticsComponent } from './components/views/stadistics/stadistics.component';
 
 @NgModule({
   declarations: [
@@ -21,8 +23,10 @@ import { FooterComponent } from './components/share/footer/footer.component';
     SearchComponent,
     MessagesComponent,
     InstructionsComponent,
-    MyhyvComponent,
+    MymyvComponent,
     FooterComponent,
+    NoPostsComponent,
+    StadisticsComponent,
   ],
   imports: [
     BrowserModule,

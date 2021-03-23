@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import keys from '../../../../keys';
 
 @Component({
-  selector: 'app-search',
-  templateUrl: './search.component.html',
-  styleUrls: ['./search.component.css']
+  selector: 'app-myhyv',
+  templateUrl: './mymyv.component.html',
+  styleUrls: ['./mymyv.component.css']
 })
-export class SearchComponent implements OnInit {
+export class MymyvComponent implements OnInit {
 
   keys = keys;
   

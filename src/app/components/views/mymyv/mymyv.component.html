@@ -1,0 +1,45 @@
+<div class="va-f mymyv-main-div hor-aligment container">
+    <div class="p-4 va-s">
+      <div class="text-center">
+        <p class="mymyv-title mb-5" [innerHTML]="keys.mymyv_title"></p>
+      </div>
+      <form>
+        <div class="form-row">
+          <div class="form-group col-lg-6">
+            <label [innerHTML]="keys.mymyv_input_1"></label>
+            <input type="number" class="form-control" min="18" max="100" value="18">
+          </div>
+          <div class="form-group col-lg-6">
+            <label [innerHTML]="keys.mymyv_input_2"></label>
+            <select class="form-control">
+                <option value="" [innerHTML]="keys.mymyv_empty_option"></option>
+                <option value={{keys.mymyv_rel_option_1}} [innerHTML]="keys.mymyv_rel_option_1"></option>
+                <option value={{keys.mymyv_rel_option_2}} [innerHTML]="keys.mymyv_rel_option_2"></option>
+                <option value={{keys.mymyv_rel_option_3}} [innerHTML]="keys.mymyv_rel_option_3"></option>
+                <option value={{keys.mymyv_indiferent_option}} [innerHTML]="keys.mymyv_indiferent_option"></option>
+              </select>
+          </div>
+          <div class="form-group col-lg-6">
+            <label [innerHTML]="keys.mymyv_input_3"></label>
+            <select class="form-control">
+                <option value="" [innerHTML]="keys.mymyv_empty_option"></option>
+                <option value={{keys.mymyv_lookfor_option_1}} [innerHTML]="keys.mymyv_lookfor_option_1"></option>
+                <option value={{keys.mymyv_lookfor_option_2}} [innerHTML]="keys.mymyv_lookfor_option_2"></option>
+                <option value={{keys.mymyv_indiferent_option}} [innerHTML]="keys.mymyv_indiferent_option"></option>
+              </select>
+          </div>
+          <div class="form-group col-lg-6">
+            <label [innerHTML]="keys.mymyv_input_4"></label>
+            <input type="text" class="form-control">
+          </div>
+        </div>
+        <label [innerHTML]="keys.mymyv_input_5"></label>
+        <textarea class="form-control text-area-format"></textarea>
+        <div class="text-right">
+          <button class="mt-4 red-button-simply font-weight-bold" [innerHTML]="keys.mymyv_send_button" [routerLink]="['/instructions']"></button>
+        </div>
+      </form>
+    </div>
+  </div>
+  
+  

@@ -1,22 +1,37 @@
 <nav id="navbar" class="navbar navbar-expand-lg navbar-dark navbar-style">
-    <a class="navbar-brand mr-4" [routerLink]="['index']"><i class="fas fa-fire-alt fa-lg mr-2"></i>{{title}}</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <i class="fas fa-bars"></i>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item mr-2">
-          <a class="nav-link" [routerLink]="['instructions']"><div class="navbar-icon-container"><i class="fas fa-list fa-lg mr-1"></i></div>{{nav_option_2}}</a>
-          </li>
-          <li class="nav-item mr-2">
-            <a class="nav-link" [routerLink]="['messages']"><div class="navbar-icon-container"><i class="fas fa-comment-alt fa-lg mr-1"></i></div>{{nav_option_3}}</a>
-          </li>
-          <li class="nav-item mr-2">
-            <a class="nav-link"[routerLink]="['myhyv']"><div class="navbar-icon-container"><i class="fas fa-fire fa-lg mr-1"></i></div>{{nav_option_4}}</a>
-          </li>
-          <li class="nav-item mr-2">
-            <a class="nav-link" [routerLink]="['search']"><div class="navbar-icon-container"><i class="fas fa-search fa-lg mr-1"></i></div>{{nav_option_5}}</a>
-          </li>
-      </ul>
-    </div>
-  </nav>
+  <a class="navbar-brand mr-4" [routerLink]="['index']"><i class="fas fa-fire-alt fa-lg mr-2"></i>{{keys.nav_title}}</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <i class="fas fa-bars"></i>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item mr-2">
+        <a class="nav-link" [routerLink]="['instructions']">
+          <div class="navbar-icon-container"><i class="fas fa-list fa-lg mr-1"></i></div>{{keys.nav_option_2}}
+        </a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <div class="navbar-icon-container"><i class="fas fa-comment-alt fa-lg mr-1"></i></div>{{keys.nav_option_3}}
+        </a>
+        <div class="dropdown-menu max-content-width pr-2 animated fadeInDown fast" aria-labelledby="navbarDropdown">
+          <a class="nav-link navbar-options" [routerLink]="['messages']">
+            <div class="navbar-icon-container"><i class="fas fa-paper-plane fa-lg mr-1"></i></div>{{keys.nav_drop_option_1}}
+          </a>
+          <a class="nav-link navbar-options" [routerLink]="['mymyv']">
+            <div class="navbar-icon-container"><i class="fas fa-fire fa-lg mr-1"></i></div>{{keys.nav_drop_option_2}}
+          </a>
+          <a class="nav-link navbar-options" [routerLink]="['search']">
+            <div class="navbar-icon-container"><i class="fas fa-search fa-lg mr-1"></i></div>{{keys.nav_drop_option_3}}
+          </a>
+        </div>
+      </li>
+      <li class="nav-item mr-2">
+        <a class="nav-link" [routerLink]="['stadistics']">
+          <div class="navbar-icon-container"><i class="fas fa-chart-bar fa-lg mr-1"></i></div>{{keys.nav_option_6}}
+        </a>
+      </li>
+    </ul>
+  </div>
+</nav>

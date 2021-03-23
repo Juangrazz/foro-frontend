@@ -1,1 +1,24 @@
-<p>search works!</p>
+<div class="search-main-div hor-aligment container">
+  <div class="p-4">
+    <div class="text-center">
+      <p class="search-title mb-5" [innerHTML]="keys.search_title"></p>
+    </div>
+    <form>
+      <div class="form-row">
+        <div class="form-group col-lg-6">
+          <label [innerHTML]="keys.search_input_1"></label>
+          <input type="date" class="form-control" id="inputDate">
+        </div>
+        <div class="form-group col-lg-6">
+          <label [innerHTML]="keys.search_input_2"></label>
+          <input type="text" class="form-control" id="inputPlace" placeholder="¿Dónde?">
+        </div>
+      </div>
+      <div class="text-right">
+        <button class="mt-4 red-button-simply font-weight-bold" [innerHTML]="keys.search_send_button" [routerLink]="['/instructions']"></button>
+      </div>
+    </form>
+  </div>
+  <hr>
+</div>
+

@@ -4,11 +4,17 @@
 body {
   font-family: 'Comfortaa', cursive;
   background-color: rgb(233, 233, 233);
+  height: 100%;
+}
+
+/* UTILS */
+
+.hor-aligment {
+  margin: 0 auto;
 }
 
 .va-f {
   display: table;
-  height: 200px;
 }
 
 .va-s {
@@ -16,15 +22,80 @@ body {
   vertical-align: middle;
 }
 
-.main-container{
-    min-height: 625px;
+.border-red {
+  border: rgb(255, 102, 102) 2px solid;
+}
+
+.red-link{
+  color: rgb(255, 102, 102);
+}
+
+.red-link:hover{
+  color: rgb(223, 89, 89);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.max-content-width{
+  width: max-content;
+}
+
+hr{
+  background-color: rgb(109, 109, 109);
+  border: none;
+  height: 4px;
+  border-radius: 50px;
+  margin: 1.5em;
+}
+
+/* BUTTONS */
+.red-button-simply{
+  background-color: rgb(219, 205, 205);
+  color: rgb(223, 89, 89);
+  border: rgb(255, 102, 102) 2px solid;
+  border-radius: 5px;
+  height: 3em;
+  min-width: 8em;
+  transition: .3s;
+}
+
+.red-button-simply:hover {
+  background-color: rgb(255, 102, 102);
+  color: rgb(219, 205, 205);
+}
+
+.red-button-simply:focus{
+  outline: none;
+}
+
+.pagewrap{
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+} 
+
+app-messages,
+app-instructions,
+app-index,
+app-mymyv,
+app-search,
+app-stadistics
+{
+  flex-grow: 1;
+}
+
+.text-area-format{
+  resize: none;
+  height: -webkit-fill-available;
+  width: -webkit-fill-available;
+  min-height: 15em;
+  border-color: rgb(170, 170, 170);
+  padding: 1em;
 }
 
 /* NAVBAR */
 .navbar-style {
   background-color: rgb(255, 102, 102);
-  padding: 0 1.5em;
-  height: 4em;
 }
 
 .navbar-button {
@@ -40,6 +111,10 @@ body {
     display: inline-block;
     text-align: center;
     width: 2.2em;
+}
+
+.navbar-options{
+  color: rgb(109, 109, 109) !important;
 }
 
 /* FOOTER */
@@ -85,6 +160,10 @@ body {
 }
 
 /* MANDANOS UN MENSAJE SECTION */
+.msg-main-div{
+  min-height: 85.5vh;
+}
+
 .msg-title{
     font-size: 2.5em;
     font-weight: bold;
@@ -92,14 +171,43 @@ body {
     margin: 0;
 }
 
-.text-area-format{
-    resize: none;
-    height: -webkit-fill-available;
-    width: -webkit-fill-available;
-    min-height: 10em;
-    border-color: rgb(170, 170, 170);
-    padding: 1em;
+/* BÚSQUEDA SECTION */
+.search-main-div{
+  min-height: 85.5vh;
 }
+
+.search-title{
+    font-size: 2.5em;
+    font-weight: bold;
+    color: rgb(109, 109, 109);
+    margin: 0;
+}
+
+/* Mymyv SECTION */
+.mymyv-main-div{
+  min-height: 85.5vh;
+}
+
+.mymyv-title{
+    font-size: 2.5em;
+    font-weight: bold;
+    color: rgb(109, 109, 109);
+    margin: 0;
+}
+
+/* No posts */
+.noposts-main-div{
+  min-height: 85.5vh;
+}
+
+.noposts-title{
+    font-size: 2.5em;
+    font-weight: bold;
+    color: rgb(109, 109, 109);
+    margin: 0;
+}
+
+
 
 @media only screen and (max-width: 450px) {
   .inst-card-body-big {
