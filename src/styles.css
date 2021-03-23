@@ -26,21 +26,25 @@ body {
   border: rgb(255, 102, 102) 2px solid;
 }
 
-.red-link{
+.red-link {
   color: rgb(255, 102, 102);
 }
 
-.red-link:hover{
+.red-link:hover {
   color: rgb(223, 89, 89);
   text-decoration: none;
   cursor: pointer;
 }
 
-.max-content-width{
+.txt_light_blue{
+  color: rgb(74, 185, 250);
+}
+
+.max-content-width {
   width: max-content;
 }
 
-hr{
+hr {
   background-color: rgb(109, 109, 109);
   border: none;
   height: 4px;
@@ -48,10 +52,24 @@ hr{
   margin: 1.5em;
 }
 
+.br-top {
+  border-top-right-radius: 15px;
+  border-top-left-radius: 15px;
+}
+
+.br-bottom {
+  border-bottom-right-radius: 15px;
+  border-bottom-left-radius: 15px;
+}
+
+.br-15 {
+  border-radius: 15px;
+}
+
 /* BUTTONS */
-.red-button-simply{
-  background-color: rgb(219, 205, 205);
-  color: rgb(223, 89, 89);
+.red-button-simply {
+  background-color: transparent;
+  color: rgb(255, 102, 102);
   border: rgb(255, 102, 102) 2px solid;
   border-radius: 5px;
   height: 3em;
@@ -61,30 +79,29 @@ hr{
 
 .red-button-simply:hover {
   background-color: rgb(255, 102, 102);
-  color: rgb(219, 205, 205);
+  color: white;
 }
 
-.red-button-simply:focus{
+.red-button-simply:focus {
   outline: none;
 }
 
-.pagewrap{
+.pagewrap {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-} 
+}
 
 app-messages,
 app-instructions,
 app-index,
 app-mymyv,
 app-search,
-app-stadistics
-{
+app-stadistics {
   flex-grow: 1;
 }
 
-.text-area-format{
+.text-area-format {
   resize: none;
   height: -webkit-fill-available;
   width: -webkit-fill-available;
@@ -99,21 +116,21 @@ app-stadistics
 }
 
 .navbar-button {
-    color: white;
-    border-color: white;
+  color: white;
+  border-color: white;
 }
 
-.navbar-button:focus{
-    border: none;
+.navbar-button:focus {
+  border: none;
 }
 
-.navbar-icon-container{
-    display: inline-block;
-    text-align: center;
-    width: 2.2em;
+.navbar-icon-container {
+  display: inline-block;
+  text-align: center;
+  width: 2.2em;
 }
 
-.navbar-options{
+.navbar-options {
   color: rgb(109, 109, 109) !important;
 }
 
@@ -160,54 +177,83 @@ app-stadistics
 }
 
 /* MANDANOS UN MENSAJE SECTION */
-.msg-main-div{
+.msg-main-div {
   min-height: 85.5vh;
 }
 
-.msg-title{
-    font-size: 2.5em;
-    font-weight: bold;
-    color: rgb(109, 109, 109);
-    margin: 0;
+.msg-title {
+  font-size: 2.5em;
+  font-weight: bold;
+  color: rgb(109, 109, 109);
+  margin: 0;
 }
 
 /* BÚSQUEDA SECTION */
-.search-main-div{
+.search-main-div {
   min-height: 85.5vh;
 }
 
-.search-title{
-    font-size: 2.5em;
-    font-weight: bold;
-    color: rgb(109, 109, 109);
-    margin: 0;
+.search-title {
+  font-size: 2.5em;
+  font-weight: bold;
+  color: rgb(109, 109, 109);
+  margin: 0;
 }
 
 /* Mymyv SECTION */
-.mymyv-main-div{
+.mymyv-main-div {
   min-height: 85.5vh;
 }
 
-.mymyv-title{
-    font-size: 2.5em;
-    font-weight: bold;
-    color: rgb(109, 109, 109);
-    margin: 0;
+.mymyv-title {
+  font-size: 2.5em;
+  font-weight: bold;
+  color: rgb(109, 109, 109);
+  margin: 0;
 }
 
 /* No posts */
-.noposts-main-div{
+.noposts-main-div {
   min-height: 85.5vh;
 }
 
-.noposts-title{
-    font-size: 2.5em;
-    font-weight: bold;
-    color: rgb(109, 109, 109);
-    margin: 0;
+.noposts-title {
+  font-size: 2.5em;
+  font-weight: bold;
+  color: rgb(109, 109, 109);
+  margin: 0;
 }
 
+/* CARDS */
 
+.div_card_desc_princ {
+  background-color: rgb(109, 109, 109);
+  padding: 2em;
+}
+
+.div_card_desc_sec {
+  background-color: rgb(109, 109, 109);
+  border: 2px solid rgb(211, 211, 211);
+  padding: 1em;
+  color: white;
+}
+
+.div_card_global {
+  padding: 0 10em;
+}
+
+.div_comment{
+  padding-left: 1em;
+}
+
+.div_comment a {
+  color: rgb(43, 153, 255);
+  text-decoration: none;
+}
+
+.div_comment a:hover {
+  color: rgb(37, 128, 212);
+}
 
 @media only screen and (max-width: 450px) {
   .inst-card-body-big {
@@ -225,6 +271,14 @@ app-stadistics
   .msg-title {
     font-size: 1.5em;
   }
+
+  .div_card_global {
+    padding: 0 3em;
+  }
+
+  body {
+    font-size: 0.5em !important;
+  }
 }
 
 @media only screen and (max-width: 991px) {
@@ -235,6 +289,10 @@ app-stadistics
   .inst-card-body-small {
     height: 16em;
   }
+
+  .div_card_global {
+    padding: 0 5em;
+  }
 }
 
 @media only screen and (max-width: 767px) {
@@ -244,5 +302,13 @@ app-stadistics
 
   .inst-card-body-small {
     height: auto;
+  }
+
+  .div_card_global {
+    padding: 0 3em;
+  }
+
+  body {
+    font-size: 0.8em;
   }
 }

@@ -74,7 +74,14 @@ const keys = {
     mymyv_send_button: "Enviar",
 
     // No post
-    nopost_text: "Ahora mismo no hay publicaciones, lo sentimos..."
+    nopost_text: "Ahora mismo no hay publicaciones, lo sentimos...",
+
+    // Cards
+    cards_info_1: "Fecha:",
+    cards_info_2: "Hora:",
+    cards_info_3: "Lugar:",
+    cards_info_4: "Instagram:",
+    cards_info_5: "Comentarios",
 }
 
 export default keys;

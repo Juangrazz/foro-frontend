@@ -1,0 +1,36 @@
+<div class="container p-2">
+    <div *ngFor="let card of cards" class="mt-5 mb-5 div_card_global">
+        <div class="card br-15">
+            <div class="card-body div_card_desc_princ br-top">
+                <div class="div_card_desc_sec br-15">
+                    <p class="card-text">{{card.descripcion}}</p>
+                </div>
+            </div>
+            <div class="card-body div_card_info txt_light_blue">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="navbar-icon-container"><i class="fas fa-calendar-alt mr-1"></i></div><b>{{keys.cards_info_1}} </b>{{card.fecha}}
+                            </div>
+                            <div class="col-md-6">
+                                <div class="navbar-icon-container"><i class="fas fa-map-marker-alt mr-1"></i></div><b>{{keys.cards_info_3}} </b>{{card.lugar}}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="navbar-icon-container"><i class="fas fa-clock mr-1"></i></div><b>{{keys.cards_info_2}} </b>{{card.hora}}
+                            </div>
+                            <div class="col-md-6">
+                                <div class="navbar-icon-container"><i class="fab fa-instagram mr-1"></i></div><b>{{keys.cards_info_4}} </b>{{card.instagram}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+          </div>
+          <div class="div_comment">
+              <a href="#"><b>{{card.comentarios}} comentarios</b></a>
+          </div>
+    </div>
+</div>
