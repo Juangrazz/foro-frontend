@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import keys from '../../../../keys';
+import keys from '../../../../../keys';
 
 @Component({
   selector: 'app-search-mymyv',

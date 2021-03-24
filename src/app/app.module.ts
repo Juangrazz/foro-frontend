@@ -14,8 +14,11 @@ import { MymyvComponent } from './components/views/mymyv/mymyv.component';
 import { FooterComponent } from './components/share/footer/footer.component';
 import { NoPostsComponent } from './components/views/index/no-posts/no-posts.component';
 import { StadisticsComponent } from './components/views/stadistics/stadistics.component';
-import { SearchMymyvComponent } from './components/views/search-mymyv/search-mymyv.component';
+import { SearchMymyvComponent } from './components/views/search/search-mymyv/search-mymyv.component';
 import { CardComponent } from './components/views/index/card/card.component';
+import { NormalSearchComponent } from './components/views/search/normal-search/normal-search.component';
+import { CardViewComponent } from './components/views/card-view/card-view.component';
+import { CommentsComponent } from './components/views/card-view/comments/comments.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +34,9 @@ import { CardComponent } from './components/views/index/card/card.component';
     StadisticsComponent,
     SearchMymyvComponent,
     CardComponent,
+    NormalSearchComponent,
+    CardViewComponent,
+    CommentsComponent,
   ],
   imports: [
     BrowserModule,

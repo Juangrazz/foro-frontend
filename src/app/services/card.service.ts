@@ -6,24 +6,30 @@ import { CardModel } from '../models/card.model';
 })
 export class CardService {
 
+  disabledCommentsLink: boolean = false;
+
   cards: CardModel[] = [
     {
-      fecha: "12/03/1995",
-      hora: "16:00",
-      lugar: "Gran casa",
-      instagram: "pepe",
-      descripcion: "Una descripción muy larga",
-      comentarios: 12
+      date: "12/03/1995",
+      time: "16:00",
+      place: "Gran casa",
+      instagram: "Anónimo",
+      description: "Chica en el 100 mon de Goya (23 de marzo) con pelo largo, castaño, sudadera marrón, pitillos negros y vans negras altas. Estabas sentada con unas amigas en una mesa al lado de un árbol, le has gustado a mi amigo. Si lo ves, comenta con ♥",
+      comments: 12
     },
     {
-      fecha: "16/11/1990",
-      hora: "12:00",
-      lugar: "Parque venecia",
+      date: "16/11/1990",
+      time: "12:00",
+      place: "Parque venecia",
       instagram: ".antonella",
-      descripcion: "Una descripción muy larga otra vez",
-      comentarios: 8
+      description: "Una descripción muy larga otra vez",
+      comments: 8
     }
   ];
 
-  constructor() { }
+  individualCard: CardModel = new CardModel();
+
+  constructor() {
+    this.individualCard = JSON.parse(sessionStorage.getItem("individual_card") || "{}");
+  }
 }

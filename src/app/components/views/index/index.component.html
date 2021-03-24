@@ -1,2 +1,4 @@
 <app-no-posts *ngIf="noPosts"></app-no-posts>
-<app-card *ngIf="!noPosts" [cardsArray]="cards"></app-card>
+<div class="container p-2 animated fadeIn slow" *ngFor="let card of cards; let i = index">
+  <app-card *ngIf="!noPosts" [card]="cards[i]"></app-card>
+</div>

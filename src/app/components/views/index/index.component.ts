@@ -15,6 +15,7 @@ export class IndexComponent implements OnInit {
   constructor(private cardService: CardService) { 
     this.getCards();
     this.checkCards();
+    this.cardService.disabledCommentsLink = false;
   }
 
   ngOnInit(): void {

@@ -7,7 +7,8 @@ import { MessagesComponent } from './components/views/messages/messages.componen
 import { MymyvComponent } from './components/views/mymyv/mymyv.component';
 import { SearchComponent } from './components/views/search/search.component';
 import { StadisticsComponent } from './components/views/stadistics/stadistics.component';
-import { SearchMymyvComponent } from './components/views/search-mymyv/search-mymyv.component';
+import { SearchMymyvComponent } from './components/views/search/search-mymyv/search-mymyv.component';
+import { CardViewComponent } from './components/views/card-view/card-view.component';
 
 const routes: Routes = [
   { path: 'index', component: IndexComponent },
@@ -17,6 +18,7 @@ const routes: Routes = [
   { path: 'search', component: SearchComponent },
   { path: 'search_mymyv', component: SearchMymyvComponent },
   { path: 'stadistics', component: StadisticsComponent },
+  { path: 'card_view', component: CardViewComponent },
   { path: '**', component: IndexComponent }
 ];
 

@@ -1,8 +1,8 @@
 export class CardModel {
-    fecha!: string;
-    hora!: string;
-    lugar!: string;
+    date!: string;
+    time!: string;
+    place!: string;
     instagram?: string;
-    descripcion!: string;
-    comentarios!: number;
+    description!: string;
+    comments!: number;
 }

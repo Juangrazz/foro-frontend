@@ -1,0 +1,9 @@
+
+        <app-card [card]="card"></app-card>
+        <div class="comments-container">
+            <div *ngFor="let comment of comments; let i = index" class="mb-3">
+                <app-comments [comment]="comments[i]"></app-comments>
+            </div>
+        </div>
+       
+        

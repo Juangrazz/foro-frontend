@@ -4,6 +4,7 @@
 body {
   font-family: 'Comfortaa', cursive;
   background-color: rgb(233, 233, 233);
+  color: rgb(109, 109, 109);
   height: 100%;
 }
 
@@ -66,6 +67,49 @@ hr {
   border-radius: 15px;
 }
 
+.pagewrap {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+app-messages,
+app-instructions,
+app-index,
+app-mymyv,
+app-search,
+app-stadistics,
+app-card-view {
+  flex-grow: 1;
+}
+
+.text-area-format {
+  resize: none;
+  height: -webkit-fill-available;
+  width: -webkit-fill-available;
+  min-height: 15em;
+  border-color: rgb(170, 170, 170);
+  padding: 1em;
+}
+
+.blue_link {
+  color: rgb(43, 153, 255);
+}
+
+.blue_link:hover {
+  color: rgb(37, 128, 212);
+  text-decoration: none;
+}
+
+.light_blue_link {
+  color: rgb(74, 185, 250);
+}
+
+.light_blue_link:hover {
+  color: rgb(63, 157, 211);
+  text-decoration: none;
+}
+
 /* BUTTONS */
 .red-button-simply {
   background-color: transparent;
@@ -86,28 +130,69 @@ hr {
   outline: none;
 }
 
-.pagewrap {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
+/* The switch - the box around the slider */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 24px;
 }
 
-app-messages,
-app-instructions,
-app-index,
-app-mymyv,
-app-search,
-app-stadistics {
-  flex-grow: 1;
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
 }
 
-.text-area-format {
-  resize: none;
-  height: -webkit-fill-available;
-  width: -webkit-fill-available;
-  min-height: 15em;
-  border-color: rgb(170, 170, 170);
-  padding: 1em;
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  height: 24px;
+  width: 55px;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .2s;
+  transition: .2s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 16px;
+  width: 16px;
+  left: 6px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .2s;
+  transition: .2s;
+}
+
+input:checked + .slider {
+  background-color: rgb(255, 102, 102);
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px rgb(221, 221, 221);
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
 }
 
 /* NAVBAR */
@@ -200,6 +285,11 @@ app-stadistics {
   margin: 0;
 }
 
+.search-mymyv-control{
+  width: 2em;
+  transition: 0.3s;
+}
+
 /* Mymyv SECTION */
 .mymyv-main-div {
   min-height: 85.5vh;
@@ -229,6 +319,7 @@ app-stadistics {
 .div_card_desc_princ {
   background-color: rgb(109, 109, 109);
   padding: 2em;
+  color: white;
 }
 
 .div_card_desc_sec {
@@ -239,23 +330,10 @@ app-stadistics {
 }
 
 .div_card_global {
-  padding: 0 10em;
+  padding: 0 21.5em;
 }
 
-.div_comment{
-  padding-left: 1em;
-}
-
-.div_comment a {
-  color: rgb(43, 153, 255);
-  text-decoration: none;
-}
-
-.div_comment a:hover {
-  color: rgb(37, 128, 212);
-}
-
-@media only screen and (max-width: 450px) {
+@media (max-width: 450px) {
   .inst-card-body-big {
     height: auto;
   }
@@ -275,27 +353,16 @@ app-stadistics {
   .div_card_global {
     padding: 0 3em;
   }
+}
 
-  body {
-    font-size: 0.5em !important;
+
+@media (max-width: 451px) {
+  .div_card_desc_princ {
+    font-size: 0.7em;
   }
 }
 
-@media only screen and (max-width: 991px) {
-  .inst-card-body-big {
-    height: 26em;
-  }
-
-  .inst-card-body-small {
-    height: 16em;
-  }
-
-  .div_card_global {
-    padding: 0 5em;
-  }
-}
-
-@media only screen and (max-width: 767px) {
+@media (min-width: 451px) and (max-width: 767px) {
   .inst-card-body-big {
     height: auto;
   }
@@ -307,8 +374,24 @@ app-stadistics {
   .div_card_global {
     padding: 0 3em;
   }
+}
 
-  body {
-    font-size: 0.8em;
+@media (min-width: 768px) and (max-width: 991px) {
+  .inst-card-body-big {
+    height: 26em;
+  }
+
+  .inst-card-body-small {
+    height: 16em;
+  }
+
+  .div_card_global {
+    padding: 0 8.5em;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+  .div_card_global {
+    padding: 0 16em;
   }
 }

@@ -1,9 +1,5 @@
-<div class="search-main-div hor-aligment container">
-    <div class="p-4">
-      <div class="text-center">
-        <p class="search-title mb-5" [innerHTML]="keys.search_mymyv_title"></p>
-      </div>
-      <form>
+
+      <form id="mymyv-form" class="animated slow fadeIn">
         <div class="form-row">
           <div class="form-group col-lg-6">
             <label [innerHTML]="keys.mymyv_input_1"></label>
@@ -37,6 +33,3 @@
           <button class="mt-4 red-button-simply font-weight-bold" [innerHTML]="keys.mymyv_send_button" [routerLink]="['/instructions']"></button>
         </div>
       </form>
-    </div>
-    <hr>
-  </div>
