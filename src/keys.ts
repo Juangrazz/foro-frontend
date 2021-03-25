@@ -83,7 +83,8 @@ const keys = {
     cards_info_4: "Instagram:",
     cards_info_5: "Comentarios",
     cards_txt_anonymous: "Anónimo",
-    cards_txt_comments: "Comentarios"
+    cards_txt_comments: "Comentarios",
+    cards_txt_new_comment: "Deja un comentario",
 }
 
 export default keys;

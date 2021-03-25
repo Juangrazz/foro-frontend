@@ -1,13 +1,6 @@
 <div>
-    <div class="container animated fadeIn slow">
-        <div class="div_card_global">
-            <div>
-                <a *ngIf="comment.user !== keys.cards_txt_anonymous" class="blue_link" href="https://instagram.com/{{comment.user}}/">@{{comment.user}}</a>
-                <span *ngIf="comment.user === keys.cards_txt_anonymous">{{comment.user}}</span>
-            </div>
-            <div [innerHTML]="comment.comment"></div>
-        </div>
-      </div>
+  <a *ngIf="comment.user !== keys.cards_txt_anonymous" class="blue_link mb-3"
+    href="https://instagram.com/{{comment.user}}/"><b>@{{comment.user}}</b></a>
+  <span *ngIf="comment.user === keys.cards_txt_anonymous"><b>{{comment.user}}</b></span>
 </div>
-
-  
+<div [innerHTML]="comment.comment" class="mt-2"></div>

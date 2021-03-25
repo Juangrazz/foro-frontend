@@ -87,9 +87,13 @@ app-card-view {
   resize: none;
   height: -webkit-fill-available;
   width: -webkit-fill-available;
-  min-height: 15em;
+  min-height: 10em;
   border-color: rgb(170, 170, 170);
   padding: 1em;
+}
+
+.text-area-format:focus{
+  outline: none;
 }
 
 .blue_link {
@@ -331,6 +335,12 @@ input:checked + .slider:before {
 
 .div_card_global {
   padding: 0 21.5em;
+}
+
+/* COMMENTS */
+.comments-container{
+  background-color: white;
+  margin: 0 15em;
 }
 
 @media (max-width: 450px) {

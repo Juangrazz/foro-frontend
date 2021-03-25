@@ -3,6 +3,7 @@ import { CardModel } from 'src/app/models/card.model';
 import { CardService } from '../../../services/card.service';
 import { CommentsService } from '../../../services/comments.service';
 import { CommentModel } from '../../../models/comment.model';
+import keys from '../../../../keys';
 
 declare var $: any;
 
@@ -12,6 +13,8 @@ declare var $: any;
   styleUrls: ['./card-view.component.css']
 })
 export class CardViewComponent implements OnInit {
+
+  keys = keys;
 
   card: CardModel = new CardModel();
   comments: CommentModel[] =  [];

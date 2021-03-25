@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import keys from '../../../../keys';
 
 @Component({
-  selector: 'app-myhyv',
+  selector: 'app-mymyv',
   templateUrl: './mymyv.component.html',
   styleUrls: ['./mymyv.component.css']
 })

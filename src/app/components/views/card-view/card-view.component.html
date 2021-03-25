@@ -1,9 +1,38 @@
+<app-card [card]="card"></app-card>
 
-        <app-card [card]="card"></app-card>
-        <div class="comments-container">
-            <div *ngFor="let comment of comments; let i = index" class="mb-3">
-                <app-comments [comment]="comments[i]"></app-comments>
-            </div>
+<div id="card-container" class="container pr-2 pl-2 mb-5 animated fadeIn slow">
+  <div id="card-global-container" class="div_card_global">
+    <div id="info-container" class="card">
+      <div class="card-body div_card_info">
+        <div class="mb-3">
+          <b [innerHTML] = keys.cards_txt_new_comment></b>
         </div>
-       
-        
+        <form>
+          <label [innerHTML]="keys.msg_input_4"></label>
+          <div class="input-group mb-2">
+            <div class="input-group-prepend">
+              <div class="input-group-text">@</div>
+            </div>
+            <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="Nombre de usuario">
+          </div>
+            <textarea class="text-area-format br-15"></textarea>
+            <div class="text-right">
+              <input type="submit" class="btn red-button-simply" value="Enviar">
+            </div>
+          </form>
+        </div>
+        </div>
+    <div id="info-container" class="card br-bottom">
+      <div class="card-body div_card_info">
+        <ul class="list-group list-group-flush">
+            <div class="mb-3 mt-3">
+                <b [innerHTML] = keys.cards_txt_comments></b>
+            </div>
+            <li *ngFor="let comment of comments; let i = index" class="list-group-item">
+                <app-comments [comment]="comments[i]"></app-comments>
+            </li>
+          </ul>
+      </div>
+    </div>
+  </div>
+</div>
