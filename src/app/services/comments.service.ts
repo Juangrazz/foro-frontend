@@ -8,47 +8,47 @@ export class CommentsService {
 
   comments: CommentModel[] = [
     {
-      user:"Pepe",
-      comment:"Soy yo... jejeje"
+      user: "Pepe",
+      comment: "Soy yo... jejeje"
     },
     {
-      user:"Anónimo",
-      comment:"Creo que puede ser @tito, no @pepe"
+      user: "Anónimo",
+      comment: "Creo que puede ser @tito, no @pepe"
     },
     {
-      user:"Anónimo",
-      comment:"Vaya pringao jajaja"
+      user: "Anónimo",
+      comment: "Vaya pringao jajaja"
     },
     {
-      user:"Doradito",
-      comment:"@Lokito_Ken? no serás tu?"
+      user: "Doradito",
+      comment: "@Lokito_Ken? no serás tu?"
     },
     {
-      user:"Pepe",
-      comment:"@Ivan????"
+      user: "Pepe",
+      comment: "@Ivan????"
     },
     {
-      user:"Anónimo",
-      comment:"Seguro que es @felipe_gonsales, o quizás @Camaron..."
+      user: "Anónimo",
+      comment: "Seguro que es @felipe_gonsales__, o quizás @Camaron..."
     }
   ];
 
-  constructor() {}
+  constructor() { }
 
-  commentsFormatter(){
+  commentsFormatter() {
     this.comments.forEach(comment => {
       let words = comment.comment.split(" ");
       let finalString = "";
       words.forEach(word => {
-        if(word.charAt(0) === "@"){
+        if (word.charAt(0) === "@") {
           let lastCharacters = "";
           let pos = word.length;
-          for (let i = word.length; i > 0 ; i--) {
+          for (let i = word.length; i > 0; i--) {
             let charCode = word.charAt(i - 1).toUpperCase().charCodeAt(0);
-            let char = word.charAt(i-1);
-            pos = i;
-            if(charCode < 64 || charCode > 91){
-            lastCharacters = char + lastCharacters;
+            let char = word.charAt(i - 1);
+            if (char !== "_" && (charCode < 65 || charCode > 90)) {
+                lastCharacters = char + lastCharacters;
+                pos = i-1;
             } else {
               break;
             }
