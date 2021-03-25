@@ -205,12 +205,17 @@ input:checked + .slider:before {
 }
 
 .navbar-button {
-  color: white;
-  border-color: white;
+  color: rgba(255, 255, 255, .5) !important;
+  border: 2px solid rgba(255, 255, 255, .5) !important;
+}
+
+.navbar-button:hover {
+  color: rgba(255, 255, 255, .7) !important;
+  border: 2px solid rgba(255, 255, 255, .7) !important;
 }
 
 .navbar-button:focus {
-  border: none;
+  outline: none;
 }
 
 .navbar-icon-container {
@@ -221,6 +226,10 @@ input:checked + .slider:before {
 
 .navbar-options {
   color: rgb(109, 109, 109) !important;
+}
+
+.navbar-active-link{
+  color: white !important;
 }
 
 /* FOOTER */

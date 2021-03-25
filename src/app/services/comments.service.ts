@@ -53,7 +53,7 @@ export class CommentsService {
               break;
             }
           }
-          finalString += `<a href="https://instagram.com/${word.slice(0, pos)}/" class="red-link">${word.slice(0, pos)}</a>${lastCharacters} `
+          finalString += `<a href="https://instagram.com/${word.slice(1, pos)}/" class="red-link">${word.slice(0, pos)}</a>${lastCharacters} `
         } else {
           finalString += word + " ";
         }
