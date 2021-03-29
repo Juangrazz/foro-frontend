@@ -1,5 +1,6 @@
 export class CardModel {
     date!: string;
+    publicationDate?: string;
     time!: string;
     place!: string;
     instagram?: string;

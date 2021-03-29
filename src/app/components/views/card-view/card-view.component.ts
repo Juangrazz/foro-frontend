@@ -25,6 +25,8 @@ export class CardViewComponent implements OnInit {
 
     commentsService.commentsFormatter();
     this.comments = commentsService.comments;
+    console.log(this.card);
+    
     
   }
 

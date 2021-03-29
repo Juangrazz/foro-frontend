@@ -15,8 +15,7 @@ export class CardComponent implements OnInit {
 
   keys = keys;
 
-  constructor(public cardService: CardService) {
-  }
+  constructor(public cardService: CardService) {}
 
   ngOnInit(): void {
   }

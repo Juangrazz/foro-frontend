@@ -1,8 +1,8 @@
 <app-card [card]="card"></app-card>
 
-<div id="card-container" class="container pr-2 pl-2 mb-5 animated fadeIn slow">
+<div id="card-container" class="container pr-2 pl-2 mt-5 mb-5 animated fadeIn slow">
   <div id="card-global-container" class="div_card_global">
-    <div id="info-container" class="card">
+    <div id="info-container" class="card br-top">
       <div class="card-body div_card_info">
         <div class="mb-3">
           <b [innerHTML] = keys.cards_txt_new_comment></b>
@@ -17,7 +17,7 @@
           </div>
             <textarea class="text-area-format br-15"></textarea>
             <div class="text-right">
-              <input type="submit" class="btn red-button-simply" value="Enviar">
+              <input type="submit" class="red-button-simply" value="Enviar">
             </div>
           </form>
         </div>

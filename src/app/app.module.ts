@@ -19,6 +19,8 @@ import { CardComponent } from './components/views/index/card/card.component';
 import { NormalSearchComponent } from './components/views/search/normal-search/normal-search.component';
 import { CardViewComponent } from './components/views/card-view/card-view.component';
 import { CommentsComponent } from './components/views/card-view/comments/comments.component';
+import { AdminHomeComponent } from './components/views/admin/admin-home/admin-home.component';
+import { DashboardComponent } from './components/views/admin/dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +39,8 @@ import { CommentsComponent } from './components/views/card-view/comments/comment
     NormalSearchComponent,
     CardViewComponent,
     CommentsComponent,
+    DashboardComponent,
+    AdminHomeComponent,
   ],
   imports: [
     BrowserModule,

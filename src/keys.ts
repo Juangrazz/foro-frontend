@@ -8,6 +8,9 @@ const keys = {
     nav_drop_option_2: "MyMyV",
     nav_drop_option_3: "Búsqueda",
     nav_option_4: "Estadísticas",
+    nav_option_5: "Verificar mensajes",
+    nav_option_6: "Crear administrador",
+    nav_option_7: "Modificar mis datos",
 
     // INSTRUCCIONES VIEW
     inst_title: "INSTRUCCIONES",
@@ -85,6 +88,17 @@ const keys = {
     cards_txt_anonymous: "Anónimo",
     cards_txt_comments: "Comentarios",
     cards_txt_new_comment: "Deja un comentario",
+    cards_txt_publicated: "Publicado el día",
+
+    // DASHBOARD
+    dashboard_title: "LOGIN",
+    dashboard_input_1: "Email",
+    dashboard_input_2: "Contraseña",
+    dashboard_submit_button: "Aceptar",
+    dashboard_recovery_pass: "Recuperar contraseña",
+    dashboard_remember_user: "Recordar usuario",
+
+    // ADMIN HOME
 }
 
 export default keys;

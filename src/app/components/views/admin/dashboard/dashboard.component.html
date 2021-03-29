@@ -1,0 +1,31 @@
+<div class="container animated fadeInDown slow">
+  <div class="admin_main_container hor-aligment va-f">
+    <div class="va-s">
+      <div class="txt-red">
+        <h1>{{keys.dashboard_title}}</h1>
+      </div>
+      <div>
+        <form [formGroup]="formLogin" (ngSubmit)="login()">
+          <div class="form-group">
+            <label for="exampleInputEmail1">{{keys.dashboard_input_1}}</label>
+            <input type="email" class="form-control" formControlName="email">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputPassword1">{{keys.dashboard_input_2}}</label>
+            <input type="password" class="form-control" formControlName="password">
+          </div>
+          <div class="form-group form-check text-right">
+            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+            <label class="form-check-label" for="exampleCheck1">{{keys.dashboard_remember_user}}</label>
+          </div>
+          <div class="text-right mt-4">
+            <button type="submit" class="red-button-simply">{{keys.dashboard_submit_button}}</button>
+          </div>
+        </form>
+        <div class="text-center mt-4">
+          <a href="#" class="blue_link">{{keys.dashboard_recovery_pass}}</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

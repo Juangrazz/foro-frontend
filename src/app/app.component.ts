@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { AdminService } from './services/admin.service';
+import { ControlService } from './services/control.service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +8,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'foro-front';
+
+  show: boolean = true;
+
+  constructor(private controlService: ControlService){
+    this.controlService.showNavAndFoot.subscribe((value) => (this.show = value));
+  }
 }

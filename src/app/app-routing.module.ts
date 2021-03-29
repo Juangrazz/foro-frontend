@@ -9,6 +9,8 @@ import { SearchComponent } from './components/views/search/search.component';
 import { StadisticsComponent } from './components/views/stadistics/stadistics.component';
 import { SearchMymyvComponent } from './components/views/search/search-mymyv/search-mymyv.component';
 import { CardViewComponent } from './components/views/card-view/card-view.component';
+import { DashboardComponent } from './components/views/admin/dashboard/dashboard.component';
+import { AdminHomeComponent } from './components/views/admin/admin-home/admin-home.component';
 
 const routes: Routes = [
   { path: 'index', component: IndexComponent },
@@ -19,6 +21,8 @@ const routes: Routes = [
   { path: 'search_mymyv', component: SearchMymyvComponent },
   { path: 'stadistics', component: StadisticsComponent },
   { path: 'card_view', component: CardViewComponent },
+  { path: 'admin_dashboard', component: DashboardComponent },
+  { path: 'admin_home', component: AdminHomeComponent },
   { path: '**', component: IndexComponent }
 ];
 

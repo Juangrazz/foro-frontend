@@ -1,35 +1,49 @@
 <div id="card-container" class="container p-2 animated fadeIn slow">
-  <div id="card-global-container" class="mt-5 mb-5 div_card_global">
-    <div id="info-container" class="card br-15">
-      <div class="card-body div_card_desc_princ br-top">
-        <p class="card-text text-justify">{{card.description}}</p>
-      </div>
-      <div class="card-body div_card_info txt_light_blue">
-        <div class="row">
-          <div class="col-sm-12">
-            <div class="row">
-              <div class="col-sm-6">
-                <div class="navbar-icon-container"><i class="fas fa-calendar-alt mr-1"></i></div>{{card.date}}
-              </div>
-              <div class="col-sm-6">
-                <div class="navbar-icon-container"><i class="fas fa-map-marker-alt mr-1"></i></div>{{card.place}}
-              </div>
+  <div id="card-global-container" class="mt-5 mb-3 div_card_global">
+    <div class="card br-15">
+      <div class="row no-gutters">
+        <div class="col-md-7">
+          <div class="card-body div_card_desc_princ va-f div_description">
+            <div class="va-s">
+              <p class="card-text text-justify">{{card.description}}</p>
             </div>
-            <div class="row">
-              <div class="col-sm-6">
-                <div class="navbar-icon-container"><i class="fas fa-clock mr-1"></i></div>{{card.time}}
-              </div>
-              <div class="col-sm-6">
-                <a class="light_blue_link" *ngIf= 'card.instagram !== keys.cards_txt_anonymous' href="https://instagram.com/{{card.instagram}}/"><div class="navbar-icon-container"><i class="fab fa-instagram mr-1"></i></div>{{card.instagram}}</a>
-                <div *ngIf= 'card.instagram === keys.cards_txt_anonymous'><div class="navbar-icon-container"><i class="fab fa-instagram mr-1"></i></div>{{card.instagram}}</div>
+          </div>
+        </div>
+        <div class="col-md-5">
+          <div class="card-body h-100 div_info va-f">
+            <div class="row va-s" style="height: 90%;">
+              <div class="txt_light_blue">
+                <div>
+                  <span class="navbar-icon-container"><i
+                      class="fas fa-calendar-alt"></i></span>
+                  {{card.date}}
+                </div>
+                <div class="mt-3">
+                  <span class="navbar-icon-container"><i
+                      class="fas fa-map-marker-alt"></i></span>
+                  {{card.place}}
+                </div>
+                <div class="mt-3">
+                  <span class="navbar-icon-container"><i class="fas fa-clock"></i></span>
+                  {{card.time}}
+                </div>
+                <div class="mt-3">
+                  <span class="navbar-icon-container"><i
+                      class="fab fa-instagram"></i></span>
+                  <a class="light_blue_link" *ngIf='card.instagram !== keys.cards_txt_anonymous'
+                    href="https://instagram.com/{{card.instagram}}/"> {{card.instagram}}</a>
+                  <span *ngIf='card.instagram === keys.cards_txt_anonymous'> {{card.instagram}}</span>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <div class="pl-3">
-      <a class="blue_link" *ngIf="!cardService.disabledCommentsLink" [routerLink]="['/card_view']" (click)="saveCard()"><b>{{card.comments}} {{keys.cards_txt_comments}}</b></a>
+    <div class="text-right">
+      <a class="blue_link" *ngIf="!cardService.disabledCommentsLink" [routerLink]="['/card_view']"
+        (click)="saveCard()"><b>{{card.comments}} {{keys.cards_txt_comments}}</b></a>
+      <p><small class="text-muted">{{keys.cards_txt_publicated}} {{card.publicationDate}}</small></p>
     </div>
   </div>
 </div>

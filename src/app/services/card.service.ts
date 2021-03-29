@@ -11,6 +11,7 @@ export class CardService {
   cards: CardModel[] = [
     {
       date: "12/03/1995",
+      publicationDate: "07/11/2021",
       time: "16:00",
       place: "Gran casa",
       instagram: "Anónimo",
@@ -19,6 +20,7 @@ export class CardService {
     },
     {
       date: "16/11/1990",
+      publicationDate: "08/11/2021",
       time: "12:00",
       place: "Parque venecia",
       instagram: ".antonella",

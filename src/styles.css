@@ -41,6 +41,10 @@ body {
   color: rgb(74, 185, 250);
 }
 
+.txt-red{
+  color: rgb(255, 102, 102);
+}
+
 .max-content-width {
   width: max-content;
 }
@@ -63,6 +67,16 @@ hr {
   border-bottom-left-radius: 15px;
 }
 
+.br-left {
+  border-bottom-left-radius: 15px;
+  border-top-left-radius: 15px;
+}
+
+.br-right {
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+
 .br-15 {
   border-radius: 15px;
 }
@@ -79,7 +93,9 @@ app-index,
 app-mymyv,
 app-search,
 app-stadistics,
-app-card-view {
+app-card-view,
+app-dashboard,
+app-admin-home {
   flex-grow: 1;
 }
 
@@ -333,6 +349,7 @@ input:checked + .slider:before {
   background-color: rgb(109, 109, 109);
   padding: 2em;
   color: white;
+  min-height: 15em;
 }
 
 .div_card_desc_sec {
@@ -343,13 +360,36 @@ input:checked + .slider:before {
 }
 
 .div_card_global {
-  padding: 0 21.5em;
+  padding: 0 15em;
+}
+
+.div_description {
+  width: 100%;
+  border-radius: 15px 0 0 15px;
+}
+
+.div_info {
+  width: 100%;
+}
+
+.txt_publication_date{
+  position: absolute;
+  bottom: 15px;
+  left: 0;
+  padding-right: 1em;
+  width: 100%;
 }
 
 /* COMMENTS */
 .comments-container{
   background-color: white;
   margin: 0 15em;
+}
+
+/* ADMIN PANEL */
+.admin_main_container{
+  width: 70%;
+  height: 100vh;
 }
 
 @media (max-width: 450px) {
@@ -376,9 +416,19 @@ input:checked + .slider:before {
 
 
 @media (max-width: 451px) {
-  .div_card_desc_princ {
-    font-size: 0.7em;
+
+  .div_description {
+    border-radius: 15px 15px 0 0;
   }
+
+  .navbar-options {
+    font-size: .8em;
+  }
+
+body{
+  font-size: .7em !important;
+}
+
 }
 
 @media (min-width: 451px) and (max-width: 767px) {
@@ -393,6 +443,14 @@ input:checked + .slider:before {
   .div_card_global {
     padding: 0 3em;
   }
+
+  .div_description {
+    border-radius: 15px 15px 0 0;
+  }
+
+  .admin_main_container{
+    width: 75%;
+  }
 }
 
 @media (min-width: 768px) and (max-width: 991px) {
@@ -405,12 +463,21 @@ input:checked + .slider:before {
   }
 
   .div_card_global {
-    padding: 0 8.5em;
+    padding: 0 2em;
   }
+
+  .admin_main_container{
+    width: 55%;
+  }
+
 }
 
 @media (min-width: 992px) and (max-width: 1199px) {
   .div_card_global {
-    padding: 0 16em;
+    padding: 0 9em;
+  }
+
+  .admin_main_container{
+    width: 40%;
   }
 }
