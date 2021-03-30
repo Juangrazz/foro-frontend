@@ -1,4 +1,13 @@
 <app-no-posts *ngIf="noPosts"></app-no-posts>
 <div class="container p-2 animated fadeIn slow zindex-back" *ngFor="let card of cards; let i = index">
   <app-card *ngIf="!noPosts" [card]="cards[i]"></app-card>
+  <div id="card-container" class="container p-2 animated fadeIn slow">
+    <div id="card-global-container" class="mb-3 div_card_global">
+      <div class="text-right">
+        <a class="blue_link" [routerLink]="['/card_view']"
+        (click)="saveCard(card)"><b>{{card.comments}} {{keys.cards_txt_comments}}</b></a>
+        <p><small class="text-muted">{{keys.cards_txt_publicated}} {{card.publicationDate}}</small></p>
+      </div>
+    </div>
+  </div>
 </div>

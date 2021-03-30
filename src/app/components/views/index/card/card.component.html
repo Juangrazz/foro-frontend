@@ -1,5 +1,5 @@
 <div id="card-container" class="container p-2 animated fadeIn slow">
-  <div id="card-global-container" class="mt-5 mb-3 div_card_global">
+  <div id="card-global-container" class="mt-5 div_card_global">
     <div class="card br-15">
       <div class="row no-gutters">
         <div class="col-md-7">
@@ -39,11 +39,6 @@
           </div>
         </div>
       </div>
-    </div>
-    <div class="text-right">
-      <a class="blue_link" *ngIf="!cardService.disabledCommentsLink" [routerLink]="['/card_view']"
-        (click)="saveCard()"><b>{{card.comments}} {{keys.cards_txt_comments}}</b></a>
-      <p><small class="text-muted">{{keys.cards_txt_publicated}} {{card.publicationDate}}</small></p>
     </div>
   </div>
 </div>

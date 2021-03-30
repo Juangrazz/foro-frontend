@@ -11,6 +11,7 @@ const keys = {
     nav_option_5: "Verificar mensajes",
     nav_option_6: "Crear administrador",
     nav_option_7: "Modificar mis datos",
+    nav_option_8: "Salir",
 
     // INSTRUCCIONES VIEW
     inst_title: "INSTRUCCIONES",
@@ -99,6 +100,13 @@ const keys = {
     dashboard_remember_user: "Recordar usuario",
 
     // ADMIN HOME
+    admin_home_title: "TUS DATOS",
+    admin_home_name: "Nombre:",
+    admin_home_info_lastname: "Apellidos:",
+    admin_home_info_email: "Correo:",
+    admin_home_info_creation_date: "Fecha de alta:",
+    admin_home_info_last_update: "Última modificación:",
+
 }
 
 export default keys;

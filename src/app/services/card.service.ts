@@ -6,8 +6,6 @@ import { CardModel } from '../models/card.model';
 })
 export class CardService {
 
-  disabledCommentsLink: boolean = false;
-
   cards: CardModel[] = [
     {
       date: "12/03/1995",
@@ -32,6 +30,6 @@ export class CardService {
   individualCard: CardModel = new CardModel();
 
   constructor() {
-    this.individualCard = JSON.parse(sessionStorage.getItem("individual_card") || "{}");
+      this.individualCard = JSON.parse(sessionStorage.getItem("individual_card") || "{}");
   }
 }

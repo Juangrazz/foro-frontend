@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ControlService } from '../../../../services/control.service';
+import keys from '../../../../../keys';
 
 @Component({
   selector: 'app-admin-home',
@@ -8,6 +9,8 @@ import { ControlService } from '../../../../services/control.service';
 })
 export class AdminHomeComponent implements OnInit {
 
+  keys = keys;
+  
   constructor(private controlService: ControlService) { 
     this.controlService.showNavAndFoot.next(true);
     this.controlService.isAdmin.next(true);

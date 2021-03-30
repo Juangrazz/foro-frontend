@@ -95,7 +95,11 @@ app-search,
 app-stadistics,
 app-card-view,
 app-dashboard,
-app-admin-home {
+app-admin-home,
+app-check-messages,
+app-create-admin,
+app-mod-admin-info
+ {
   flex-grow: 1;
 }
 
@@ -160,6 +164,44 @@ app-admin-home {
 }
 
 .red-button-simply:focus {
+  outline: none;
+}
+
+.blue-button-simply {
+  background-color: transparent;
+  color: rgb(67, 165, 223);
+  border: rgb(67, 165, 223) 2px solid;
+  border-radius: 5px;
+  height: 3em;
+  min-width: 8em;
+  transition: .3s;
+}
+
+.blue-button-simply:hover {
+  background-color: rgb(67, 165, 223);
+  color: white;
+}
+
+.blue-button-simply:focus {
+  outline: none;
+}
+
+.green-button-simply {
+  background-color: transparent;
+  color: rgb(67, 223, 114);
+  border: rgb(67, 223, 114) 2px solid;
+  border-radius: 5px;
+  height: 3em;
+  min-width: 8em;
+  transition: .3s;
+}
+
+.green-button-simply:hover {
+  background-color: rgb(67, 223, 114);
+  color: white;
+}
+
+.green-button-simply:focus {
   outline: none;
 }
 

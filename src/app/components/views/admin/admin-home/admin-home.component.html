@@ -2,17 +2,16 @@
     <div class="p-4 va-s">
       <div class="text-center">
         <p class="msg-title mb-5">
-            TUS DATOS
+          {{keys.admin_home_title}}
         </p>
       </div>
-      <div>
+      <div class="w-50 hor-aligment">
         <ul class="list-group">
-            <li class="list-group-item">Nombre</li>
-            <li class="list-group-item">Apellidos</li>
-            <li class="list-group-item">Correo</li>
-            <li class="list-group-item">Fecha alta</li>
-            <li class="list-group-item">Último inicio de sesión</li>
-            <li class="list-group-item">Última modificación</li>
+            <li class="list-group-item"><div class="navbar-icon-container"><i class="fas fa-address-card"></i></div>{{keys.admin_home_name}}</li>
+            <li class="list-group-item"><div class="navbar-icon-container"><i class="fas fa-address-card"></i></div>{{keys.admin_home_info_lastname}}</li>
+            <li class="list-group-item"><div class="navbar-icon-container"><i class="fas fa-at"></i></div>{{keys.admin_home_info_email}}</li>
+            <li class="list-group-item"><div class="navbar-icon-container"><i class="fas fa-calendar-alt"></i></div>{{keys.admin_home_info_creation_date}}</li>
+            <li class="list-group-item"><div class="navbar-icon-container"><i class="fas fa-calendar-alt"></i></div>{{keys.admin_home_info_last_update}}</li>
           </ul>
       </div>
     </div>

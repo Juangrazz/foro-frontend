@@ -21,11 +21,9 @@ export class CardViewComponent implements OnInit {
 
   constructor(private cardService: CardService, private commentsService: CommentsService) { 
     this.card = this.cardService.individualCard;
-    cardService.disabledCommentsLink = true;
 
-    commentsService.commentsFormatter();
-    this.comments = commentsService.comments;
-    console.log(this.card);
+    this.commentsService.commentsFormatter();
+    this.comments = this.commentsService.comments;
     
     
   }

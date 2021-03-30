@@ -5,7 +5,7 @@
     <div id="info-container" class="card br-top">
       <div class="card-body div_card_info">
         <div class="mb-3">
-          <b [innerHTML] = keys.cards_txt_new_comment></b>
+          <b [innerHTML]=keys.cards_txt_new_comment></b>
         </div>
         <form>
           <label [innerHTML]="keys.msg_input_4"></label>
@@ -15,23 +15,23 @@
             </div>
             <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="Nombre de usuario">
           </div>
-            <textarea class="text-area-format br-15"></textarea>
-            <div class="text-right">
-              <input type="submit" class="red-button-simply" value="Enviar">
-            </div>
-          </form>
-        </div>
-        </div>
+          <textarea class="text-area-format br-15"></textarea>
+          <div class="text-right">
+            <input type="submit" class="red-button-simply" value="Enviar">
+          </div>
+        </form>
+      </div>
+    </div>
     <div id="info-container" class="card br-bottom">
       <div class="card-body div_card_info">
         <ul class="list-group list-group-flush">
-            <div class="mb-3 mt-3">
-                <b [innerHTML] = keys.cards_txt_comments></b>
-            </div>
-            <li *ngFor="let comment of comments; let i = index" class="list-group-item">
-                <app-comments [comment]="comments[i]"></app-comments>
-            </li>
-          </ul>
+          <div class="mb-3 mt-3">
+            <b [innerHTML]=keys.cards_txt_comments></b>
+          </div>
+          <li *ngFor="let comment of comments; let i = index" class="list-group-item">
+            <app-comments [comment]="comments[i]"></app-comments>
+          </li>
+        </ul>
       </div>
     </div>
   </div>

@@ -20,9 +20,4 @@ export class CardComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  saveCard(){
-    sessionStorage.setItem("individual_card", JSON.stringify(this.card));
-    this.cardService.individualCard = this.card;
-  };
-
 }
