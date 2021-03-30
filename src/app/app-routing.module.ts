@@ -11,10 +11,13 @@ import { SearchMymyvComponent } from './components/views/search/search-mymyv/sea
 import { CardViewComponent } from './components/views/card-view/card-view.component';
 import { DashboardComponent } from './components/views/admin/dashboard/dashboard.component';
 import { AdminHomeComponent } from './components/views/admin/admin-home/admin-home.component';
+import { CheckMessagesComponent } from './components/views/admin/check-messages/check-messages.component';
+import { CreateAdminComponent } from './components/views/admin/create-admin/create-admin.component';
+import { ModAdminInfoComponent } from './components/views/admin/mod-admin-info/mod-admin-info.component';
 
 const routes: Routes = [
   { path: 'index', component: IndexComponent },
-  { path: 'instructions', component: InstructionsComponent},
+  { path: 'instructions', component: InstructionsComponent },
   { path: 'messages', component: MessagesComponent },
   { path: 'mymyv', component: MymyvComponent },
   { path: 'search', component: SearchComponent },
@@ -22,7 +25,10 @@ const routes: Routes = [
   { path: 'stadistics', component: StadisticsComponent },
   { path: 'card_view', component: CardViewComponent },
   { path: 'admin_dashboard', component: DashboardComponent },
-  { path: 'admin_home', component: AdminHomeComponent },
+  { path: 'home', component: AdminHomeComponent },
+  { path: 'check_messages', component: CheckMessagesComponent },
+  { path: 'create_admin', component: CreateAdminComponent },
+  { path: 'mod_info', component: ModAdminInfoComponent },
   { path: '**', component: IndexComponent }
 ];
 

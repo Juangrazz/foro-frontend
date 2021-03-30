@@ -1,4 +1,4 @@
-<nav id="navbar" class="navbar navbar-expand-lg navbar-dark navbar-style animated fadeIn slow">
+<nav id="navbar" class="navbar navbar-expand-lg navbar-dark navbar-style zindex-1 animated fadeIn slow">
   <a *ngIf="!isAdmin" class="navbar-brand mr-4" [routerLink]="['index']"><i
       class="fas fa-fire-alt fa-lg mr-2"></i>{{keys.nav_title}}</a>
   <a *ngIf="isAdmin" class="navbar-brand mr-4"><i class="fas fa-fire-alt fa-lg mr-2"></i>{{keys.nav_title}}</a>
@@ -40,17 +40,17 @@
     </ul>
     <ul *ngIf="isAdmin" class="navbar-nav mr-auto">
       <li class="nav-item mr-2">
-        <a class="nav-link" [routerLink]="['check_messages']" [routerLinkActive]="['navbar-active-link']">
+        <a class="nav-link" routerLink="check_messages" [routerLinkActive]="['navbar-active-link']">
           <div class="navbar-icon-container"><i class="fas fa-check fa-lg mr-1"></i></div>{{keys.nav_option_5}}
         </a>
       </li>
       <li class="nav-item mr-2">
-        <a class="nav-link" [routerLink]="['create_admin']" [routerLinkActive]="['navbar-active-link']">
+        <a class="nav-link" routerLink="create_admin" [routerLinkActive]="['navbar-active-link']">
           <div class="navbar-icon-container"><i class="fas fa-user-cog fa-lg mr-1"></i></div>{{keys.nav_option_6}}
         </a>
       </li>
       <li class="nav-item mr-2">
-        <a class="nav-link" [routerLink]="['profile']" [routerLinkActive]="['navbar-active-link']">
+        <a class="nav-link" routerLink="mod_info" [routerLinkActive]="['navbar-active-link']">
           <div class="navbar-icon-container"><i class="fas fa-user fa-lg mr-1"></i></div>{{keys.nav_option_7}}
         </a>
       </li>

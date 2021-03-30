@@ -21,6 +21,9 @@ import { CardViewComponent } from './components/views/card-view/card-view.compon
 import { CommentsComponent } from './components/views/card-view/comments/comments.component';
 import { AdminHomeComponent } from './components/views/admin/admin-home/admin-home.component';
 import { DashboardComponent } from './components/views/admin/dashboard/dashboard.component';
+import { CheckMessagesComponent } from './components/views/admin/check-messages/check-messages.component';
+import { CreateAdminComponent } from './components/views/admin/create-admin/create-admin.component';
+import { ModAdminInfoComponent } from './components/views/admin/mod-admin-info/mod-admin-info.component';
 
 @NgModule({
   declarations: [
@@ -41,6 +44,9 @@ import { DashboardComponent } from './components/views/admin/dashboard/dashboard
     CommentsComponent,
     DashboardComponent,
     AdminHomeComponent,
+    CheckMessagesComponent,
+    CreateAdminComponent,
+    ModAdminInfoComponent,
   ],
   imports: [
     BrowserModule,

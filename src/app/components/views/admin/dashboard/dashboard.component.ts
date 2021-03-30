@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ControlService } from '../../../../services/control.service';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 import keys from '../../../../../keys';
 
@@ -14,8 +14,8 @@ export class DashboardComponent implements OnInit {
 
   keys = keys;
   formLogin!: FormGroup;
-  
-  constructor(private controlService: ControlService, private formBuilder: FormBuilder, private router: Router) {
+
+  constructor(private controlService: ControlService, private formBuilder: FormBuilder, private router: Router, private route: ActivatedRoute) {
     this.controlService.showNavAndFoot.next(false);
     this.createForm();
   }
@@ -25,7 +25,7 @@ export class DashboardComponent implements OnInit {
 
   login(){
     this.controlService.isAdmin.next(true);
-    this.router.navigate(["/admin_home"]);
+    this.router.navigate(["home"]);
   }
 
   createForm() {
