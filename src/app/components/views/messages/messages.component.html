@@ -3,19 +3,19 @@
     <div class="text-center">
       <p class="msg-title mb-5" [innerHTML]="keys.msg_title"></p>
     </div>
-    <form>
+    <form [formGroup]="cardForm" (ngSubmit)="validateFrom()">
       <div class="form-row">
         <div class="form-group col-lg-3">
           <label [innerHTML]="keys.msg_input_1"></label>
-          <input type="date" class="form-control" id="inputDate">
+          <input type="date" class="form-control" formControlName="date">
         </div>
         <div class="form-group col-lg-3">
           <label [innerHTML]="keys.msg_input_2"></label>
-          <input type="time" class="form-control timepicker" id="inputTime">
+          <input type="time" class="form-control timepicker" formControlName="time">
         </div>
         <div class="form-group col-lg-3">
           <label [innerHTML]="keys.msg_input_3"></label>
-          <input type="text" class="form-control" id="inputPlace" placeholder="¿Dónde?">
+          <input type="text" class="form-control" placeholder="¿Dónde?" formControlName="place">
         </div>
         <div class="form-group col-lg-3">
           <label [innerHTML]="keys.msg_input_4"></label>
@@ -23,16 +23,27 @@
             <div class="input-group-prepend">
               <div class="input-group-text">@</div>
             </div>
-            <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="Nombre de usuario">
+            <input type="text" class="form-control" placeholder="Nombre de usuario" formControlName="instagram">
           </div>
         </div>
       </div>
       <label [innerHTML]="keys.msg_input_5"></label>
-      <textarea class="form-control text-area-format"></textarea>
+      <textarea class="form-control text-area-format" formControlName="description" (input)="countCharacters()"></textarea>
       <div class="text-right">
-        <button class="mt-4 red-button-simply font-weight-bold" [innerHTML]="keys.msg_send_button" [routerLink]="['/instructions']"></button>
+        <small [ngClass]="{'txt-red' : characters < 50}">{{characters}} {{keys.msg_count_text}}</small>
+      </div>
+      <div class="text-right">
+        <button type="submit" class="mt-4 red-button-simply font-weight-bold" [innerHTML]="keys.msg_send_button"></button>
       </div>
     </form>
+    <div class="mt-4">
+      <div *ngIf="dateError" class="msg msg-error animated fadeIn slow" [innerHTML]="keys.msg_date_error"></div>
+      <div *ngIf="timeError" class="msg msg-error animated fadeIn slow" [innerHTML]="keys.msg_time_error"></div>
+      <div *ngIf="placeError" class="msg msg-error animated fadeIn slow" [innerHTML]="keys.msg_place_error"></div>
+      <div *ngIf="descriptionError" class="msg msg-error animated fadeIn slow" [innerHTML]="keys.msg_description_error"></div>
+      <div *ngIf="formError" class="msg msg-error animated fadeIn slow" [innerHTML]="keys.msg_form_error"></div>
+    </div>
   </div>
 </div>
+<app-error-modal></app-error-modal>
 

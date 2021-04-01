@@ -25,6 +25,7 @@ import { CheckMessagesComponent } from './components/views/admin/check-messages/
 import { CreateAdminComponent } from './components/views/admin/create-admin/create-admin.component';
 import { ModAdminInfoComponent } from './components/views/admin/mod-admin-info/mod-admin-info.component';
 import { EditComponent } from './components/views/admin/check-messages/edit/edit.component';
+import { ErrorModalComponent } from './components/modals/error-modal/error-modal.component';
 
 @NgModule({
   declarations: [
@@ -49,6 +50,7 @@ import { EditComponent } from './components/views/admin/check-messages/edit/edit
     CreateAdminComponent,
     ModAdminInfoComponent,
     EditComponent,
+    ErrorModalComponent,
   ],
   imports: [
     BrowserModule,

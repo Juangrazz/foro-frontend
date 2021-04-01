@@ -1,0 +1,16 @@
+<div id="errorModal" class="modal fade" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered modal-sm">
+        <div class="modal-content border-0">
+            <div class="modal-header error-modal-header">
+                <h5 class="modal-title text-white-50" [innerHTML] = keys.error_modal_title></h5>
+            </div>
+            <div class="modal-body text-center text-black-50">
+                <p id="errorModalMessage"></p>
+                <i class="fas fa-times-circle fa-3x"></i>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn-block red-button text-uppercase" data-dismiss="modal" [innerHTML] = keys.error_modal_button></button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -148,7 +148,52 @@ app-edit
   z-index: 2;
 }
 
+.msg {
+  font-weight: bold;
+  font-size: 15px;
+  width: 100%;
+  height: auto;
+  padding: 8px;
+  border-radius: 5px;
+  text-align: center;
+  display: grid;
+  align-items: center;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+.msg-error {
+  color: rgb(255, 79, 79);
+  background-color: rgb(255, 225, 225);
+  border: 1px rgb(255, 79, 79) solid;
+}
+
+.msg-info {
+  color: rgb(76, 202, 93);
+  background-color: rgb(232, 255, 235);
+  border: 1px rgb(76, 202, 93) solid;
+}
+
+.error-modal-header {
+  background-color: rgb(255, 79, 79);
+}
+
+.correct-modal-header {
+  background-color: #42b15c;
+}
+
 /* BUTTONS */
+
+.red-button {
+  background-color: rgb(255, 102, 102);
+  color: white;
+  border-radius: 5px;
+  height: 3em;
+  min-width: 8em;
+  transition: .3s;
+  border: none
+}
+
 .red-button-simply {
   background-color: transparent;
   color: rgb(255, 102, 102);
@@ -164,7 +209,8 @@ app-edit
   color: white;
 }
 
-.red-button-simply:focus {
+.red-button-simply:focus,
+.red-button:focus {
   outline: none;
 }
 

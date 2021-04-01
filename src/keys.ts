@@ -1,4 +1,11 @@
 const keys = {
+
+    // DATABASE SERVICE
+    db_host: "http://localhost:4000",
+    db_server_path: "/server",
+
+    // ---------------------------------------------------------
+
     // NAVBAR
     nav_title: "Tinder Unizar",
     nav_option_1: "Inicio",
@@ -51,6 +58,12 @@ const keys = {
     msg_input_4: "Instagram (opcional)",
     msg_input_5: "Descripción",
     msg_send_button: "Enviar",
+    msg_date_error: "Selecciona una fecha válida",
+    msg_time_error: "Selecciona una hora válida",
+    msg_place_error: "El lugar ha de tener al menos dos caracteres",
+    msg_description_error: "La descripción ha de tener al menos 50 caracteres",
+    msg_form_error: "El formulario no puede estar vacío",
+    msg_count_text: "letras",
 
     // BÚSQUEDA SECTION
     search_title: "Búsqueda",
@@ -126,18 +139,23 @@ const keys = {
     create_admin_subtitle_2: "Seguridad",
     create_admin_submit_button: "Dar de alta",
 
-        // MOD INFO
-        mod_info_title: "Modificar mis datos",
-        mod_info_input_1: "Nombre",
-        mod_info_input_2: "Apellidos",
-        mod_info_input_3: "Correo",
-        mod_info_input_4: "Contraseña vieja",
-        mod_info_input_5: "Contraseña nueva",
-        mod_info_input_6: "Repite la nueva contraseña",
-        mod_info_subtitle_1: "Datos personales",
-        mod_info_subtitle_2: "Seguridad",
-        mod_info_submit_button_personal: "Modificar datos",
-        mod_info_submit_button_pass: "Cambiar contraseña",
+    // MOD INFO
+    mod_info_title: "Modificar mis datos",
+    mod_info_input_1: "Nombre",
+    mod_info_input_2: "Apellidos",
+    mod_info_input_3: "Correo",
+    mod_info_input_4: "Contraseña vieja",
+    mod_info_input_5: "Contraseña nueva",
+    mod_info_input_6: "Repite la nueva contraseña",
+    mod_info_subtitle_1: "Datos personales",
+    mod_info_subtitle_2: "Seguridad",
+    mod_info_submit_button_personal: "Modificar datos",
+    mod_info_submit_button_pass: "Cambiar contraseña",
+
+    // ERROR MODAL
+    error_modal_title: "Mensaje",
+    error_modal_button: "Ok",
+    error_modal_message: "Se ha producido un error al enviar los datos"
 
 }
 
