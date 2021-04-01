@@ -1,1 +1,46 @@
-<p>mod-admin-info works!</p>
+<div class="va-f msg-main-div hor-aligment container animated fadeIn slow">
+  <div class="p-4 va-s">
+    <div class="text-center">
+      <p class="msg-title mb-5" [innerHTML]="keys.mod_info_title"></p>
+    </div>
+    <div class="w-50 hor-aligment">
+      <form>
+        <h2 class="mb-3" [innerHTML]="keys.mod_info_subtitle_1"></h2>
+        <div class="form-group">
+          <label [innerHTML]="keys.mod_info_input_1"></label>
+          <input type="text" class="form-control">
+        </div>
+        <div class="form-group">
+          <label [innerHTML]="keys.mod_info_input_2"></label>
+          <input type="text" class="form-control timepicker">
+        </div>
+        <div class="form-group">
+          <label [innerHTML]="keys.mod_info_input_3"></label>
+          <input type="email" class="form-control">
+        </div>
+        <div class="text-right">
+          <button class="btn-block mt-4 red-button-simply font-weight-bold"
+            [innerHTML]="keys.mod_info_submit_button_personal"></button>
+        </div>
+
+        <h2 class="mt-5 mb-3" [innerHTML]="keys.mod_info_subtitle_2"></h2>
+        <div class="form-group">
+          <label [innerHTML]="keys.mod_info_input_4"></label>
+          <input type="password" class="form-control">
+        </div>
+        <div class="form-group">
+          <label [innerHTML]="keys.mod_info_input_5"></label>
+          <input type="password" class="form-control timepicker">
+        </div>
+        <div class="form-group">
+          <label [innerHTML]="keys.mod_info_input_6"></label>
+          <input type="password" class="form-control">
+        </div>
+        <div class="text-right">
+          <button class="btn-block mt-4 red-button-simply font-weight-bold"
+            [innerHTML]="keys.mod_info_submit_button_pass"></button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

@@ -107,6 +107,38 @@ const keys = {
     admin_home_info_creation_date: "Fecha de alta:",
     admin_home_info_last_update: "Última modificación:",
 
+    // CHECK MESSAGES
+    check_messages_btn_accept: "Aceptar",
+    check_messages_btn_edit: "Modificar",
+    check_messages_btn_reject: "Rechazar",
+
+    // EDIT MESSAGE
+    edit_title: "Editar mensaje",
+
+    // CREATE ADMIN
+    create_admin_title: "Crear administrador",
+    create_admin_input_1: "Nombre",
+    create_admin_input_2: "Apellidos",
+    create_admin_input_3: "Correo",
+    create_admin_input_4: "Contraseña",
+    create_admin_input_5: "Repite la contraseña",
+    create_admin_subtitle_1: "Datos personales",
+    create_admin_subtitle_2: "Seguridad",
+    create_admin_submit_button: "Dar de alta",
+
+        // MOD INFO
+        mod_info_title: "Modificar mis datos",
+        mod_info_input_1: "Nombre",
+        mod_info_input_2: "Apellidos",
+        mod_info_input_3: "Correo",
+        mod_info_input_4: "Contraseña vieja",
+        mod_info_input_5: "Contraseña nueva",
+        mod_info_input_6: "Repite la nueva contraseña",
+        mod_info_subtitle_1: "Datos personales",
+        mod_info_subtitle_2: "Seguridad",
+        mod_info_submit_button_personal: "Modificar datos",
+        mod_info_submit_button_pass: "Cambiar contraseña",
+
 }
 
 export default keys;

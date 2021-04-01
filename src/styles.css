@@ -98,7 +98,8 @@ app-dashboard,
 app-admin-home,
 app-check-messages,
 app-create-admin,
-app-mod-admin-info
+app-mod-admin-info,
+app-edit
  {
   flex-grow: 1;
 }

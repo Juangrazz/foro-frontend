@@ -25,7 +25,7 @@ export class DashboardComponent implements OnInit {
 
   login(){
     this.controlService.isAdmin.next(true);
-    this.router.navigate(["home"]);
+    this.router.navigate(["home"], {relativeTo:this.route});
   }
 
   createForm() {

@@ -14,6 +14,7 @@ import { AdminHomeComponent } from './components/views/admin/admin-home/admin-ho
 import { CheckMessagesComponent } from './components/views/admin/check-messages/check-messages.component';
 import { CreateAdminComponent } from './components/views/admin/create-admin/create-admin.component';
 import { ModAdminInfoComponent } from './components/views/admin/mod-admin-info/mod-admin-info.component';
+import { EditComponent } from './components/views/admin/check-messages/edit/edit.component';
 
 const routes: Routes = [
   { path: 'index', component: IndexComponent },
@@ -25,10 +26,11 @@ const routes: Routes = [
   { path: 'stadistics', component: StadisticsComponent },
   { path: 'card_view', component: CardViewComponent },
   { path: 'admin_dashboard', component: DashboardComponent },
-  { path: 'home', component: AdminHomeComponent },
-  { path: 'check_messages', component: CheckMessagesComponent },
-  { path: 'create_admin', component: CreateAdminComponent },
-  { path: 'mod_info', component: ModAdminInfoComponent },
+  { path: 'admin_dashboard/home', component: AdminHomeComponent },
+  { path: 'admin_dashboard/check_messages', component: CheckMessagesComponent },
+  { path: 'admin_dashboard/check_messages/edit', component: EditComponent },
+  { path: 'admin_dashboard/create_admin', component: CreateAdminComponent },
+  { path: 'admin_dashboard/mod_info', component: ModAdminInfoComponent },
   { path: '**', component: IndexComponent }
 ];
 

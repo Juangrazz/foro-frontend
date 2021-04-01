@@ -24,6 +24,7 @@ import { DashboardComponent } from './components/views/admin/dashboard/dashboard
 import { CheckMessagesComponent } from './components/views/admin/check-messages/check-messages.component';
 import { CreateAdminComponent } from './components/views/admin/create-admin/create-admin.component';
 import { ModAdminInfoComponent } from './components/views/admin/mod-admin-info/mod-admin-info.component';
+import { EditComponent } from './components/views/admin/check-messages/edit/edit.component';
 
 @NgModule({
   declarations: [
@@ -47,6 +48,7 @@ import { ModAdminInfoComponent } from './components/views/admin/mod-admin-info/m
     CheckMessagesComponent,
     CreateAdminComponent,
     ModAdminInfoComponent,
+    EditComponent,
   ],
   imports: [
     BrowserModule,
