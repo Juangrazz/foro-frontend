@@ -34,9 +34,9 @@ export class IndexComponent implements OnInit {
       resp => {
         this.cards = resp;
         for (const card of this.cards) {
-          card.publication_date = moment(card.publication_date).format("DD-MM-YYYY");
+          card.publication_date = card.publication_date?.split(" ")[0];
         }
-    this.checkCards();
+        this.checkCards();
       },
       err => {
 
@@ -52,8 +52,8 @@ export class IndexComponent implements OnInit {
     }
   }
 
-  
-  saveCard(card: CardModel){
+
+  saveCard(card: CardModel) {
     sessionStorage.setItem("individual_card", JSON.stringify(card));
     this.cardService.individualCard = card;
   };
