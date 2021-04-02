@@ -7,9 +7,7 @@ import { DatabaseService } from './database.service';
 })
 export class CardService {
 
-  cards: CardModel[] = [
-
-  ];
+  cards: CardModel[] = [];
 
   individualCard: CardModel = new CardModel();
 

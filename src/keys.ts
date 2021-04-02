@@ -6,6 +6,26 @@ const keys = {
 
     // ---------------------------------------------------------
 
+    // CONTROLS
+    ctrl_description_max_length: 3000,
+    ctrl_description_min_length: 50,
+    ctrl_place_min_length: 2,
+    ctrl_place_max_length: 200,
+    ctrl_instagram_pattern: "^[a-zA-Z0-9._]+$",
+
+    // ---------------------------------------------------------
+
+    // ERRORS
+    msg_date_error: "Selecciona una fecha válida",
+    msg_time_error: "Selecciona una hora válida",
+    msg_place_error: "El lugar ha de tener al menos dos caracteres",
+    msg_description_error: "La descripción ha de tener al menos 50 caracteres",
+    msg_form_error: "El formulario no puede estar vacío",
+    msg_count_text: "letras",
+    msg_insta_error: "Introduce una cuenta de instagram válida",
+
+    // ---------------------------------------------------------
+
     // NAVBAR
     nav_title: "Tinder Unizar",
     nav_option_1: "Inicio",
@@ -19,6 +39,8 @@ const keys = {
     nav_option_6: "Crear administrador",
     nav_option_7: "Modificar mis datos",
     nav_option_8: "Salir",
+
+    // ---------------------------------------------------------
 
     // INSTRUCCIONES VIEW
     inst_title: "INSTRUCCIONES",
@@ -49,6 +71,8 @@ const keys = {
     inst_sub_4_cont_1: "Recalcar que queda reservado el derecho a publicar o no un mensaje, así como las razones sobre ello.",
     inst_sub_4_cont_2: "Además, también queda reservado la manipulación de la información enviada para que haya un orden.",
 
+    // ---------------------------------------------------------
+
     // MÁNDANOS UN MENSAJE SECTION
     msg_title: "Cuéntanos dónde y cuándo le has visto",
     msg_instruction_link: "Más instrucciones",
@@ -58,13 +82,9 @@ const keys = {
     msg_input_4: "Instagram (opcional)",
     msg_input_5: "Descripción",
     msg_send_button: "Enviar",
-    msg_date_error: "Selecciona una fecha válida",
-    msg_time_error: "Selecciona una hora válida",
-    msg_place_error: "El lugar ha de tener al menos dos caracteres",
-    msg_description_error: "La descripción ha de tener al menos 50 caracteres",
-    msg_form_error: "El formulario no puede estar vacío",
-    msg_count_text: "letras",
 
+    // ---------------------------------------------------------
+    
     // BÚSQUEDA SECTION
     search_title: "Búsqueda",
     search_mymyv_txt: "MyMyV",
@@ -74,6 +94,8 @@ const keys = {
     search_input_2: "Lugar",
     search_send_button: "Buscar",
 
+    // ---------------------------------------------------------
+    
     // MyMyV SECTION
     mymyv_title: "Mozos y mozas y viceversa",
     mymyv_input_1: "Edad",
@@ -90,10 +112,12 @@ const keys = {
     mymyv_lookfor_option_2: "Chica",
     mymyv_send_button: "Enviar",
 
-    // No post
+    // ---------------------------------------------------------
+    
+    // NO POST
     nopost_text: "Ahora mismo no hay publicaciones, lo sentimos...",
 
-    // Cards
+    // CARDS
     cards_info_1: "Fecha:",
     cards_info_2: "Hora:",
     cards_info_3: "Lugar:",
@@ -104,6 +128,8 @@ const keys = {
     cards_txt_new_comment: "Deja un comentario",
     cards_txt_publicated: "Publicado el día",
 
+    // ---------------------------------------------------------
+    
     // DASHBOARD
     dashboard_title: "LOGIN",
     dashboard_input_1: "Email",
@@ -112,6 +138,8 @@ const keys = {
     dashboard_recovery_pass: "Recuperar contraseña",
     dashboard_remember_user: "Recordar usuario",
 
+    // ---------------------------------------------------------
+    
     // ADMIN HOME
     admin_home_title: "TUS DATOS",
     admin_home_name: "Nombre:",
@@ -120,14 +148,20 @@ const keys = {
     admin_home_info_creation_date: "Fecha de alta:",
     admin_home_info_last_update: "Última modificación:",
 
+    // ---------------------------------------------------------
+    
     // CHECK MESSAGES
     check_messages_btn_accept: "Aceptar",
     check_messages_btn_edit: "Modificar",
     check_messages_btn_reject: "Rechazar",
 
+    // ---------------------------------------------------------
+    
     // EDIT MESSAGE
     edit_title: "Editar mensaje",
 
+    // ---------------------------------------------------------
+    
     // CREATE ADMIN
     create_admin_title: "Crear administrador",
     create_admin_input_1: "Nombre",
@@ -139,6 +173,8 @@ const keys = {
     create_admin_subtitle_2: "Seguridad",
     create_admin_submit_button: "Dar de alta",
 
+    // ---------------------------------------------------------
+    
     // MOD INFO
     mod_info_title: "Modificar mis datos",
     mod_info_input_1: "Nombre",
@@ -152,10 +188,18 @@ const keys = {
     mod_info_submit_button_personal: "Modificar datos",
     mod_info_submit_button_pass: "Cambiar contraseña",
 
+    // ---------------------------------------------------------
+    
     // ERROR MODAL
     error_modal_title: "Mensaje",
     error_modal_button: "Ok",
-    error_modal_message: "Se ha producido un error al enviar los datos"
+    error_modal_message: "Ha ocurrido un error, inténtalo de nuevo más tarde.",
+
+        // CORRECT MODAL
+        correct_modal_title: "Mensaje",
+        correct_modal_button: "Ok",
+        correct_modal_message: "¡Mensaje enviado!",
+    
 
 }
 

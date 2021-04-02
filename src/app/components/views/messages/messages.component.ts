@@ -26,6 +26,7 @@ export class MessagesComponent implements OnInit {
   placeError: boolean = false;
   descriptionError: boolean = false;
   formError: boolean = false;
+  instaError: boolean = false;
 
   constructor(private formBuilder: FormBuilder, private databaseService: DatabaseService) {
     this.createFrom();
@@ -39,15 +40,15 @@ export class MessagesComponent implements OnInit {
     this.cardForm = this.formBuilder.group({
       date: ['', [Validators.required, this.validateDate()]],
       time: ['', Validators.required],
-      place: ['', [Validators.required, Validators.minLength(2)]],
-      instagram: ['', Validators.minLength(2)],
-      description: ['', [Validators.required, Validators.minLength(50)]]
-    })
+      place: ['', [Validators.required, Validators.minLength(keys.ctrl_place_min_length), Validators.minLength(keys.ctrl_place_min_length)]],
+      instagram: ['', Validators.pattern(new RegExp(keys.ctrl_instagram_pattern))],
+      description: ['', [Validators.required, Validators.minLength(keys.ctrl_description_min_length), Validators.maxLength(keys.ctrl_place_max_length)]]
+    });
   }
 
   validateFrom() {
     this.resetErrors();
-    debugger;
+
     if (this.cardForm.valid) {
       this.card.date = this.cardForm.controls.date.value;
       this.card.time = this.cardForm.controls.time.value;
@@ -55,29 +56,37 @@ export class MessagesComponent implements OnInit {
       this.card.instagram = this.cardForm.controls.instagram.value;
       this.card.description = this.cardForm.controls.description.value;
 
-      if (this.card.instagram === "") {
+      if (this.card.instagram === "" || this.card.instagram === null) {
         this.card.instagram = "Anónimo";
       }
 
-      /*
       this.databaseService.createCard(this.card).subscribe(
         (resp) => {
-          console.log(resp);
-          this.cardForm.reset();
+          if(resp.status === "KO"){
+            $("#errorModalMessage").text(keys.error_modal_message);
+            $('#errorModal').modal('show');
+          } else if(resp.status === "OK") {
+            $("#correctModalMessage").text(keys.correct_modal_message);
+            $('#correctModal').modal('show');
+            $('#correctModal').on('hidden.bs.modal', () => {
+              this.cardForm.reset();
+            });
+          }
+          
         },
         (error) => {
           $("#errorModalMessage").text(keys.error_modal_message);
           $('#errorModal').modal('show');
-          console.error("An error has ocurred creating the card");
         }
       );
-      */
+      
 
     } else {
       if (this.cardForm.controls.description.invalid) this.descriptionError = true;
       if (this.cardForm.controls.place.invalid) this.placeError = true;
       if (this.cardForm.controls.date.invalid) this.dateError = true;
       if (this.cardForm.controls.time.invalid) this.timeError = true;
+      if (this.cardForm.controls.instagram.invalid) this.instaError = true;
       if (
         this.cardForm.controls.description.value === "" &&
         this.cardForm.controls.place.value === "" &&
@@ -99,6 +108,7 @@ export class MessagesComponent implements OnInit {
     this.placeError = false;
     this.dateError = false;
     this.timeError = false;
+    this.instaError = false;
   }
 
   countCharacters() {
@@ -112,7 +122,7 @@ export class MessagesComponent implements OnInit {
       if (!value) {
         return null;
       }
-      
+
       let date = moment(control.value);
       let now = moment().format("YYYY-MM-DD");
       let diff = date.diff(now, 'days');

@@ -35,6 +35,7 @@ export class CommentsService {
 
   constructor() { }
 
+  // TODO: cmabiar algoritmo por patron ^(?!.*\.\.)(?!.*\.$)[^\W][\w.]{0,29}$
   commentsFormatter() {
     this.comments.forEach(comment => {
       let words = comment.comment.split(" ");

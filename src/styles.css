@@ -179,7 +179,7 @@ app-edit
 }
 
 .correct-modal-header {
-  background-color: #42b15c;
+  background-color: rgb(67, 223, 114);
 }
 
 /* BUTTONS */
@@ -210,6 +210,8 @@ app-edit
 }
 
 .red-button-simply:focus,
+.blue-button-simply:focus,
+.green-button:focus,
 .red-button:focus {
   outline: none;
 }
@@ -229,8 +231,14 @@ app-edit
   color: white;
 }
 
-.blue-button-simply:focus {
-  outline: none;
+.green-button {
+  background-color: rgb(67, 223, 114);
+  color: white;
+  border-radius: 5px;
+  height: 3em;
+  min-width: 8em;
+  transition: .3s;
+  border: none
 }
 
 .green-button-simply {

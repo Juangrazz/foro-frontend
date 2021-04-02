@@ -2,7 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { CardModel } from 'src/app/models/card.model';
 import { CardService } from '../../../services/card.service';
 import { ControlService } from '../../../services/control.service';
+import { DatabaseService } from '../../../services/database.service';
+
 import keys from '../../../../keys';
+import * as moment from 'moment';
 
 @Component({
   selector: 'app-index',
@@ -17,9 +20,8 @@ export class IndexComponent implements OnInit {
   cards: CardModel[] = [];
   showNavAndFoot: boolean = true;
 
-  constructor(private cardService: CardService, private controlService: ControlService) {
+  constructor(private cardService: CardService, private controlService: ControlService, private databseService: DatabaseService) {
     this.getCards();
-    this.checkCards();
     this.controlService.showNavAndFoot.next(true);
     this.controlService.isAdmin.next(false);
   }
@@ -28,7 +30,18 @@ export class IndexComponent implements OnInit {
   }
 
   getCards() {
-    this.cards = this.cardService.cards;
+    this.databseService.getCards().subscribe(
+      resp => {
+        this.cards = resp;
+        for (const card of this.cards) {
+          card.publication_date = moment(card.publication_date).format("DD-MM-YYYY");
+        }
+    this.checkCards();
+      },
+      err => {
+
+      }
+    );
   }
 
   checkCards() {

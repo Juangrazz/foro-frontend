@@ -5,5 +5,5 @@ export class CardModel {
     instagram?: string;
     description!: string;
     comments?: number;
-    publicationDate?: string;
+    publication_date?: string;
 }

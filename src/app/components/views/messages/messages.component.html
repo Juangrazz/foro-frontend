@@ -30,7 +30,7 @@
       <label [innerHTML]="keys.msg_input_5"></label>
       <textarea class="form-control text-area-format" formControlName="description" (input)="countCharacters()"></textarea>
       <div class="text-right">
-        <small [ngClass]="{'txt-red' : characters < 50}">{{characters}} {{keys.msg_count_text}}</small>
+        <small [ngClass]="{'txt-red' : characters < 50 || characters > 3000}">{{characters}} {{keys.msg_count_text}}</small>
       </div>
       <div class="text-right">
         <button type="submit" class="mt-4 red-button-simply font-weight-bold" [innerHTML]="keys.msg_send_button"></button>
@@ -41,9 +41,11 @@
       <div *ngIf="timeError" class="msg msg-error animated fadeIn slow" [innerHTML]="keys.msg_time_error"></div>
       <div *ngIf="placeError" class="msg msg-error animated fadeIn slow" [innerHTML]="keys.msg_place_error"></div>
       <div *ngIf="descriptionError" class="msg msg-error animated fadeIn slow" [innerHTML]="keys.msg_description_error"></div>
+      <div *ngIf="instaError" class="msg msg-error animated fadeIn slow" [innerHTML]="keys.msg_insta_error"></div>
       <div *ngIf="formError" class="msg msg-error animated fadeIn slow" [innerHTML]="keys.msg_form_error"></div>
     </div>
   </div>
 </div>
 <app-error-modal></app-error-modal>
+<app-correct-modal></app-correct-modal>
 
