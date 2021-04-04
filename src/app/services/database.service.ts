@@ -17,7 +17,7 @@ export class DatabaseService {
     return this.http.post<MessageModel>(`${keys.db_host}${keys.db_server_path}/cards/createcard`, card);
   }
 
-  getCards() {
-    return this.http.get<CardModel[]>(`${keys.db_host}${keys.db_server_path}/cards/getcards`);
+  getCards(date: string) {
+    return this.http.get<CardModel[]>(`${keys.db_host}${keys.db_server_path}/cards/getcards/${date}`);
   }
 }

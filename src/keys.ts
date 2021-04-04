@@ -42,6 +42,11 @@ const keys = {
 
     // ---------------------------------------------------------
 
+    // INDEX
+    index_day_text: "Posts del día",
+    index_arrows_text: "Día",
+    // ---------------------------------------------------------
+
     // INSTRUCCIONES VIEW
     inst_title: "INSTRUCCIONES",
 
@@ -84,7 +89,7 @@ const keys = {
     msg_send_button: "Enviar",
 
     // ---------------------------------------------------------
-    
+
     // BÚSQUEDA SECTION
     search_title: "Búsqueda",
     search_mymyv_txt: "MyMyV",
@@ -95,7 +100,7 @@ const keys = {
     search_send_button: "Buscar",
 
     // ---------------------------------------------------------
-    
+
     // MyMyV SECTION
     mymyv_title: "Mozos y mozas y viceversa",
     mymyv_input_1: "Edad",
@@ -113,9 +118,9 @@ const keys = {
     mymyv_send_button: "Enviar",
 
     // ---------------------------------------------------------
-    
+
     // NO POST
-    nopost_text: "Ahora mismo no hay publicaciones, lo sentimos...",
+    nopost_text: "No hay publicaciones para este día",
 
     // CARDS
     cards_info_1: "Fecha:",
@@ -129,7 +134,7 @@ const keys = {
     cards_txt_publicated: "Publicado el día",
 
     // ---------------------------------------------------------
-    
+
     // DASHBOARD
     dashboard_title: "LOGIN",
     dashboard_input_1: "Email",
@@ -139,7 +144,7 @@ const keys = {
     dashboard_remember_user: "Recordar usuario",
 
     // ---------------------------------------------------------
-    
+
     // ADMIN HOME
     admin_home_title: "TUS DATOS",
     admin_home_name: "Nombre:",
@@ -149,19 +154,19 @@ const keys = {
     admin_home_info_last_update: "Última modificación:",
 
     // ---------------------------------------------------------
-    
+
     // CHECK MESSAGES
     check_messages_btn_accept: "Aceptar",
     check_messages_btn_edit: "Modificar",
     check_messages_btn_reject: "Rechazar",
 
     // ---------------------------------------------------------
-    
+
     // EDIT MESSAGE
     edit_title: "Editar mensaje",
 
     // ---------------------------------------------------------
-    
+
     // CREATE ADMIN
     create_admin_title: "Crear administrador",
     create_admin_input_1: "Nombre",
@@ -174,7 +179,7 @@ const keys = {
     create_admin_submit_button: "Dar de alta",
 
     // ---------------------------------------------------------
-    
+
     // MOD INFO
     mod_info_title: "Modificar mis datos",
     mod_info_input_1: "Nombre",
@@ -189,17 +194,18 @@ const keys = {
     mod_info_submit_button_pass: "Cambiar contraseña",
 
     // ---------------------------------------------------------
-    
+
     // ERROR MODAL
     error_modal_title: "Mensaje",
     error_modal_button: "Ok",
     error_modal_message: "Ha ocurrido un error, inténtalo de nuevo más tarde.",
 
-        // CORRECT MODAL
-        correct_modal_title: "Mensaje",
-        correct_modal_button: "Ok",
-        correct_modal_message: "¡Mensaje enviado!",
-    
+    // CORRECT MODAL
+    correct_modal_title: "Mensaje",
+    correct_modal_button: "Ok",
+    correct_modal_message: "¡Mensaje enviado!",
+
+    // ---------------------------------------------------------
 
 }
 

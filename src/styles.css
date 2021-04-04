@@ -182,7 +182,15 @@ app-edit
   background-color: rgb(67, 223, 114);
 }
 
+.w-10{
+  width: 10%;
+}
+
 /* BUTTONS */
+
+.btn-index-days {
+  color: rgb(67, 165, 223);
+}
 
 .red-button {
   background-color: rgb(255, 102, 102);
@@ -212,7 +220,8 @@ app-edit
 .red-button-simply:focus,
 .blue-button-simply:focus,
 .green-button:focus,
-.red-button:focus {
+.red-button:focus,
+.btn-index-days:focus {
   outline: none;
 }
 
@@ -375,6 +384,11 @@ input:checked + .slider:before {
   color: white;
 }
 
+/* INDEX */
+.index-main-div {
+  min-height: 64.5vh;
+}
+
 /* INSTRUCTIONES SECTION */
 .inst-title {
   font-size: 2.5em;
@@ -442,10 +456,6 @@ input:checked + .slider:before {
 }
 
 /* No posts */
-.noposts-main-div {
-  min-height: 85.5vh;
-}
-
 .noposts-title {
   font-size: 2.5em;
   font-weight: bold;

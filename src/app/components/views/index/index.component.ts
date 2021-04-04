@@ -4,8 +4,8 @@ import { CardService } from '../../../services/card.service';
 import { ControlService } from '../../../services/control.service';
 import { DatabaseService } from '../../../services/database.service';
 
-import keys from '../../../../keys';
 import * as moment from 'moment';
+import keys from '../../../../keys';
 
 @Component({
   selector: 'app-index',
@@ -20,19 +20,29 @@ export class IndexComponent implements OnInit {
   cards: CardModel[] = [];
   showNavAndFoot: boolean = true;
 
+  page: number = 1;
+  dateToShow: string = moment().format("DD-MM-YYYY");
+  dateNext!: string;
+  dateBack!: string;
+
   constructor(private cardService: CardService, private controlService: ControlService, private databseService: DatabaseService) {
     this.getCards();
     this.controlService.showNavAndFoot.next(true);
     this.controlService.isAdmin.next(false);
+  
+    this.calculateDay();
+    
   }
 
   ngOnInit(): void {
   }
 
   getCards() {
-    this.databseService.getCards().subscribe(
+    
+    this.databseService.getCards(this.dateToShow).subscribe(
       resp => {
         this.cards = resp;
+        
         for (const card of this.cards) {
           card.publication_date = card.publication_date?.split(" ")[0];
         }
@@ -57,5 +67,22 @@ export class IndexComponent implements OnInit {
     sessionStorage.setItem("individual_card", JSON.stringify(card));
     this.cardService.individualCard = card;
   };
+
+  calculateDay(){
+    this.dateBack = moment(this.dateToShow, "DD-MM-YYYY").subtract(1, "days").format("DD");
+    this.dateNext = moment(this.dateToShow, "DD-MM-YYYY").add(1, "days").format("DD");
+  }
+
+  addDay(){
+    this.dateToShow = moment(this.dateToShow, "DD-MM-YYYY").add(1, "days").format("DD-MM-YYYY");
+    this.calculateDay();
+    this.getCards();
+  }
+
+  subtractDay(){
+    this.dateToShow = moment(this.dateToShow, "DD-MM-YYYY").subtract(1, "days").format("DD-MM-YYYY");
+    this.calculateDay();
+    this.getCards();
+  }
 
 }

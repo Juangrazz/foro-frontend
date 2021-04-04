@@ -8,7 +8,6 @@ import { DatabaseService } from './database.service';
 export class CardService {
 
   cards: CardModel[] = [];
-
   individualCard: CardModel = new CardModel();
 
   constructor(private databaseService: DatabaseService) {
