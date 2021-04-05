@@ -29,9 +29,7 @@ export class IndexComponent implements OnInit {
     this.getCards();
     this.controlService.showNavAndFoot.next(true);
     this.controlService.isAdmin.next(false);
-  
     this.calculateDay();
-    
   }
 
   ngOnInit(): void {
@@ -42,10 +40,11 @@ export class IndexComponent implements OnInit {
     this.databseService.getCards(this.dateToShow).subscribe(
       resp => {
         this.cards = resp;
-        
+    
         for (const card of this.cards) {
-          card.publication_date = card.publication_date?.split(" ")[0];
+          card.date = moment(card.date).format("DD-MM-YYYY");
         }
+        
         this.checkCards();
       },
       err => {

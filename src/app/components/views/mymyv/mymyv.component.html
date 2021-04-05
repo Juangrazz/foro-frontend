@@ -30,7 +30,12 @@
           </div>
           <div class="form-group col-lg-6">
             <label [innerHTML]="keys.mymyv_input_4"></label>
-            <input type="text" class="form-control">
+            <div class="input-group mb-2">
+              <div class="input-group-prepend">
+                <div class="input-group-text">@</div>
+              </div>
+              <input type="text" class="form-control" formControlName="instagram">
+            </div>
           </div>
         </div>
         <label [innerHTML]="keys.mymyv_input_5"></label>

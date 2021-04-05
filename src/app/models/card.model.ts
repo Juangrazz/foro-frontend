@@ -1,4 +1,5 @@
 export class CardModel {
+    id!: number;
     date!: string;
     time!: string;
     place!: string;

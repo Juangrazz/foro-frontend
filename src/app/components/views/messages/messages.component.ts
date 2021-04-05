@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, Validators, AbstractControl, ValidatorFn, ValidationErrors } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
 import { CardModel } from 'src/app/models/card.model';
 import { DatabaseService } from '../../../services/database.service';
 
 import keys from "../../../../keys";
+import { CardService } from '../../../services/card.service';
 
 declare var $: any;
-import * as moment from 'moment';
 
 @Component({
   selector: 'app-messages',
@@ -28,7 +28,7 @@ export class MessagesComponent implements OnInit {
   formError: boolean = false;
   instaError: boolean = false;
 
-  constructor(private formBuilder: FormBuilder, private databaseService: DatabaseService) {
+  constructor(private formBuilder: FormBuilder, private databaseService: DatabaseService, private cardService: CardService) {
     this.createFrom();
   }
 
@@ -38,7 +38,7 @@ export class MessagesComponent implements OnInit {
 
   createFrom() {
     this.cardForm = this.formBuilder.group({
-      date: ['', [Validators.required, this.validateDate()]],
+      date: ['', [Validators.required, this.cardService.validateDate()]],
       time: ['', Validators.required],
       place: ['', [Validators.required, Validators.minLength(keys.ctrl_place_min_length), Validators.minLength(keys.ctrl_place_min_length)]],
       instagram: ['', Validators.pattern(new RegExp(keys.ctrl_instagram_pattern))],
@@ -112,25 +112,8 @@ export class MessagesComponent implements OnInit {
   }
 
   countCharacters() {
-    this.characters = this.cardForm.controls.description.value.length;
+    this.characters = this.cardService.countCharacters(this.cardForm.controls.description);
   }
 
-  validateDate(): ValidatorFn {
-    return (control: AbstractControl): ValidationErrors | null => {
-      const value = control.value;
 
-      if (!value) {
-        return null;
-      }
-
-      let date = moment(control.value);
-      let now = moment().format("YYYY-MM-DD");
-      let diff = date.diff(now, 'days');
-      let valid = false;
-
-      if (diff > 0) valid = true;
-
-      return valid ? { dateValid: true } : null;
-    }
-  }
 }

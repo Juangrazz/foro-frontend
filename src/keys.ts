@@ -43,7 +43,7 @@ const keys = {
     // ---------------------------------------------------------
 
     // INDEX
-    index_day_text: "Posts del día",
+    index_day_text: "Publicaciones del día",
     index_arrows_text: "Día",
     // ---------------------------------------------------------
 
@@ -106,7 +106,7 @@ const keys = {
     mymyv_input_1: "Edad",
     mymyv_input_2: "Tipo de relación",
     mymyv_input_3: "¿Qué buscas?",
-    mymyv_input_4: "¿De dónde eres?",
+    mymyv_input_4: "Instagram (opcional)",
     mymyv_input_5: "Añade una descripción",
     mymyv_empty_option: "-- Selecciona una opción --",
     mymyv_indiferent_option: "Indiferente",
