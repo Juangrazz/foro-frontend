@@ -23,6 +23,9 @@ const keys = {
     msg_form_error: "El formulario no puede estar vacío",
     msg_count_text: "letras",
     msg_insta_error: "Introduce una cuenta de instagram válida",
+    msg_age_error: "Introduce una edad válida",
+    msg_kind_error: "Introduce un tipo de relación válido",
+    msg_lookfor_error: "Selecciona qué estás buscando",
 
     // ---------------------------------------------------------
 

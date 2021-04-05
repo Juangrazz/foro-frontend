@@ -42,11 +42,11 @@ export class MessagesComponent implements OnInit {
       time: ['', Validators.required],
       place: ['', [Validators.required, Validators.minLength(keys.ctrl_place_min_length), Validators.minLength(keys.ctrl_place_min_length)]],
       instagram: ['', Validators.pattern(new RegExp(keys.ctrl_instagram_pattern))],
-      description: ['', [Validators.required, Validators.minLength(keys.ctrl_description_min_length), Validators.maxLength(keys.ctrl_place_max_length)]]
+      description: ['', [Validators.required, Validators.minLength(keys.ctrl_description_min_length), Validators.maxLength(keys.ctrl_description_max_length)]]
     });
   }
 
-  validateFrom() {
+  validateForm() {
     this.resetErrors();
 
     if (this.cardForm.valid) {
@@ -98,6 +98,7 @@ export class MessagesComponent implements OnInit {
         this.placeError = false;
         this.dateError = false;
         this.timeError = false;
+        this.instaError = false;
       }
     }
   }
