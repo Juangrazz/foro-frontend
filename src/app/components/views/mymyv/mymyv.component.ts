@@ -1,10 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, Validators, AbstractControl, ValidatorFn, ValidationErrors } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
-import keys from '../../../../keys';
+import { MymyvCardModel } from '../../../models/mymyv_card.model';
+
 import { DatabaseService } from '../../../services/database.service';
 import { CardService } from '../../../services/card.service';
-import { MymyvCardModel } from '../../../models/mymyv_card.model';
+
+import keys from '../../../../keys';
+declare var $: any;
 
 @Component({
   selector: 'app-mymyv',
@@ -35,17 +38,15 @@ export class MymyvComponent implements OnInit {
 
   createFrom() {
     this.mymyvCardForm = this.formBuilder.group({
-      age: ['18', [Validators.required, Validators.min(18), Validators.max(100)]],
+      age: [keys.ctrl_min_age, [Validators.required, Validators.min(keys.ctrl_min_age), Validators.max(keys.ctrl_max_age)]],
       kind: ['', Validators.required],
-      lookFor: ['', [Validators.required, Validators.minLength(keys.ctrl_place_min_length), Validators.minLength(keys.ctrl_place_min_length)]],
+      lookFor: ['', Validators.required],
       instagram: ['', Validators.pattern(new RegExp(keys.ctrl_instagram_pattern))],
       description: ['', [Validators.required, Validators.minLength(keys.ctrl_description_min_length), Validators.maxLength(keys.ctrl_description_max_length)]]
     });
   }
 
   validateForm(){
-    console.log(this.mymyvCardForm);
-    
     this.resetErrors();
 
     if (this.mymyvCardForm.valid) {
@@ -58,30 +59,26 @@ export class MymyvComponent implements OnInit {
       if (this.mymyvCard.instagram === "" || this.mymyvCard.instagram === null) {
         this.mymyvCard.instagram = "Anónimo";
       }
-
-      /*
-      this.databaseService.createCard(this.mymyvCard).subscribe(
-        (resp) => {
-          if(resp.status === "KO"){
+      
+      this.databaseService.createMymyvCard(this.mymyvCard).subscribe(
+        (resp) => {      
+          if(resp.status === keys.ctrl_fail_result){
             $("#errorModalMessage").text(keys.error_modal_message);
             $('#errorModal').modal('show');
-          } else if(resp.status === "OK") {
+          } else if(resp.status === keys.ctrl_successful_result) {
             $("#correctModalMessage").text(keys.correct_modal_message);
             $('#correctModal').modal('show');
             $('#correctModal').on('hidden.bs.modal', () => {
               this.mymyvCardForm.reset();
             });
           }
-          
         },
         (error) => {
           $("#errorModalMessage").text(keys.error_modal_message);
           $('#errorModal').modal('show');
         }
       );
-      */
       
-
     } else {
       if (this.mymyvCardForm.controls.description.invalid) this.descriptionError = true;
       if (this.mymyvCardForm.controls.age.invalid) this.ageError = true;

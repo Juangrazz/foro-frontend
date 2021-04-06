@@ -1,11 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
-import { CardModel } from 'src/app/models/card.model';
-import { DatabaseService } from '../../../services/database.service';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
-import keys from "../../../../keys";
+import { CardModel } from 'src/app/models/card.model';
+
+import { DatabaseService } from '../../../services/database.service';
 import { CardService } from '../../../services/card.service';
 
+import keys from "../../../../keys";
 declare var $: any;
 
 @Component({
@@ -62,10 +63,10 @@ export class MessagesComponent implements OnInit {
 
       this.databaseService.createCard(this.card).subscribe(
         (resp) => {
-          if(resp.status === "KO"){
+          if(resp.status === keys.ctrl_fail_result){
             $("#errorModalMessage").text(keys.error_modal_message);
             $('#errorModal').modal('show');
-          } else if(resp.status === "OK") {
+          } else if(resp.status === keys.ctrl_successful_result) {
             $("#correctModalMessage").text(keys.correct_modal_message);
             $('#correctModal').modal('show');
             $('#correctModal').on('hidden.bs.modal', () => {

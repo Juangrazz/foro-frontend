@@ -4,8 +4,8 @@
 </div>
 <div *ngIf="!noPosts" class="index-main-div">
   <div class="container p-2 animated fadeIn slow"
-    *ngFor="let card of cards | paginate: { itemsPerPage: 5, currentPage: page}; let i = index">
-    <app-card [card]="card"></app-card>
+    *ngFor="let card of allCards; let i = index">
+    <app-card *ngIf="!card.hasOwnProperty('age')" [card]="card"></app-card>
     <div id="card-container" class="container p-2 animated fadeIn slow">
       <div id="card-global-container" class="mb-3 div_card_global">
         <div class="text-right">

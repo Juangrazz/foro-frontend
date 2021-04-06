@@ -11,7 +11,11 @@ const keys = {
     ctrl_description_min_length: 50,
     ctrl_place_min_length: 2,
     ctrl_place_max_length: 200,
+    ctrl_min_age: 18,
+    ctrl_max_age: 100,
     ctrl_instagram_pattern: "^[a-zA-Z0-9._]+$",
+    ctrl_fail_result: "KO",
+    ctrl_successful_result: "OK",
 
     // ---------------------------------------------------------
 

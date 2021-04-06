@@ -6,6 +6,7 @@ import { DatabaseService } from '../../../services/database.service';
 
 import * as moment from 'moment';
 import keys from '../../../../keys';
+import { MymyvCardModel } from '../../../models/mymyv_card.model';
 
 @Component({
   selector: 'app-index',
@@ -18,6 +19,8 @@ export class IndexComponent implements OnInit {
 
   noPosts: boolean = true;
   cards: CardModel[] = [];
+  mymyvCards: MymyvCardModel[] = [];
+  allCards: any[] = [];
   showNavAndFoot: boolean = true;
 
   page: number = 1;
@@ -26,7 +29,8 @@ export class IndexComponent implements OnInit {
   dateBack!: string;
 
   constructor(private cardService: CardService, private controlService: ControlService, private databseService: DatabaseService) {
-    this.getCards();
+    this.getAllCards();
+    this.checkCards();
     this.controlService.showNavAndFoot.next(true);
     this.controlService.isAdmin.next(false);
     this.calculateDay();
@@ -35,26 +39,24 @@ export class IndexComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  getCards() {
-    
-    this.databseService.getCards(this.dateToShow).subscribe(
-      resp => {
-        this.cards = resp;
-    
-        for (const card of this.cards) {
-          card.date = moment(card.date).format("DD-MM-YYYY");
-        }
-        
-        this.checkCards();
-      },
-      err => {
+  async getAllCards() {
+    const cards = await this.databseService.getCards(this.dateToShow);
+    const mymyvCards = await this.databseService.getMymyvCards(this.dateToShow);
 
-      }
-    );
+    for (const card of cards) {
+      this.allCards.push(card);
+    }
+    for (const card of mymyvCards) {
+      this.allCards.push(card);
+    }
+    this.allCards.sort((a, b) => new Date(b.publicationDate).getTime() - new Date(a.publicationDate).getTime());
+    
+    this.checkCards();
   }
 
+
   checkCards() {
-    if (this.cards.length === 0) {
+    if (this.allCards.length === 0) {
       this.noPosts = true;
     } else {
       this.noPosts = false;
@@ -67,21 +69,21 @@ export class IndexComponent implements OnInit {
     this.cardService.individualCard = card;
   };
 
-  calculateDay(){
+  calculateDay() {
     this.dateBack = moment(this.dateToShow, "DD-MM-YYYY").subtract(1, "days").format("DD");
     this.dateNext = moment(this.dateToShow, "DD-MM-YYYY").add(1, "days").format("DD");
   }
 
-  addDay(){
+  addDay() {
     this.dateToShow = moment(this.dateToShow, "DD-MM-YYYY").add(1, "days").format("DD-MM-YYYY");
     this.calculateDay();
-    this.getCards();
+    this.getAllCards();
   }
 
-  subtractDay(){
+  subtractDay() {
     this.dateToShow = moment(this.dateToShow, "DD-MM-YYYY").subtract(1, "days").format("DD-MM-YYYY");
     this.calculateDay();
-    this.getCards();
+    this.getAllCards();
   }
 
 }
