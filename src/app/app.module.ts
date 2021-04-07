@@ -28,6 +28,7 @@ import { ModAdminInfoComponent } from './components/views/admin/mod-admin-info/m
 import { EditComponent } from './components/views/admin/check-messages/edit/edit.component';
 import { ErrorModalComponent } from './components/modals/error-modal/error-modal.component';
 import { CorrectModalComponent } from './components/modals/correct-modal/correct-modal.component';
+import { MymyvCardComponent } from './components/views/index/mymyv-card/mymyv-card.component';
 
 @NgModule({
   declarations: [
@@ -54,6 +55,7 @@ import { CorrectModalComponent } from './components/modals/correct-modal/correct
     EditComponent,
     ErrorModalComponent,
     CorrectModalComponent,
+    MymyvCardComponent,
   ],
   imports: [
     BrowserModule,

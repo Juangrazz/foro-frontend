@@ -7,4 +7,5 @@ export class CardModel {
     description!: string;
     comments?: number;
     publication_date?: string;
+    model_type?: String;
 }

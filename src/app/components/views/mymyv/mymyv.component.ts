@@ -52,7 +52,7 @@ export class MymyvComponent implements OnInit {
     if (this.mymyvCardForm.valid) {
       this.mymyvCard.age = this.mymyvCardForm.controls.age.value;
       this.mymyvCard.kind = this.mymyvCardForm.controls.kind.value;
-      this.mymyvCard.lookFor = this.mymyvCardForm.controls.lookFor.value;
+      this.mymyvCard.look_for = this.mymyvCardForm.controls.lookFor.value;
       this.mymyvCard.instagram = this.mymyvCardForm.controls.instagram.value;
       this.mymyvCard.description = this.mymyvCardForm.controls.description.value;
 

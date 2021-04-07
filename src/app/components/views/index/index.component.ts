@@ -1,12 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { CardModel } from 'src/app/models/card.model';
 import { CardService } from '../../../services/card.service';
 import { ControlService } from '../../../services/control.service';
 import { DatabaseService } from '../../../services/database.service';
 
+import { MymyvCardModel } from '../../../models/mymyv_card.model';
+import { CardModel } from 'src/app/models/card.model';
+
 import * as moment from 'moment';
 import keys from '../../../../keys';
-import { MymyvCardModel } from '../../../models/mymyv_card.model';
 
 @Component({
   selector: 'app-index',
@@ -42,14 +43,16 @@ export class IndexComponent implements OnInit {
   async getAllCards() {
     const cards = await this.databseService.getCards(this.dateToShow);
     const mymyvCards = await this.databseService.getMymyvCards(this.dateToShow);
-
+    
     for (const card of cards) {
+      card.model_type = keys.ctrl_model_card_type_1;
       this.allCards.push(card);
     }
     for (const card of mymyvCards) {
+      card.model_type = keys.ctrl_model_card_type_2;
       this.allCards.push(card);
     }
-    this.allCards.sort((a, b) => new Date(b.publicationDate).getTime() - new Date(a.publicationDate).getTime());
+    this.allCards.sort((a, b) => new Date(b.publication_date).getTime() - new Date(a.publication_date).getTime());
     
     this.checkCards();
   }

@@ -472,11 +472,11 @@ input:checked + .slider:before {
   min-height: 15em;
 }
 
-.div_card_desc_sec {
-  background-color: rgb(109, 109, 109);
-  border: 2px solid rgb(211, 211, 211);
-  padding: 1em;
+.div_mymyv_card_desc_princ {
+  background-color: rgb(255, 102, 102);
+  padding: 2em;
   color: white;
+  min-height: 15em;
 }
 
 .div_card_global {

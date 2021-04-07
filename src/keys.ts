@@ -16,6 +16,8 @@ const keys = {
     ctrl_instagram_pattern: "^[a-zA-Z0-9._]+$",
     ctrl_fail_result: "KO",
     ctrl_successful_result: "OK",
+    ctrl_model_card_type_1: "normal",
+    ctrl_model_card_type_2: "mymyv",
 
     // ---------------------------------------------------------
 
