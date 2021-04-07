@@ -11,7 +11,13 @@ const keys = {
     ctrl_description_min_length: 50,
     ctrl_place_min_length: 2,
     ctrl_place_max_length: 200,
+    ctrl_min_age: 18,
+    ctrl_max_age: 100,
     ctrl_instagram_pattern: "^[a-zA-Z0-9._]+$",
+    ctrl_fail_result: "KO",
+    ctrl_successful_result: "OK",
+    ctrl_model_card_type_1: "normal",
+    ctrl_model_card_type_2: "mymyv",
 
     // ---------------------------------------------------------
 
@@ -23,6 +29,9 @@ const keys = {
     msg_form_error: "El formulario no puede estar vacío",
     msg_count_text: "letras",
     msg_insta_error: "Introduce una cuenta de instagram válida",
+    msg_age_error: "Introduce una edad válida",
+    msg_kind_error: "Introduce un tipo de relación válido",
+    msg_lookfor_error: "Selecciona qué estás buscando",
 
     // ---------------------------------------------------------
 
@@ -40,6 +49,11 @@ const keys = {
     nav_option_7: "Modificar mis datos",
     nav_option_8: "Salir",
 
+    // ---------------------------------------------------------
+
+    // INDEX
+    index_day_text: "Publicaciones del día",
+    index_arrows_text: "Día",
     // ---------------------------------------------------------
 
     // INSTRUCCIONES VIEW
@@ -84,7 +98,7 @@ const keys = {
     msg_send_button: "Enviar",
 
     // ---------------------------------------------------------
-    
+
     // BÚSQUEDA SECTION
     search_title: "Búsqueda",
     search_mymyv_txt: "MyMyV",
@@ -95,13 +109,13 @@ const keys = {
     search_send_button: "Buscar",
 
     // ---------------------------------------------------------
-    
+
     // MyMyV SECTION
     mymyv_title: "Mozos y mozas y viceversa",
     mymyv_input_1: "Edad",
     mymyv_input_2: "Tipo de relación",
     mymyv_input_3: "¿Qué buscas?",
-    mymyv_input_4: "¿De dónde eres?",
+    mymyv_input_4: "Instagram (opcional)",
     mymyv_input_5: "Añade una descripción",
     mymyv_empty_option: "-- Selecciona una opción --",
     mymyv_indiferent_option: "Indiferente",
@@ -113,9 +127,9 @@ const keys = {
     mymyv_send_button: "Enviar",
 
     // ---------------------------------------------------------
-    
+
     // NO POST
-    nopost_text: "Ahora mismo no hay publicaciones, lo sentimos...",
+    nopost_text: "No hay publicaciones para este día",
 
     // CARDS
     cards_info_1: "Fecha:",
@@ -129,7 +143,7 @@ const keys = {
     cards_txt_publicated: "Publicado el día",
 
     // ---------------------------------------------------------
-    
+
     // DASHBOARD
     dashboard_title: "LOGIN",
     dashboard_input_1: "Email",
@@ -139,7 +153,7 @@ const keys = {
     dashboard_remember_user: "Recordar usuario",
 
     // ---------------------------------------------------------
-    
+
     // ADMIN HOME
     admin_home_title: "TUS DATOS",
     admin_home_name: "Nombre:",
@@ -149,19 +163,19 @@ const keys = {
     admin_home_info_last_update: "Última modificación:",
 
     // ---------------------------------------------------------
-    
+
     // CHECK MESSAGES
     check_messages_btn_accept: "Aceptar",
     check_messages_btn_edit: "Modificar",
     check_messages_btn_reject: "Rechazar",
 
     // ---------------------------------------------------------
-    
+
     // EDIT MESSAGE
     edit_title: "Editar mensaje",
 
     // ---------------------------------------------------------
-    
+
     // CREATE ADMIN
     create_admin_title: "Crear administrador",
     create_admin_input_1: "Nombre",
@@ -174,7 +188,7 @@ const keys = {
     create_admin_submit_button: "Dar de alta",
 
     // ---------------------------------------------------------
-    
+
     // MOD INFO
     mod_info_title: "Modificar mis datos",
     mod_info_input_1: "Nombre",
@@ -189,17 +203,18 @@ const keys = {
     mod_info_submit_button_pass: "Cambiar contraseña",
 
     // ---------------------------------------------------------
-    
+
     // ERROR MODAL
     error_modal_title: "Mensaje",
     error_modal_button: "Ok",
     error_modal_message: "Ha ocurrido un error, inténtalo de nuevo más tarde.",
 
-        // CORRECT MODAL
-        correct_modal_title: "Mensaje",
-        correct_modal_button: "Ok",
-        correct_modal_message: "¡Mensaje enviado!",
-    
+    // CORRECT MODAL
+    correct_modal_title: "Mensaje",
+    correct_modal_button: "Ok",
+    correct_modal_message: "¡Mensaje enviado!",
+
+    // ---------------------------------------------------------
 
 }
 

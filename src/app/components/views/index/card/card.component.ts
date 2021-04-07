@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { CardModel } from '../../../../models/card.model';
+
 import keys from '../../../../../keys';
-import { CardService } from '../../../../services/card.service';
 
 @Component({
   selector: 'app-card',
@@ -15,7 +15,7 @@ export class CardComponent implements OnInit {
 
   keys = keys;
 
-  constructor(public cardService: CardService) {}
+  constructor() {}
 
   ngOnInit(): void {
   }

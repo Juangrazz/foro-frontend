@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import keys from '../../keys';
 import { CardModel } from '../models/card.model';
 import { MessageModel } from '../models/message.model';
+import { MymyvCardModel } from '../models/mymyv_card.model';
 
 @Injectable({
   providedIn: 'root'
@@ -17,7 +18,15 @@ export class DatabaseService {
     return this.http.post<MessageModel>(`${keys.db_host}${keys.db_server_path}/cards/createcard`, card);
   }
 
-  getCards() {
-    return this.http.get<CardModel[]>(`${keys.db_host}${keys.db_server_path}/cards/getcards`);
+  createMymyvCard(mymyVCard: MymyvCardModel) {
+    return this.http.post<MessageModel>(`${keys.db_host}${keys.db_server_path}/cards/createmymyvcard`, mymyVCard);
+  }
+
+  getCards(date: string) {
+    return this.http.get<CardModel[]>(`${keys.db_host}${keys.db_server_path}/cards/getcards/${date}`).toPromise();
+  }
+
+  getMymyvCards(date: string) {
+    return this.http.get<MymyvCardModel[]>(`${keys.db_host}${keys.db_server_path}/cards/getmymyvcards/${date}`).toPromise();
   }
 }

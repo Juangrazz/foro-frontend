@@ -1,13 +1,31 @@
-<app-no-posts *ngIf="noPosts"></app-no-posts>
-<div class="container p-2 animated fadeIn slow zindex-back" *ngFor="let card of cards; let i = index">
-  <app-card *ngIf="!noPosts" [card]="cards[i]"></app-card>
-  <div id="card-container" class="container p-2 animated fadeIn slow">
-    <div id="card-global-container" class="mb-3 div_card_global">
-      <div class="text-right">
-        <a class="blue_link" [routerLink]="['/card_view']"
-        (click)="saveCard(card)"><b>{{card.comments}} {{keys.cards_txt_comments}}</b></a>
-        <p><small class="text-muted">{{keys.cards_txt_publicated}} {{card.publication_date}}</small></p>
+<div class="text-center mt-5 animated fadeIn slow">
+  <h1><b>{{keys.index_day_text}} {{dateToShow}}</b></h1>
+  <app-no-posts *ngIf="noPosts"></app-no-posts>
+</div>
+<div *ngIf="!noPosts" class="index-main-div">
+  <div class="container p-2 animated fadeIn slow"
+    *ngFor="let card of allCards; let i = index">
+    <app-card *ngIf="card.model_type === keys.ctrl_model_card_type_1" [card]="card"></app-card>
+    <app-mymyv-card *ngIf="card.model_type === keys.ctrl_model_card_type_2" [card]="card"></app-mymyv-card>
+    <div id="card-container" class="container p-2 animated fadeIn slow">
+      <div id="card-global-container" class="mb-3 div_card_global">
+        <div class="text-right">
+          <a class="blue_link" [routerLink]="['/card_view']" (click)="saveCard(card)"><b>{{card.comments}}
+              {{keys.cards_txt_comments}}</b></a>
+        </div>
       </div>
     </div>
   </div>
+</div>
+<div class="text-center">
+  <ul class="list-inline txt_light_blue">
+    <li role="button" class="list-inline-item w-10" (click)="subtractDay()">
+      <i class="fas fa-arrow-circle-left fa-3x"></i>
+      <div>{{keys.index_arrows_text}} {{dateBack}}</div>
+    </li>
+    <li role="button" class="list-inline-item w-10" (click)="addDay()">
+      <i class="fas fa-arrow-circle-right fa-3x"></i>
+      <div>{{keys.index_arrows_text}} {{dateNext}}</div>
+    </li>
+  </ul>
 </div>

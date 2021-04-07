@@ -1,8 +1,8 @@
-export class CardModel {
+export class MymyvCardModel {
     id!: number;
-    date!: string;
-    time!: string;
-    place!: string;
+    age!: number;
+    kind!: string;
+    look_for!: string;
     instagram?: string;
     description!: string;
     comments?: number;

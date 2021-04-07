@@ -1,11 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { CardModel } from 'src/app/models/card.model';
 import { CardService } from '../../../services/card.service';
 import { ControlService } from '../../../services/control.service';
 import { DatabaseService } from '../../../services/database.service';
 
-import keys from '../../../../keys';
+import { MymyvCardModel } from '../../../models/mymyv_card.model';
+import { CardModel } from 'src/app/models/card.model';
+
 import * as moment from 'moment';
+import keys from '../../../../keys';
 
 @Component({
   selector: 'app-index',
@@ -18,34 +20,46 @@ export class IndexComponent implements OnInit {
 
   noPosts: boolean = true;
   cards: CardModel[] = [];
+  mymyvCards: MymyvCardModel[] = [];
+  allCards: any[] = [];
   showNavAndFoot: boolean = true;
 
+  page: number = 1;
+  dateToShow: string = moment().format("DD-MM-YYYY");
+  dateNext!: string;
+  dateBack!: string;
+
   constructor(private cardService: CardService, private controlService: ControlService, private databseService: DatabaseService) {
-    this.getCards();
+    this.getAllCards();
+    this.checkCards();
     this.controlService.showNavAndFoot.next(true);
     this.controlService.isAdmin.next(false);
+    this.calculateDay();
   }
 
   ngOnInit(): void {
   }
 
-  getCards() {
-    this.databseService.getCards().subscribe(
-      resp => {
-        this.cards = resp;
-        for (const card of this.cards) {
-          card.publication_date = card.publication_date?.split(" ")[0];
-        }
-        this.checkCards();
-      },
-      err => {
-
-      }
-    );
+  async getAllCards() {
+    const cards = await this.databseService.getCards(this.dateToShow);
+    const mymyvCards = await this.databseService.getMymyvCards(this.dateToShow);
+    
+    for (const card of cards) {
+      card.model_type = keys.ctrl_model_card_type_1;
+      this.allCards.push(card);
+    }
+    for (const card of mymyvCards) {
+      card.model_type = keys.ctrl_model_card_type_2;
+      this.allCards.push(card);
+    }
+    this.allCards.sort((a, b) => new Date(b.publication_date).getTime() - new Date(a.publication_date).getTime());
+    
+    this.checkCards();
   }
 
+
   checkCards() {
-    if (this.cards.length === 0) {
+    if (this.allCards.length === 0) {
       this.noPosts = true;
     } else {
       this.noPosts = false;
@@ -57,5 +71,22 @@ export class IndexComponent implements OnInit {
     sessionStorage.setItem("individual_card", JSON.stringify(card));
     this.cardService.individualCard = card;
   };
+
+  calculateDay() {
+    this.dateBack = moment(this.dateToShow, "DD-MM-YYYY").subtract(1, "days").format("DD");
+    this.dateNext = moment(this.dateToShow, "DD-MM-YYYY").add(1, "days").format("DD");
+  }
+
+  addDay() {
+    this.dateToShow = moment(this.dateToShow, "DD-MM-YYYY").add(1, "days").format("DD-MM-YYYY");
+    this.calculateDay();
+    this.getAllCards();
+  }
+
+  subtractDay() {
+    this.dateToShow = moment(this.dateToShow, "DD-MM-YYYY").subtract(1, "days").format("DD-MM-YYYY");
+    this.calculateDay();
+    this.getAllCards();
+  }
 
 }
