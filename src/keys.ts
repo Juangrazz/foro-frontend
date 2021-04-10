@@ -13,7 +13,7 @@ const keys = {
     ctrl_place_max_length: 200,
     ctrl_min_age: 18,
     ctrl_max_age: 100,
-    ctrl_instagram_pattern: "^[a-zA-Z0-9._]+$",
+    ctrl_instagram_pattern: "[A-Za-z0-9_](?:(?:[A-Za-z0-9_]|(?:\.(?!\.))){0,28}(?:[A-Za-z0-9_]))",
     ctrl_fail_result: "KO",
     ctrl_successful_result: "OK",
     ctrl_model_card_type_1: "normal",

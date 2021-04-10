@@ -37,11 +37,11 @@ body {
   cursor: pointer;
 }
 
-.txt_light_blue{
+.txt_light_blue {
   color: rgb(74, 185, 250);
 }
 
-.txt-red{
+.txt-red {
   color: rgb(255, 102, 102);
 }
 
@@ -99,8 +99,7 @@ app-admin-home,
 app-check-messages,
 app-create-admin,
 app-mod-admin-info,
-app-edit
- {
+app-edit {
   flex-grow: 1;
 }
 
@@ -113,7 +112,7 @@ app-edit
   padding: 1em;
 }
 
-.text-area-format:focus{
+.text-area-format:focus {
   outline: none;
 }
 
@@ -135,16 +134,16 @@ app-edit
   text-decoration: none;
 }
 
-.height-100{
+.height-100 {
   height: 100vh;
 }
 
-.zindex-1{
+.zindex-1 {
   position: relative;
   z-index: 1;
 }
 
-.zindex-2{
+.zindex-2 {
   z-index: 2;
 }
 
@@ -182,7 +181,7 @@ app-edit
   background-color: rgb(67, 223, 114);
 }
 
-.w-10{
+.w-10 {
   width: 10%;
 }
 
@@ -269,6 +268,10 @@ app-edit
   outline: none;
 }
 
+.index-arrow-button {
+  width: 100px;
+}
+
 /* The switch - the box around the slider */
 .switch {
   position: relative;
@@ -311,15 +314,15 @@ app-edit
   transition: .2s;
 }
 
-input:checked + .slider {
+input:checked+.slider {
   background-color: rgb(255, 102, 102);
 }
 
-input:focus + .slider {
+input:focus+.slider {
   box-shadow: 0 0 1px rgb(221, 221, 221);
 }
 
-input:checked + .slider:before {
+input:checked+.slider:before {
   -webkit-transform: translateX(26px);
   -ms-transform: translateX(26px);
   transform: translateX(26px);
@@ -363,7 +366,7 @@ input:checked + .slider:before {
   color: rgb(109, 109, 109) !important;
 }
 
-.navbar-active-link{
+.navbar-active-link {
   color: white !important;
 }
 
@@ -387,6 +390,11 @@ input:checked + .slider:before {
 /* INDEX */
 .index-main-div {
   min-height: 64.5vh;
+}
+
+.index-title {
+  font-size: 2.5em;
+  color: rgb(109, 109, 109);
 }
 
 /* INSTRUCTIONES SECTION */
@@ -438,7 +446,7 @@ input:checked + .slider:before {
   margin: 0;
 }
 
-.search-mymyv-control{
+.search-mymyv-control {
   width: 2em;
   transition: 0.3s;
 }
@@ -459,7 +467,7 @@ input:checked + .slider:before {
 .noposts-title {
   font-size: 2.5em;
   font-weight: bold;
-  color: rgb(109, 109, 109);
+  color: rgb(172, 172, 172);
   margin: 0;
 }
 
@@ -492,7 +500,7 @@ input:checked + .slider:before {
   width: 100%;
 }
 
-.txt_publication_date{
+.txt_publication_date {
   position: absolute;
   bottom: 15px;
   left: 0;
@@ -501,17 +509,18 @@ input:checked + .slider:before {
 }
 
 /* COMMENTS */
-.comments-container{
+.comments-container {
   background-color: white;
   margin: 0 15em;
 }
 
 /* ADMIN PANEL */
-.admin_main_container{
+.admin_main_container {
   width: 70%;
   height: 100vh;
 }
 
+/*
 @media (max-width: 450px) {
   .inst-card-body-big {
     height: auto;
@@ -525,6 +534,8 @@ input:checked + .slider:before {
     font-size: 1.5em;
   }
 
+
+
   .msg-title {
     font-size: 1.5em;
   }
@@ -533,6 +544,7 @@ input:checked + .slider:before {
     padding: 0 3em;
   }
 }
+*/
 
 
 @media (max-width: 451px) {
@@ -545,9 +557,29 @@ input:checked + .slider:before {
     font-size: .8em;
   }
 
-body{
-  font-size: .7em !important;
-}
+  body {
+    font-size: .7em !important;
+  }
+
+  .inst-card-body-big {
+    height: auto;
+  }
+
+  .inst-card-body-small {
+    height: auto;
+  }
+
+  .inst-title {
+    font-size: 1.5em;
+  }
+  
+  .msg-title {
+    font-size: 1.5em;
+  }
+
+  .div_card_global {
+    padding: 0 3em;
+  }
 
 }
 
@@ -568,8 +600,15 @@ body{
     border-radius: 15px 15px 0 0;
   }
 
-  .admin_main_container{
+  .admin_main_container {
     width: 75%;
+  }
+  .index-title{
+    font-size: 2em;
+  }
+
+  .noposts-title{
+    font-size: 2em;
   }
 }
 
@@ -586,7 +625,7 @@ body{
     padding: 0 2em;
   }
 
-  .admin_main_container{
+  .admin_main_container {
     width: 55%;
   }
 
@@ -597,7 +636,7 @@ body{
     padding: 0 9em;
   }
 
-  .admin_main_container{
+  .admin_main_container {
     width: 40%;
   }
 }

@@ -4,6 +4,7 @@ import keys from '../../keys';
 import { CardModel } from '../models/card.model';
 import { MessageModel } from '../models/message.model';
 import { MymyvCardModel } from '../models/mymyv_card.model';
+import { CommentModel } from '../models/comment.model';
 
 @Injectable({
   providedIn: 'root'
@@ -29,4 +30,10 @@ export class DatabaseService {
   getMymyvCards(date: string) {
     return this.http.get<MymyvCardModel[]>(`${keys.db_host}${keys.db_server_path}/cards/getmymyvcards/${date}`).toPromise();
   }
+
+  getCardComments(card: CardModel | MymyvCardModel){
+    return this.http.post<CommentModel[]>(`${keys.db_host}${keys.db_server_path}/cards/getmymyvcards/`, card).toPromise();
+  }
+
+
 }

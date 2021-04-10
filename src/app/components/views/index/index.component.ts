@@ -41,6 +41,8 @@ export class IndexComponent implements OnInit {
   }
 
   async getAllCards() {
+    this.allCards = [];
+    
     const cards = await this.databseService.getCards(this.dateToShow);
     const mymyvCards = await this.databseService.getMymyvCards(this.dateToShow);
     

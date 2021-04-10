@@ -1,10 +1,14 @@
 <div class="text-center mt-5 animated fadeIn slow">
-  <h1><b>{{keys.index_day_text}} {{dateToShow}}</b></h1>
+  <span class="index-title">
+    <b>
+      <p>{{keys.index_day_text}}</p>
+      <p>{{dateToShow}}</p>
+    </b>
+  </span>
   <app-no-posts *ngIf="noPosts"></app-no-posts>
 </div>
 <div *ngIf="!noPosts" class="index-main-div">
-  <div class="container p-2 animated fadeIn slow"
-    *ngFor="let card of allCards; let i = index">
+  <div class="container p-2 animated fadeIn slow" *ngFor="let card of allCards; let i = index">
     <app-card *ngIf="card.model_type === keys.ctrl_model_card_type_1" [card]="card"></app-card>
     <app-mymyv-card *ngIf="card.model_type === keys.ctrl_model_card_type_2" [card]="card"></app-mymyv-card>
     <div id="card-container" class="container p-2 animated fadeIn slow">
@@ -19,11 +23,11 @@
 </div>
 <div class="text-center">
   <ul class="list-inline txt_light_blue">
-    <li role="button" class="list-inline-item w-10" (click)="subtractDay()">
+    <li role="button" class="list-inline-item index-arrow-button" (click)="subtractDay()">
       <i class="fas fa-arrow-circle-left fa-3x"></i>
       <div>{{keys.index_arrows_text}} {{dateBack}}</div>
     </li>
-    <li role="button" class="list-inline-item w-10" (click)="addDay()">
+    <li role="button" class="list-inline-item index-arrow-button" (click)="addDay()">
       <i class="fas fa-arrow-circle-right fa-3x"></i>
       <div>{{keys.index_arrows_text}} {{dateNext}}</div>
     </li>
