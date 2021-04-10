@@ -42,12 +42,15 @@ export class MessagesComponent implements OnInit {
       date: ['', [Validators.required, this.cardService.validateDate()]],
       time: ['', Validators.required],
       place: ['', [Validators.required, Validators.minLength(keys.ctrl_place_min_length), Validators.minLength(keys.ctrl_place_min_length)]],
-      instagram: ['', Validators.pattern(new RegExp(keys.ctrl_instagram_pattern))],
+      instagram: ['', this.cardService.validateInstagram()],
       description: ['', [Validators.required, Validators.minLength(keys.ctrl_description_min_length), Validators.maxLength(keys.ctrl_description_max_length)]]
     });
   }
 
   validateForm() {
+    console.log(this.cardForm.controls.date);
+    
+    
     this.resetErrors();
 
     if (this.cardForm.valid) {
