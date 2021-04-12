@@ -1,5 +1,6 @@
 export class CommentModel {
-    user!: string;
+    id!: number;
+    instagram!: string;
     comment!: string;
     publication_date!: string;
 }

@@ -28,8 +28,8 @@
           <div class="mb-3 mt-3">
             <b [innerHTML]=keys.cards_txt_comments></b>
           </div>
-          <li *ngFor="let comment of comments; let i = index" class="list-group-item">
-            <app-comments [comment]="comments[i]"></app-comments>
+          <li *ngFor="let comment of comments" class="list-group-item">
+            <app-comments [comment]="comment"></app-comments>
           </li>
         </ul>
       </div>

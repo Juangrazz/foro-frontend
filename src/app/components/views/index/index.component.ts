@@ -25,11 +25,14 @@ export class IndexComponent implements OnInit {
   showNavAndFoot: boolean = true;
 
   page: number = 1;
-  dateToShow: string = moment().format("DD-MM-YYYY");
+  dateToShow: string;
   dateNext!: string;
   dateBack!: string;
 
   constructor(private cardService: CardService, private controlService: ControlService, private databseService: DatabaseService) {
+    sessionStorage.removeItem("individual_card");
+    this.dateToShow = this.cardService.dateToShow;
+
     this.getAllCards();
     this.checkCards();
     this.controlService.showNavAndFoot.next(true);
@@ -42,12 +45,12 @@ export class IndexComponent implements OnInit {
 
   async getAllCards() {
     this.allCards = [];
-    
+
     const cards = await this.databseService.getCards(this.dateToShow);
     const mymyvCards = await this.databseService.getMymyvCards(this.dateToShow);
     
     for (const card of cards) {
-      card.model_type = keys.ctrl_model_card_type_1;
+      card.model_type = keys.ctrl_model_card_normal_type;
       this.allCards.push(card);
     }
     for (const card of mymyvCards) {
@@ -83,12 +86,21 @@ export class IndexComponent implements OnInit {
     this.dateToShow = moment(this.dateToShow, "DD-MM-YYYY").add(1, "days").format("DD-MM-YYYY");
     this.calculateDay();
     this.getAllCards();
+
+    this.saveDateToShow();
   }
 
   subtractDay() {
     this.dateToShow = moment(this.dateToShow, "DD-MM-YYYY").subtract(1, "days").format("DD-MM-YYYY");
     this.calculateDay();
     this.getAllCards();
+
+    this.saveDateToShow();
+  }
+
+  saveDateToShow(){
+    sessionStorage.setItem("date_to_show", JSON.stringify(this.dateToShow));
+    this.cardService.dateToShow = this.dateToShow;
   }
 
 }

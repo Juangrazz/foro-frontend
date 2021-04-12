@@ -31,8 +31,8 @@ export class DatabaseService {
     return this.http.get<MymyvCardModel[]>(`${keys.db_host}${keys.db_server_path}/cards/getmymyvcards/${date}`).toPromise();
   }
 
-  getCardComments(card: CardModel | MymyvCardModel){
-    return this.http.post<CommentModel[]>(`${keys.db_host}${keys.db_server_path}/cards/getmymyvcards/`, card).toPromise();
+  getCardComments(id_card: number){
+    return this.http.get<CommentModel[]>(`${keys.db_host}${keys.db_server_path}/cards/getcardcomments/${id_card}`).toPromise();
   }
 
 
