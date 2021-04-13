@@ -1,6 +1,7 @@
 <div>
-  <a *ngIf="comment.user !== keys.cards_txt_anonymous" class="blue_link mb-3"
-    href="https://instagram.com/{{comment.user}}/"><b>@{{comment.user}}</b></a>
-  <span *ngIf="comment.user === keys.cards_txt_anonymous"><b>{{comment.user}}</b></span>
+  <a *ngIf="comment.instagram !== keys.cards_txt_anonymous" class="blue_link mb-3"
+    href="https://instagram.com/{{comment.instagram}}/"><b>@{{comment.instagram}}</b></a>
+  <span *ngIf="comment.instagram === keys.cards_txt_anonymous"><b>{{comment.instagram}}</b></span>
 </div>
 <div [innerHTML]="comment.comment" class="mt-2"></div>
+<div class="text-right mt-3"><small [innerHTML]="comment.publication_date"></small></div>

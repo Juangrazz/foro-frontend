@@ -14,9 +14,9 @@ const keys = {
     ctrl_min_age: 18,
     ctrl_max_age: 100,
     ctrl_instagram_pattern: "(?:(?:[A-Za-z0-9_]|(?:\.(?!\.))){0,28}(?:[A-Za-z0-9_]))",
-    ctrl_fail_result: "KO",
+    ctrl_fail_result: "NOK",
     ctrl_successful_result: "OK",
-    ctrl_model_card_type_1: "normal",
+    ctrl_model_card_normal_type: "normal",
     ctrl_model_card_type_2: "mymyv",
 
     // ---------------------------------------------------------
@@ -141,6 +141,7 @@ const keys = {
     cards_txt_comments: "Comentarios",
     cards_txt_new_comment: "Deja un comentario",
     cards_txt_publicated: "Publicado el día",
+    cards_txt_no_comments: "No hay comentarios todavía. ¡Sé el primero en escribir!",
 
     // ---------------------------------------------------------
 
@@ -208,6 +209,8 @@ const keys = {
     error_modal_title: "Mensaje",
     error_modal_button: "Ok",
     error_modal_message: "Ha ocurrido un error, inténtalo de nuevo más tarde.",
+    error_modal_message_2: "¡Vaya! Parece que algo ha salido mal y no se pueden obtener los post. <br><br> Lo intentaremos solucionar lo antes posible.",
+    error_modal_message_3: "¡Vaya! Parece que algo ha salido mal y no se pueden obtener los comentarios. <br><br> Lo intentaremos solucionar lo antes posible.",
 
     // CORRECT MODAL
     correct_modal_title: "Mensaje",

@@ -9,7 +9,7 @@
 </div>
 <div *ngIf="!noPosts" class="index-main-div">
   <div class="container p-2 animated fadeIn slow" *ngFor="let card of allCards; let i = index">
-    <app-card *ngIf="card.model_type === keys.ctrl_model_card_type_1" [card]="card"></app-card>
+    <app-card *ngIf="card.model_type === keys.ctrl_model_card_normal_type" [card]="card"></app-card>
     <app-mymyv-card *ngIf="card.model_type === keys.ctrl_model_card_type_2" [card]="card"></app-mymyv-card>
     <div id="card-container" class="container p-2 animated fadeIn slow">
       <div id="card-global-container" class="mb-3 div_card_global">
@@ -33,3 +33,4 @@
     </li>
   </ul>
 </div>
+<app-error-modal></app-error-modal>

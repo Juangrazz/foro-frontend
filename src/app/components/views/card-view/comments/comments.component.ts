@@ -14,7 +14,9 @@ export class CommentsComponent implements OnInit {
 
   keys = keys;
   
-  constructor() { }
+  constructor() {
+    
+  }
 
   ngOnInit(): void {
   }

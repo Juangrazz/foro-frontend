@@ -1,4 +1,5 @@
-<app-card [card]="card"></app-card>
+<app-card *ngIf="card.model_type === keys.ctrl_model_card_normal_type" [card]="card"></app-card>
+<app-mymyv-card *ngIf="card.model_type === keys.ctrl_model_card_type_2" [card]="card"></app-mymyv-card>
 
 <div id="card-container" class="container pr-2 pl-2 mt-5 mb-5 animated fadeIn slow">
   <div id="card-global-container" class="div_card_global">
@@ -24,15 +25,21 @@
     </div>
     <div id="info-container" class="card br-bottom">
       <div class="card-body div_card_info">
-        <ul class="list-group list-group-flush">
-          <div class="mb-3 mt-3">
-            <b [innerHTML]=keys.cards_txt_comments></b>
-          </div>
-          <li *ngFor="let comment of comments; let i = index" class="list-group-item">
-            <app-comments [comment]="comments[i]"></app-comments>
-          </li>
-        </ul>
+        <div class="mb-3 mt-3">
+          <b [innerHTML]=keys.cards_txt_comments></b>
+        </div>
+        <div *ngIf="noComments" class="text-center">
+          <p [innerHTML]=keys.cards_txt_no_comments></p>
+        </div>
+        <div *ngIf="!noComments">
+          <ul class="list-group list-group-flush">
+            <li *ngFor="let comment of comments" class="list-group-item">
+              <app-comments [comment]="comment"></app-comments>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
   </div>
 </div>
+<app-error-modal></app-error-modal>

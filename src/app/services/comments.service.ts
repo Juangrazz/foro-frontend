@@ -7,44 +7,10 @@ import { CommentModel } from '../models/comment.model';
 })
 export class CommentsService {
 
-  comments: CommentModel[] = [
-    {
-      user: "Pepe",
-      comment: "Soy yo... jejeje",
-      publication_date: "04-04-2021"
-    },
-    {
-      user: "Anónimo",
-      comment: "Creo que puede ser @tito, no @pepe",
-      publication_date: "04-04-2021"
-    },
-    {
-      user: "Anónimo",
-      comment: "Vaya pringao jajaja",
-      publication_date: "04-04-2021"
-    },
-    {
-      user: "Doradito",
-      comment: "@Lokito_Ken? no serás tu?",
-      publication_date: "04-04-2021"
-    },
-    {
-      user: "Pepe",
-      comment: "@Ivan????",
-      publication_date: "04-04-2021"
-    },
-    {
-      user: "Anónimo",
-      comment: "Seguro que es @felipe_gonsales__, o quizás @Camaron...",
-      publication_date: "04-04-2021"
-    }
-  ];
-
   constructor() { }
 
-  // TODO: cmabiar algoritmo por patron ^(?!.*\.\.)(?!.*\.$)[^\W][\w.]{0,29}$
-  commentsFormatter() {
-    this.comments.forEach(comment => {
+  commentsFormatter(comments: CommentModel[]): CommentModel[] {
+    comments.forEach(comment => {
       let words = comment.comment.split(" ");
       let finalString = "";
       words.forEach(word => {
@@ -58,5 +24,6 @@ export class CommentsService {
       });
       comment.comment = finalString.trim();
     });
+    return comments;
   }
 }
