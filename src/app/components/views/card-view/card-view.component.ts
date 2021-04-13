@@ -5,6 +5,7 @@ import { CommentsService } from '../../../services/comments.service';
 import { CommentModel } from '../../../models/comment.model';
 import keys from '../../../../keys';
 import { DatabaseService } from '../../../services/database.service';
+import { MymyvCardModel } from '../../../models/mymyv_card.model';
 
 declare var $: any;
 
@@ -17,16 +18,17 @@ export class CardViewComponent implements OnInit {
 
   keys = keys;
 
-  card: CardModel = new CardModel();
-  comments: CommentModel[] =  [];
+  card: any = {};
+  comments: CommentModel[] = [];
+  noComments: boolean = false;
 
-  constructor(private cardService: CardService, private commentsService: CommentsService, private databaseService: DatabaseService) { 
+  constructor(private cardService: CardService, private commentsService: CommentsService, private databaseService: DatabaseService) {
     this.card = this.cardService.individualCard;
     this.getComments();
   }
 
   ngOnInit(): void {
-    $("#info-container").css({"border-bottom-right-radius":"0", "border-bottom-left-radius":"0"});
+    $("#info-container").css({ "border-bottom-right-radius": "0", "border-bottom-left-radius": "0" });
     $("#card-container").removeClass("p-2").addClass("pl-2").addClass("pr-2").addClass("pt-2");
     $("#card-global-container").removeClass("mb-5");
   }
@@ -48,12 +50,40 @@ export class CardViewComponent implements OnInit {
     });
   }
 
-  async getComments(){
-    if(this.card.model_type === keys.ctrl_model_card_normal_type){
-      this.comments = await this.databaseService.getCardComments(this.card.id);
-      this.comments = this.commentsService.commentsFormatter(this.comments);
+  async getComments() {
+    if (this.card.model_type === keys.ctrl_model_card_normal_type) {
+      await this.databaseService.getCardComments(this.card.id)
+        .then(res => {
+          this.comments = res;
+          this.comments = this.commentsService.commentsFormatter(this.comments);
+          this.checkComments();
+        })
+        .catch(err => {
+          $("#errorModalMessage").html(keys.error_modal_message_3);
+          $('#errorModal').modal('show');
+        });
     } else {
-      
+      await this.databaseService.getMymyvCardComments(this.card.id)
+      .then(res => {
+        this.comments = res;
+        this.comments = this.commentsService.commentsFormatter(this.comments);
+        this.checkComments();
+      })        
+      .catch(err => {
+        $("#errorModalMessage").html(keys.error_modal_message_3);
+        $('#errorModal').modal('show');
+      });;
+      this.comments = this.commentsService.commentsFormatter(this.comments);
+    }
+
+    this.checkComments();
+  }
+
+  checkComments() {
+    if (this.comments.length === 0) {
+      this.noComments = true;
+    } else {
+      this.noComments = false;
     }
   }
 

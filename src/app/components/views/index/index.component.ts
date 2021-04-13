@@ -9,6 +9,8 @@ import { CardModel } from 'src/app/models/card.model';
 import * as moment from 'moment';
 import keys from '../../../../keys';
 
+declare var $: any;
+
 @Component({
   selector: 'app-index',
   templateUrl: './index.component.html',
@@ -18,7 +20,7 @@ export class IndexComponent implements OnInit {
 
   keys = keys;
 
-  noPosts: boolean = true;
+  noPosts: boolean = false;
   cards: CardModel[] = [];
   mymyvCards: MymyvCardModel[] = [];
   allCards: any[] = [];
@@ -34,7 +36,6 @@ export class IndexComponent implements OnInit {
     this.dateToShow = this.cardService.dateToShow;
 
     this.getAllCards();
-    this.checkCards();
     this.controlService.showNavAndFoot.next(true);
     this.controlService.isAdmin.next(false);
     this.calculateDay();
@@ -46,20 +47,36 @@ export class IndexComponent implements OnInit {
   async getAllCards() {
     this.allCards = [];
 
-    const cards = await this.databseService.getCards(this.dateToShow);
-    const mymyvCards = await this.databseService.getMymyvCards(this.dateToShow);
-    
-    for (const card of cards) {
-      card.model_type = keys.ctrl_model_card_normal_type;
-      this.allCards.push(card);
-    }
-    for (const card of mymyvCards) {
-      card.model_type = keys.ctrl_model_card_type_2;
-      this.allCards.push(card);
-    }
+    await this.databseService.getCards(this.dateToShow)
+      .then(res => {
+          const cards = res;
+          for (const card of cards) {
+            card.model_type = keys.ctrl_model_card_normal_type;
+            this.allCards.push(card);
+          }
+        })
+      .catch(err => {
+          $("#errorModalMessage").html(keys.error_modal_message_2);
+          $('#errorModal').modal('show');
+        }
+      );
+    await this.databseService.getMymyvCards(this.dateToShow)
+    .then(res => {
+        const mymyvCards = res;
+        for (const card of mymyvCards) {
+          card.model_type = keys.ctrl_model_card_type_2;
+          this.allCards.push(card);
+        }
+      })
+      .catch(err => {
+          $("#errorModalMessage").html(keys.error_modal_message_2);
+          $('#errorModal').modal('show');
+        }
+      );
+
+      this.checkCards();
+
     this.allCards.sort((a, b) => new Date(b.publication_date).getTime() - new Date(a.publication_date).getTime());
-    
-    this.checkCards();
   }
 
 
@@ -98,7 +115,7 @@ export class IndexComponent implements OnInit {
     this.saveDateToShow();
   }
 
-  saveDateToShow(){
+  saveDateToShow() {
     sessionStorage.setItem("date_to_show", JSON.stringify(this.dateToShow));
     this.cardService.dateToShow = this.dateToShow;
   }

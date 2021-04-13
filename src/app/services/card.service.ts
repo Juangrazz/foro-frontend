@@ -10,12 +10,12 @@ import keys from 'src/keys';
 })
 export class CardService {
 
-  individualCard: CardModel = new CardModel();
+  individualCard: any = {};
   dateToShow!: string;
 
   constructor() {
       this.individualCard = JSON.parse(sessionStorage.getItem("individual_card") || "{}");
-      this.dateToShow = JSON.parse(sessionStorage.getItem("date_to_show") || moment().format("DD-MM-YYYY"));
+      this.dateToShow = JSON.parse(sessionStorage.getItem("date_to_show") || `"${moment().format("DD-MM-YYYY")}"`);
   }
 
   validateDate(): ValidatorFn {
