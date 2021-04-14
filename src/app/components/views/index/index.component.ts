@@ -124,6 +124,7 @@ export class IndexComponent implements OnInit {
     this.dateToShow = moment().format("DD-MM-YYYY");
     
     this.calculateDay();
+    this.getAllCards();
     this.saveDateToShow();
   }
 

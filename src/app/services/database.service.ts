@@ -1,10 +1,11 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import keys from '../../keys';
 import { CardModel } from '../models/card.model';
 import { MessageModel } from '../models/message.model';
 import { MymyvCardModel } from '../models/mymyv_card.model';
 import { CommentModel } from '../models/comment.model';
+
+import keys from '../../keys';
 
 @Injectable({
   providedIn: 'root'

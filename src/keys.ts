@@ -54,6 +54,7 @@ const keys = {
     // INDEX
     index_day_text: "Publicaciones del día",
     index_arrows_text: "Día",
+    index_arrow_reload: "Día actual",
     // ---------------------------------------------------------
 
     // INSTRUCCIONES VIEW
