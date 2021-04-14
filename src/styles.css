@@ -41,6 +41,10 @@ body {
   color: rgb(74, 185, 250);
 }
 
+.txt_semidark_blue {
+  color: rgb(126, 208, 255);
+}
+
 .txt-red {
   color: rgb(255, 102, 102);
 }
@@ -270,7 +274,17 @@ app-edit {
 
 .index-arrow-button {
   width: 100px;
+  
+  transition: .1s;
 }
+
+.index-arrow-button:hover {
+  font-size: .8em;
+  transition: .1s;
+}
+
+
+
 
 /* The switch - the box around the slider */
 .switch {
@@ -389,7 +403,7 @@ input:checked+.slider:before {
 
 /* INDEX */
 .index-main-div {
-  min-height: 64.5vh;
+  min-height: 45vh;
 }
 
 .index-title {

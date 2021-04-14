@@ -120,4 +120,11 @@ export class IndexComponent implements OnInit {
     this.cardService.dateToShow = this.dateToShow;
   }
 
+  reloadToCurrentDay(){
+    this.dateToShow = moment().format("DD-MM-YYYY");
+    
+    this.calculateDay();
+    this.saveDateToShow();
+  }
+
 }

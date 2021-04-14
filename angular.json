@@ -130,5 +130,8 @@
       }
     }
   },
-  "defaultProject": "foro-front"
+  "defaultProject": "foro-front",
+  "cli": {
+    "analytics": "d252f4d9-6924-43d3-b9c1-c4c344314d04"
+  }
 }

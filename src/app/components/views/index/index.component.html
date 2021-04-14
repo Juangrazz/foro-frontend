@@ -22,12 +22,16 @@
   </div>
 </div>
 <div class="text-center">
-  <ul class="list-inline txt_light_blue">
-    <li role="button" class="list-inline-item index-arrow-button" (click)="subtractDay()">
+  <ul class="list-inline">
+    <li role="button" class="list-inline-item index-arrow-button txt_light_blue" (click)="subtractDay()">
       <i class="fas fa-arrow-circle-left fa-3x"></i>
       <div>{{keys.index_arrows_text}} {{dateBack}}</div>
     </li>
-    <li role="button" class="list-inline-item index-arrow-button" (click)="addDay()">
+    <li role="button" class="list-inline-item index-arrow-button txt_semidark_blue" (click)="reloadToCurrentDay()">
+      <i class="fas fa-redo-alt fa-3x"></i>
+      <div>Dia actual</div>
+    </li>
+    <li role="button" class="list-inline-item index-arrow-button txt_light_blue" (click)="addDay()">
       <i class="fas fa-arrow-circle-right fa-3x"></i>
       <div>{{keys.index_arrows_text}} {{dateNext}}</div>
     </li>
