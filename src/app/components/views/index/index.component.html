@@ -1,4 +1,4 @@
-<div class="text-center mt-5 animated fadeIn slow">
+<div class="text-center mt-5 animate__animated animate__fadeIn slow">
   <span class="index-title">
     <b>
       <p>{{keys.index_day_text}}</p>
@@ -8,10 +8,10 @@
   <app-no-posts *ngIf="noPosts"></app-no-posts>
 </div>
 <div *ngIf="!noPosts" class="index-main-div">
-  <div class="container p-2 animated fadeIn slow" *ngFor="let card of allCards; let i = index">
+  <div class="container p-2 animate__animated animate__fadeIn slow" *ngFor="let card of allCards; let i = index">
     <app-card *ngIf="card.model_type === keys.ctrl_model_card_normal_type" [card]="card"></app-card>
     <app-mymyv-card *ngIf="card.model_type === keys.ctrl_model_card_type_2" [card]="card"></app-mymyv-card>
-    <div id="card-container" class="container p-2 animated fadeIn slow">
+    <div id="card-container" class="container p-2 animate__animated animate__fadeIn slow">
       <div id="card-global-container" class="mb-3 div_card_global">
         <div class="text-right">
           <a class="blue_link" [routerLink]="['/card_view']" (click)="saveCard(card)"><b>{{card.comments}}
@@ -29,7 +29,7 @@
     </li>
     <li role="button" class="list-inline-item index-arrow-button txt_semidark_blue" (click)="reloadToCurrentDay()">
       <i class="fas fa-redo-alt fa-3x"></i>
-      <div>Dia actual</div>
+      <div [innerHTML]="keys.index_arrow_reload"></div>
     </li>
     <li role="button" class="list-inline-item index-arrow-button txt_light_blue" (click)="addDay()">
       <i class="fas fa-arrow-circle-right fa-3x"></i>

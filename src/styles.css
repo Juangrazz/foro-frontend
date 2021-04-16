@@ -274,17 +274,13 @@ app-edit {
 
 .index-arrow-button {
   width: 100px;
-  
   transition: .1s;
 }
 
 .index-arrow-button:hover {
-  font-size: .8em;
+  font-size: .85em;
   transition: .1s;
 }
-
-
-
 
 /* The switch - the box around the slider */
 .switch {
@@ -484,6 +480,8 @@ input:checked+.slider:before {
   color: rgb(172, 172, 172);
   margin: 0;
 }
+
+
 
 /* CARDS */
 
