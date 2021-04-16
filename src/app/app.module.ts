@@ -2,7 +2,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
-import { NgxPaginationModule } from 'ngx-pagination';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -29,6 +28,7 @@ import { EditComponent } from './components/views/admin/check-messages/edit/edit
 import { ErrorModalComponent } from './components/modals/error-modal/error-modal.component';
 import { CorrectModalComponent } from './components/modals/correct-modal/correct-modal.component';
 import { MymyvCardComponent } from './components/views/index/mymyv-card/mymyv-card.component';
+import { ChartsModule } from 'ng2-charts';
 
 @NgModule({
   declarations: [
@@ -62,7 +62,7 @@ import { MymyvCardComponent } from './components/views/index/mymyv-card/mymyv-ca
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
-    NgxPaginationModule
+    ChartsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
