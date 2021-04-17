@@ -2,7 +2,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
-import { NgxPaginationModule } from 'ngx-pagination';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -14,7 +13,7 @@ import { InstructionsComponent } from './components/views/instructions/instructi
 import { MymyvComponent } from './components/views/mymyv/mymyv.component';
 import { FooterComponent } from './components/share/footer/footer.component';
 import { NoPostsComponent } from './components/views/index/no-posts/no-posts.component';
-import { StadisticsComponent } from './components/views/stadistics/stadistics.component';
+import { StatisticsComponent } from './components/views/statistics/statistics.component';
 import { SearchMymyvComponent } from './components/views/search/search-mymyv/search-mymyv.component';
 import { CardComponent } from './components/views/index/card/card.component';
 import { NormalSearchComponent } from './components/views/search/normal-search/normal-search.component';
@@ -29,6 +28,7 @@ import { EditComponent } from './components/views/admin/check-messages/edit/edit
 import { ErrorModalComponent } from './components/modals/error-modal/error-modal.component';
 import { CorrectModalComponent } from './components/modals/correct-modal/correct-modal.component';
 import { MymyvCardComponent } from './components/views/index/mymyv-card/mymyv-card.component';
+import { ChartsModule } from 'ng2-charts';
 
 @NgModule({
   declarations: [
@@ -41,7 +41,7 @@ import { MymyvCardComponent } from './components/views/index/mymyv-card/mymyv-ca
     MymyvComponent,
     FooterComponent,
     NoPostsComponent,
-    StadisticsComponent,
+    StatisticsComponent,
     SearchMymyvComponent,
     CardComponent,
     NormalSearchComponent,
@@ -62,7 +62,7 @@ import { MymyvCardComponent } from './components/views/index/mymyv-card/mymyv-ca
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
-    NgxPaginationModule
+    ChartsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -6,7 +6,7 @@ import { InstructionsComponent } from './components/views/instructions/instructi
 import { MessagesComponent } from './components/views/messages/messages.component';
 import { MymyvComponent } from './components/views/mymyv/mymyv.component';
 import { SearchComponent } from './components/views/search/search.component';
-import { StadisticsComponent } from './components/views/stadistics/stadistics.component';
+import { StatisticsComponent } from './components/views/statistics/statistics.component';
 import { SearchMymyvComponent } from './components/views/search/search-mymyv/search-mymyv.component';
 import { CardViewComponent } from './components/views/card-view/card-view.component';
 import { DashboardComponent } from './components/views/admin/dashboard/dashboard.component';
@@ -23,7 +23,7 @@ const routes: Routes = [
   { path: 'mymyv', component: MymyvComponent },
   { path: 'search', component: SearchComponent },
   { path: 'search_mymyv', component: SearchMymyvComponent },
-  { path: 'stadistics', component: StadisticsComponent },
+  { path: 'statistics', component: StatisticsComponent },
   { path: 'card_view', component: CardViewComponent },
   { path: 'admin_dashboard', component: DashboardComponent },
   { path: 'admin_dashboard/home', component: AdminHomeComponent },
