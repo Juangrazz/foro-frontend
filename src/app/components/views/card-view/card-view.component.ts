@@ -59,7 +59,7 @@ export class CardViewComponent implements OnInit {
           this.checkComments();
         })
         .catch(err => {
-          $("#errorModalMessage").html(keys.error_modal_message_3);
+          $("#errorModalMessage").html(keys.error_modal_message_2);
           $('#errorModal').modal('show');
         });
     } else {
@@ -70,7 +70,7 @@ export class CardViewComponent implements OnInit {
         this.checkComments();
       })        
       .catch(err => {
-        $("#errorModalMessage").html(keys.error_modal_message_3);
+        $("#errorModalMessage").html(keys.error_modal_message_2);
         $('#errorModal').modal('show');
       });;
       this.comments = this.commentsService.commentsFormatter(this.comments);

@@ -1,0 +1,57 @@
+<div class="animate__animated animate__fadeIn slow">
+  <div class="mt-5 mb-5">
+    <span class="index-title text-center">
+      <b>
+        <p [innerHTML]="keys.statistic_all_time_title"></p>
+      </b>
+    </span>
+    <div class="chart-wrapper hor-aligment" style="max-height: 700px; max-width: 1000px;">
+      <canvas 
+        baseChart 
+        [datasets]="barChartDataAllTime" 
+        [labels]="barChartLabelsAllTime"
+        [options]="barChartOptionsAllTime" 
+        [plugins]="barChartPluginsAllTime" 
+        [legend]="barChartLegendAllTime"
+        [chartType]="barChartTypeAllTime">
+      </canvas>
+    </div>
+  </div>
+  <div class="mt-5">
+    <span class="index-title text-center">
+      <b>
+        <p [innerHTML]="keys.statistic_thirty_days_title"></p>
+      </b>
+    </span>
+    <div class="chart-wrapper hor-aligment" style="max-height: 700px; max-width: 1000px;">
+      <canvas 
+        baseChart 
+        [datasets]="barChartDataThirtyDays" 
+        [labels]="barChartLabelsThirtyDays"
+        [options]="barChartOptionsThirtyDays" 
+        [plugins]="barChartPluginsThirtyDays" 
+        [legend]="barChartLegendThirtyDays"
+        [chartType]="barChartTypeThirtyDays">
+      </canvas>
+    </div>
+  </div>
+  <div class="mt-5">
+    <span class="index-title text-center">
+      <b>
+        <p [innerHTML]="keys.statistic_cards_seven_days_title"></p>
+      </b>
+    </span>
+    <div class="chart-wrapper hor-aligment" style="max-height: 700px; max-width: 1000px;">
+      <canvas 
+        baseChart 
+        [datasets]="lineChartDataSevenDaysCards" 
+        [labels]="lineChartLabelsSevenDaysCards"
+        [options]="lineChartOptionsSevenDaysCards" 
+        [plugins]="lineChartPluginsSevenDaysCards" 
+        [legend]="lineChartLegendSevenDaysCards"
+        [chartType]="lineChartTypeSevenDaysCards">
+      </canvas>
+    </div>
+  </div>
+</div>
+<app-error-modal></app-error-modal>

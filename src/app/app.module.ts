@@ -13,7 +13,7 @@ import { InstructionsComponent } from './components/views/instructions/instructi
 import { MymyvComponent } from './components/views/mymyv/mymyv.component';
 import { FooterComponent } from './components/share/footer/footer.component';
 import { NoPostsComponent } from './components/views/index/no-posts/no-posts.component';
-import { StadisticsComponent } from './components/views/stadistics/stadistics.component';
+import { StatisticsComponent } from './components/views/statistics/statistics.component';
 import { SearchMymyvComponent } from './components/views/search/search-mymyv/search-mymyv.component';
 import { CardComponent } from './components/views/index/card/card.component';
 import { NormalSearchComponent } from './components/views/search/normal-search/normal-search.component';
@@ -41,7 +41,7 @@ import { ChartsModule } from 'ng2-charts';
     MymyvComponent,
     FooterComponent,
     NoPostsComponent,
-    StadisticsComponent,
+    StatisticsComponent,
     SearchMymyvComponent,
     CardComponent,
     NormalSearchComponent,

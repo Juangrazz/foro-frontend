@@ -210,8 +210,7 @@ const keys = {
     error_modal_title: "Mensaje",
     error_modal_button: "Ok",
     error_modal_message: "Ha ocurrido un error, inténtalo de nuevo más tarde.",
-    error_modal_message_2: "¡Vaya! Parece que algo ha salido mal y no se pueden obtener los post. <br><br> Lo intentaremos solucionar lo antes posible.",
-    error_modal_message_3: "¡Vaya! Parece que algo ha salido mal y no se pueden obtener los comentarios. <br><br> Lo intentaremos solucionar lo antes posible.",
+    error_modal_message_2: "¡Vaya! Parece que algo ha salido mal <br><br> Lo intentaremos solucionar lo antes posible.",
 
     // CORRECT MODAL
     correct_modal_title: "Mensaje",
@@ -219,6 +218,14 @@ const keys = {
     correct_modal_message: "¡Mensaje enviado!",
 
     // ---------------------------------------------------------
+
+    // STATISTICS
+    statistic_all_time_title: "Cantidad de post por lugar",
+    statistic_thirty_days_title: "Cantidad de post por lugar últimos 30 días",
+    statistic_cards_seven_days_title: "Cantidad de post por categoría últimos 7 días",
+    statistic_cards_seven_days_normal_label: "Normales",
+    statistic_cards_seven_days_mymyv_label: "Mymyv",
+    statistic_cards_seven_days_mymyv_text_label: "Día",
 
 }
 
