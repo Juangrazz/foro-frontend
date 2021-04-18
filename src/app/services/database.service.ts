@@ -59,5 +59,13 @@ export class DatabaseService {
     return this.http.get<StatisticsCardsModel[]>(`${keys.db_host}${keys.db_server_path}/cards/getstatisticscardssevendays`).toPromise();
   }
 
+  sendCardComment(comment: CommentModel){
+    return this.http.post<MessageModel>(`${keys.db_host}${keys.db_server_path}/cards/sendCardComment`, comment);
+  }
+
+  sendMymyvCardComment(comment: CommentModel){
+    return this.http.post<MessageModel>(`${keys.db_host}${keys.db_server_path}/cards/sendMymyvCardComment`, comment);
+  }
+
 
 }

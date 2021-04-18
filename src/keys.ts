@@ -32,6 +32,7 @@ const keys = {
     msg_age_error: "Introduce una edad válida",
     msg_kind_error: "Introduce un tipo de relación válido",
     msg_lookfor_error: "Selecciona qué estás buscando",
+    msg_comment_error: "No puedes enviar un comentario sin texto",
 
     // ---------------------------------------------------------
 
@@ -52,7 +53,7 @@ const keys = {
     // ---------------------------------------------------------
 
     // INDEX
-    index_day_text: "Publicaciones del día",
+    index_day_text: "Día",
     index_arrows_text: "Día",
     index_arrow_reload: "Día actual",
     // ---------------------------------------------------------
@@ -216,6 +217,7 @@ const keys = {
     correct_modal_title: "Mensaje",
     correct_modal_button: "Ok",
     correct_modal_message: "¡Mensaje enviado!",
+    correct_modal_comment: "¡Comentario enviado!",
 
     // ---------------------------------------------------------
 

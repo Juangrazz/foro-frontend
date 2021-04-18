@@ -38,6 +38,7 @@ export class CardService {
   }
 
   validateInstagram(): ValidatorFn {
+    
     return (control: AbstractControl): ValidationErrors | null => {
       const value = control.value;
       let valid = false;

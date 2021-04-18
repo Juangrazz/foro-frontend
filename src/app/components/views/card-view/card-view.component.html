@@ -8,19 +8,24 @@
         <div class="mb-3">
           <b [innerHTML]=keys.cards_txt_new_comment></b>
         </div>
-        <form>
+        <form [formGroup]="commentForm" (ngSubmit)="validateForm()">
           <label [innerHTML]="keys.msg_input_4"></label>
           <div class="input-group mb-2">
             <div class="input-group-prepend">
               <div class="input-group-text">@</div>
             </div>
-            <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="Nombre de usuario">
+            <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="Nombre de usuario" formControlName="instagram">
           </div>
-          <textarea class="text-area-format br-15"></textarea>
+          <textarea id="commentArea" class="text-area-format br-15" formControlName="comment"></textarea>
           <div class="text-right">
             <input type="submit" class="red-button-simply" value="Enviar">
           </div>
-        </form>
+        </form>    
+        <div class="mt-4">
+          <div *ngIf="commentError" class="msg msg-error animate__animated animate__fadeIn slow" [innerHTML]="keys.msg_comment_error"></div>
+          <div *ngIf="instaError" class="msg msg-error animate__animated animate__fadeIn slow" [innerHTML]="keys.msg_insta_error"></div>
+          <div *ngIf="formError" class="msg msg-error animate__animated animate__fadeIn slow" [innerHTML]="keys.msg_form_error"></div>
+        </div>
       </div>
     </div>
     <div id="info-container" class="card br-bottom">
@@ -43,3 +48,4 @@
   </div>
 </div>
 <app-error-modal></app-error-modal>
+<app-correct-modal></app-correct-modal>

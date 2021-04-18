@@ -1,11 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { CardModel } from 'src/app/models/card.model';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+
 import { CardService } from '../../../services/card.service';
 import { CommentsService } from '../../../services/comments.service';
 import { CommentModel } from '../../../models/comment.model';
-import keys from '../../../../keys';
 import { DatabaseService } from '../../../services/database.service';
-import { MymyvCardModel } from '../../../models/mymyv_card.model';
+
+import keys from '../../../../keys';
+import * as moment from 'moment';
 
 declare var $: any;
 
@@ -21,8 +23,15 @@ export class CardViewComponent implements OnInit {
   card: any = {};
   comments: CommentModel[] = [];
   noComments: boolean = false;
+  commentToSend: CommentModel = new CommentModel();
 
-  constructor(private cardService: CardService, private commentsService: CommentsService, private databaseService: DatabaseService) {
+  commentForm!: FormGroup;
+  commentError: boolean = false;
+  instaError: boolean = false;
+  formError: boolean = false;
+
+  constructor(private formBuilder: FormBuilder, private cardService: CardService, private commentsService: CommentsService, private databaseService: DatabaseService) {
+    this.createFrom();
     this.card = this.cardService.individualCard;
     this.getComments();
   }
@@ -64,15 +73,15 @@ export class CardViewComponent implements OnInit {
         });
     } else {
       await this.databaseService.getMymyvCardComments(this.card.id)
-      .then(res => {
-        this.comments = res;
-        this.comments = this.commentsService.commentsFormatter(this.comments);
-        this.checkComments();
-      })        
-      .catch(err => {
-        $("#errorModalMessage").html(keys.error_modal_message_2);
-        $('#errorModal').modal('show');
-      });;
+        .then(res => {
+          this.comments = res;
+          this.comments = this.commentsService.commentsFormatter(this.comments);
+          this.checkComments();
+        })
+        .catch(err => {
+          $("#errorModalMessage").html(keys.error_modal_message_2);
+          $('#errorModal').modal('show');
+        });;
       this.comments = this.commentsService.commentsFormatter(this.comments);
     }
 
@@ -85,6 +94,93 @@ export class CardViewComponent implements OnInit {
     } else {
       this.noComments = false;
     }
+  }
+
+  createFrom() {
+    this.commentForm = this.formBuilder.group({
+      comment: ['', [Validators.required]],
+      instagram: ['', this.cardService.validateInstagram()]
+    });
+  }
+
+  validateForm() {
+
+    this.resetErrors();
+    if (this.commentForm.valid) {
+      this.commentToSend.card_id = this.card.id;
+      this.commentToSend.comment = this.commentForm.controls.comment.value;
+      this.commentToSend.instagram = this.commentForm.controls.instagram.value;
+      this.commentToSend.publication_date = moment().format("DD-MM-YYYY HH:mm:ss");
+
+      if (this.commentToSend.instagram === "" || this.commentToSend.instagram === null) {
+        this.commentToSend.instagram = keys.cards_txt_anonymous;
+      }
+
+      if(this.card.model_type === keys.ctrl_model_card_normal_type){
+        this.databaseService.sendCardComment(this.commentToSend).subscribe(
+          (resp) => {
+            if (resp.status === keys.ctrl_fail_result) {
+              $("#errorModalMessage").text(keys.error_modal_message);
+              $('#errorModal').modal('show');
+            } else if (resp.status === keys.ctrl_successful_result) {
+              $("#correctModalMessage").text(keys.correct_modal_comment);
+              $('#correctModal').modal('show');
+              $('#correctModal').on('hidden.bs.modal', () => {
+                this.commentForm.reset();
+                this.getComments();
+              });
+            }
+          },
+          (err) => {
+            $("#errorModalMessage").text(keys.error_modal_message);
+            $('#errorModal').modal('show');
+          }
+        )
+      } else {
+        this.databaseService.sendMymyvCardComment(this.commentToSend).subscribe(
+          (resp) => {
+            if (resp.status === keys.ctrl_fail_result) {
+              $("#errorModalMessage").text(keys.error_modal_message);
+              $('#errorModal').modal('show');
+            } else if (resp.status === keys.ctrl_successful_result) {
+              $("#correctModalMessage").text(keys.correct_modal_comment);
+              $('#correctModal').modal('show');
+              $('#correctModal').on('hidden.bs.modal', () => {
+                this.commentForm.reset();
+                this.getComments();
+              });
+            }
+          },
+          (err) => {
+            $("#errorModalMessage").text(keys.error_modal_message);
+            $('#errorModal').modal('show');
+          }
+        )
+      }
+
+      
+    } else {
+      if (this.commentForm.controls.comment.invalid) this.commentError = true;
+      if (this.commentForm.controls.instagram.invalid) this.instaError = true;
+      if (
+        this.commentForm.controls.comment.value === "" &&
+        this.commentForm.controls.instagram.value === ""
+      ) {
+        this.formError = true;
+        this.commentError = false;
+        this.instaError = false;
+      }
+    }
+  }
+
+  resetErrors() {
+    this.formError = false;
+    this.commentError = false;
+    this.instaError = false;
+  }
+
+  commentToSendFormatter() {
+    console.log(this.commentsService.commentToSendFormatter(this.commentForm.controls.comment.value));
   }
 
 }

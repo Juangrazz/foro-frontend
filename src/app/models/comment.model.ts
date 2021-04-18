@@ -1,5 +1,5 @@
 export class CommentModel {
-    id!: number;
+    card_id!: number;
     instagram!: string;
     comment!: string;
     publication_date!: string;

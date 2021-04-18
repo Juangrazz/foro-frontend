@@ -48,9 +48,6 @@ export class MessagesComponent implements OnInit {
   }
 
   validateForm() {
-    console.log(this.cardForm.controls.date);
-    
-    
     this.resetErrors();
 
     if (this.cardForm.valid) {

@@ -26,4 +26,22 @@ export class CommentsService {
     });
     return comments;
   }
+
+  commentToSendFormatter(comment: string): string{
+
+    debugger;
+      let words = comment.split(" ");
+      let finalString = "";
+      words.forEach(word => {
+        if (word.charAt(0) === "@" && word.length > 1) {
+          let match = word.match(keys.ctrl_instagram_pattern);
+          let lastCharacters = word.replace(match![0], "").replace("@", "");
+          finalString += `<p class="txt-red">@${match![0]}</p>${lastCharacters} `
+        } else {
+          finalString += word;
+        }
+      });
+      comment = finalString;
+    return comment;
+  }
 }

@@ -399,7 +399,7 @@ input:checked+.slider:before {
 
 /* INDEX */
 .index-main-div {
-  min-height: 45vh;
+  min-height: 54vh;
 }
 
 .index-title {
@@ -524,6 +524,17 @@ input:checked+.slider:before {
 .comments-container {
   background-color: white;
   margin: 0 15em;
+}
+
+/* STATISTICS */
+.statistics-title{
+  font-size: 2.5em;
+  color: rgb(109, 109, 109);
+}
+
+.chart-size{
+  max-height: 700px; 
+  max-width: 1000px;
 }
 
 /* ADMIN PANEL */
