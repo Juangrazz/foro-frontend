@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { ControlService } from '../../../../services/control.service';
 import { CardModel } from '../../../../models/card.model';
-import keys from '../../../../../keys';
+import keys from '../../../../../global/keys';
 
 @Component({
   selector: 'app-check-messages',
   templateUrl: './check-messages.component.html',
-  styleUrls: ['./check-messages.component.css']
+  styleUrls: ['./check-messages.component.scss']
 })
 export class CheckMessagesComponent implements OnInit {
 

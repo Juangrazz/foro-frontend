@@ -4,15 +4,15 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { MymyvCardModel } from '../../../models/mymyv_card.model';
 
 import { DatabaseService } from '../../../services/database.service';
-import { CardService } from '../../../services/card.service';
+import { ControlService } from '../../../services/control.service';
 
-import keys from '../../../../keys';
+import keys from '../../../../global/keys';
 declare var $: any;
 
 @Component({
   selector: 'app-mymyv',
   templateUrl: './mymyv.component.html',
-  styleUrls: ['./mymyv.component.css']
+  styleUrls: ['./mymyv.component.scss']
 })
 export class MymyvComponent implements OnInit {
 
@@ -29,7 +29,7 @@ export class MymyvComponent implements OnInit {
   descriptionError: boolean = false;
   formError: boolean = false;
   
-  constructor(private formBuilder: FormBuilder, private databaseService: DatabaseService, private cardService: CardService) { 
+  constructor(private formBuilder: FormBuilder, private databaseService: DatabaseService, private controlService: ControlService) { 
     this.createFrom();
   }
 
@@ -112,7 +112,7 @@ export class MymyvComponent implements OnInit {
   }
 
   countCharacters() {
-    this.characters = this.cardService.countCharacters(this.mymyvCardForm.controls.description);
+    this.characters = this.controlService.countCharacters(this.mymyvCardForm.controls.description);
   }
 
 }

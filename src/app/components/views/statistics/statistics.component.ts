@@ -3,14 +3,14 @@ import { ChartOptions, ChartType, ChartDataSets } from 'chart.js';
 import { Label } from 'ng2-charts';
 import { DatabaseService } from '../../../services/database.service';
 
-import keys from '../../../../keys';
+import keys from '../../../../global/keys';
 
 declare var $: any;
 
 @Component({
   selector: 'app-statistics',
   templateUrl: './statistics.component.html',
-  styleUrls: ['./statistics.component.css']
+  styleUrls: ['./statistics.component.scss']
 })
 
 

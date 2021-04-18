@@ -6,13 +6,13 @@ import { CardModel } from 'src/app/models/card.model';
 import { DatabaseService } from '../../../services/database.service';
 import { ControlService } from '../../../services/control.service';
 
-import keys from "../../../../keys";
+import keys from "../../../../global/keys";
 declare var $: any;
 
 @Component({
   selector: 'app-messages',
   templateUrl: './messages.component.html',
-  styleUrls: ['./messages.component.css']
+  styleUrls: ['./messages.component.scss']
 })
 export class MessagesComponent implements OnInit {
 

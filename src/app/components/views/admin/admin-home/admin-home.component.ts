@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { ControlService } from '../../../../services/control.service';
-import keys from '../../../../../keys';
+import keys from '../../../../../global/keys';
 
 @Component({
   selector: 'app-admin-home',
   templateUrl: './admin-home.component.html',
-  styleUrls: ['./admin-home.component.css']
+  styleUrls: ['./admin-home.component.scss']
 })
 export class AdminHomeComponent implements OnInit {
 

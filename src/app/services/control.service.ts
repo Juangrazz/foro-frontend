@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { AbstractControl, ValidatorFn, ValidationErrors, FormControl } from '@angular/forms';
 
-import keys from 'src/keys';
+import keys from 'src/global/keys';
 import * as moment from 'moment';
 import { CommentModel } from '../models/comment.model';
 
@@ -76,8 +76,6 @@ export class ControlService {
   }
 
   commentToSendFormatter(comment: string): string{
-
-    debugger;
       let words = comment.split(" ");
       let finalString = "";
       words.forEach(word => {

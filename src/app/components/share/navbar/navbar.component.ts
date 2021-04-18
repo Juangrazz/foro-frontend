@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import keys from '../../../../keys';
+import keys from '../../../../global/keys';
 import { ControlService } from '../../../services/control.service';
 
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
-  styleUrls: ['./navbar.component.css']
+  styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent implements OnInit {
 

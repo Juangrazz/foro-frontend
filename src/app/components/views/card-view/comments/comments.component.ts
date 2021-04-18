@@ -1,11 +1,11 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { CommentModel } from '../../../../models/comment.model';
-import keys from '../../../../../keys';
+import keys from '../../../../../global/keys';
 
 @Component({
   selector: 'app-comments',
   templateUrl: './comments.component.html',
-  styleUrls: ['./comments.component.css']
+  styleUrls: ['./comments.component.scss']
 })
 export class CommentsComponent implements OnInit {
 

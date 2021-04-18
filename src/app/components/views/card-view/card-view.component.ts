@@ -6,7 +6,7 @@ import { CommentsService } from '../../../services/comments.service';
 import { CommentModel } from '../../../models/comment.model';
 import { DatabaseService } from '../../../services/database.service';
 
-import keys from '../../../../keys';
+import keys from '../../../../global/keys';
 import * as moment from 'moment';
 import { ControlService } from '../../../services/control.service';
 
@@ -15,7 +15,7 @@ declare var $: any;
 @Component({
   selector: 'app-card-view',
   templateUrl: './card-view.component.html',
-  styleUrls: ['./card-view.component.css']
+  styleUrls: ['./card-view.component.scss']
 })
 export class CardViewComponent implements OnInit {
 

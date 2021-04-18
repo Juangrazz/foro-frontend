@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import keys from '../../../../../keys';
+import keys from '../../../../../global/keys';
 
 @Component({
   selector: 'app-normal-search',
   templateUrl: './normal-search.component.html',
-  styleUrls: ['./normal-search.component.css']
+  styleUrls: ['./normal-search.component.scss']
 })
 export class NormalSearchComponent implements OnInit {
 

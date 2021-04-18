@@ -7,14 +7,14 @@ import { MymyvCardModel } from '../../../models/mymyv_card.model';
 import { CardModel } from 'src/app/models/card.model';
 
 import * as moment from 'moment';
-import keys from '../../../../keys';
+import keys from '../../../../global/keys';
 
 declare var $: any;
 
 @Component({
   selector: 'app-index',
   templateUrl: './index.component.html',
-  styleUrls: ['./index.component.css']
+  styleUrls: ['./index.component.scss']
 })
 export class IndexComponent implements OnInit {
 

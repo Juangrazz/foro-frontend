@@ -1,10 +1,12 @@
+@import "./global/colors.scss";
+
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@500&display=swap');
 
 body {
   font-family: 'Comfortaa', cursive;
   background-color: rgb(233, 233, 233);
-  color: rgb(109, 109, 109);
+  color: $color-grey;
   height: 100%;
 }
 
@@ -24,29 +26,29 @@ body {
 }
 
 .border-red {
-  border: rgb(255, 102, 102) 2px solid;
+  border: $color-red 2px solid;
 }
 
 .red-link {
-  color: rgb(255, 102, 102);
+  color: $color-red;
 }
 
 .red-link:hover {
-  color: rgb(223, 89, 89);
+  color: $color-red-semi-dark;
   text-decoration: none;
   cursor: pointer;
 }
 
 .txt_light_blue {
-  color: rgb(74, 185, 250);
+  color: $color-light-blue;
 }
 
-.txt_semidark_blue {
-  color: rgb(126, 208, 255);
+.txt_very_light_blue {
+  color: $color-very-light-blue;
 }
 
 .txt-red {
-  color: rgb(255, 102, 102);
+  color: $color-red;
 }
 
 .max-content-width {
@@ -54,7 +56,7 @@ body {
 }
 
 hr {
-  background-color: rgb(109, 109, 109);
+  background-color: $color-grey;
   border: none;
   height: 4px;
   border-radius: 50px;
@@ -112,7 +114,7 @@ app-edit {
   height: -webkit-fill-available;
   width: -webkit-fill-available;
   min-height: 10em;
-  border-color: rgb(170, 170, 170);
+  border-color: $color-light-grey;
   padding: 1em;
 }
 
@@ -121,20 +123,20 @@ app-edit {
 }
 
 .blue_link {
-  color: rgb(43, 153, 255);
+  color: $color-blue;
 }
 
 .blue_link:hover {
-  color: rgb(37, 128, 212);
+  color: $color-dark-blue;
   text-decoration: none;
 }
 
 .light_blue_link {
-  color: rgb(74, 185, 250);
+  color: $color-light-blue;
 }
 
 .light_blue_link:hover {
-  color: rgb(63, 157, 211);
+  color: $color-blue;
   text-decoration: none;
 }
 
@@ -166,23 +168,23 @@ app-edit {
 }
 
 .msg-error {
-  color: rgb(255, 79, 79);
-  background-color: rgb(255, 225, 225);
-  border: 1px rgb(255, 79, 79) solid;
+  color: $color-red;
+  background-color: $color-light-red;
+  border: 1px $color-red solid;
 }
 
 .msg-info {
-  color: rgb(76, 202, 93);
-  background-color: rgb(232, 255, 235);
-  border: 1px rgb(76, 202, 93) solid;
+  color: $color-green;
+  background-color: $color-light-green;
+  border: 1px $color-green solid;
 }
 
 .error-modal-header {
-  background-color: rgb(255, 79, 79);
+  background-color: $color-red;
 }
 
 .correct-modal-header {
-  background-color: rgb(67, 223, 114);
+  background-color: $color-green;
 }
 
 .w-10 {
@@ -191,13 +193,9 @@ app-edit {
 
 /* BUTTONS */
 
-.btn-index-days {
-  color: rgb(67, 165, 223);
-}
-
 .red-button {
-  background-color: rgb(255, 102, 102);
-  color: white;
+  background-color: $color-red;
+  color: $color-white;
   border-radius: 5px;
   height: 3em;
   min-width: 8em;
@@ -207,8 +205,8 @@ app-edit {
 
 .red-button-simply {
   background-color: transparent;
-  color: rgb(255, 102, 102);
-  border: rgb(255, 102, 102) 2px solid;
+  color: $color-red;
+  border: $color-red 2px solid;
   border-radius: 5px;
   height: 3em;
   min-width: 8em;
@@ -216,22 +214,21 @@ app-edit {
 }
 
 .red-button-simply:hover {
-  background-color: rgb(255, 102, 102);
-  color: white;
+  background-color: $color-red;
+  color: $color-white;
 }
 
 .red-button-simply:focus,
 .blue-button-simply:focus,
 .green-button:focus,
-.red-button:focus,
-.btn-index-days:focus {
+.red-button:focus {
   outline: none;
 }
 
 .blue-button-simply {
   background-color: transparent;
-  color: rgb(67, 165, 223);
-  border: rgb(67, 165, 223) 2px solid;
+  color: $color-blue;
+  border: $color-blue 2px solid;
   border-radius: 5px;
   height: 3em;
   min-width: 8em;
@@ -239,13 +236,13 @@ app-edit {
 }
 
 .blue-button-simply:hover {
-  background-color: rgb(67, 165, 223);
-  color: white;
+  background-color: $color-blue;
+  color: $color-white;
 }
 
 .green-button {
-  background-color: rgb(67, 223, 114);
-  color: white;
+  background-color: $color-green;
+  color: $color-white;
   border-radius: 5px;
   height: 3em;
   min-width: 8em;
@@ -255,8 +252,8 @@ app-edit {
 
 .green-button-simply {
   background-color: transparent;
-  color: rgb(67, 223, 114);
-  border: rgb(67, 223, 114) 2px solid;
+  color: $color-green;
+  border: $color-green 2px solid;
   border-radius: 5px;
   height: 3em;
   min-width: 8em;
@@ -264,8 +261,8 @@ app-edit {
 }
 
 .green-button-simply:hover {
-  background-color: rgb(67, 223, 114);
-  color: white;
+  background-color: $color-green;
+  color: $color-white;
 }
 
 .green-button-simply:focus {
@@ -307,7 +304,7 @@ app-edit {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #ccc;
+  background-color: $color-very-light-grey;
   -webkit-transition: .2s;
   transition: .2s;
 }
@@ -319,17 +316,17 @@ app-edit {
   width: 16px;
   left: 6px;
   bottom: 4px;
-  background-color: white;
+  background-color: $color-white;
   -webkit-transition: .2s;
   transition: .2s;
 }
 
 input:checked+.slider {
-  background-color: rgb(255, 102, 102);
+  background-color: $color-red;
 }
 
 input:focus+.slider {
-  box-shadow: 0 0 1px rgb(221, 221, 221);
+  box-shadow: 0 0 1px $color-very-light-grey;
 }
 
 input:checked+.slider:before {
@@ -349,17 +346,17 @@ input:checked+.slider:before {
 
 /* NAVBAR */
 .navbar-style {
-  background-color: rgb(255, 102, 102);
+  background-color: $color-red;
 }
 
 .navbar-button {
-  color: rgba(255, 255, 255, .5) !important;
-  border: 2px solid rgba(255, 255, 255, .5) !important;
+  color: $color-five-transparent-white !important;
+  border: 2px solid $color-five-transparent-white !important;
 }
 
 .navbar-button:hover {
-  color: rgba(255, 255, 255, .7) !important;
-  border: 2px solid rgba(255, 255, 255, .7) !important;
+  color: $color-seven-transparent-white !important;
+  border: 2px solid $color-seven-transparent-white !important;
 }
 
 .navbar-button:focus {
@@ -373,28 +370,28 @@ input:checked+.slider:before {
 }
 
 .navbar-options {
-  color: rgb(109, 109, 109) !important;
+  color: $color-grey !important;
 }
 
 .navbar-active-link {
-  color: white !important;
+  color: $color-white !important;
 }
 
 /* FOOTER */
 .footer-style {
-  background-color: rgb(255, 102, 102);
+  background-color: $color-red;
   width: 100%;
   height: 5em;
-  color: white;
+  color: $color-white;
   text-align: center;
 }
 
 .footer-style a {
-  color: rgba(255, 255, 255, .5);
+  color: $color-five-transparent-white;
 }
 
 .footer-style a:hover {
-  color: white;
+  color: $color-white;
 }
 
 /* INDEX */
@@ -404,24 +401,24 @@ input:checked+.slider:before {
 
 .index-title {
   font-size: 2.5em;
-  color: rgb(109, 109, 109);
+  color: $color-grey;
 }
 
 /* INSTRUCTIONES SECTION */
 .inst-title {
   font-size: 2.5em;
   font-weight: bold;
-  color: rgb(109, 109, 109);
+  color: $color-grey;
   margin: 0;
 }
 
 .myhyv-list {
-  background-color: rgb(245, 245, 245);
+  background-color: $color-bit-dark-white;
 }
 
 .inst-card-header {
-  background-color: rgb(255, 102, 102);
-  color: white;
+  background-color: $color-red;
+  color: $color-white;
 }
 
 .inst-card-body-big {
@@ -440,7 +437,7 @@ input:checked+.slider:before {
 .msg-title {
   font-size: 2.5em;
   font-weight: bold;
-  color: rgb(109, 109, 109);
+  color: $color-grey;
   margin: 0;
 }
 
@@ -452,7 +449,7 @@ input:checked+.slider:before {
 .search-title {
   font-size: 2.5em;
   font-weight: bold;
-  color: rgb(109, 109, 109);
+  color: $color-grey;
   margin: 0;
 }
 
@@ -469,7 +466,7 @@ input:checked+.slider:before {
 .mymyv-title {
   font-size: 2.5em;
   font-weight: bold;
-  color: rgb(109, 109, 109);
+  color: $color-grey;
   margin: 0;
 }
 
@@ -477,7 +474,7 @@ input:checked+.slider:before {
 .noposts-title {
   font-size: 2.5em;
   font-weight: bold;
-  color: rgb(172, 172, 172);
+  color: $color-light-grey;
   margin: 0;
 }
 
@@ -486,16 +483,16 @@ input:checked+.slider:before {
 /* CARDS */
 
 .div_card_desc_princ {
-  background-color: rgb(109, 109, 109);
+  background-color: $color-grey;
   padding: 2em;
-  color: white;
+  color: $color-white;
   min-height: 15em;
 }
 
 .div_mymyv_card_desc_princ {
-  background-color: rgb(255, 102, 102);
+  background-color: $color-red;
   padding: 2em;
-  color: white;
+  color: $color-white;
   min-height: 15em;
 }
 
@@ -522,14 +519,14 @@ input:checked+.slider:before {
 
 /* COMMENTS */
 .comments-container {
-  background-color: white;
+  background-color: $color-white;
   margin: 0 15em;
 }
 
 /* STATISTICS */
 .statistics-title{
   font-size: 2.5em;
-  color: rgb(109, 109, 109);
+  color: $color-grey;
 }
 
 .chart-size{

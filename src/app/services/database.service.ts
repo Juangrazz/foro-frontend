@@ -7,7 +7,7 @@ import { MymyvCardModel } from '../models/mymyv_card.model';
 import { CommentModel } from '../models/comment.model';
 import { StatisticsModel } from '../models/statistics.model';
 
-import keys from '../../keys';
+import keys from '../../global/keys';
 import { StatisticsCardsModel } from '../models/statistics_cards.model';
 
 @Injectable({
