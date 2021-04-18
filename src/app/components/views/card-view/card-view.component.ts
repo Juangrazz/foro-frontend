@@ -8,6 +8,7 @@ import { DatabaseService } from '../../../services/database.service';
 
 import keys from '../../../../keys';
 import * as moment from 'moment';
+import { ControlService } from '../../../services/control.service';
 
 declare var $: any;
 
@@ -30,7 +31,7 @@ export class CardViewComponent implements OnInit {
   instaError: boolean = false;
   formError: boolean = false;
 
-  constructor(private formBuilder: FormBuilder, private cardService: CardService, private commentsService: CommentsService, private databaseService: DatabaseService) {
+  constructor(private formBuilder: FormBuilder, private cardService: CardService, private commentsService: CommentsService, private databaseService: DatabaseService, private controlService: ControlService) {
     this.createFrom();
     this.card = this.cardService.individualCard;
     this.getComments();
@@ -42,29 +43,12 @@ export class CardViewComponent implements OnInit {
     $("#card-global-container").removeClass("mb-5");
   }
 
-  commentsFormatter() {
-    this.comments.forEach(comment => {
-      let words = comment.comment.split(" ");
-      let finalString = "";
-      words.forEach(word => {
-        if (word.charAt(0) === "@") {
-          let match = word.match(keys.ctrl_instagram_pattern);
-          let lastCharacters = word.replace(match![0], "").replace("@", "");
-          finalString += `<a href="https://instagram.com/${match![0]}/" class="red-link">@${match![0]}</a>${lastCharacters} `
-        } else {
-          finalString += word + " ";
-        }
-      });
-      comment.comment = finalString.trim();
-    });
-  }
-
   async getComments() {
     if (this.card.model_type === keys.ctrl_model_card_normal_type) {
       await this.databaseService.getCardComments(this.card.id)
         .then(res => {
           this.comments = res;
-          this.comments = this.commentsService.commentsFormatter(this.comments);
+          this.comments = this.controlService.commentsFormatter(this.comments);
           this.checkComments();
         })
         .catch(err => {
@@ -75,16 +59,15 @@ export class CardViewComponent implements OnInit {
       await this.databaseService.getMymyvCardComments(this.card.id)
         .then(res => {
           this.comments = res;
-          this.comments = this.commentsService.commentsFormatter(this.comments);
+          this.comments = this.controlService.commentsFormatter(this.comments);
           this.checkComments();
         })
         .catch(err => {
           $("#errorModalMessage").html(keys.error_modal_message_2);
           $('#errorModal').modal('show');
         });;
-      this.comments = this.commentsService.commentsFormatter(this.comments);
+      this.comments = this.controlService.commentsFormatter(this.comments);
     }
-
     this.checkComments();
   }
 
@@ -99,7 +82,7 @@ export class CardViewComponent implements OnInit {
   createFrom() {
     this.commentForm = this.formBuilder.group({
       comment: ['', [Validators.required]],
-      instagram: ['', this.cardService.validateInstagram()]
+      instagram: ['', this.controlService.validateInstagram()]
     });
   }
 
@@ -180,7 +163,7 @@ export class CardViewComponent implements OnInit {
   }
 
   commentToSendFormatter() {
-    console.log(this.commentsService.commentToSendFormatter(this.commentForm.controls.comment.value));
+    console.log(this.controlService.commentToSendFormatter(this.commentForm.controls.comment.value));
   }
 
 }

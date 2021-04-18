@@ -4,7 +4,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { CardModel } from 'src/app/models/card.model';
 
 import { DatabaseService } from '../../../services/database.service';
-import { CardService } from '../../../services/card.service';
+import { ControlService } from '../../../services/control.service';
 
 import keys from "../../../../keys";
 declare var $: any;
@@ -29,7 +29,7 @@ export class MessagesComponent implements OnInit {
   formError: boolean = false;
   instaError: boolean = false;
 
-  constructor(private formBuilder: FormBuilder, private databaseService: DatabaseService, private cardService: CardService) {
+  constructor(private formBuilder: FormBuilder, private databaseService: DatabaseService, private controlService: ControlService) {
     this.createFrom();
   }
 
@@ -39,10 +39,10 @@ export class MessagesComponent implements OnInit {
 
   createFrom() {
     this.cardForm = this.formBuilder.group({
-      date: ['', [Validators.required, this.cardService.validateDate()]],
+      date: ['', [Validators.required, this.controlService.validateDate()]],
       time: ['', Validators.required],
       place: ['', [Validators.required, Validators.minLength(keys.ctrl_place_min_length), Validators.minLength(keys.ctrl_place_min_length)]],
-      instagram: ['', this.cardService.validateInstagram()],
+      instagram: ['', this.controlService.validateInstagram()],
       description: ['', [Validators.required, Validators.minLength(keys.ctrl_description_min_length), Validators.maxLength(keys.ctrl_description_max_length)]]
     });
   }
@@ -114,7 +114,7 @@ export class MessagesComponent implements OnInit {
   }
 
   countCharacters() {
-    this.characters = this.cardService.countCharacters(this.cardForm.controls.description);
+    this.characters = this.controlService.countCharacters(this.cardForm.controls.description);
   }
 
 
