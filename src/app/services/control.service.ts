@@ -29,7 +29,7 @@ export class ControlService {
       let diff = date.diff(now, 'days');
       let valid = false;
 
-      if (diff < 0) valid = true;
+      if (diff <= 0) valid = true;
 
       return valid ? null: { dateValid: false };
     }
