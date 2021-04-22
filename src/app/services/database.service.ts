@@ -6,9 +6,10 @@ import { MessageModel } from '../models/message.model';
 import { MymyvCardModel } from '../models/mymyv_card.model';
 import { CommentModel } from '../models/comment.model';
 import { StatisticsModel } from '../models/statistics.model';
+import { StatisticsCardsModel } from '../models/statistics_cards.model';
+import { NormalSearchModel } from '../models/normal_search.model';
 
 import keys from '../../global/keys';
-import { StatisticsCardsModel } from '../models/statistics_cards.model';
 
 @Injectable({
   providedIn: 'root'
@@ -65,6 +66,10 @@ export class DatabaseService {
 
   sendMymyvCardComment(comment: CommentModel){
     return this.http.post<MessageModel>(`${keys.db_host}${keys.db_server_path}/cards/sendMymyvCardComment`, comment);
+  }
+
+  normalSearch(search: NormalSearchModel){
+    return this.http.post<MessageModel>(`${keys.db_host}${keys.db_server_path}/cards/normalSearch`, search);
   }
 
 

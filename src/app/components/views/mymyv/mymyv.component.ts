@@ -55,6 +55,7 @@ export class MymyvComponent implements OnInit {
       this.mymyvCard.look_for = this.mymyvCardForm.controls.lookFor.value;
       this.mymyvCard.instagram = this.mymyvCardForm.controls.instagram.value;
       this.mymyvCard.description = this.mymyvCardForm.controls.description.value;
+      this.mymyvCard.publicated = 0;
 
       if (this.mymyvCard.instagram === "" || this.mymyvCard.instagram === null) {
         this.mymyvCard.instagram = "Anónimo";
