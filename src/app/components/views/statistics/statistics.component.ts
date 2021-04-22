@@ -82,6 +82,7 @@ export class StatisticsComponent implements OnInit {
   ];
 
   constructor(private databaseService: DatabaseService) {
+    sessionStorage.removeItem("normal_search");
     this.getstatistics();
   }
 

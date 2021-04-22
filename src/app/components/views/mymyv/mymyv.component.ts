@@ -30,6 +30,7 @@ export class MymyvComponent implements OnInit {
   formError: boolean = false;
   
   constructor(private formBuilder: FormBuilder, private databaseService: DatabaseService, private controlService: ControlService) { 
+    sessionStorage.removeItem("normal_search");
     this.createFrom();
   }
 

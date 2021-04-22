@@ -422,7 +422,7 @@ input:checked+.slider:before {
 }
 
 .inst-card-body-big {
-  height: 21em;
+  height: 23em;
 }
 
 .inst-card-body-small {
@@ -534,6 +534,11 @@ input:checked+.slider:before {
   max-width: 1000px;
 }
 
+/* NOS RESULTS */
+.no-results-div {
+  min-height: 39vh;
+}
+
 /* ADMIN PANEL */
 .admin_main_container {
   width: 70%;
@@ -634,7 +639,7 @@ input:checked+.slider:before {
 
 @media (min-width: 768px) and (max-width: 991px) {
   .inst-card-body-big {
-    height: 26em;
+    height: 30em;
   }
 
   .inst-card-body-small {

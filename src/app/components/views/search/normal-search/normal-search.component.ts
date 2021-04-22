@@ -1,12 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
-
 import { DatabaseService } from '../../../../services/database.service';
+import { ControlService } from '../../../../services/control.service';
+import { CardService } from '../../../../services/card.service';
+
+import { NormalSearchModel } from '../../../../models/normal_search.model';
+import { CardModel } from '../../../../models/card.model';
 
 import keys from '../../../../../global/keys';
-import { ControlService } from '../../../../services/control.service';
-import { NormalSearchModel } from '../../../../models/normal_search.model';
 declare var $: any;
 
 @Component({
@@ -23,9 +25,14 @@ export class NormalSearchComponent implements OnInit {
   placeError: boolean = false;
   formError: boolean = false;
 
+  cards: CardModel[];
+  noResults: boolean = false;
+
   keys = keys;
   
-  constructor(private formBuilder: FormBuilder, private databaseService: DatabaseService, private controlService: ControlService) { 
+  constructor(private formBuilder: FormBuilder, private databaseService: DatabaseService, private controlService: ControlService, private cardService: CardService) { 
+    sessionStorage.removeItem("individual_card");
+    this.cards = this.cardService.normalSearch;
     this.createFrom();
   }
 
@@ -48,7 +55,9 @@ export class NormalSearchComponent implements OnInit {
 
       this.databaseService.normalSearch(this.searchInfo).subscribe(
         (resp) => {
-          console.log(resp);
+          this.cards = resp;
+          this.checkResults();
+          this.saveResults();
           this.normalSearchForm.reset();
         },
         (error) => {
@@ -74,6 +83,23 @@ export class NormalSearchComponent implements OnInit {
     this.formError = false;
     this.placeError = false;
     this.dateError = false;
+  }
+
+  saveCard(card: CardModel) {
+    sessionStorage.setItem("individual_card", JSON.stringify(card));
+    this.cardService.individualCard = card;
+  };
+
+  saveResults(){
+    sessionStorage.setItem("normal_search", JSON.stringify(this.cards));
+    this.cardService.normalSearch = this.cards;
+  }
+
+  checkResults(){
+    this.noResults = false;
+    if(this.cards.length === 0){
+      this.noResults = true;
+    }
   }
 
 }

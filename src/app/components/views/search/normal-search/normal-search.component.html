@@ -18,4 +18,18 @@
     <div *ngIf="placeError" class="msg msg-error animate__animated animate__fadeIn slow" [innerHTML]="keys.msg_place_error"></div>
     <div *ngIf="formError" class="msg msg-error animate__animated animate__fadeIn slow" [innerHTML]="keys.msg_form_error"></div>
   </div>
-
+  <div *ngFor="let card of cards">
+    <app-card [card]="card"></app-card>
+    <div id="card-container" class="container p-2 animate__animated animate__fadeIn slow">
+      <div id="card-global-container" class="mb-3 div_card_global">
+        <div class="text-right">
+          <a class="blue_link" [routerLink]="['/card_view']" (click)="saveCard(card)"><b>{{card.comments}}
+              {{keys.cards_txt_comments}}</b></a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="noResults">
+    <app-no-results></app-no-results>
+  </div>
+  

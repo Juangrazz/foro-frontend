@@ -69,7 +69,7 @@ export class DatabaseService {
   }
 
   normalSearch(search: NormalSearchModel){
-    return this.http.post<MessageModel>(`${keys.db_host}${keys.db_server_path}/cards/normalSearch`, search);
+    return this.http.post<CardModel[]>(`${keys.db_host}${keys.db_server_path}/cards/normalSearch`, search);
   }
 
 

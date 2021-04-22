@@ -229,6 +229,11 @@ const keys = {
     statistic_cards_seven_days_mymyv_label: "Mymyv",
     statistic_cards_seven_days_mymyv_text_label: "Día",
 
+    // ---------------------------------------------------------
+
+    // NO POST
+    noresults_text: "No hay resultados",
+
 }
 
 export default keys;
