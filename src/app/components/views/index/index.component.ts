@@ -33,6 +33,8 @@ export class IndexComponent implements OnInit {
 
   constructor(private cardService: CardService, private controlService: ControlService, private databseService: DatabaseService) {
     sessionStorage.removeItem("individual_card");
+    sessionStorage.removeItem("normal_search");
+    
     this.dateToShow = this.cardService.dateToShow;
 
     this.getAllCards();
@@ -51,7 +53,6 @@ export class IndexComponent implements OnInit {
       .then(res => {
           const cards = res;
           for (const card of cards) {
-            card.model_type = keys.ctrl_model_card_normal_type;
             this.allCards.push(card);
           }
         })
@@ -64,7 +65,6 @@ export class IndexComponent implements OnInit {
     .then(res => {
         const mymyvCards = res;
         for (const card of mymyvCards) {
-          card.model_type = keys.ctrl_model_card_type_2;
           this.allCards.push(card);
         }
       })
@@ -87,7 +87,6 @@ export class IndexComponent implements OnInit {
       this.noPosts = false;
     }
   }
-
 
   saveCard(card: CardModel) {
     sessionStorage.setItem("individual_card", JSON.stringify(card));

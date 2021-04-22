@@ -30,6 +30,7 @@ export class MessagesComponent implements OnInit {
   instaError: boolean = false;
 
   constructor(private formBuilder: FormBuilder, private databaseService: DatabaseService, private controlService: ControlService) {
+    sessionStorage.removeItem("normal_search");
     this.createFrom();
   }
 
@@ -41,7 +42,7 @@ export class MessagesComponent implements OnInit {
     this.cardForm = this.formBuilder.group({
       date: ['', [Validators.required, this.controlService.validateDate()]],
       time: ['', Validators.required],
-      place: ['', [Validators.required, Validators.minLength(keys.ctrl_place_min_length), Validators.minLength(keys.ctrl_place_min_length)]],
+      place: ['', [Validators.required, Validators.minLength(keys.ctrl_place_min_length), Validators.maxLength(keys.ctrl_place_max_length)]],
       instagram: ['', this.controlService.validateInstagram()],
       description: ['', [Validators.required, Validators.minLength(keys.ctrl_description_min_length), Validators.maxLength(keys.ctrl_description_max_length)]]
     });
@@ -56,6 +57,7 @@ export class MessagesComponent implements OnInit {
       this.card.place = this.cardForm.controls.place.value;
       this.card.instagram = this.cardForm.controls.instagram.value;
       this.card.description = this.cardForm.controls.description.value;
+      this.card.publicated = 0;
 
       if (this.card.instagram === "" || this.card.instagram === null) {
         this.card.instagram = "Anónimo";

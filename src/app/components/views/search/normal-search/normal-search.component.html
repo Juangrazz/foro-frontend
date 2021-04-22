@@ -1,16 +1,35 @@
-<form id="normal-search-form" class="animate__animated slow animate__fadeIn">
+<form id="normal-search-form" class="animate__animated slow animate__fadeIn" [formGroup]="normalSearchForm" (ngSubmit)="validateForm()">
     <div class="form-row">
       <div class="form-group col-lg-6">
         <label [innerHTML]="keys.search_input_1"></label>
-        <input type="date" class="form-control" id="inputDate">
+        <input type="date" class="form-control" id="inputDate" formControlName="date">
       </div>
       <div class="form-group col-lg-6">
         <label [innerHTML]="keys.search_input_2"></label>
-        <input type="text" class="form-control" id="inputPlace" placeholder="¿Dónde?">
+        <input type="text" class="form-control" id="inputPlace" placeholder="¿Dónde?" formControlName="place">
       </div>
     </div>
     <div class="text-right">
-      <button class="mt-4 red-button-simply font-weight-bold" [innerHTML]="keys.search_send_button"
-        [routerLink]="['/instructions']"></button>
+      <button class="mt-4 red-button-simply font-weight-bold" [innerHTML]="keys.search_send_button"></button>
     </div>
   </form>
+  <div class="mt-4">
+    <div *ngIf="dateError" class="msg msg-error animate__animated animate__fadeIn slow" [innerHTML]="keys.msg_date_error"></div>
+    <div *ngIf="placeError" class="msg msg-error animate__animated animate__fadeIn slow" [innerHTML]="keys.msg_place_error"></div>
+    <div *ngIf="formError" class="msg msg-error animate__animated animate__fadeIn slow" [innerHTML]="keys.msg_form_error"></div>
+  </div>
+  <div *ngFor="let card of cards">
+    <app-card [card]="card"></app-card>
+    <div id="card-container" class="container p-2 animate__animated animate__fadeIn slow">
+      <div id="card-global-container" class="mb-3 div_card_global">
+        <div class="text-right">
+          <a class="blue_link" [routerLink]="['/card_view']" (click)="saveCard(card)"><b>{{card.comments}}
+              {{keys.cards_txt_comments}}</b></a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="noResults">
+    <app-no-results></app-no-results>
+  </div>
+  

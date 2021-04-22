@@ -10,7 +10,9 @@ export class InstructionsComponent implements OnInit {
 
   keys = keys;
 
-  constructor() {}
+  constructor() {
+    sessionStorage.removeItem("normal_search");
+  }
 
   ngOnInit(): void {
   }

@@ -8,4 +8,5 @@ export class MymyvCardModel {
     comments?: number;
     publication_date?: string;
     model_type?: String;
+    publicated?: number;
 }
