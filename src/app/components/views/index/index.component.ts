@@ -33,7 +33,6 @@ export class IndexComponent implements OnInit {
 
   constructor(private cardService: CardService, private controlService: ControlService, private databseService: DatabaseService) {
     sessionStorage.removeItem("individual_card");
-    sessionStorage.removeItem("normal_search");
     
     this.dateToShow = this.cardService.dateToShow;
 

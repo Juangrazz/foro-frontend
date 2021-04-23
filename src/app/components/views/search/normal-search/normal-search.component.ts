@@ -91,7 +91,6 @@ export class NormalSearchComponent implements OnInit {
   };
 
   saveResults(){  
-    sessionStorage.setItem("normal_search", JSON.stringify(this.cards));
     this.cardService.normalSearch = this.cards;
   }
 

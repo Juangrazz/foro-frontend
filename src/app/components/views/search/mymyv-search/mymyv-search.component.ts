@@ -99,7 +99,6 @@ export class MymyvSearchComponent implements OnInit {
   };
 
   saveResults(){
-    sessionStorage.setItem("mymyv_search", JSON.stringify(this.cards));
     this.cardService.mymyvSearch = this.cards;
   }
 

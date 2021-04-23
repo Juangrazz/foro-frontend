@@ -32,8 +32,6 @@ export class CardViewComponent implements OnInit {
   formError: boolean = false;
 
   constructor(private formBuilder: FormBuilder, private cardService: CardService, private commentsService: CommentsService, private databaseService: DatabaseService, private controlService: ControlService) {
-    sessionStorage.removeItem("normal_search");
-    sessionStorage.removeItem("mymyv_search");
     this.createFrom();
     this.card = this.cardService.individualCard;
     this.getComments();

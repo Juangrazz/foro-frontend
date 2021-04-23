@@ -30,8 +30,6 @@ export class MessagesComponent implements OnInit {
   instaError: boolean = false;
 
   constructor(private formBuilder: FormBuilder, private databaseService: DatabaseService, private controlService: ControlService) {
-    sessionStorage.removeItem("normal_search");
-    sessionStorage.removeItem("mymyv_search");
     this.createFrom();
   }
 
