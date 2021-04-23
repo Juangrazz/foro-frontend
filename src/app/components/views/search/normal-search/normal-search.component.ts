@@ -62,9 +62,10 @@ export class NormalSearchComponent implements OnInit {
         this.databaseService.normalSearch(this.searchInfo).subscribe(
           (resp) => {
             this.cards = resp;
+            
             this.checkResults();
             this.saveResults();
-            this.normalSearchForm.reset();
+            this.normalSearchForm.reset({date: "", place: ""});
           },
           (error) => {
             $("#errorModalMessage").text(keys.error_modal_message);
@@ -89,7 +90,7 @@ export class NormalSearchComponent implements OnInit {
     this.cardService.individualCard = card;
   };
 
-  saveResults(){
+  saveResults(){  
     sessionStorage.setItem("normal_search", JSON.stringify(this.cards));
     this.cardService.normalSearch = this.cards;
   }

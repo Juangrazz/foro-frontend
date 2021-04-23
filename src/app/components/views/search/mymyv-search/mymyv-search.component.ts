@@ -43,8 +43,8 @@ export class MymyvSearchComponent implements OnInit {
 
   createFrom() {
     this.mymyvSearchForm = this.formBuilder.group({
-      min_age:['18', [Validators.min(keys.ctrl_min_age), Validators.max(keys.ctrl_max_age)]],
-      max_age:['18', [Validators.min(keys.ctrl_min_age), Validators.max(keys.ctrl_max_age)]],
+      min_age:[, [Validators.min(keys.ctrl_min_age), Validators.max(keys.ctrl_max_age)]],
+      max_age:[, [Validators.min(keys.ctrl_min_age), Validators.max(keys.ctrl_max_age)]],
       kind: [''],
       look_for: [''],
     });
@@ -65,13 +65,14 @@ export class MymyvSearchComponent implements OnInit {
         this.searchInfo.max_age = this.mymyvSearchForm.controls.max_age.value;
         this.searchInfo.kind = this.mymyvSearchForm.controls.kind.value;
         this.searchInfo.look_for = this.mymyvSearchForm.controls.look_for.value;
-  
+        
         this.databaseService.mymyvSearch(this.searchInfo).subscribe(
           (resp) => {
             this.cards = resp;
+            
             this.checkResults();
             this.saveResults();
-            this.mymyvSearchForm.reset();
+            this.mymyvSearchForm.reset({ kind: "", look_for: "" });
           },
           (error) => {
             $("#errorModalMessage").text(keys.error_modal_message);

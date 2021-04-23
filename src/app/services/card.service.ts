@@ -18,6 +18,7 @@ export class CardService {
       this.individualCard = JSON.parse(sessionStorage.getItem("individual_card") || "{}");
       this.dateToShow = JSON.parse(sessionStorage.getItem("date_to_show") || `"${moment().format("DD-MM-YYYY")}"`);
       this.normalSearch = JSON.parse(sessionStorage.getItem("normal_search") || "[]");
+      this.mymyvSearch = JSON.parse(sessionStorage.getItem("mymyv_search") || "[]");
   }
 
 }
