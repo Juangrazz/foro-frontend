@@ -12,6 +12,7 @@ export class InstructionsComponent implements OnInit {
 
   constructor() {
     sessionStorage.removeItem("normal_search");
+    sessionStorage.removeItem("mymyv_search");
   }
 
   ngOnInit(): void {
