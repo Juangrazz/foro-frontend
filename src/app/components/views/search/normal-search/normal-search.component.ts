@@ -49,32 +49,31 @@ export class NormalSearchComponent implements OnInit {
   validateForm() {
     this.resetErrors();
 
-    if (this.normalSearchForm.valid) {
-      this.searchInfo.date = this.normalSearchForm.controls.date.value;
-      this.searchInfo.place = this.normalSearchForm.controls.place.value;
-
-      this.databaseService.normalSearch(this.searchInfo).subscribe(
-        (resp) => {
-          this.cards = resp;
-          this.checkResults();
-          this.saveResults();
-          this.normalSearchForm.reset();
-        },
-        (error) => {
-          $("#errorModalMessage").text(keys.error_modal_message);
-          $('#errorModal').modal('show');
-        }
-      );
+    if (
+      this.normalSearchForm.controls.date.value === "" &&
+      this.normalSearchForm.controls.place.value === ""
+    ) {
+      this.formError = true;
     } else {
-      if (this.normalSearchForm.controls.date.invalid) this.dateError = true;
-      if (this.normalSearchForm.controls.place.invalid) this.placeError = true;
-      if (
-        this.normalSearchForm.controls.date.value === "" &&
-        this.normalSearchForm.controls.place.value === ""
-      ) {
-        this.formError = true;
-        this.placeError = false;
-        this.dateError = false;
+      if (this.normalSearchForm.valid) {
+        this.searchInfo.date = this.normalSearchForm.controls.date.value;
+        this.searchInfo.place = this.normalSearchForm.controls.place.value;
+  
+        this.databaseService.normalSearch(this.searchInfo).subscribe(
+          (resp) => {
+            this.cards = resp;
+            this.checkResults();
+            this.saveResults();
+            this.normalSearchForm.reset();
+          },
+          (error) => {
+            $("#errorModalMessage").text(keys.error_modal_message);
+            $('#errorModal').modal('show');
+          }
+        );
+      } else {
+        if (this.normalSearchForm.controls.date.invalid) this.dateError = true;
+        if (this.normalSearchForm.controls.place.invalid) this.placeError = true;
       }
     }
   }

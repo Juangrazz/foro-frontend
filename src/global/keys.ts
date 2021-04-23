@@ -33,6 +33,8 @@ const keys = {
     msg_kind_error: "Introduce un tipo de relación válido",
     msg_lookfor_error: "Selecciona qué estás buscando",
     msg_comment_error: "No puedes enviar un comentario sin texto",
+    msg_min_age_error: "Introduce una edad mínima válida",
+    msg_max_age_error: "Introduce una edad máxima válida",
 
     // ---------------------------------------------------------
 
@@ -108,6 +110,7 @@ const keys = {
     // Búsqueda normal form
     search_input_1: "Fecha",
     search_input_2: "Lugar",
+    search_input_2_place_holder: "¿Dónde?",
     search_send_button: "Buscar",
 
     // ---------------------------------------------------------
@@ -119,6 +122,8 @@ const keys = {
     mymyv_input_3: "¿Qué buscas?",
     mymyv_input_4: "Instagram (opcional)",
     mymyv_input_5: "Añade una descripción",
+    mymyv_input_6: "Edad mínima",
+    mymyv_input_7: "Edad máxima",
     mymyv_empty_option: "-- Selecciona una opción --",
     mymyv_indiferent_option: "Indiferente",
     mymyv_rel_option_1: "Algo serio",

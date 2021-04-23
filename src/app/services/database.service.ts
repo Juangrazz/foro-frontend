@@ -10,6 +10,7 @@ import { StatisticsCardsModel } from '../models/statistics_cards.model';
 import { NormalSearchModel } from '../models/normal_search.model';
 
 import keys from '../../global/keys';
+import { MymyvSearchModel } from '../models/mymyv_search_model';
 
 @Injectable({
   providedIn: 'root'
@@ -70,6 +71,10 @@ export class DatabaseService {
 
   normalSearch(search: NormalSearchModel){
     return this.http.post<CardModel[]>(`${keys.db_host}${keys.db_server_path}/cards/normalSearch`, search);
+  }
+
+  mymyvSearch(search: MymyvSearchModel){
+    return this.http.post<MymyvCardModel[]>(`${keys.db_host}${keys.db_server_path}/cards/mymyvSearch`, search);
   }
 
 
