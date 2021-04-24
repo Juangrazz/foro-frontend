@@ -112,6 +112,9 @@ const keys = {
     search_input_2: "Lugar",
     search_input_2_place_holder: "¿Dónde?",
     search_send_button: "Buscar",
+    secret_search_1: "el inframundo",
+    secret_search_2: "el corazón de tu ex",
+    secret_search_3: "donde tenga oportunidades de ligar",
 
     // ---------------------------------------------------------
 
@@ -223,6 +226,10 @@ const keys = {
     correct_modal_button: "Ok",
     correct_modal_message: "¡Mensaje enviado!",
     correct_modal_comment: "¡Comentario enviado!",
+
+    // INFO MODAL
+    info_modal_button: `Vale <i class="fas fa-smile fa-lg"></i>`,
+    info_modal_message: "Si hubo gente que se compró el Fiat Multipla, tiene que haber gente que saldría contigo.",
 
     // ---------------------------------------------------------
 

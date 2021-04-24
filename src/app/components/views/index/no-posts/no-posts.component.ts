@@ -24,4 +24,9 @@ export class NoPostsComponent implements OnInit {
     }, 1000);
   }
 
+  openModal(){
+    $("#infoModalMessage").html(keys.info_modal_message);
+    $('#infoModal').modal('show');
+  }
+
 }

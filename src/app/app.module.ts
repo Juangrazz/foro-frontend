@@ -24,8 +24,9 @@ import { CheckMessagesComponent } from './components/views/admin/check-messages/
 import { CreateAdminComponent } from './components/views/admin/create-admin/create-admin.component';
 import { ModAdminInfoComponent } from './components/views/admin/mod-admin-info/mod-admin-info.component';
 import { EditComponent } from './components/views/admin/check-messages/edit/edit.component';
-import { ErrorModalComponent } from './components/modals/error-modal/error-modal.component';
-import { CorrectModalComponent } from './components/modals/correct-modal/correct-modal.component';
+import { ErrorModalComponent } from './components/share/modals/error-modal/error-modal.component';
+import { CorrectModalComponent } from './components/share/modals/correct-modal/correct-modal.component';
+import { InfoModalComponent } from './components/share/modals/info-modal/info-modal.component';
 import { MymyvCardComponent } from './components/share/cards/mymyv-card/mymyv-card.component';
 import { ChartsModule } from 'ng2-charts';
 import { NoResultsComponent } from './components/views/search/no-results/no-results.component';
@@ -55,6 +56,7 @@ import { MymyvSearchComponent } from './components/views/search/mymyv-search/mym
     EditComponent,
     ErrorModalComponent,
     CorrectModalComponent,
+    InfoModalComponent,
     MymyvCardComponent,
     NoResultsComponent,
     MymyvSearchComponent,
