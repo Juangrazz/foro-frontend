@@ -67,19 +67,7 @@ export class MymyvSearchComponent implements OnInit {
         this.searchInfo.kind = this.mymyvSearchForm.controls.kind.value;
         this.searchInfo.look_for = this.mymyvSearchForm.controls.look_for.value;
         
-        this.databaseService.mymyvSearch(this.searchInfo).subscribe(
-          (resp) => {
-            this.cards = resp;
-            
-            this.checkResults();
-            this.saveResults();
-            this.mymyvSearchForm.reset({ kind: "", look_for: "" });
-          },
-          (error) => {
-            $("#errorModalMessage").text(keys.error_modal_message);
-            $('#errorModal').modal('show');
-          }
-        );
+        this.mymyvSearch();
     
       } else {
         if (this.mymyvSearchForm.controls.min_age.invalid) this.minAgeError = true;
@@ -108,6 +96,22 @@ export class MymyvSearchComponent implements OnInit {
     if(this.cards.length === 0){
       this.noResults = true;
     }
+  }
+
+  mymyvSearch(){
+    this.databaseService.mymyvSearch(this.searchInfo).subscribe(
+      (resp) => {
+        this.cards = resp;
+        
+        this.checkResults();
+        this.saveResults();
+        this.mymyvSearchForm.reset({ kind: "", look_for: "" });
+      },
+      (error) => {
+        $("#errorModalMessage").text(keys.error_modal_message);
+        $('#errorModal').modal('show');
+      }
+    );
   }
 
 }

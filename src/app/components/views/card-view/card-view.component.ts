@@ -99,49 +99,13 @@ export class CardViewComponent implements OnInit {
         this.commentToSend.instagram = keys.cards_txt_anonymous;
       }
 
-      if(this.card.model_type === keys.ctrl_model_card_normal_type){
-        this.databaseService.sendCardComment(this.commentToSend).subscribe(
-          (resp) => {
-            if (resp.status === keys.ctrl_fail_result) {
-              $("#errorModalMessage").text(keys.error_modal_message);
-              $('#errorModal').modal('show');
-            } else if (resp.status === keys.ctrl_successful_result) {
-              $("#correctModalMessage").text(keys.correct_modal_comment);
-              $('#correctModal').modal('show');
-              $('#correctModal').on('hidden.bs.modal', () => {
-                this.commentForm.reset();
-                this.getComments();
-              });
-            }
-          },
-          (err) => {
-            $("#errorModalMessage").text(keys.error_modal_message);
-            $('#errorModal').modal('show');
-          }
-        )
+      if (this.card.model_type === keys.ctrl_model_card_normal_type) {
+        this.sendNormalCardComment();
       } else {
-        this.databaseService.sendMymyvCardComment(this.commentToSend).subscribe(
-          (resp) => {
-            if (resp.status === keys.ctrl_fail_result) {
-              $("#errorModalMessage").text(keys.error_modal_message);
-              $('#errorModal').modal('show');
-            } else if (resp.status === keys.ctrl_successful_result) {
-              $("#correctModalMessage").text(keys.correct_modal_comment);
-              $('#correctModal').modal('show');
-              $('#correctModal').on('hidden.bs.modal', () => {
-                this.commentForm.reset();
-                this.getComments();
-              });
-            }
-          },
-          (err) => {
-            $("#errorModalMessage").text(keys.error_modal_message);
-            $('#errorModal').modal('show');
-          }
-        )
+        this.sendMymyvCardComment();
       }
 
-      
+
     } else {
       if (this.commentForm.controls.comment.invalid) this.commentError = true;
       if (this.commentForm.controls.instagram.invalid) this.instaError = true;
@@ -164,6 +128,50 @@ export class CardViewComponent implements OnInit {
 
   commentToSendFormatter() {
     console.log(this.controlService.commentToSendFormatter(this.commentForm.controls.comment.value));
+  }
+
+  sendNormalCardComment() {
+    this.databaseService.sendCardComment(this.commentToSend).subscribe(
+      (resp) => {
+        if (resp.status === keys.ctrl_fail_result) {
+          $("#errorModalMessage").text(keys.error_modal_message);
+          $('#errorModal').modal('show');
+        } else if (resp.status === keys.ctrl_successful_result) {
+          $("#correctModalMessage").text(keys.correct_modal_comment);
+          $('#correctModal').modal('show');
+          $('#correctModal').on('hidden.bs.modal', () => {
+            this.commentForm.reset();
+            this.getComments();
+          });
+        }
+      },
+      (err) => {
+        $("#errorModalMessage").text(keys.error_modal_message);
+        $('#errorModal').modal('show');
+      }
+    );
+  }
+
+  sendMymyvCardComment() {
+    this.databaseService.sendMymyvCardComment(this.commentToSend).subscribe(
+      (resp) => {
+        if (resp.status === keys.ctrl_fail_result) {
+          $("#errorModalMessage").text(keys.error_modal_message);
+          $('#errorModal').modal('show');
+        } else if (resp.status === keys.ctrl_successful_result) {
+          $("#correctModalMessage").text(keys.correct_modal_comment);
+          $('#correctModal').modal('show');
+          $('#correctModal').on('hidden.bs.modal', () => {
+            this.commentForm.reset();
+            this.getComments();
+          });
+        }
+      },
+      (err) => {
+        $("#errorModalMessage").text(keys.error_modal_message);
+        $('#errorModal').modal('show');
+      }
+    );
   }
 
 }

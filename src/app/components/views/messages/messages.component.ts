@@ -62,26 +62,7 @@ export class MessagesComponent implements OnInit {
         this.card.instagram = "Anónimo";
       }
 
-      this.databaseService.createCard(this.card).subscribe(
-        (resp) => {
-          if(resp.status === keys.ctrl_fail_result){
-            $("#errorModalMessage").text(keys.error_modal_message);
-            $('#errorModal').modal('show');
-          } else if(resp.status === keys.ctrl_successful_result) {
-            $("#correctModalMessage").text(keys.correct_modal_message);
-            $('#correctModal').modal('show');
-            $('#correctModal').on('hidden.bs.modal', () => {
-              this.cardForm.reset();
-            });
-          }
-          
-        },
-        (error) => {
-          $("#errorModalMessage").text(keys.error_modal_message);
-          $('#errorModal').modal('show');
-        }
-      );
-      
+      this.createCard();
 
     } else {
       if (this.cardForm.controls.description.invalid) this.descriptionError = true;
@@ -116,6 +97,28 @@ export class MessagesComponent implements OnInit {
 
   countCharacters() {
     this.characters = this.controlService.countCharacters(this.cardForm.controls.description);
+  }
+
+  createCard() {
+    this.databaseService.createCard(this.card).subscribe(
+      (resp) => {
+        if(resp.status === keys.ctrl_fail_result){
+          $("#errorModalMessage").text(keys.error_modal_message);
+          $('#errorModal').modal('show');
+        } else if(resp.status === keys.ctrl_successful_result) {
+          $("#correctModalMessage").text(keys.correct_modal_message);
+          $('#correctModal').modal('show');
+          $('#correctModal').on('hidden.bs.modal', () => {
+            this.cardForm.reset();
+          });
+        }
+        
+      },
+      (error) => {
+        $("#errorModalMessage").text(keys.error_modal_message);
+        $('#errorModal').modal('show');
+      }
+    );
   }
 
 

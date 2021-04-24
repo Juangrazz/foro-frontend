@@ -60,19 +60,8 @@ export class NormalSearchComponent implements OnInit {
         this.searchInfo.date = this.normalSearchForm.controls.date.value;
         this.searchInfo.place = this.normalSearchForm.controls.place.value;
   
-        this.databaseService.normalSearch(this.searchInfo).subscribe(
-          (resp) => {
-            this.cards = resp;
-            
-            this.checkResults();
-            this.saveResults();
-            this.normalSearchForm.reset({date: "", place: ""});
-          },
-          (error) => {
-            $("#errorModalMessage").text(keys.error_modal_message);
-            $('#errorModal').modal('show');
-          }
-        );
+        this.normalSearch();
+        
       } else {
         if (this.normalSearchForm.controls.date.invalid) this.dateError = true;
         if (this.normalSearchForm.controls.place.invalid) this.placeError = true;
@@ -100,6 +89,22 @@ export class NormalSearchComponent implements OnInit {
     if(this.cards.length === 0){
       this.noResults = true;
     }
+  }
+
+  normalSearch(){
+    this.databaseService.normalSearch(this.searchInfo).subscribe(
+      (resp) => {
+        this.cards = resp;
+        
+        this.checkResults();
+        this.saveResults();
+        this.normalSearchForm.reset({date: "", place: ""});
+      },
+      (error) => {
+        $("#errorModalMessage").text(keys.error_modal_message);
+        $('#errorModal').modal('show');
+      }
+    );
   }
 
 }
