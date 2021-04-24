@@ -2,13 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import { CardService } from '../../../services/card.service';
 import { ControlService } from '../../../services/control.service';
 import { DatabaseService } from '../../../services/database.service';
+import { StorageService } from '../../../services/storage.service';
 
 import { MymyvCardModel } from '../../../models/mymyv_card.model';
 import { CardModel } from 'src/app/models/card.model';
 
 import * as moment from 'moment';
 import keys from '../../../../global/keys';
-import { StorageService } from '../../../services/storage.service';
 
 declare var $: any;
 
