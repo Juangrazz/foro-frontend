@@ -9,6 +9,7 @@ import { NormalSearchModel } from '../../../../models/normal_search.model';
 import { CardModel } from '../../../../models/card.model';
 
 import keys from '../../../../../global/keys';
+import { StorageService } from '../../../../services/storage.service';
 declare var $: any;
 
 @Component({
@@ -30,8 +31,8 @@ export class NormalSearchComponent implements OnInit {
 
   keys = keys;
   
-  constructor(private formBuilder: FormBuilder, private databaseService: DatabaseService, private controlService: ControlService, private cardService: CardService) { 
-    sessionStorage.removeItem("individual_card");
+  constructor(private formBuilder: FormBuilder, private databaseService: DatabaseService, private controlService: ControlService, private cardService: CardService, private storageService: StorageService) { 
+    sessionStorage.removeItem(keys.session_storage_individual_card);
     this.cards = this.cardService.normalSearch;
     this.createFrom();
   }
@@ -86,7 +87,7 @@ export class NormalSearchComponent implements OnInit {
   }
 
   saveCard(card: CardModel) {
-    sessionStorage.setItem("individual_card", JSON.stringify(card));
+    this.storageService.setEncryptSessionValue(keys.session_storage_individual_card, card);
     this.cardService.individualCard = card;
   };
 

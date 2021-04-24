@@ -236,8 +236,15 @@ const keys = {
 
     // ---------------------------------------------------------
 
-    // NO POST
+    // NO RESULTS
     noresults_text: "No hay resultados",
+
+    // ---------------------------------------------------------
+
+    // SESSION STORAGE
+    session_storage_individual_card: "individual_card",
+    session_storage_date_to_show: "date_to_show"
+
 
 }
 
