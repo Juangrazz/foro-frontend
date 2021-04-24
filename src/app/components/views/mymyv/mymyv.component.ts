@@ -61,24 +61,7 @@ export class MymyvComponent implements OnInit {
         this.mymyvCard.instagram = "Anónimo";
       }
       
-      this.databaseService.createMymyvCard(this.mymyvCard).subscribe(
-        (resp) => {      
-          if(resp.status === keys.ctrl_fail_result){
-            $("#errorModalMessage").text(keys.error_modal_message);
-            $('#errorModal').modal('show');
-          } else if(resp.status === keys.ctrl_successful_result) {
-            $("#correctModalMessage").text(keys.correct_modal_message);
-            $('#correctModal').modal('show');
-            $('#correctModal').on('hidden.bs.modal', () => {
-              this.mymyvCardForm.reset();
-            });
-          }
-        },
-        (error) => {
-          $("#errorModalMessage").text(keys.error_modal_message);
-          $('#errorModal').modal('show');
-        }
-      );
+      this.createMymyvCard();
       
     } else {
       if (this.mymyvCardForm.controls.description.invalid) this.descriptionError = true;
@@ -114,6 +97,27 @@ export class MymyvComponent implements OnInit {
 
   countCharacters() {
     this.characters = this.controlService.countCharacters(this.mymyvCardForm.controls.description);
+  }
+
+  createMymyvCard(){
+    this.databaseService.createMymyvCard(this.mymyvCard).subscribe(
+      (resp) => {      
+        if(resp.status === keys.ctrl_fail_result){
+          $("#errorModalMessage").text(keys.error_modal_message);
+          $('#errorModal').modal('show');
+        } else if(resp.status === keys.ctrl_successful_result) {
+          $("#correctModalMessage").text(keys.correct_modal_message);
+          $('#correctModal').modal('show');
+          $('#correctModal').on('hidden.bs.modal', () => {
+            this.mymyvCardForm.reset();
+          });
+        }
+      },
+      (error) => {
+        $("#errorModalMessage").text(keys.error_modal_message);
+        $('#errorModal').modal('show');
+      }
+    );
   }
 
 }

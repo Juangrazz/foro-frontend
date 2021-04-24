@@ -9,6 +9,7 @@ import { MymyvSearchModel } from '../../../../models/mymyv_search_model';
 import { MymyvCardModel } from 'src/app/models/mymyv_card.model';
 
 import keys from 'src/global/keys';
+import { StorageService } from '../../../../services/storage.service';
 declare var $: any;
 
 @Component({
@@ -32,8 +33,8 @@ export class MymyvSearchComponent implements OnInit {
 
   keys = keys;
   
-  constructor(private formBuilder: FormBuilder, private databaseService: DatabaseService, private controlService: ControlService, private cardService: CardService) { 
-    sessionStorage.removeItem("individual_card");
+  constructor(private formBuilder: FormBuilder, private databaseService: DatabaseService, private cardService: CardService, private storageService: StorageService) { 
+    sessionStorage.removeItem(keys.session_storage_individual_card);
     this.cards = this.cardService.mymyvSearch;
     this.createFrom();
   }
@@ -66,19 +67,7 @@ export class MymyvSearchComponent implements OnInit {
         this.searchInfo.kind = this.mymyvSearchForm.controls.kind.value;
         this.searchInfo.look_for = this.mymyvSearchForm.controls.look_for.value;
         
-        this.databaseService.mymyvSearch(this.searchInfo).subscribe(
-          (resp) => {
-            this.cards = resp;
-            
-            this.checkResults();
-            this.saveResults();
-            this.mymyvSearchForm.reset({ kind: "", look_for: "" });
-          },
-          (error) => {
-            $("#errorModalMessage").text(keys.error_modal_message);
-            $('#errorModal').modal('show');
-          }
-        );
+        this.mymyvSearch();
     
       } else {
         if (this.mymyvSearchForm.controls.min_age.invalid) this.minAgeError = true;
@@ -94,7 +83,7 @@ export class MymyvSearchComponent implements OnInit {
   }
 
   saveCard(card: MymyvCardModel) {
-    sessionStorage.setItem("individual_card", JSON.stringify(card));
+    this.storageService.setEncryptSessionValue(keys.session_storage_individual_card, card);
     this.cardService.individualCard = card;
   };
 
@@ -107,6 +96,22 @@ export class MymyvSearchComponent implements OnInit {
     if(this.cards.length === 0){
       this.noResults = true;
     }
+  }
+
+  mymyvSearch(){
+    this.databaseService.mymyvSearch(this.searchInfo).subscribe(
+      (resp) => {
+        this.cards = resp;
+        
+        this.checkResults();
+        this.saveResults();
+        this.mymyvSearchForm.reset({ kind: "", look_for: "" });
+      },
+      (error) => {
+        $("#errorModalMessage").text(keys.error_modal_message);
+        $('#errorModal').modal('show');
+      }
+    );
   }
 
 }

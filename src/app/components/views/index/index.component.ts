@@ -8,6 +8,7 @@ import { CardModel } from 'src/app/models/card.model';
 
 import * as moment from 'moment';
 import keys from '../../../../global/keys';
+import { StorageService } from '../../../services/storage.service';
 
 declare var $: any;
 
@@ -31,8 +32,8 @@ export class IndexComponent implements OnInit {
   dateNext!: string;
   dateBack!: string;
 
-  constructor(private cardService: CardService, private controlService: ControlService, private databseService: DatabaseService) {
-    sessionStorage.removeItem("individual_card");
+  constructor(private cardService: CardService, private controlService: ControlService, private databseService: DatabaseService, private storageService: StorageService) {
+    sessionStorage.removeItem(keys.session_storage_individual_card);
     
     this.dateToShow = this.cardService.dateToShow;
 
@@ -88,7 +89,7 @@ export class IndexComponent implements OnInit {
   }
 
   saveCard(card: CardModel) {
-    sessionStorage.setItem("individual_card", JSON.stringify(card));
+    this.storageService.setEncryptSessionValue(keys.session_storage_individual_card, card);
     this.cardService.individualCard = card;
   };
 
@@ -114,7 +115,7 @@ export class IndexComponent implements OnInit {
   }
 
   saveDateToShow() {
-    sessionStorage.setItem("date_to_show", JSON.stringify(this.dateToShow));
+    sessionStorage.setItem(keys.session_storage_date_to_show, JSON.stringify(this.dateToShow));
     this.cardService.dateToShow = this.dateToShow;
   }
 
