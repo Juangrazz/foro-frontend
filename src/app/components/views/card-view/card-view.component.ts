@@ -9,6 +9,8 @@ import { DatabaseService } from '../../../services/database.service';
 import keys from '../../../../global/keys';
 import * as moment from 'moment';
 import { ControlService } from '../../../services/control.service';
+import { CardModel } from '../../../models/card.model';
+import { StorageService } from '../../../services/storage.service';
 
 declare var $: any;
 
@@ -31,7 +33,8 @@ export class CardViewComponent implements OnInit {
   instaError: boolean = false;
   formError: boolean = false;
 
-  constructor(private formBuilder: FormBuilder, private cardService: CardService, private commentsService: CommentsService, private databaseService: DatabaseService, private controlService: ControlService) {
+  constructor(private formBuilder: FormBuilder, private cardService: CardService, private databaseService: DatabaseService, private controlService: ControlService, private storageService: StorageService) {
+    this.saveCard(this.card);
     this.createFrom();
     this.card = this.cardService.individualCard;
     this.getComments();
@@ -173,5 +176,11 @@ export class CardViewComponent implements OnInit {
       }
     );
   }
+
+  saveCard(card: CardModel) {
+    if(!this.storageService.checkSessionValue(keys.session_storage_individual_card)){
+      this.storageService.setEncryptSessionValue(keys.session_storage_individual_card, this.cardService.individualCard);
+    }
+  };
 
 }

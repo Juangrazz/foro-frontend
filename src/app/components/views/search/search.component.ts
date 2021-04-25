@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import keys from '../../../../global/keys';
+import { StorageService } from '../../../services/storage.service';
 
 declare var $: any;
 
@@ -13,7 +14,9 @@ export class SearchComponent implements OnInit {
   keys = keys;
   mymyvActived = false;
   
-  constructor() { }
+  constructor(private storageService: StorageService) { 
+    this.storageService.deleteSessionValue(keys.session_storage_individual_card);
+  }
 
   ngOnInit(): void {
   }

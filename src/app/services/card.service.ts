@@ -29,8 +29,8 @@ export class CardService {
     } else {
       this.individualCard = {};
     }
-
-    this.dateToShow = JSON.parse(sessionStorage.getItem(keys.session_storage_date_to_show) || `"${moment().format("DD-MM-YYYY")}"`);
+    
+    this.dateToShow = JSON.parse(this.storageService.getSessionValue(keys.session_storage_date_to_show) || `"${moment().format("DD-MM-YYYY")}"`);
   }
 
 }

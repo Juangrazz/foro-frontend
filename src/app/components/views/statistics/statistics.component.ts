@@ -4,6 +4,7 @@ import { Label } from 'ng2-charts';
 import { DatabaseService } from '../../../services/database.service';
 
 import keys from '../../../../global/keys';
+import { StorageService } from '../../../services/storage.service';
 
 declare var $: any;
 
@@ -81,8 +82,9 @@ export class StatisticsComponent implements OnInit {
     }
   ];
 
-  constructor(private databaseService: DatabaseService) {
+  constructor(private databaseService: DatabaseService, private storageService: StorageService) {
     this.getstatistics();
+    this.storageService.deleteSessionValue(keys.session_storage_individual_card);
   }
 
   ngOnInit(): void {

@@ -7,6 +7,7 @@ import { DatabaseService } from '../../../services/database.service';
 import { ControlService } from '../../../services/control.service';
 
 import keys from "../../../../global/keys";
+import { StorageService } from '../../../services/storage.service';
 declare var $: any;
 
 @Component({
@@ -29,8 +30,9 @@ export class MessagesComponent implements OnInit {
   formError: boolean = false;
   instaError: boolean = false;
 
-  constructor(private formBuilder: FormBuilder, private databaseService: DatabaseService, private controlService: ControlService) {
+  constructor(private formBuilder: FormBuilder, private databaseService: DatabaseService, private controlService: ControlService, private storageService: StorageService) {
     this.createFrom();
+    this.storageService.deleteSessionValue(keys.session_storage_individual_card);
   }
 
   ngOnInit(): void {

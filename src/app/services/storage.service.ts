@@ -11,8 +11,8 @@ export class StorageService {
   constructor() { }
 
   setEncryptSessionValue(key: string, value: any) {
-    let prueba = CryptoJS.AES.encrypt(JSON.stringify(value), this.key).toString();
-    sessionStorage.setItem(key, prueba);
+    let encryptedItem = CryptoJS.AES.encrypt(JSON.stringify(value), this.key).toString();
+    sessionStorage.setItem(key, encryptedItem);
   }
 
   getEncryptSessionValue(key: any): any {
@@ -23,6 +23,27 @@ export class StorageService {
       return decryptValue;
     }
     return null;
+  }
+
+  setSessionValue(key: string, value: any){
+    sessionStorage.setItem(key, value);
+  }
+
+  getSessionValue(key: string): any{
+    return sessionStorage.getItem(key);
+  }
+
+  deleteSessionValue(key: string){
+    sessionStorage.removeItem(key);
+  }
+
+  checkSessionValue(key: string): boolean{
+    if(sessionStorage.getItem(key)){
+      return true;
+    } else {
+      return false;
+    }
+    
   }
 
 }

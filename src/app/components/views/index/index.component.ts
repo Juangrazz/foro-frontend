@@ -33,7 +33,7 @@ export class IndexComponent implements OnInit {
   dateBack!: string;
 
   constructor(private cardService: CardService, private controlService: ControlService, private databseService: DatabaseService, private storageService: StorageService) {
-    sessionStorage.removeItem(keys.session_storage_individual_card);
+    this.storageService.deleteSessionValue(keys.session_storage_individual_card);
     
     this.dateToShow = this.cardService.dateToShow;
 
@@ -115,7 +115,7 @@ export class IndexComponent implements OnInit {
   }
 
   saveDateToShow() {
-    sessionStorage.setItem(keys.session_storage_date_to_show, JSON.stringify(this.dateToShow));
+    this.storageService.setSessionValue(keys.session_storage_date_to_show, JSON.stringify(this.dateToShow));
     this.cardService.dateToShow = this.dateToShow;
   }
 

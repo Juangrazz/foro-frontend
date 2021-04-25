@@ -32,7 +32,7 @@ export class NormalSearchComponent implements OnInit {
   keys = keys;
 
   constructor(private formBuilder: FormBuilder, private databaseService: DatabaseService, private controlService: ControlService, private cardService: CardService, private storageService: StorageService) {
-    sessionStorage.removeItem(keys.session_storage_individual_card);
+    this.storageService.deleteSessionValue(keys.session_storage_individual_card);
     this.cards = this.cardService.normalSearch;
     this.createFrom();
   }
