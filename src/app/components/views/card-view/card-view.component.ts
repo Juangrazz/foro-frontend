@@ -93,7 +93,7 @@ export class CardViewComponent implements OnInit {
       this.commentToSend.card_id = this.card.id;
       this.commentToSend.comment = this.commentForm.controls.comment.value;
       this.commentToSend.instagram = this.commentForm.controls.instagram.value;
-      this.commentToSend.publication_date = moment().format("DD-MM-YYYY HH:mm:ss");
+      this.commentToSend.publication_date = moment().format("YYYY-MM-DD HH:mm:ss");
 
       if (this.commentToSend.instagram === "" || this.commentToSend.instagram === null) {
         this.commentToSend.instagram = keys.cards_txt_anonymous;
