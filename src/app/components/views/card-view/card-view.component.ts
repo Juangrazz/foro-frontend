@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 import { CardService } from '../../../services/card.service';
-import { CommentsService } from '../../../services/comments.service';
 import { CommentModel } from '../../../models/comment.model';
 import { DatabaseService } from '../../../services/database.service';
 
