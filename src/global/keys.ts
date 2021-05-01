@@ -13,7 +13,11 @@ const keys = {
     ctrl_place_max_length: 200,
     ctrl_min_age: 18,
     ctrl_max_age: 100,
+    ctrl_name_min_lenght: 2,
+    ctrl_lastname_min_lenght: 2,
+    ctrl_password_min_lenght: 6,
     ctrl_instagram_pattern: "(?:(?:[A-Za-z0-9_]|(?:\.(?!\.))){0,28}(?:[A-Za-z0-9_]))",
+    ctrl_email_pattern: "[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{2,5}",
     ctrl_fail_result: "NOK",
     ctrl_successful_result: "OK",
     ctrl_model_card_normal_type: "normal",
@@ -35,6 +39,11 @@ const keys = {
     msg_comment_error: "No puedes enviar un comentario sin texto",
     msg_min_age_error: "Introduce una edad mínima válida",
     msg_max_age_error: "Introduce una edad máxima válida",
+    msg_name_error: "La lóngitud del nombre ha de ser de al menos 2 caracteres",
+    msg_lastname_error: "La lóngitud de los apellidos ha de ser al menos de 2 caracteres",
+    msg_email_error: "El email no es válido",
+    msg_pass_match_error: "Las contraseñas no coinciden",
+    msg_pass_length_error: "La contraseña ha de tener al menos 6 caracteres",
 
     // ---------------------------------------------------------
 
@@ -226,6 +235,7 @@ const keys = {
     correct_modal_button: "Ok",
     correct_modal_message: "¡Mensaje enviado!",
     correct_modal_comment: "¡Comentario enviado!",
+    correct_modal_create_admin: "¡Administrador creado!",
 
     // INFO MODAL
     info_modal_button: `Vale <i class="fas fa-smile fa-lg"></i>`,
@@ -251,7 +261,6 @@ const keys = {
     // SESSION STORAGE
     session_storage_individual_card: "individual_card",
     session_storage_date_to_show: "date_to_show"
-
 
 }
 

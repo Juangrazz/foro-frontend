@@ -5,9 +5,9 @@ import { CardModel } from 'src/app/models/card.model';
 
 import { DatabaseService } from '../../../services/database.service';
 import { ControlService } from '../../../services/control.service';
+import { StorageService } from '../../../services/storage.service';
 
 import keys from "../../../../global/keys";
-import { StorageService } from '../../../services/storage.service';
 declare var $: any;
 
 @Component({

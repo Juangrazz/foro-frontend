@@ -8,9 +8,11 @@ import { CommentModel } from '../models/comment.model';
 import { StatisticsModel } from '../models/statistics.model';
 import { StatisticsCardsModel } from '../models/statistics_cards.model';
 import { NormalSearchModel } from '../models/normal_search.model';
+import { MymyvSearchModel } from '../models/mymyv_search_model';
+import { AdminModel } from '../models/admin.model';
 
 import keys from '../../global/keys';
-import { MymyvSearchModel } from '../models/mymyv_search_model';
+
 
 @Injectable({
   providedIn: 'root'
@@ -75,6 +77,10 @@ export class DatabaseService {
 
   mymyvSearch(search: MymyvSearchModel){
     return this.http.post<MymyvCardModel[]>(`${keys.db_host}${keys.db_server_path}/cards/mymyvSearch`, search);
+  }
+
+  createAdmin(admin: AdminModel){
+    return this.http.post<MessageModel>(`${keys.db_host}${keys.db_server_path}/admin/createAdmin`, admin);
   }
 
 
