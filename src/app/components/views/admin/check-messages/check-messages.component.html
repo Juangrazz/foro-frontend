@@ -9,14 +9,14 @@
     <div id="card-global-container" class="div_card_global">
       <div class="row">
         <div class="col-md-4 mt-1">
-          <button class="btn btn-block blue-button-simply" routerLink="edit"
-            [innerHTML]=keys.check_messages_btn_edit></button>
-        </div>
-        <div class="col-md-4 mt-1">
           <button class="btn btn-block green-button-simply" [innerHTML]=keys.check_messages_btn_accept (click)="accept()"></button>
         </div>
         <div class="col-md-4 mt-1">
-          <button class="btn btn-block red-button-simply" [innerHTML]=keys.check_messages_btn_reject></button>
+          <button class="btn btn-block red-button-simply" [innerHTML]=keys.check_messages_btn_reject (click)="reject()"></button>
+        </div>
+        <div class="col-md-4 mt-1">
+          <button class="btn btn-block blue-button-simply" routerLink="edit"
+            [innerHTML]=keys.check_messages_btn_edit></button>
         </div>
       </div>
     </div>

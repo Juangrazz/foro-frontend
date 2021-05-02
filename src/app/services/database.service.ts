@@ -96,5 +96,14 @@ export class DatabaseService {
     return this.http.put<MessageModel>(`${keys.db_host}${keys.db_server_path}/admin/acceptmymyvcard`, infoToSend);
   }
 
+  rejectCard(infoToSend: CardAcceptRejectModel){
+    return this.http.delete<MessageModel>(`${keys.db_host}${keys.db_server_path}/admin/rejectcard/${infoToSend.card_id}`);
+  }
+
+  rejectMymyvCard(infoToSend: CardAcceptRejectModel){
+    return this.http.delete<MessageModel>(`${keys.db_host}${keys.db_server_path}/admin/rejectmymyvcard/${infoToSend.card_id}`);
+  }
+
+
 
 }

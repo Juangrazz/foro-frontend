@@ -55,7 +55,7 @@ export class MessagesComponent implements OnInit {
     if (this.cardForm.valid) {
       this.card.date = this.cardForm.controls.date.value;
       this.card.time = this.cardForm.controls.time.value;
-      this.card.place = this.cardForm.controls.place.value;
+      this.card.place = this.cardForm.controls.place.value.toUpperCase();
       this.card.instagram = this.cardForm.controls.instagram.value;
       this.card.description = this.cardForm.controls.description.value;
       this.card.publicated = 0;

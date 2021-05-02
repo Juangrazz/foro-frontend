@@ -28,7 +28,6 @@ export class CheckMessagesComponent implements OnInit {
   }
 
   async getOlderCard() {
-    this.card = {};
     await this.dataBaseService.getOlderCard()
       .then(res => {
         this.card = res[0][0];
@@ -74,6 +73,34 @@ export class CheckMessagesComponent implements OnInit {
       this.infoToSend.current_date = moment().format("YYYY-MM-DD HH:mm:ss");
 
       this.dataBaseService.acceptMymyvCard(this.infoToSend).subscribe(
+        resp => {
+          this.getOlderCard();
+        },
+        err => {
+
+        }
+      );;
+    }
+  }
+
+  reject() {
+    if (this.card.model_type === keys.ctrl_model_card_normal_type) {
+      this.infoToSend.card_id = this.card.id;
+      this.infoToSend.current_date = moment().format("YYYY-MM-DD HH:mm:ss");
+
+      this.dataBaseService.rejectCard(this.infoToSend).subscribe(
+        resp => {
+          this.getOlderCard();
+        },
+        err => {
+
+        }
+      );
+    } else {
+      this.infoToSend.card_id = this.card.id;
+      this.infoToSend.current_date = moment().format("YYYY-MM-DD HH:mm:ss");
+
+      this.dataBaseService.rejectMymyvCard(this.infoToSend).subscribe(
         resp => {
           this.getOlderCard();
         },
