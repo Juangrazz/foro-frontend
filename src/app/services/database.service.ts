@@ -12,6 +12,7 @@ import { MymyvSearchModel } from '../models/mymyv_search_model';
 import { AdminModel } from '../models/admin.model';
 
 import keys from '../../global/keys';
+import { CardAcceptRejectModel } from '../models/card-accept-reject.model';
 
 
 @Injectable({
@@ -81,6 +82,18 @@ export class DatabaseService {
 
   createAdmin(admin: AdminModel){
     return this.http.post<MessageModel>(`${keys.db_host}${keys.db_server_path}/admin/createAdmin`, admin);
+  }
+
+  getOlderCard(){
+    return this.http.get<any>(`${keys.db_host}${keys.db_server_path}/admin/getoldercard`).toPromise();
+  }
+
+  acceptCard(infoToSend: CardAcceptRejectModel){
+    return this.http.put<MessageModel>(`${keys.db_host}${keys.db_server_path}/admin/acceptcard`, infoToSend);
+  }
+
+  acceptMymyvCard(infoToSend: CardAcceptRejectModel){
+    return this.http.put<MessageModel>(`${keys.db_host}${keys.db_server_path}/admin/acceptmymyvcard`, infoToSend);
   }
 
 

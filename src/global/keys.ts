@@ -21,7 +21,7 @@ const keys = {
     ctrl_fail_result: "NOK",
     ctrl_successful_result: "OK",
     ctrl_model_card_normal_type: "normal",
-    ctrl_model_card_type_2: "mymyv",
+    ctrl_model_card_mymyv_type: "mymyv",
 
     // ---------------------------------------------------------
 
@@ -253,8 +253,14 @@ const keys = {
 
     // ---------------------------------------------------------
 
-    // NO RESULTS
+    // NO POST TO CHECK
     noresults_text: "No hay resultados",
+
+    // ---------------------------------------------------------
+
+    // CHECK MESSAGES
+    // No messages to check
+    nopost_to_check_text: "No hay más mensajes para validar",
 
     // ---------------------------------------------------------
 

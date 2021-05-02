@@ -550,6 +550,20 @@ input:checked+.slider:before {
   height: 100vh;
 }
 
+/* CHECK POSTS */
+
+.check-posts {
+  height: 79.5vh;
+}
+
+/* no post to check */
+.noposts-to-check-title {
+  font-size: 2.5em;
+  font-weight: bold;
+  color: $color-light-grey;
+  margin: 0;
+}
+
 /*
 @media (max-width: 450px) {
   .inst-card-body-big {
@@ -638,6 +652,9 @@ input:checked+.slider:before {
   }
 
   .noposts-title{
+    font-size: 2em;
+  }
+  .noposts-to-check-title{
     font-size: 2em;
   }
 }

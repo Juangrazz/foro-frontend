@@ -1,16 +1,25 @@
-<app-card [card]="card"></app-card>
-<div class="container pr-2 pl-2 mt-2 mb-5 animate__animated animate__fadeIn slow">
-  <div id="card-global-container" class="div_card_global">
-    <div class="row">
+<div class="check-posts">
+  <div>
+    <app-card *ngIf="card !== undefined && card.model_type === keys.ctrl_model_card_normal_type" [card]="card"></app-card>
+    <app-mymyv-card *ngIf="card !== undefined && card.model_type === keys.ctrl_model_card_mymyv_type" [card]="card"></app-mymyv-card>
+    <app-no-post-to-check *ngIf="card === undefined"></app-no-post-to-check>
+  </div>
+
+  <div *ngIf="card !== undefined" class="container pr-2 pl-2 mt-2 mb-5 animate__animated animate__fadeIn slow">
+    <div id="card-global-container" class="div_card_global">
+      <div class="row">
         <div class="col-md-4 mt-1">
-            <button class="btn btn-block blue-button-simply" routerLink="edit" [innerHTML] = keys.check_messages_btn_edit></button>
+          <button class="btn btn-block blue-button-simply" routerLink="edit"
+            [innerHTML]=keys.check_messages_btn_edit></button>
         </div>
         <div class="col-md-4 mt-1">
-            <button class="btn btn-block green-button-simply" [innerHTML] = keys.check_messages_btn_accept></button>
+          <button class="btn btn-block green-button-simply" [innerHTML]=keys.check_messages_btn_accept (click)="accept()"></button>
         </div>
         <div class="col-md-4 mt-1">
-            <button class="btn btn-block red-button-simply" [innerHTML] = keys.check_messages_btn_reject></button>
+          <button class="btn btn-block red-button-simply" [innerHTML]=keys.check_messages_btn_reject></button>
         </div>
+      </div>
     </div>
   </div>
 </div>
+

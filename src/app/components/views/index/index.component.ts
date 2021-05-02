@@ -32,7 +32,7 @@ export class IndexComponent implements OnInit {
   dateNext!: string;
   dateBack!: string;
 
-  constructor(private cardService: CardService, private controlService: ControlService, private databseService: DatabaseService, private storageService: StorageService) {
+  constructor(private cardService: CardService, private controlService: ControlService, private databaseService: DatabaseService, private storageService: StorageService) {
     this.storageService.deleteSessionValue(keys.session_storage_individual_card);
     
     this.dateToShow = this.cardService.dateToShow;
@@ -49,7 +49,7 @@ export class IndexComponent implements OnInit {
   async getAllCards() {
     this.allCards = [];
 
-    await this.databseService.getCards(this.dateToShow)
+    await this.databaseService.getCards(this.dateToShow)
       .then(res => {
           const cards = res;
           for (const card of cards) {
@@ -61,7 +61,7 @@ export class IndexComponent implements OnInit {
           $('#errorModal').modal('show');
         }
       );
-    await this.databseService.getMymyvCards(this.dateToShow)
+    await this.databaseService.getMymyvCards(this.dateToShow)
     .then(res => {
         const mymyvCards = res;
         for (const card of mymyvCards) {
