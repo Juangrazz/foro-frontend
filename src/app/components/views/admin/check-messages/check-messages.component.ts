@@ -1,11 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { ControlService } from '../../../../services/control.service';
 import { CardModel } from '../../../../models/card.model';
-import keys from '../../../../../global/keys';
+import { CardAcceptRejectModel } from 'src/app/models/card-accept-reject.model';
 import { DatabaseService } from '../../../../services/database.service';
 
+import keys from '../../../../../global/keys';
 import * as moment from 'moment';
-import { CardAcceptRejectModel } from 'src/app/models/card-accept-reject.model';
+
+declare var $: any;
 
 @Component({
   selector: 'app-check-messages',
@@ -65,7 +67,8 @@ export class CheckMessagesComponent implements OnInit {
           this.getOlderCard();
         },
         err => {
-
+          $("#errorModalMessage").html(keys.error_modal_message);
+          $('#errorModal').modal('show');
         }
       );
     } else {
@@ -77,7 +80,8 @@ export class CheckMessagesComponent implements OnInit {
           this.getOlderCard();
         },
         err => {
-
+          $("#errorModalMessage").html(keys.error_modal_message);
+          $('#errorModal').modal('show');
         }
       );;
     }
@@ -93,7 +97,8 @@ export class CheckMessagesComponent implements OnInit {
           this.getOlderCard();
         },
         err => {
-
+          $("#errorModalMessage").html(keys.error_modal_message);
+          $('#errorModal').modal('show');
         }
       );
     } else {
@@ -105,7 +110,8 @@ export class CheckMessagesComponent implements OnInit {
           this.getOlderCard();
         },
         err => {
-
+          $("#errorModalMessage").html(keys.error_modal_message);
+          $('#errorModal').modal('show');
         }
       );;
     }
