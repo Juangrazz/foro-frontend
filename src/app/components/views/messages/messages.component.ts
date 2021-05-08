@@ -8,6 +8,7 @@ import { ControlService } from '../../../services/control.service';
 import { StorageService } from '../../../services/storage.service';
 
 import keys from "../../../../global/keys";
+import * as moment from 'moment';
 declare var $: any;
 
 @Component({
@@ -58,6 +59,7 @@ export class MessagesComponent implements OnInit {
       this.card.place = this.cardForm.controls.place.value.toUpperCase();
       this.card.instagram = this.cardForm.controls.instagram.value;
       this.card.description = this.cardForm.controls.description.value;
+      this.card.sending_date = moment().format("YYYY-MM-DD HH:mm:ss.SSS");
       this.card.publicated = 0;
 
       if (this.card.instagram === "" || this.card.instagram === null) {

@@ -12,6 +12,11 @@ body {
 
 /* UTILS */
 
+.padre {
+  display: flex;
+  align-items: center;
+}
+
 .hor-aligment {
   margin: 0 auto;
 }

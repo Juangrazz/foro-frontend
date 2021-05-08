@@ -58,7 +58,7 @@ export class CheckMessagesComponent implements OnInit {
   accept() {
     if (this.card.model_type === keys.ctrl_model_card_normal_type) {
       this.infoToSend.card_id = this.card.id;
-      this.infoToSend.current_date = moment().format("YYYY-MM-DD HH:mm:ss");
+      this.infoToSend.current_date = moment().format("YYYY-MM-DD HH:mm:ss.SSS");
 
       this.dataBaseService.acceptCard(this.infoToSend).subscribe(
         resp => {
@@ -70,7 +70,7 @@ export class CheckMessagesComponent implements OnInit {
       );
     } else {
       this.infoToSend.card_id = this.card.id;
-      this.infoToSend.current_date = moment().format("YYYY-MM-DD HH:mm:ss");
+      this.infoToSend.current_date = moment().format("YYYY-MM-DD HH:mm:ss.SSS");
 
       this.dataBaseService.acceptMymyvCard(this.infoToSend).subscribe(
         resp => {

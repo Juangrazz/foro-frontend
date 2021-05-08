@@ -6,7 +6,7 @@
   </span>
   <app-no-posts *ngIf="noPosts"></app-no-posts>
 </div>
-<div *ngIf="!noPosts" class="index-main-div">
+<div *ngIf="!noPosts" class="index-main-div mt-4">
   <div class="container p-2 animate__animated animate__fadeIn slow" *ngFor="let card of allCards; let i = index">
     <app-card *ngIf="card.model_type === keys.ctrl_model_card_normal_type" [card]="card"></app-card>
     <app-mymyv-card *ngIf="card.model_type === keys.ctrl_model_card_mymyv_type" [card]="card"></app-mymyv-card>

@@ -52,6 +52,7 @@ export class IndexComponent implements OnInit {
     await this.databaseService.getCards(this.dateToShow)
       .then(res => {
           const cards = res;
+          
           for (const card of cards) {
             this.allCards.push(card);
           }

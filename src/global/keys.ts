@@ -259,6 +259,7 @@ const keys = {
     // ---------------------------------------------------------
 
     // CHECK MESSAGES
+    check_messages_title: "Verificar mensajes",
     // No messages to check
     nopost_to_check_text: "No hay más mensajes para validar",
 

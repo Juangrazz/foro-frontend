@@ -8,6 +8,7 @@ import { ControlService } from '../../../services/control.service';
 
 import keys from '../../../../global/keys';
 import { StorageService } from '../../../services/storage.service';
+import * as moment from 'moment';
 declare var $: any;
 
 @Component({
@@ -50,13 +51,13 @@ export class MymyvComponent implements OnInit {
 
   validateForm(){
     this.resetErrors();
-
     if (this.mymyvCardForm.valid) {
       this.mymyvCard.age = this.mymyvCardForm.controls.age.value;
       this.mymyvCard.kind = this.mymyvCardForm.controls.kind.value;
       this.mymyvCard.look_for = this.mymyvCardForm.controls.lookFor.value;
       this.mymyvCard.instagram = this.mymyvCardForm.controls.instagram.value;
       this.mymyvCard.description = this.mymyvCardForm.controls.description.value;
+      this.mymyvCard.sending_date = moment().format("YYYY-MM-DD HH:mm:ss.SSS");
       this.mymyvCard.publicated = 0;
 
       if (this.mymyvCard.instagram === "" || this.mymyvCard.instagram === null) {

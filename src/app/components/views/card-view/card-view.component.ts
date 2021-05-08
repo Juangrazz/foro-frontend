@@ -129,7 +129,7 @@ export class CardViewComponent implements OnInit {
   }
 
   commentToSendFormatter() {
-    console.log(this.controlService.commentToSendFormatter(this.commentForm.controls.comment.value));
+    this.controlService.commentToSendFormatter(this.commentForm.controls.comment.value);
   }
 
   sendNormalCardComment() {
