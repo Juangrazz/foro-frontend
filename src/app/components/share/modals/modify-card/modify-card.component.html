@@ -1,0 +1,22 @@
+<div id="modifyCard" class="modal fade" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered modal-sm">
+        <div class="modal-content border-0">
+            <div class="modal-header modify-place-header text-white-50">
+                <h5 class="modal-title" id="modifyCardLabel" [innerHTML]="keys.change_place_modal_title"></h5>
+            </div>
+            <div class="modal-body text-black-50">
+                <div class="form-group">
+                    <label [innerHTML]="keys.change_place_modal_old_place"></label>
+                    <input id="oldPlace" type="text" class="form-control" disabled>
+                </div>
+                <div class="form-group">
+                    <label [innerHTML]="keys.change_place_modal_new_place"></label>
+                    <input id="newPlace" type="text" class="form-control">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal" [innerHTML]="keys.change_place_modal_cancel_button"></button>
+                <button type="button" class="btn btn-primary" [innerHTML]="keys.change_place_modal_accept_button" (click)="savePlace()"></button> </div>
+        </div>
+    </div>
+</div>

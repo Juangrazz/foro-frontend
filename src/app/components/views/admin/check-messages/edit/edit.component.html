@@ -1,28 +1,4 @@
-<div class="va-f msg-main-div hor-aligment container animate__animated animate__fadeIn slow">
-    <div class="p-4 va-s">
-      <div class="text-center">
-        <p class="msg-title mb-5" [innerHTML]="keys.edit_title"></p>
-      </div>
-      <form>
-        <div class="form-row">
-          <div class="form-group col-lg-4">
-            <label [innerHTML]="keys.msg_input_1"></label>
-            <input type="date" class="form-control" id="inputDate">
-          </div>
-          <div class="form-group col-lg-4">
-            <label [innerHTML]="keys.msg_input_2"></label>
-            <input type="time" class="form-control timepicker" id="inputTime">
-          </div>
-          <div class="form-group col-lg-4">
-            <label [innerHTML]="keys.msg_input_3"></label>
-            <input type="text" class="form-control" id="inputPlace" placeholder="¿Dónde?">
-          </div>
-        </div>
-        <label [innerHTML]="keys.msg_input_5"></label>
-        <textarea class="form-control text-area-format"></textarea>
-        <div class="text-right">
-          <button class="mt-4 red-button-simply font-weight-bold" [innerHTML]="keys.msg_send_button" [routerLink]="['/instructions']"></button>
-        </div>
-      </form>
-    </div>
-  </div>
+<div>
+  <app-mymyv *ngIf="card.model_type === keys.ctrl_model_card_mymyv_type"></app-mymyv>
+  <app-messages *ngIf="card.model_type === keys.ctrl_model_card_normal_type"></app-messages>
+</div>

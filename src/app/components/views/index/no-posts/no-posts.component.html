@@ -1,7 +1,7 @@
 <div class="va-f index-main-div hor-aligment container animate__animated animate__fadeIn slow">
     <div class="p-2 va-s">
       <div class="text-center noposts-title">
-        <p class="mb-3">{{keys.nopost_text}}</p>
+        <p class="mb-3" [innerHTML]="keys.nopost_text"></p>
         <i id="index-heart" class="fas fa-heart-broken fa-2x txt-red" (mouseover)="heartBeat()" (click)="openModal()"></i>
       </div>
     </div>

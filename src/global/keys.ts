@@ -21,7 +21,7 @@ const keys = {
     ctrl_fail_result: "NOK",
     ctrl_successful_result: "OK",
     ctrl_model_card_normal_type: "normal",
-    ctrl_model_card_type_2: "mymyv",
+    ctrl_model_card_mymyv_type: "mymyv",
 
     // ---------------------------------------------------------
 
@@ -29,7 +29,7 @@ const keys = {
     msg_date_error: "Selecciona una fecha válida",
     msg_time_error: "Selecciona una hora válida",
     msg_place_error: "El lugar ha de tener al menos dos caracteres",
-    msg_description_error: "La descripción ha de tener al menos 50 caracteres",
+    msg_description_error: "La descripción ha de tener entre 50 y 3000 caracteres",
     msg_form_error: "El formulario no puede estar vacío",
     msg_count_text: "letras",
     msg_insta_error: "Introduce una cuenta de instagram válida",
@@ -186,7 +186,7 @@ const keys = {
 
     // CHECK MESSAGES
     check_messages_btn_accept: "Aceptar",
-    check_messages_btn_edit: "Modificar",
+    check_messages_btn_edit: "Modificar lugar",
     check_messages_btn_reject: "Rechazar",
 
     // ---------------------------------------------------------
@@ -224,6 +224,8 @@ const keys = {
 
     // ---------------------------------------------------------
 
+    // MODALS
+
     // ERROR MODAL
     error_modal_title: "Mensaje",
     error_modal_button: "Ok",
@@ -236,10 +238,18 @@ const keys = {
     correct_modal_message: "¡Mensaje enviado!",
     correct_modal_comment: "¡Comentario enviado!",
     correct_modal_create_admin: "¡Administrador creado!",
+    correct_modal_place_updated: "Lugar modificado correctamente",
 
     // INFO MODAL
     info_modal_button: `Vale <i class="fas fa-smile fa-lg"></i>`,
     info_modal_message: "Si hubo gente que se compró el Fiat Multipla, tiene que haber gente que saldría contigo.",
+
+    // CHANGE PLACE MODAL
+    change_place_modal_title: `Modificar lugar`,
+    change_place_modal_old_place: "Viejo lugar",
+    change_place_modal_new_place: "Nuevo lugar",
+    change_place_modal_accept_button: "Aceptar",
+    change_place_modal_cancel_button: "Cancelar",
 
     // ---------------------------------------------------------
 
@@ -253,8 +263,15 @@ const keys = {
 
     // ---------------------------------------------------------
 
-    // NO RESULTS
+    // NO POST TO CHECK
     noresults_text: "No hay resultados",
+
+    // ---------------------------------------------------------
+
+    // CHECK MESSAGES
+    check_messages_title: "Verificar mensajes",
+    // No messages to check
+    nopost_to_check_text: "No hay más mensajes para validar",
 
     // ---------------------------------------------------------
 

@@ -12,6 +12,11 @@ body {
 
 /* UTILS */
 
+.padre {
+  display: flex;
+  align-items: center;
+}
+
 .hor-aligment {
   margin: 0 auto;
 }
@@ -187,11 +192,25 @@ app-edit {
   background-color: $color-green;
 }
 
+.modify-place-header {
+  background-color: $color-blue;
+}
+
 .w-10 {
   width: 10%;
 }
 
 /* BUTTONS */
+
+.disabled_button {
+  background-color: transparent;
+  color: $color-grey !important;
+  border: $color-grey 2px solid !important;
+  border-radius: 5px;
+  height: 3em;
+  min-width: 8em;
+  transition: .3s;
+}
 
 .red-button {
   background-color: $color-red;
@@ -550,6 +569,24 @@ input:checked+.slider:before {
   height: 100vh;
 }
 
+/* CHECK POSTS */
+
+.check-posts {
+  height: 79.5vh;
+}
+
+.check-posts-div-card {
+  min-height: 258px;
+}
+
+/* no post to check */
+.noposts-to-check-title {
+  font-size: 2.5em;
+  font-weight: bold;
+  color: $color-light-grey;
+  margin: 0;
+}
+
 /*
 @media (max-width: 450px) {
   .inst-card-body-big {
@@ -638,6 +675,9 @@ input:checked+.slider:before {
   }
 
   .noposts-title{
+    font-size: 2em;
+  }
+  .noposts-to-check-title{
     font-size: 2em;
   }
 }

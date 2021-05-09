@@ -8,6 +8,7 @@ import { ControlService } from '../../../services/control.service';
 import { StorageService } from '../../../services/storage.service';
 
 import keys from "../../../../global/keys";
+import * as moment from 'moment';
 declare var $: any;
 
 @Component({
@@ -32,7 +33,6 @@ export class MessagesComponent implements OnInit {
 
   constructor(private formBuilder: FormBuilder, private databaseService: DatabaseService, private controlService: ControlService, private storageService: StorageService) {
     this.createFrom();
-    this.storageService.deleteSessionValue(keys.session_storage_individual_card);
   }
 
   ngOnInit(): void {
@@ -55,9 +55,10 @@ export class MessagesComponent implements OnInit {
     if (this.cardForm.valid) {
       this.card.date = this.cardForm.controls.date.value;
       this.card.time = this.cardForm.controls.time.value;
-      this.card.place = this.cardForm.controls.place.value;
+      this.card.place = this.cardForm.controls.place.value.toUpperCase();
       this.card.instagram = this.cardForm.controls.instagram.value;
       this.card.description = this.cardForm.controls.description.value;
+      this.card.sending_date = moment().format("YYYY-MM-DD HH:mm:ss.SSS");
       this.card.publicated = 0;
 
       if (this.card.instagram === "" || this.card.instagram === null) {

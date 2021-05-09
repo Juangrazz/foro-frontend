@@ -31,6 +31,8 @@ import { MymyvCardComponent } from './components/share/cards/mymyv-card/mymyv-ca
 import { ChartsModule } from 'ng2-charts';
 import { NoResultsComponent } from './components/views/search/no-results/no-results.component';
 import { MymyvSearchComponent } from './components/views/search/mymyv-search/mymyv-search.component';
+import { NoPostToCheckComponent } from './components/views/admin/check-messages/no-post-to-check/no-post-to-check.component';
+import { ModifyCardComponent } from './components/share/modals/modify-card/modify-card.component';
 
 @NgModule({
   declarations: [
@@ -60,6 +62,8 @@ import { MymyvSearchComponent } from './components/views/search/mymyv-search/mym
     MymyvCardComponent,
     NoResultsComponent,
     MymyvSearchComponent,
+    NoPostToCheckComponent,
+    ModifyCardComponent,
   ],
   imports: [
     BrowserModule,
