@@ -22,7 +22,7 @@ export class CheckMessagesComponent implements OnInit {
   card: any = {};
   infoToSend: CardAcceptRejectModel = new CardAcceptRejectModel();
   characters: number = 0;
-  cosa: boolean = false;
+  effectController: boolean = false;
 
   keys = keys;
 
@@ -36,10 +36,10 @@ export class CheckMessagesComponent implements OnInit {
 
   async getOlderCard() {
     
-    this.cosa = false;
+    this.effectController = false;
     await this.dataBaseService.getOlderCard()
       .then(res => {
-        this.cosa = true;
+        this.effectController = true;
         this.card = res[0][0];
 
         if (this.card !== undefined) {

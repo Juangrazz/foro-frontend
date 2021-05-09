@@ -4,7 +4,7 @@
       <p class="msg-title" [innerHTML]="keys.check_messages_title"></p>
     </div>
     <div class="check-posts-div-card">
-      <div *ngIf="cosa" >
+      <div *ngIf="effectController" >
         <app-card *ngIf="card !== undefined && card.model_type === keys.ctrl_model_card_normal_type" [card]="card">
         </app-card>
         <app-mymyv-card *ngIf="card !== undefined && card.model_type === keys.ctrl_model_card_mymyv_type" [card]="card">
