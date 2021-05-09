@@ -22,6 +22,7 @@ export class CheckMessagesComponent implements OnInit {
   card: any = {};
   infoToSend: CardAcceptRejectModel = new CardAcceptRejectModel();
   characters: number = 0;
+  cosa: boolean = false;
 
   keys = keys;
 
@@ -34,8 +35,11 @@ export class CheckMessagesComponent implements OnInit {
   }
 
   async getOlderCard() {
+    
+    this.cosa = false;
     await this.dataBaseService.getOlderCard()
       .then(res => {
+        this.cosa = true;
         this.card = res[0][0];
 
         if (this.card !== undefined) {
@@ -128,21 +132,19 @@ export class CheckMessagesComponent implements OnInit {
     $('#modifyCard').modal('show');
     $("#modifyCard").on("hidden.bs.modal", () => {
       this.changePlace();
-      this.updateCardPlace();
     });
   }
 
   changePlace() {
     let newPlace = this.cardService.newPlace;
-    console.log(newPlace);
-    
 
     if (newPlace !== this.card.place && newPlace !== "") {
       this.card.place = newPlace;
+      this.updateCardPlace();
     }
   }
 
-  updateCardPlace(){
+  updateCardPlace() {
     this.dataBaseService.updateCardPlace(this.card).subscribe(
       resp => {
         $("#correctModalMessage").text(keys.correct_modal_place_updated);
