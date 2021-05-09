@@ -104,6 +104,10 @@ export class DatabaseService {
     return this.http.delete<MessageModel>(`${keys.db_host}${keys.db_server_path}/admin/rejectmymyvcard/${infoToSend.card_id}`);
   }
 
+  updateCardPlace(card: CardModel){
+    return this.http.put<MessageModel>(`${keys.db_host}${keys.db_server_path}/admin/updateCardPlace`, card);
+  }
+
 
 
 }

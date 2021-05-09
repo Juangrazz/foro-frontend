@@ -22,8 +22,9 @@
               (click)="reject()"></button>
           </div>
           <div class="col-md-4 mt-1">
-            <button class="btn btn-block blue-button-simply" routerLink="edit"
-              [innerHTML]=keys.check_messages_btn_edit></button>
+            <button class="btn btn-block" [innerHTML]=keys.check_messages_btn_edit (click)="modify()"
+              [ngClass]="{'disabled_button': card.model_type === keys.ctrl_model_card_mymyv_type, 'blue-button-simply': card.model_type === keys.ctrl_model_card_normal_type}"
+              [disabled]="card.model_type === keys.ctrl_model_card_mymyv_type"></button>
           </div>
         </div>
       </div>
@@ -31,3 +32,5 @@
   </div>
 </div>
 <app-error-modal></app-error-modal>
+<app-correct-modal></app-correct-modal>
+<app-modify-card></app-modify-card>

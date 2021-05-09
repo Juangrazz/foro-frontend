@@ -33,7 +33,6 @@ export class MessagesComponent implements OnInit {
 
   constructor(private formBuilder: FormBuilder, private databaseService: DatabaseService, private controlService: ControlService, private storageService: StorageService) {
     this.createFrom();
-    this.storageService.deleteSessionValue(keys.session_storage_individual_card);
   }
 
   ngOnInit(): void {

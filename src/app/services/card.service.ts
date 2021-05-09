@@ -17,6 +17,7 @@ export class CardService {
   dateToShow!: string;
   normalSearch: CardModel[] = [];
   mymyvSearch: MymyvCardModel[] = [];
+  newPlace: string = "";
 
   constructor(private storageService: StorageService) {
     this.getSessionStorageValues();

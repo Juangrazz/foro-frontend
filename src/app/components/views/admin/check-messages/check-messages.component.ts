@@ -3,9 +3,12 @@ import { ControlService } from '../../../../services/control.service';
 import { CardModel } from '../../../../models/card.model';
 import { CardAcceptRejectModel } from 'src/app/models/card-accept-reject.model';
 import { DatabaseService } from '../../../../services/database.service';
+import { CardService } from '../../../../services/card.service';
+import { Router, ActivatedRoute } from '@angular/router';
 
 import keys from '../../../../../global/keys';
 import * as moment from 'moment';
+import { StorageService } from 'src/app/services/storage.service';
 
 declare var $: any;
 
@@ -18,10 +21,11 @@ export class CheckMessagesComponent implements OnInit {
 
   card: any = {};
   infoToSend: CardAcceptRejectModel = new CardAcceptRejectModel();
+  characters: number = 0;
 
   keys = keys;
 
-  constructor(private controlService: ControlService, private dataBaseService: DatabaseService) {
+  constructor(private controlService: ControlService, private dataBaseService: DatabaseService, private cardService: CardService, private router: Router, private route: ActivatedRoute, private storageService: StorageService) {
     this.controlService.isAdmin.next(true);
     this.getOlderCard();
   }
@@ -33,7 +37,7 @@ export class CheckMessagesComponent implements OnInit {
     await this.dataBaseService.getOlderCard()
       .then(res => {
         this.card = res[0][0];
-        
+
         if (this.card !== undefined) {
           this.cardModification();
         }
@@ -117,4 +121,37 @@ export class CheckMessagesComponent implements OnInit {
     }
   }
 
+  modify() {
+    this.cardService.newPlace = "";
+    $("#newPlace").val("");
+    $('#oldPlace').val(this.card.place);
+    $('#modifyCard').modal('show');
+    $("#modifyCard").on("hidden.bs.modal", () => {
+      this.changePlace();
+      this.updateCardPlace();
+    });
+  }
+
+  changePlace() {
+    let newPlace = this.cardService.newPlace;
+    console.log(newPlace);
+    
+
+    if (newPlace !== this.card.place && newPlace !== "") {
+      this.card.place = newPlace;
+    }
+  }
+
+  updateCardPlace(){
+    this.dataBaseService.updateCardPlace(this.card).subscribe(
+      resp => {
+        $("#correctModalMessage").text(keys.correct_modal_place_updated);
+        $('#correctModal').modal('show');
+      },
+      err => {
+        $("#errorModalMessage").html(keys.error_modal_message);
+        $('#errorModal').modal('show');
+      }
+    );
+  }
 }
