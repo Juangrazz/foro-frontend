@@ -8,6 +8,7 @@ import { AdminLoginModel } from '../../../../models/admin_login.model';
 
 import keys from '../../../../../global/keys';
 import { StorageService } from '../../../../services/storage.service';
+import { AdminService } from '../../../../services/admin.service';
 declare var $: any;
 
 @Component({
@@ -27,7 +28,7 @@ export class DashboardComponent implements OnInit {
   credentialsError: boolean = false;
   formError: boolean = false;
 
-  constructor(private controlService: ControlService, private formBuilder: FormBuilder, private router: Router, private route: ActivatedRoute, private databaseService: DatabaseService, private storageService: StorageService) {
+  constructor(private controlService: ControlService, private formBuilder: FormBuilder, private router: Router, private route: ActivatedRoute, private databaseService: DatabaseService, private storageService: StorageService, private adminService: AdminService) {
     this.controlService.showNavAndFoot.next(false);
     this.createForm();
   }
@@ -36,19 +37,30 @@ export class DashboardComponent implements OnInit {
   }
 
   login() {
-    if (!this.formLogin.invalid) {
-      this.databaseService.checkCredentials(this.formLogin.controls.email.value)
-        .then(resp => {
+    if (this.formLogin.valid) {
+      this.databaseService.checkCredentials(this.adminLogin).subscribe(
+        resp => {
           if (resp.status === keys.ctrl_successful_result) {
             this.controlService.isAdmin.next(true);
+
+            this.databaseService.getAdminData(this.adminLogin.email)
+            .then(res => {
+              this.adminService.adminLogged = res;
+              console.log(res);
+              
+              }
+            )
+            .catch();
             this.router.navigate(["home"], { relativeTo: this.route });
           } else {
             this.credentialsError = true;
           }
-        }).catch(err => {
+        },
+        err => {
           $("#errorModalMessage").text(keys.error_modal_message);
           $('#errorModal').modal('show');
-        });
+        }
+      )
     }
     
   }
@@ -75,7 +87,7 @@ export class DashboardComponent implements OnInit {
         this.storageService.deleteLocalValue(keys.local_storage_remember);
         this.storageService.deleteLocalValue(keys.local_storage_email);
       }
-      // this.login();
+      this.login();
 
     } else {
       if (this.formLogin.controls.email.invalid) this.emailError = true;

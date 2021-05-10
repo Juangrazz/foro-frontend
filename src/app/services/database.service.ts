@@ -13,6 +13,7 @@ import { AdminModel } from '../models/admin.model';
 
 import keys from '../../global/keys';
 import { CardAcceptRejectModel } from '../models/card-accept-reject.model';
+import { AdminLoginModel } from '../models/admin_login.model';
 
 
 @Injectable({
@@ -108,8 +109,14 @@ export class DatabaseService {
     return this.http.put<MessageModel>(`${keys.db_host}${keys.db_server_path}/admin/updateCardPlace`, card);
   }
 
-  checkCredentials(email: String){
-    return this.http.get<MessageModel>(`${keys.db_host}${keys.db_server_path}/admin/checkadminemail/${email}`).toPromise();
+  checkCredentials(admin: AdminLoginModel){
+    return this.http.post<MessageModel>(`${keys.db_host}${keys.db_server_path}/auth/checkcredentials`, admin);
   }
+
+  getAdminData(email: string){
+    return this.http.get<AdminModel>(`${keys.db_host}${keys.db_server_path}/admin/getadmindata/${email}`).toPromise();
+  }
+
+
 
 }
