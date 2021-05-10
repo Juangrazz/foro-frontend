@@ -108,6 +108,8 @@ export class DatabaseService {
     return this.http.put<MessageModel>(`${keys.db_host}${keys.db_server_path}/admin/updateCardPlace`, card);
   }
 
-
+  checkCredentials(email: String){
+    return this.http.get<MessageModel>(`${keys.db_host}${keys.db_server_path}/admin/checkadminemail/${email}`).toPromise();
+  }
 
 }

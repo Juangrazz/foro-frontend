@@ -44,6 +44,7 @@ const keys = {
     msg_email_error: "El email no es válido",
     msg_pass_match_error: "Las contraseñas no coinciden",
     msg_pass_length_error: "La contraseña ha de tener al menos 6 caracteres",
+    msg_credentials_error: "El usuario o la contraseña no son correctos",
 
     // ---------------------------------------------------------
 
@@ -170,7 +171,7 @@ const keys = {
     dashboard_input_2: "Contraseña",
     dashboard_submit_button: "Aceptar",
     dashboard_recovery_pass: "Recuperar contraseña",
-    dashboard_remember_user: "Recordar usuario",
+    dashboard_remember_user: "Recordar email",
 
     // ---------------------------------------------------------
 
@@ -277,7 +278,11 @@ const keys = {
 
     // SESSION STORAGE
     session_storage_individual_card: "individual_card",
-    session_storage_date_to_show: "date_to_show"
+    session_storage_date_to_show: "date_to_show",
+
+    // LOCAL STORAGE
+    local_storage_remember: "remember",
+    local_storage_email: "email",
 
 }
 

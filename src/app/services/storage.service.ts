@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import * as CryptoJS from 'crypto-js';
+import keys from 'src/global/keys';
 
 @Injectable({
   providedIn: 'root'
@@ -7,6 +8,7 @@ import * as CryptoJS from 'crypto-js';
 export class StorageService {
 
   key: string = "zXeQ/$ha8NL/#$L0cPr4";
+  keys = keys;
 
   constructor() { }
 
@@ -44,6 +46,25 @@ export class StorageService {
       return false;
     }
     
+  }
+
+  deleteLocalValue(key: string){
+    localStorage.removeItem(key);
+  }
+
+  setRemember(value: boolean) {
+    localStorage.setItem(keys.local_storage_remember, value.toString());
+  }
+  getRemember(): boolean{
+    return String(localStorage.getItem(keys.local_storage_remember)) == "true";
+  }
+
+  setEmail(email: string) {
+    localStorage.setItem(keys.local_storage_email, email);
+  }
+
+  getEmail(): string {
+    return localStorage.getItem(keys.local_storage_email) || "";
   }
 
 }
