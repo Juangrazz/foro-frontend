@@ -41,80 +41,88 @@ export class DatabaseService {
     return this.http.get<MymyvCardModel[]>(`${keys.db_host}${keys.db_server_path}/cards/getmymyvcards/${date}`).toPromise();
   }
 
-  getCardComments(id_card: number){
+  getCardComments(id_card: number) {
     return this.http.get<CommentModel[]>(`${keys.db_host}${keys.db_server_path}/cards/getcardcomments/${id_card}`).toPromise();
   }
 
-  getMymyvCardComments(id_card: number){
+  getMymyvCardComments(id_card: number) {
     return this.http.get<CommentModel[]>(`${keys.db_host}${keys.db_server_path}/cards/getmymyvcardcomments/${id_card}`).toPromise();
   }
 
-  getStatisticsPlacesAllTime(){
+  getStatisticsPlacesAllTime() {
     return this.http.get<StatisticsModel[]>(`${keys.db_host}${keys.db_server_path}/cards/getstatisticsplacesalltime`).toPromise();
   }
-  
-  getStatisticsPlacesThirtyDays(){
+
+  getStatisticsPlacesThirtyDays() {
     return this.http.get<StatisticsModel[]>(`${keys.db_host}${keys.db_server_path}/cards/getstatisticsplacesthirtydays`).toPromise();
   }
 
-  getStatisticsMymyvCardsSevenDays(){
+  getStatisticsMymyvCardsSevenDays() {
     return this.http.get<StatisticsModel[]>(`${keys.db_host}${keys.db_server_path}/cards/getstatisticsmymyvcardssevendays`).toPromise();
   }
 
-  getStatisticsCardsSevenDays(){
+  getStatisticsCardsSevenDays() {
     return this.http.get<StatisticsCardsModel[]>(`${keys.db_host}${keys.db_server_path}/cards/getstatisticscardssevendays`).toPromise();
   }
 
-  sendCardComment(comment: CommentModel){
+  sendCardComment(comment: CommentModel) {
     return this.http.post<MessageModel>(`${keys.db_host}${keys.db_server_path}/cards/sendCardComment`, comment);
   }
 
-  sendMymyvCardComment(comment: CommentModel){
+  sendMymyvCardComment(comment: CommentModel) {
     return this.http.post<MessageModel>(`${keys.db_host}${keys.db_server_path}/cards/sendMymyvCardComment`, comment);
   }
 
-  normalSearch(search: NormalSearchModel){
+  normalSearch(search: NormalSearchModel) {
     return this.http.post<CardModel[]>(`${keys.db_host}${keys.db_server_path}/cards/normalSearch`, search);
   }
 
-  mymyvSearch(search: MymyvSearchModel){
+  mymyvSearch(search: MymyvSearchModel) {
     return this.http.post<MymyvCardModel[]>(`${keys.db_host}${keys.db_server_path}/cards/mymyvSearch`, search);
   }
 
-  createAdmin(admin: AdminModel){
+  createAdmin(admin: AdminModel) {
     return this.http.post<MessageModel>(`${keys.db_host}${keys.db_server_path}/admin/createAdmin`, admin);
   }
 
-  getOlderCard(){
+  getOlderCard() {
     return this.http.get<any>(`${keys.db_host}${keys.db_server_path}/admin/getoldercard`).toPromise();
   }
 
-  acceptCard(infoToSend: CardAcceptRejectModel){
+  acceptCard(infoToSend: CardAcceptRejectModel) {
     return this.http.put<MessageModel>(`${keys.db_host}${keys.db_server_path}/admin/acceptcard`, infoToSend);
   }
 
-  acceptMymyvCard(infoToSend: CardAcceptRejectModel){
+  acceptMymyvCard(infoToSend: CardAcceptRejectModel) {
     return this.http.put<MessageModel>(`${keys.db_host}${keys.db_server_path}/admin/acceptmymyvcard`, infoToSend);
   }
 
-  rejectCard(infoToSend: CardAcceptRejectModel){
+  rejectCard(infoToSend: CardAcceptRejectModel) {
     return this.http.delete<MessageModel>(`${keys.db_host}${keys.db_server_path}/admin/rejectcard/${infoToSend.card_id}`);
   }
 
-  rejectMymyvCard(infoToSend: CardAcceptRejectModel){
+  rejectMymyvCard(infoToSend: CardAcceptRejectModel) {
     return this.http.delete<MessageModel>(`${keys.db_host}${keys.db_server_path}/admin/rejectmymyvcard/${infoToSend.card_id}`);
   }
 
-  updateCardPlace(card: CardModel){
+  updateCardPlace(card: CardModel) {
     return this.http.put<MessageModel>(`${keys.db_host}${keys.db_server_path}/admin/updateCardPlace`, card);
   }
 
-  checkCredentials(admin: AdminLoginModel){
+  checkCredentials(admin: AdminLoginModel) {
     return this.http.post<MessageModel>(`${keys.db_host}${keys.db_server_path}/auth/checkcredentials`, admin);
   }
 
-  getAdminData(email: string){
+  getAdminData(email: string) {
     return this.http.get<AdminModel>(`${keys.db_host}${keys.db_server_path}/admin/getadmindata/${email}`).toPromise();
+  }
+
+  getToken(email: string) {
+    return this.http.get<MessageModel>(`${keys.db_host}${keys.db_server_path}/auth/gettoken/${email}`);
+  }
+
+  verifyToken() {
+    return this.http.get<MessageModel>(`${keys.db_host}${keys.db_server_path}/auth/verifytoken`);
   }
 
 

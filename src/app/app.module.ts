@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -33,6 +33,8 @@ import { NoResultsComponent } from './components/views/search/no-results/no-resu
 import { MymyvSearchComponent } from './components/views/search/mymyv-search/mymyv-search.component';
 import { NoPostToCheckComponent } from './components/views/admin/check-messages/no-post-to-check/no-post-to-check.component';
 import { ModifyCardComponent } from './components/share/modals/modify-card/modify-card.component';
+import { AuthGuard } from './auth.guard';
+import { TokenInterceptorService } from './services/token-interceptor.service';
 
 @NgModule({
   declarations: [
@@ -72,7 +74,13 @@ import { ModifyCardComponent } from './components/share/modals/modify-card/modif
     ReactiveFormsModule,
     ChartsModule
   ],
-  providers: [],
+  providers: [
+    AuthGuard,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: TokenInterceptorService,
+      multi: true
+    }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

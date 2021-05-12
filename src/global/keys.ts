@@ -279,6 +279,7 @@ const keys = {
     // SESSION STORAGE
     session_storage_individual_card: "individual_card",
     session_storage_date_to_show: "date_to_show",
+    session_storage_token: "token",
 
     // LOCAL STORAGE
     local_storage_remember: "remember",

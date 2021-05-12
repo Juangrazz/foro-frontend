@@ -42,16 +42,17 @@ export class DashboardComponent implements OnInit {
         resp => {
           if (resp.status === keys.ctrl_successful_result) {
             this.controlService.isAdmin.next(true);
-
-            this.databaseService.getAdminData(this.adminLogin.email)
-            .then(res => {
-              this.adminService.adminLogged = res;
-              console.log(res);
-              
+            this.databaseService.getToken(this.adminLogin.email).subscribe(
+              resp => {
+                if (resp.status === keys.ctrl_successful_result) {
+                  this.storageService.setSessionValue(keys.session_storage_token, resp.message);
+                  this.router.navigate(["home"], { relativeTo: this.route });
+                }
+              },
+              err => {
+                console.error("An error has ocurred");
               }
             )
-            .catch();
-            this.router.navigate(["home"], { relativeTo: this.route });
           } else {
             this.credentialsError = true;
           }
