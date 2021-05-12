@@ -5,7 +5,7 @@
         <h1 [innerHTML]="keys.dashboard_title"></h1>
       </div>
       <div>
-        <form [formGroup]="formLogin" (ngSubmit)="login()">
+        <form [formGroup]="formLogin" (ngSubmit)="validateForm()">
           <div class="form-group">
             <label for="exampleInputEmail1" [innerHTML]="keys.dashboard_input_1"></label>
             <input type="email" class="form-control" formControlName="email">
@@ -15,13 +15,23 @@
             <input type="password" class="form-control" formControlName="password">
           </div>
           <div class="form-group form-check text-right">
-            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+            <input type="checkbox" class="form-check-input" formControlName="remember" id="exampleCheck1">
             <label class="form-check-label" for="exampleCheck1" [innerHTML]="keys.dashboard_remember_user"></label>
           </div>
           <div class="text-right mt-4">
             <button type="submit" class="red-button-simply" [innerHTML]="keys.dashboard_submit_button"></button>
           </div>
         </form>
+        <div class="mt-4">
+          <div *ngIf="emailError" class="msg msg-error animate__animated animate__fadeIn slow"
+            [innerHTML]="keys.msg_email_error"></div>
+          <div *ngIf="passwordError" class="msg msg-error animate__animated animate__fadeIn slow"
+            [innerHTML]="keys.msg_pass_length_error"></div>
+          <div *ngIf="formError" class="msg msg-error animate__animated animate__fadeIn slow"
+            [innerHTML]="keys.msg_form_error"></div>
+            <div *ngIf="credentialsError" class="msg msg-error animate__animated animate__fadeIn slow"
+            [innerHTML]="keys.msg_credentials_error"></div>
+        </div>
         <div class="text-center mt-4">
           <a href="#" class="blue_link" [innerHTML]="keys.dashboard_recovery_pass"></a>
         </div>
@@ -29,3 +39,4 @@
     </div>
   </div>
 </div>
+<app-error-modal></app-error-modal>

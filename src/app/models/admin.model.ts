@@ -3,7 +3,7 @@ export class AdminModel {
     name!: string;
     lastname!: string;
     email!: string;
-    password!: string;
+    password?: string;
     creation_date!: string;
     last_update!: string;
 }

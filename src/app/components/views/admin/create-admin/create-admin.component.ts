@@ -73,8 +73,8 @@ export class CreateAdminComponent implements OnInit {
     }
 
     if (this.createAdminForm.valid && passValidation) {
-      this.admin.name = this.createAdminForm.controls.name.value;
-      this.admin.lastname = this.createAdminForm.controls.lastname.value;
+      this.admin.name = this.createAdminForm.controls.name.value.toUpperCase();
+      this.admin.lastname = this.createAdminForm.controls.lastname.value.toUpperCase();
       this.admin.email = this.createAdminForm.controls.email.value;
       this.admin.password = this.createAdminForm.controls.password.value;
       this.admin.creation_date = moment().format("YYYY-MM-DD HH:mm:ss");
