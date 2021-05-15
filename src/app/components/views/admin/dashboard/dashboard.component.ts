@@ -69,7 +69,7 @@ export class DashboardComponent implements OnInit {
   createForm() {
     this.formLogin = this.formBuilder.group({
       email: [this.storageService.getEmail(), [Validators.required, Validators.pattern(keys.ctrl_email_pattern)]],
-      password: ['', [Validators.required, Validators.minLength(6)]],
+      password: ['', [Validators.required, Validators.minLength(keys.ctrl_password_min_length)]],
       remember: [this.storageService.getRemember() || false]
     });
   }

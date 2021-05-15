@@ -39,11 +39,11 @@ export class CreateAdminComponent implements OnInit {
 
   createFrom() {
     this.createAdminForm = this.formBuilder.group({
-      name: ['', [Validators.required, Validators.minLength(keys.ctrl_name_min_lenght)]],
-      lastname: ['', [Validators.required, Validators.minLength(keys.ctrl_lastname_min_lenght)]],
+      name: ['', [Validators.required, Validators.minLength(keys.ctrl_name_min_length)]],
+      lastname: ['', [Validators.required, Validators.minLength(keys.ctrl_lastname_min_length)]],
       email: ['', [Validators.required, Validators.pattern(keys.ctrl_email_pattern)]],
-      password: ['', [Validators.required, Validators.minLength(keys.ctrl_password_min_lenght)]],
-      confPassword: ['', [Validators.required, Validators.minLength(keys.ctrl_password_min_lenght)]]
+      password: ['', [Validators.required, Validators.minLength(keys.ctrl_password_min_length)]],
+      confPassword: ['', [Validators.required, Validators.minLength(keys.ctrl_password_min_length)]]
     });
   }
 
