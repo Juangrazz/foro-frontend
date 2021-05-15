@@ -1,18 +1,43 @@
 <div class="va-f admin_home_container hor-aligment container animate__animated animate__fadeIn slow">
-    <div class="p-4 va-s">
-      <div class="text-center">
-        <p class="msg-title mb-5">
-          {{keys.admin_home_title}}
-        </p>
-      </div>
-      <div class="w-50 hor-aligment">
-        <ul class="list-group">
-            <li class="list-group-item"><div class="navbar-icon-container"><i class="fas fa-address-card"></i></div>{{keys.admin_home_name}}</li>
-            <li class="list-group-item"><div class="navbar-icon-container"><i class="fas fa-address-card"></i></div>{{keys.admin_home_info_lastname}}</li>
-            <li class="list-group-item"><div class="navbar-icon-container"><i class="fas fa-at"></i></div>{{keys.admin_home_info_email}}</li>
-            <li class="list-group-item"><div class="navbar-icon-container"><i class="fas fa-calendar-alt"></i></div>{{keys.admin_home_info_creation_date}}</li>
-            <li class="list-group-item"><div class="navbar-icon-container"><i class="fas fa-calendar-alt"></i></div>{{keys.admin_home_info_last_update}}</li>
-          </ul>
-      </div>
+  <div class="p-4 va-s">
+    <div class="text-center">
+      <p class="msg-title mb-5">
+        {{keys.admin_home_title}}
+      </p>
+    </div>
+    <div class="admin_home_info_container hor-aligment">
+      <ul class="list-group">
+        <li class="list-group-item">
+          <div class="row">
+            <div class="col-md-1"><i class="fas fa-address-card"></i></div>
+            <div class="col-md-11"><b>{{keys.admin_home_info_name}}</b> {{adminData.name}}</div>
+          </div>
+        </li>
+        <li class="list-group-item">
+          <div class="row">
+            <div class="col-md-1"><i class="fas fa-address-card"></i></div>
+            <div class="col-md-11"><b>{{keys.admin_home_info_lastname}}</b> {{adminData.lastname}}</div>
+          </div>
+        </li>
+        <li class="list-group-item">
+          <div class="row">
+            <div class="col-md-1"><i class="fas fa-at"></i></div>
+            <div class="col-md-11"><b>{{keys.admin_home_info_email}}</b> {{adminData.email}}</div>
+          </div>
+        </li>
+        <li class="list-group-item">
+          <div class="row">
+            <div class="col-md-1"><i class="fas fa-calendar-alt"></i></div>
+            <div class="col-md-11"><b>{{keys.admin_home_info_creation_date}}</b> {{adminData.creation_date}}</div>
+          </div>
+        </li>
+        <li class="list-group-item">
+          <div class="row">
+            <div class="col-md-1"><i class="fas fa-calendar-alt"></i></div>
+            <div class="col-md-11"><b>{{keys.admin_home_info_last_update}}</b> {{adminData.last_update}}</div>
+          </div>
+        </li>
+      </ul>
     </div>
   </div>
+</div>

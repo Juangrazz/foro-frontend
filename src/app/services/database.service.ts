@@ -113,8 +113,8 @@ export class DatabaseService {
     return this.http.post<MessageModel>(`${keys.db_host}${keys.db_server_path}/auth/checkcredentials`, admin);
   }
 
-  getAdminData(email: string) {
-    return this.http.get<AdminModel>(`${keys.db_host}${keys.db_server_path}/admin/getadmindata/${email}`).toPromise();
+  getAdminData() {
+    return this.http.get<AdminModel>(`${keys.db_host}${keys.db_server_path}/admin/getadmindata`).toPromise();
   }
 
   getToken(email: string) {

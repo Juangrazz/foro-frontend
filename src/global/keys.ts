@@ -177,11 +177,11 @@ const keys = {
 
     // ADMIN HOME
     admin_home_title: "TUS DATOS",
-    admin_home_name: "Nombre:",
+    admin_home_info_name: "Nombre:",
     admin_home_info_lastname: "Apellidos:",
     admin_home_info_email: "Correo:",
-    admin_home_info_creation_date: "Fecha de alta:",
-    admin_home_info_last_update: "Última modificación:",
+    admin_home_info_creation_date: "Alta:",
+    admin_home_info_last_update: "Modificado:",
 
     // ---------------------------------------------------------
 
