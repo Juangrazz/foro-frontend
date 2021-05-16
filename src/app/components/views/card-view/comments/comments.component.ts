@@ -1,5 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
+
 import { CommentModel } from '../../../../models/comment.model';
+
 import keys from '../../../../../global/keys';
 
 @Component({

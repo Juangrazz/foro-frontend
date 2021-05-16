@@ -1,5 +1,6 @@
-import { Injectable, resolveForwardRef } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
+
 import { DatabaseService } from './database.service';
 
 import keys from '../../global/keys';

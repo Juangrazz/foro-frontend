@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { CardAcceptRejectModel } from 'src/app/models/card-accept-reject.model';
 import { Router, ActivatedRoute } from '@angular/router';
+
+import { CardAcceptRejectModel } from 'src/app/models/card-accept-reject.model';
 
 import { CardService } from '../../../../services/card.service';
 import { ControlService } from '../../../../services/control.service';
@@ -8,6 +9,7 @@ import { DatabaseService } from '../../../../services/database.service';
 import { StorageService } from 'src/app/services/storage.service';
 
 import keys from '../../../../../global/keys';
+
 import * as moment from 'moment';
 declare var $: any;
 

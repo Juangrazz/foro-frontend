@@ -2,12 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 import { AdminModel } from 'src/app/models/admin.model';
+import { adminCredentialsModel } from '../../../../models/admin_credentials.model';
 
 import { DatabaseService } from '../../../../services/database.service';
 import { ControlService } from '../../../../services/control.service';
 
 import keys from '../../../../../global/keys';
-import { adminCredentialsModel } from '../../../../models/admin_credentials.model';
+
 declare var $: any;
 
 @Component({

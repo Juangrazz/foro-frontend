@@ -1,15 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
-import { DatabaseService } from '../../../../services/database.service';
-import { ControlService } from '../../../../services/control.service';
-import { CardService } from '../../../../services/card.service';
-
 import { NormalSearchModel } from '../../../../models/normal_search.model';
 import { CardModel } from '../../../../models/card.model';
 
-import keys from '../../../../../global/keys';
+import { DatabaseService } from '../../../../services/database.service';
+import { ControlService } from '../../../../services/control.service';
+import { CardService } from '../../../../services/card.service';
 import { StorageService } from '../../../../services/storage.service';
+
+import keys from '../../../../../global/keys';
+
 declare var $: any;
 
 @Component({

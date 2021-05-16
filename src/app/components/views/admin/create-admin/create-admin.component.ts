@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
+import { AdminModel } from '../../../../models/admin.model';
+
 import { DatabaseService } from '../../../../services/database.service';
 import { ControlService } from '../../../../services/control.service';
-import { AdminModel } from '../../../../models/admin.model';
 
 import keys from '../../../../../global/keys';
 

@@ -1,9 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { ControlService } from '../../../../services/control.service';
-import { DatabaseService } from '../../../../services/database.service';
+
 import { AdminModel } from 'src/app/models/admin.model';
 
+import { ControlService } from '../../../../services/control.service';
+import { DatabaseService } from '../../../../services/database.service';
+
 import keys from '../../../../../global/keys';
+
 declare var $: any;
 
 @Component({

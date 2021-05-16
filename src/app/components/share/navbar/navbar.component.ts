@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import keys from '../../../../global/keys';
+import { Router } from '@angular/router';
+
 import { ControlService } from '../../../services/control.service';
 import { StorageService } from '../../../services/storage.service';
-import { Router } from '@angular/router';
+
+import keys from '../../../../global/keys';
 
 @Component({
   selector: 'app-navbar',

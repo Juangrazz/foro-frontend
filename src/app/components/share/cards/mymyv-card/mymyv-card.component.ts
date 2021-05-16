@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+
 import { MymyvCardModel } from '../../../../models/mymyv_card.model';
 
 import keys from '../../../../../global/keys';

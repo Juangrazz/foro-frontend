@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import keys from '../../../../../../global/keys';
+
 import { ControlService } from '../../../../../services/control.service';
 import { CardService } from '../../../../../services/card.service';
+
+import keys from '../../../../../../global/keys';
 
 @Component({
   selector: 'app-edit',

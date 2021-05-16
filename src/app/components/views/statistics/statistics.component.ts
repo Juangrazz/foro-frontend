@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { ChartOptions, ChartType, ChartDataSets } from 'chart.js';
 import { Label } from 'ng2-charts';
+
 import { DatabaseService } from '../../../services/database.service';
+import { StorageService } from '../../../services/storage.service';
 
 import keys from '../../../../global/keys';
-import { StorageService } from '../../../services/storage.service';
 
 declare var $: any;
 

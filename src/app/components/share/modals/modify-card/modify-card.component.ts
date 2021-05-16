@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import keys from 'src/global/keys';
+
 import { CardService } from '../../../../services/card.service';
+
+import keys from 'src/global/keys';
 
 declare var $: any;
 

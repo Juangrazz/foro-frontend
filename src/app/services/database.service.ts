@@ -10,10 +10,10 @@ import { StatisticsCardsModel } from '../models/statistics_cards.model';
 import { NormalSearchModel } from '../models/normal_search.model';
 import { MymyvSearchModel } from '../models/mymyv_search_model';
 import { AdminModel } from '../models/admin.model';
-
-import keys from '../../global/keys';
 import { CardAcceptRejectModel } from '../models/card-accept-reject.model';
 import { adminCredentialsModel } from '../models/admin_credentials.model';
+
+import keys from '../../global/keys';
 
 
 @Injectable({

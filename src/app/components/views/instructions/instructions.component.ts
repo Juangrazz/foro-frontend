@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import keys from '../../../../global/keys';
+
 import { StorageService } from '../../../services/storage.service';
+
+import keys from '../../../../global/keys';
 
 @Component({
   selector: 'app-instructions',

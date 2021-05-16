@@ -1,16 +1,17 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
-import { CardService } from '../../../services/card.service';
 import { CommentModel } from '../../../models/comment.model';
+import { CardModel } from '../../../models/card.model';
+
+import { CardService } from '../../../services/card.service';
+import { ControlService } from '../../../services/control.service';
+import { StorageService } from '../../../services/storage.service';
 import { DatabaseService } from '../../../services/database.service';
 
 import keys from '../../../../global/keys';
-import * as moment from 'moment';
-import { ControlService } from '../../../services/control.service';
-import { CardModel } from '../../../models/card.model';
-import { StorageService } from '../../../services/storage.service';
 
+import * as moment from 'moment';
 declare var $: any;
 
 @Component({
