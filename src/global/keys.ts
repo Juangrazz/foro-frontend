@@ -47,6 +47,7 @@ const keys = {
     msg_credentials_error: "El usuario o la contraseña no son correctos",
     msg_old_password_empty: "La contraseña actual no puede estar vacía",
     msg_old_password_match: "La contraseña actual no coincide",
+    msg_email_exists: "El correo indicado ya está registrado",
 
     // ---------------------------------------------------------
 

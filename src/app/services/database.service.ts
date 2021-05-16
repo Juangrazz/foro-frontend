@@ -137,6 +137,8 @@ export class DatabaseService {
     return this.http.post<MessageModel>(`${keys.db_host}${keys.db_server_path}/admin/updatepassword`, credentials);
   }
 
-
+  checkEmail(email: string) {
+    return this.http.get<MessageModel>(`${keys.db_host}${keys.db_server_path}/admin/checkemail/${email}`).toPromise();
+  }
 
 }

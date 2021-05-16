@@ -27,6 +27,7 @@ export class CreateAdminComponent implements OnInit {
   emailError: boolean = false;
   passwordError: boolean = false;
   confPasswordError: boolean = false;
+  emailExistsError: boolean = false;
   formError: boolean = false;
   
   constructor(private formBuilder: FormBuilder, private controlService: ControlService, private dataService: DatabaseService) { 
@@ -91,6 +92,7 @@ export class CreateAdminComponent implements OnInit {
     this.emailError = false;
     this.passwordError = false;
     this.confPasswordError = false;
+    this.emailExistsError = false;
   }
 
   checkPassword(pass: string, confPass: string): boolean{
@@ -102,24 +104,36 @@ export class CreateAdminComponent implements OnInit {
   }
 
   createAdmin(){
-    this.dataService.createAdmin(this.admin).subscribe(
-      resp => {
-        if(resp.status === keys.ctrl_fail_result){
-          $("#errorModalMessage").text(keys.error_modal_message);
-          $('#errorModal').modal('show');
-        } else if(resp.status === keys.ctrl_successful_result) {
-          $("#correctModalMessage").text(keys.correct_modal_create_admin);
-          $('#correctModal').modal('show');
-          $('#correctModal').on('hidden.bs.modal', () => {
-            this.createAdminForm.reset({name: "", lastname: "", email: "", password: "", confPassword: ""});
-          });
-        }
-      },
-      err => {
-        $("#errorModalMessage").text(keys.error_modal_message);
-        $('#errorModal').modal('show');
+    this.dataService.checkEmail(this.admin.email)
+    .then(resp => {
+      if(resp.status === keys.ctrl_successful_result){
+        this.dataService.createAdmin(this.admin).subscribe(
+          resp => {
+            if(resp.status === keys.ctrl_fail_result){
+              $("#errorModalMessage").text(keys.error_modal_message);
+              $('#errorModal').modal('show');
+            } else if(resp.status === keys.ctrl_successful_result) {
+              $("#correctModalMessage").text(keys.correct_modal_create_admin);
+              $('#correctModal').modal('show');
+              $('#correctModal').on('hidden.bs.modal', () => {
+                this.createAdminForm.reset({name: "", lastname: "", email: "", password: "", confPassword: ""});
+              });
+            }
+          },
+          err => {
+            $("#errorModalMessage").text(keys.error_modal_message);
+            $('#errorModal').modal('show');
+          }
+        );
+      } else {
+        this.emailExistsError = true;
       }
-    );
+    })
+    .catch(err => {
+      $("#errorModalMessage").text(keys.error_modal_message);
+      $('#errorModal').modal('show');
+    })
+    
   }
 
 

@@ -46,6 +46,8 @@
           [innerHTML]="keys.msg_pass_match_error"></div>
         <div *ngIf="formError" class="msg msg-error animate__animated animate__fadeIn slow"
           [innerHTML]="keys.msg_form_error"></div>
+          <div *ngIf="emailExistsError" class="msg msg-error animate__animated animate__fadeIn slow"
+          [innerHTML]="keys.msg_email_exists"></div>
       </div>
     </div>
   </div>
