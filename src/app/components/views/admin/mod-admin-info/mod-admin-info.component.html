@@ -54,9 +54,9 @@
       </form>
       <div class="mt-4">
         <div *ngIf="oldPasswordEmptyError" class="msg msg-error animate__animated animate__fadeIn slow"
-          [innerHTML]="keys.msg_old_password_empty"></div>
+          [innerHTML]="keys.msg_old_password_empty_error"></div>
           <div *ngIf="oldPasswordMatchError" class="msg msg-error animate__animated animate__fadeIn slow"
-          [innerHTML]="keys.msg_old_password_match"></div>
+          [innerHTML]="keys.msg_old_password_match_error"></div>
         <div *ngIf="newPasswordError" class="msg msg-error animate__animated animate__fadeIn slow"
           [innerHTML]="keys.msg_lastname_error"></div>
         <div *ngIf="newPasswordConfError" class="msg msg-error animate__animated animate__fadeIn slow"

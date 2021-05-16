@@ -56,6 +56,10 @@ body {
   color: $color-red;
 }
 
+.txt-yellow {
+  color: $color-yellow;
+}
+
 .max-content-width {
   width: max-content;
 }
@@ -222,6 +226,16 @@ app-edit {
   border: none
 }
 
+.yellow-button {
+  background-color: $color-yellow;
+  color: $color-white;
+  border-radius: 5px;
+  height: 3em;
+  min-width: 8em;
+  transition: .3s;
+  border: none
+}
+
 .red-button-simply {
   background-color: transparent;
   color: $color-red;
@@ -240,7 +254,8 @@ app-edit {
 .red-button-simply:focus,
 .blue-button-simply:focus,
 .green-button:focus,
-.red-button:focus {
+.red-button:focus,
+.yellow-button:focus {
   outline: none;
 }
 

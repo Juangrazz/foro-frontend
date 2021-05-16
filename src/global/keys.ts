@@ -45,9 +45,10 @@ const keys = {
     msg_pass_match_error: "Las contraseñas no coinciden",
     msg_pass_length_error: "La contraseña ha de tener al menos 6 caracteres",
     msg_credentials_error: "El usuario o la contraseña no son correctos",
-    msg_old_password_empty: "La contraseña actual no puede estar vacía",
-    msg_old_password_match: "La contraseña actual no coincide",
-    msg_email_exists: "El correo indicado ya está registrado",
+    msg_old_password_empty_error: "La contraseña actual no puede estar vacía",
+    msg_old_password_match_error: "La contraseña actual no coincide",
+    msg_email_exists_error: "El correo indicado ya está registrado",
+    msg_delete_email_error: "El correo introducido no existe o no es válido",
 
     // ---------------------------------------------------------
 
@@ -61,7 +62,8 @@ const keys = {
     nav_drop_option_3: "Búsqueda",
     nav_option_4: "Estadísticas",
     nav_option_5: "Verificar mensajes",
-    nav_option_6: "Crear administrador",
+    nav_option_6: "Administrador",
+    nav_option_6_B: "Crear administrador",
     nav_option_7: "Modificar mis datos",
     nav_option_8: "Cerrar sessión",
 
@@ -185,6 +187,7 @@ const keys = {
     admin_home_info_email: "Correo:",
     admin_home_info_creation_date: "Alta:",
     admin_home_info_last_update: "Modificado:",
+    admin_home_delete_account: "Eliminar cuenta",
 
     // ---------------------------------------------------------
 
@@ -201,15 +204,18 @@ const keys = {
     // ---------------------------------------------------------
 
     // CREATE ADMIN
-    create_admin_title: "Crear administrador",
-    create_admin_input_1: "Nombre",
-    create_admin_input_2: "Apellidos",
-    create_admin_input_3: "Correo",
-    create_admin_input_4: "Contraseña",
-    create_admin_input_5: "Repite la contraseña",
-    create_admin_subtitle_1: "Datos personales",
-    create_admin_subtitle_2: "Seguridad",
-    create_admin_submit_button: "Dar de alta",
+    admin_config_title: "Crear administrador",
+    admin_config_input_1: "Nombre",
+    admin_config_input_2: "Apellidos",
+    admin_config_input_3: "Correo",
+    admin_config_input_4: "Contraseña",
+    admin_config_input_5: "Repite la contraseña",
+    admin_config_subtitle_1: "Datos personales",
+    admin_config_subtitle_2: "Seguridad",
+    admin_config_submit_button: "Dar de alta",
+    admin_config_input_6: "Email",
+    admin_config_submit_button_2: "Eliminar",
+    admin_config_title_2: "Eliminar cuenta",
 
     // ---------------------------------------------------------
 
@@ -241,7 +247,7 @@ const keys = {
     correct_modal_button: "Ok",
     correct_modal_message: "¡Mensaje enviado!",
     correct_modal_comment: "¡Comentario enviado!",
-    correct_modal_create_admin: "¡Administrador creado!",
+    correct_modal_admin_config: "¡Administrador creado!",
     correct_modal_place_updated: "Lugar modificado correctamente",
     correct_modal_update_admin_data: "Información actualizada correctamente",
     correct_modal_update_admin_password: "Contraseña actualizada correctamente",
@@ -251,11 +257,17 @@ const keys = {
     info_modal_message: "Si hubo gente que se compró el Fiat Multipla, tiene que haber gente que saldría contigo.",
 
     // CHANGE PLACE MODAL
-    change_place_modal_title: `Modificar lugar`,
+    change_place_modal_title: "Modificar lugar",
     change_place_modal_old_place: "Viejo lugar",
     change_place_modal_new_place: "Nuevo lugar",
     change_place_modal_accept_button: "Aceptar",
     change_place_modal_cancel_button: "Cancelar",
+
+    // CHANGE PLACE MODAL
+    warning_modal_title: "¡Aviso!",
+    warning_modal_text: "Si borras tu cuenta, no podrás volver a acceder a no ser que te den de alta de nuevo",
+    warning_modal_text_2: "Si borras esta cuenta, el usuario correspondiente no podrá acceder de nuevo",
+    warning_modal_button: "Eliminar",
 
     // ---------------------------------------------------------
 

@@ -21,7 +21,7 @@ import { CommentsComponent } from './components/views/card-view/comments/comment
 import { AdminHomeComponent } from './components/views/admin/admin-home/admin-home.component';
 import { DashboardComponent } from './components/views/admin/dashboard/dashboard.component';
 import { CheckMessagesComponent } from './components/views/admin/check-messages/check-messages.component';
-import { CreateAdminComponent } from './components/views/admin/create-admin/create-admin.component';
+import { AdminConfigComponent } from './components/views/admin/admin-config/admin-config.component';
 import { ModAdminInfoComponent } from './components/views/admin/mod-admin-info/mod-admin-info.component';
 import { EditComponent } from './components/views/admin/check-messages/edit/edit.component';
 import { ErrorModalComponent } from './components/share/modals/error-modal/error-modal.component';
@@ -35,6 +35,7 @@ import { NoPostToCheckComponent } from './components/views/admin/check-messages/
 import { ModifyCardComponent } from './components/share/modals/modify-card/modify-card.component';
 import { AuthGuard } from './auth.guard';
 import { TokenInterceptorService } from './services/token-interceptor.service';
+import { WarningModalComponent } from './components/share/modals/warning-modal/warning-modal.component';
 
 @NgModule({
   declarations: [
@@ -55,7 +56,7 @@ import { TokenInterceptorService } from './services/token-interceptor.service';
     DashboardComponent,
     AdminHomeComponent,
     CheckMessagesComponent,
-    CreateAdminComponent,
+    AdminConfigComponent,
     ModAdminInfoComponent,
     EditComponent,
     ErrorModalComponent,
@@ -66,6 +67,7 @@ import { TokenInterceptorService } from './services/token-interceptor.service';
     MymyvSearchComponent,
     NoPostToCheckComponent,
     ModifyCardComponent,
+    WarningModalComponent,
   ],
   imports: [
     BrowserModule,
