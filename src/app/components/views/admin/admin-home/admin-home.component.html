@@ -1,9 +1,7 @@
 <div class="va-f admin_home_container hor-aligment container animate__animated animate__fadeIn slow">
   <div class="p-4 va-s">
     <div class="text-center">
-      <p class="msg-title mb-5">
-        {{keys.admin_home_title}}
-      </p>
+      <p class="msg-title mb-5" [innerHTML]=keys.admin_home_title></p>
     </div>
     <div class="admin_home_info_container hor-aligment">
       <ul class="list-group">
@@ -38,9 +36,7 @@
           </div>
         </li>
       </ul>
-      <div role="button" class="mt-3 text-right txt-red" (click)="deleteAccount()">
-        Eliminar cuenta
-      </div>
+      <div role="button" class="mt-3 text-right txt-red" (click)="deleteAccount()" [innerHTML]=keys.admin_home_delete_account></div>
     </div>
   </div>
 </div>

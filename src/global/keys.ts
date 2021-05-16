@@ -45,9 +45,10 @@ const keys = {
     msg_pass_match_error: "Las contraseñas no coinciden",
     msg_pass_length_error: "La contraseña ha de tener al menos 6 caracteres",
     msg_credentials_error: "El usuario o la contraseña no son correctos",
-    msg_old_password_empty: "La contraseña actual no puede estar vacía",
-    msg_old_password_match: "La contraseña actual no coincide",
-    msg_email_exists: "El correo indicado ya está registrado",
+    msg_old_password_empty_error: "La contraseña actual no puede estar vacía",
+    msg_old_password_match_error: "La contraseña actual no coincide",
+    msg_email_exists_error: "El correo indicado ya está registrado",
+    msg_delete_email_error: "El correo introducido no existe o no es válido",
 
     // ---------------------------------------------------------
 
@@ -61,7 +62,8 @@ const keys = {
     nav_drop_option_3: "Búsqueda",
     nav_option_4: "Estadísticas",
     nav_option_5: "Verificar mensajes",
-    nav_option_6: "Crear administrador",
+    nav_option_6: "Administrador",
+    nav_option_6_B: "Crear administrador",
     nav_option_7: "Modificar mis datos",
     nav_option_8: "Cerrar sessión",
 
@@ -185,6 +187,7 @@ const keys = {
     admin_home_info_email: "Correo:",
     admin_home_info_creation_date: "Alta:",
     admin_home_info_last_update: "Modificado:",
+    admin_home_delete_account: "Eliminar cuenta",
 
     // ---------------------------------------------------------
 
@@ -210,6 +213,9 @@ const keys = {
     create_admin_subtitle_1: "Datos personales",
     create_admin_subtitle_2: "Seguridad",
     create_admin_submit_button: "Dar de alta",
+    create_admin_input_6: "Email",
+    create_admin_submit_button_2: "Eliminar",
+    create_admin_title_2: "Eliminar cuenta",
 
     // ---------------------------------------------------------
 
@@ -260,6 +266,7 @@ const keys = {
     // CHANGE PLACE MODAL
     warning_modal_title: "¡Aviso!",
     warning_modal_text: "Si borras tu cuenta, no podrás volver a acceder a no ser que te den de alta de nuevo",
+    warning_modal_text_2: "Si borras esta cuenta, el usuario correspondiente no podrá acceder de nuevo",
     warning_modal_button: "Eliminar",
 
     // ---------------------------------------------------------

@@ -47,7 +47,28 @@
         <div *ngIf="formError" class="msg msg-error animate__animated animate__fadeIn slow"
           [innerHTML]="keys.msg_form_error"></div>
           <div *ngIf="emailExistsError" class="msg msg-error animate__animated animate__fadeIn slow"
-          [innerHTML]="keys.msg_email_exists"></div>
+          [innerHTML]="keys.msg_email_exists_error"></div>
+      </div>
+    </div>
+    <div class="text-center">
+      <p class="msg-title mb-5 mt-5" [innerHTML]="keys.create_admin_title_2"></p>
+    </div>
+    <div class="create-admin-div hor-aligment">
+      <form [formGroup]="deleteAdminForm" (ngSubmit)="validateDeleteForm()">
+        <div class="form-group">
+          <label [innerHTML]="keys.create_admin_input_6"></label>
+          <input type="text" class="form-control" formControlName="email">
+        </div>
+        <div class="text-right">
+          <button class="mt-4 red-button-simply font-weight-bold"
+            [innerHTML]="keys.create_admin_submit_button_2"></button>
+        </div>
+      </form>
+      <div class="mt-4">
+        <div *ngIf="deleteFormError" class="msg msg-error animate__animated animate__fadeIn slow"
+          [innerHTML]="keys.msg_form_error"></div>
+        <div *ngIf="deleteEmailError" class="msg msg-error animate__animated animate__fadeIn slow"
+          [innerHTML]="keys.msg_delete_email_error"></div>
       </div>
     </div>
   </div>
