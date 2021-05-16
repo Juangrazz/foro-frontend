@@ -3,9 +3,9 @@
     <div class="text-center">
       <p class="msg-title mb-5" [innerHTML]="keys.create_admin_title"></p>
     </div>
-    <div class="w-50 hor-aligment">
+    <div class="create-admin-div hor-aligment">
       <form [formGroup]="createAdminForm" (ngSubmit)="validateForm()">
-        <h2 class="mb-3" [innerHTML]="keys.create_admin_subtitle_1"></h2>
+        <h2 class="mb-3 create-admin-subtitle" [innerHTML]="keys.create_admin_subtitle_1"></h2>
         <div class="form-group">
           <label [innerHTML]="keys.create_admin_input_1"></label>
           <input type="text" class="form-control" formControlName="name">
@@ -19,7 +19,7 @@
           <input type="email" class="form-control" formControlName="email">
         </div>
 
-        <h2 class="mt-5 mb-3" [innerHTML]="keys.create_admin_subtitle_2"></h2>
+        <h2 class="mt-5 mb-3 create-admin-subtitle" [innerHTML]="keys.create_admin_subtitle_2"></h2>
         <div class="form-group">
           <label [innerHTML]="keys.create_admin_input_4"></label>
           <input type="password" class="form-control" formControlName="password">
