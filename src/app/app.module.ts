@@ -35,6 +35,7 @@ import { NoPostToCheckComponent } from './components/views/admin/check-messages/
 import { ModifyCardComponent } from './components/share/modals/modify-card/modify-card.component';
 import { AuthGuard } from './auth.guard';
 import { TokenInterceptorService } from './services/token-interceptor.service';
+import { WarningModalComponent } from './components/share/modals/warning-modal/warning-modal.component';
 
 @NgModule({
   declarations: [
@@ -66,6 +67,7 @@ import { TokenInterceptorService } from './services/token-interceptor.service';
     MymyvSearchComponent,
     NoPostToCheckComponent,
     ModifyCardComponent,
+    WarningModalComponent,
   ],
   imports: [
     BrowserModule,

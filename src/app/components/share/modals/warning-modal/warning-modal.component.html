@@ -1,0 +1,16 @@
+<div id="warningModal" class="modal fade" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered modal-sm">
+        <div class="modal-content border-0">
+            <div class="modal-body text-center text-black-50">
+                <h2 [innerHTML] = keys.warning_modal_title></h2>
+                <p class="mt-2" id="warningModalMessage"></p>
+                <i class="fas fa-exclamation-triangle fa-3x txt-yellow"></i>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn-block yellow-button text-uppercase" data-dismiss="modal" [innerHTML] = keys.warning_modal_button (click)="deleteAccount()"></button>
+            </div>
+        </div>
+    </div>
+</div>
+
+

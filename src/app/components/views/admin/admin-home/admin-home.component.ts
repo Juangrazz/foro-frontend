@@ -41,4 +41,9 @@ export class AdminHomeComponent implements OnInit {
     });
   }
 
+  deleteAccount() {
+    $("#warningModalMessage").html(keys.warning_modal_text);
+    $('#warningModal').modal('show');
+  }
+
 }

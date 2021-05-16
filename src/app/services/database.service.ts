@@ -141,4 +141,8 @@ export class DatabaseService {
     return this.http.get<MessageModel>(`${keys.db_host}${keys.db_server_path}/admin/checkemail/${email}`).toPromise();
   }
 
+  deleteAdmin(){
+    return this.http.delete<MessageModel>(`${keys.db_host}${keys.db_server_path}/admin/deleteadmin`).toPromise();
+  }
+
 }

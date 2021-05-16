@@ -251,11 +251,16 @@ const keys = {
     info_modal_message: "Si hubo gente que se compró el Fiat Multipla, tiene que haber gente que saldría contigo.",
 
     // CHANGE PLACE MODAL
-    change_place_modal_title: `Modificar lugar`,
+    change_place_modal_title: "Modificar lugar",
     change_place_modal_old_place: "Viejo lugar",
     change_place_modal_new_place: "Nuevo lugar",
     change_place_modal_accept_button: "Aceptar",
     change_place_modal_cancel_button: "Cancelar",
+
+    // CHANGE PLACE MODAL
+    warning_modal_title: "¡Aviso!",
+    warning_modal_text: "Si borras tu cuenta, no podrás volver a acceder a no ser que te den de alta de nuevo",
+    warning_modal_button: "Eliminar",
 
     // ---------------------------------------------------------
 
