@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { ControlService } from '../../../../services/control.service';
-import keys from '../../../../../global/keys';
 import { DatabaseService } from '../../../../services/database.service';
 import { AdminModel } from 'src/app/models/admin.model';
+
+import keys from '../../../../../global/keys';
+declare var $: any;
 
 @Component({
   selector: 'app-admin-home',
@@ -26,8 +28,13 @@ export class AdminHomeComponent implements OnInit {
   }
 
   getAdminData(){
-    this.databaseService.getAdminData().then(resp => {
+    this.databaseService.getAdminData()
+    .then(resp => {
       this.adminData = resp;
+    })
+    .catch(err => {
+      $("#errorModalMessage").html(keys.error_modal_message_2);
+      $('#errorModal').modal('show');
     });
   }
 

@@ -17,7 +17,7 @@ export class AuthService {
 
     let valid: boolean;
     try {
-      const response = await this.databaseService.verifyToken().toPromise();
+      const response = await this.databaseService.verifyToken();
       
       if(response.status === keys.ctrl_successful_result){
         valid = true;
