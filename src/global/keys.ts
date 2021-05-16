@@ -62,7 +62,7 @@ const keys = {
     nav_option_5: "Verificar mensajes",
     nav_option_6: "Crear administrador",
     nav_option_7: "Modificar mis datos",
-    nav_option_8: "Salir",
+    nav_option_8: "Cerrar sessión",
 
     // ---------------------------------------------------------
 

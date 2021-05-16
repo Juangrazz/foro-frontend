@@ -401,6 +401,10 @@ input:checked+.slider:before {
   margin-bottom: 5px;
 }
 
+.navbar-close-session {
+  cursor: pointer;
+}
+
 /* FOOTER */
 .footer-style {
   background-color: $color-red;
