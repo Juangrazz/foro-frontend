@@ -1,4 +1,4 @@
-export class AdminLoginModel {
+export class adminCredentialsModel {
     email!: string;
     password!: string;
 }

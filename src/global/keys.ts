@@ -45,6 +45,8 @@ const keys = {
     msg_pass_match_error: "Las contraseñas no coinciden",
     msg_pass_length_error: "La contraseña ha de tener al menos 6 caracteres",
     msg_credentials_error: "El usuario o la contraseña no son correctos",
+    msg_old_password_empty: "La contraseña actual no puede estar vacía",
+    msg_old_password_match: "La contraseña actual no coincide",
 
     // ---------------------------------------------------------
 
@@ -215,7 +217,7 @@ const keys = {
     mod_info_input_1: "Nombre",
     mod_info_input_2: "Apellidos",
     mod_info_input_3: "Correo",
-    mod_info_input_4: "Contraseña vieja",
+    mod_info_input_4: "Contraseña actual",
     mod_info_input_5: "Contraseña nueva",
     mod_info_input_6: "Repite la nueva contraseña",
     mod_info_subtitle_1: "Datos personales",
@@ -240,6 +242,8 @@ const keys = {
     correct_modal_comment: "¡Comentario enviado!",
     correct_modal_create_admin: "¡Administrador creado!",
     correct_modal_place_updated: "Lugar modificado correctamente",
+    correct_modal_update_admin_data: "Información actualizada correctamente",
+    correct_modal_update_admin_password: "Contraseña actualizada correctamente",
 
     // INFO MODAL
     info_modal_button: `Vale <i class="fas fa-smile fa-lg"></i>`,

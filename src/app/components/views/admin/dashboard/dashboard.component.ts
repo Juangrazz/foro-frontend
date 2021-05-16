@@ -4,7 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 
 import { ControlService } from '../../../../services/control.service';
 import { DatabaseService } from '../../../../services/database.service';
-import { AdminLoginModel } from '../../../../models/admin_login.model';
+import { adminCredentialsModel } from '../../../../models/admin_credentials.model';
 
 import keys from '../../../../../global/keys';
 import { StorageService } from '../../../../services/storage.service';
@@ -21,7 +21,7 @@ export class DashboardComponent implements OnInit {
   keys = keys;
 
   formLogin!: FormGroup;
-  adminLogin: AdminLoginModel = new AdminLoginModel();
+  adminCredentials: adminCredentialsModel = new adminCredentialsModel();
 
   emailError: boolean = false;
   passwordError: boolean = false;
@@ -38,11 +38,11 @@ export class DashboardComponent implements OnInit {
 
   login() {
     if (this.formLogin.valid) {
-      this.databaseService.checkCredentials(this.adminLogin).subscribe(
+      this.databaseService.checkCredentials(this.adminCredentials).subscribe(
         resp => {
           if (resp.status === keys.ctrl_successful_result) {
             this.controlService.isAdmin.next(true);
-            this.databaseService.getToken(this.adminLogin.email).subscribe(
+            this.databaseService.getToken(this.adminCredentials.email).subscribe(
               resp => {
                 if (resp.status === keys.ctrl_successful_result) {
                   this.storageService.setSessionValue(keys.session_storage_token, resp.message);
@@ -78,8 +78,8 @@ export class DashboardComponent implements OnInit {
     this.resetErrors();
 
     if (this.formLogin.valid) {
-      this.adminLogin.email = this.formLogin.controls.email.value;
-      this.adminLogin.password = this.formLogin.controls.password.value;
+      this.adminCredentials.email = this.formLogin.controls.email.value;
+      this.adminCredentials.password = this.formLogin.controls.password.value;
 
       if(this.formLogin.controls.remember.value){
         this.storageService.setEmail(this.formLogin.controls.email.value);

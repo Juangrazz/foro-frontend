@@ -1,15 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-import { ControlService } from '../../../../services/control.service';
-import { CardModel } from '../../../../models/card.model';
 import { CardAcceptRejectModel } from 'src/app/models/card-accept-reject.model';
-import { DatabaseService } from '../../../../services/database.service';
-import { CardService } from '../../../../services/card.service';
 import { Router, ActivatedRoute } from '@angular/router';
+
+import { CardService } from '../../../../services/card.service';
+import { ControlService } from '../../../../services/control.service';
+import { DatabaseService } from '../../../../services/database.service';
+import { StorageService } from 'src/app/services/storage.service';
 
 import keys from '../../../../../global/keys';
 import * as moment from 'moment';
-import { StorageService } from 'src/app/services/storage.service';
-
 declare var $: any;
 
 @Component({

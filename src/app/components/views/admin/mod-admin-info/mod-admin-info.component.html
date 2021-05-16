@@ -3,9 +3,9 @@
     <div class="text-center">
       <p class="msg-title mb-5" [innerHTML]="keys.mod_info_title"></p>
     </div>
-    <div class="w-50 hor-aligment">
-      <form [formGroup]="formModAdminData" (ngSubmit)="validateForm()">
-        <h2 class="mb-3" [innerHTML]="keys.mod_info_subtitle_1"></h2>
+    <div class="mod-admin-info-div hor-aligment">
+      <form [formGroup]="formPersonalData" (ngSubmit)="validatePersonalForm()">
+        <h2 class="mb-3 mod-admin-info-subtitle" [innerHTML]="keys.mod_info_subtitle_1"></h2>
         <div class="form-group">
           <label [innerHTML]="keys.mod_info_input_1"></label>
           <input type="text" class="form-control" formControlName="name">
@@ -22,8 +22,19 @@
           <button class="btn-block mt-4 red-button-simply font-weight-bold"
             [innerHTML]="keys.mod_info_submit_button_personal"></button>
         </div>
-
-        <h2 class="mt-5 mb-3" [innerHTML]="keys.mod_info_subtitle_2"></h2>
+      </form>
+      <div class="mt-4">
+        <div *ngIf="nameError" class="msg msg-error animate__animated animate__fadeIn slow"
+          [innerHTML]="keys.msg_name_error"></div>
+        <div *ngIf="lastnameError" class="msg msg-error animate__animated animate__fadeIn slow"
+          [innerHTML]="keys.msg_lastname_error"></div>
+        <div *ngIf="emailError" class="msg msg-error animate__animated animate__fadeIn slow"
+          [innerHTML]="keys.msg_email_error"></div>
+          <div *ngIf="formPersonalDataError" class="msg msg-error animate__animated animate__fadeIn slow"
+          [innerHTML]="keys.msg_form_error"></div>
+      </div>
+      <form [formGroup]="formPassword" (ngSubmit)="validatePasswordForm()">
+        <h2 class="mt-5 mb-3 mod-admin-info-subtitle" [innerHTML]="keys.mod_info_subtitle_2"></h2>
         <div class="form-group">
           <label [innerHTML]="keys.mod_info_input_4"></label>
           <input type="password" class="form-control" formControlName="oldPassword">
@@ -41,6 +52,20 @@
             [innerHTML]="keys.mod_info_submit_button_pass"></button>
         </div>
       </form>
+      <div class="mt-4">
+        <div *ngIf="oldPasswordEmptyError" class="msg msg-error animate__animated animate__fadeIn slow"
+          [innerHTML]="keys.msg_old_password_empty"></div>
+          <div *ngIf="oldPasswordMatchError" class="msg msg-error animate__animated animate__fadeIn slow"
+          [innerHTML]="keys.msg_old_password_match"></div>
+        <div *ngIf="newPasswordError" class="msg msg-error animate__animated animate__fadeIn slow"
+          [innerHTML]="keys.msg_lastname_error"></div>
+        <div *ngIf="newPasswordConfError" class="msg msg-error animate__animated animate__fadeIn slow"
+          [innerHTML]="keys.msg_email_error"></div>
+          <div *ngIf="formPasswordError" class="msg msg-error animate__animated animate__fadeIn slow"
+          [innerHTML]="keys.msg_form_error"></div>
+      </div>
     </div>
   </div>
 </div>
+<app-error-modal></app-error-modal>
+<app-correct-modal></app-correct-modal>

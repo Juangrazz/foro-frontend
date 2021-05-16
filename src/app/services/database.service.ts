@@ -13,7 +13,7 @@ import { AdminModel } from '../models/admin.model';
 
 import keys from '../../global/keys';
 import { CardAcceptRejectModel } from '../models/card-accept-reject.model';
-import { AdminLoginModel } from '../models/admin_login.model';
+import { adminCredentialsModel } from '../models/admin_credentials.model';
 
 
 @Injectable({
@@ -109,7 +109,7 @@ export class DatabaseService {
     return this.http.put<MessageModel>(`${keys.db_host}${keys.db_server_path}/admin/updateCardPlace`, card);
   }
 
-  checkCredentials(admin: AdminLoginModel) {
+  checkCredentials(admin: adminCredentialsModel) {
     return this.http.post<MessageModel>(`${keys.db_host}${keys.db_server_path}/auth/checkcredentials`, admin);
   }
 
@@ -122,7 +122,19 @@ export class DatabaseService {
   }
 
   verifyToken() {
-    return this.http.get<MessageModel>(`${keys.db_host}${keys.db_server_path}/auth/verifytoken`);
+    return this.http.get<MessageModel>(`${keys.db_host}${keys.db_server_path}/auth/verifytoken`).toPromise();
+  }
+
+  updatePersonalAdminData(admin: AdminModel) {
+    return this.http.post<MessageModel>(`${keys.db_host}${keys.db_server_path}/admin/updateadmindata`, admin);
+  }
+
+  passwordMatch(credentials: adminCredentialsModel) {
+    return this.http.post<MessageModel>(`${keys.db_host}${keys.db_server_path}/admin/checkpassword`, credentials);
+  }
+
+  updatePassword(credentials: adminCredentialsModel) {
+    return this.http.post<MessageModel>(`${keys.db_host}${keys.db_server_path}/admin/updatepassword`, credentials);
   }
 
 
