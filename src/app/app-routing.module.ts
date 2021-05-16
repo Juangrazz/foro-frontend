@@ -11,7 +11,7 @@ import { CardViewComponent } from './components/views/card-view/card-view.compon
 import { DashboardComponent } from './components/views/admin/dashboard/dashboard.component';
 import { AdminHomeComponent } from './components/views/admin/admin-home/admin-home.component';
 import { CheckMessagesComponent } from './components/views/admin/check-messages/check-messages.component';
-import { CreateAdminComponent } from './components/views/admin/create-admin/create-admin.component';
+import { AdminConfigComponent } from './components/views/admin/admin-config/admin-config.component';
 import { ModAdminInfoComponent } from './components/views/admin/mod-admin-info/mod-admin-info.component';
 import { EditComponent } from './components/views/admin/check-messages/edit/edit.component';
 import { MymyvSearchComponent } from './components/views/search/mymyv-search/mymyv-search.component';
@@ -30,7 +30,7 @@ const routes: Routes = [
   { path: 'admin_dashboard/home', component: AdminHomeComponent, canActivate: [AuthGuard]  },
   { path: 'admin_dashboard/check_messages', component: CheckMessagesComponent, canActivate: [AuthGuard]  },
   { path: 'admin_dashboard/check_messages/edit', component: EditComponent, canActivate: [AuthGuard]  },
-  { path: 'admin_dashboard/create_admin', component: CreateAdminComponent, canActivate: [AuthGuard]  },
+  { path: 'admin_dashboard/admin_config', component: AdminConfigComponent, canActivate: [AuthGuard]  },
   { path: 'admin_dashboard/mod_info', component: ModAdminInfoComponent, canActivate: [AuthGuard]  },
   { path: '**', component: IndexComponent }
 ];

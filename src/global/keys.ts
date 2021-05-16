@@ -204,18 +204,18 @@ const keys = {
     // ---------------------------------------------------------
 
     // CREATE ADMIN
-    create_admin_title: "Crear administrador",
-    create_admin_input_1: "Nombre",
-    create_admin_input_2: "Apellidos",
-    create_admin_input_3: "Correo",
-    create_admin_input_4: "Contraseña",
-    create_admin_input_5: "Repite la contraseña",
-    create_admin_subtitle_1: "Datos personales",
-    create_admin_subtitle_2: "Seguridad",
-    create_admin_submit_button: "Dar de alta",
-    create_admin_input_6: "Email",
-    create_admin_submit_button_2: "Eliminar",
-    create_admin_title_2: "Eliminar cuenta",
+    admin_config_title: "Crear administrador",
+    admin_config_input_1: "Nombre",
+    admin_config_input_2: "Apellidos",
+    admin_config_input_3: "Correo",
+    admin_config_input_4: "Contraseña",
+    admin_config_input_5: "Repite la contraseña",
+    admin_config_subtitle_1: "Datos personales",
+    admin_config_subtitle_2: "Seguridad",
+    admin_config_submit_button: "Dar de alta",
+    admin_config_input_6: "Email",
+    admin_config_submit_button_2: "Eliminar",
+    admin_config_title_2: "Eliminar cuenta",
 
     // ---------------------------------------------------------
 
@@ -247,7 +247,7 @@ const keys = {
     correct_modal_button: "Ok",
     correct_modal_message: "¡Mensaje enviado!",
     correct_modal_comment: "¡Comentario enviado!",
-    correct_modal_create_admin: "¡Administrador creado!",
+    correct_modal_admin_config: "¡Administrador creado!",
     correct_modal_place_updated: "Lugar modificado correctamente",
     correct_modal_update_admin_data: "Información actualizada correctamente",
     correct_modal_update_admin_password: "Contraseña actualizada correctamente",

@@ -9,15 +9,14 @@ import { ControlService } from '../../../../services/control.service';
 import keys from '../../../../../global/keys';
 
 import * as moment from 'moment';
-import { adminCredentialsModel } from '../../../../models/admin_credentials.model';
 declare var $: any;
 
 @Component({
-  selector: 'app-create-admin',
-  templateUrl: './create-admin.component.html',
-  styleUrls: ['./create-admin.component.scss']
+  selector: 'app-admin-config',
+  templateUrl: './admin-config.component.html',
+  styleUrls: ['./admin-config.component.scss']
 })
-export class CreateAdminComponent implements OnInit {
+export class AdminConfigComponent implements OnInit {
 
   keys = keys;
 
@@ -93,10 +92,12 @@ export class CreateAdminComponent implements OnInit {
   }
 
   validateDeleteForm() {
+    debugger;
     this.resetDeleteErrors();
 
     if (this.deleteAdminForm.valid) {
       let email = this.deleteAdminForm.controls.email.value;
+
       this.databaseService.getAdminData()
         .then(resp => {
           if (resp.email !== email) {
@@ -174,7 +175,7 @@ export class CreateAdminComponent implements OnInit {
                 $("#errorModalMessage").text(keys.error_modal_message);
                 $('#errorModal').modal('show');
               } else if (resp.status === keys.ctrl_successful_result) {
-                $("#correctModalMessage").text(keys.correct_modal_create_admin);
+                $("#correctModalMessage").text(keys.correct_modal_admin_config);
                 $('#correctModal').modal('show');
                 $('#correctModal').on('hidden.bs.modal', () => {
                   this.createAdminForm.reset({ name: "", lastname: "", email: "", password: "", confPassword: "" });
