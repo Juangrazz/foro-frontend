@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 import { DatabaseService } from '../../../../services/database.service';
@@ -19,6 +19,12 @@ declare var $: any;
 })
 export class MymyvSearchComponent implements OnInit {
 
+  public config = {
+      id!: 'custom',
+      itemsPerPage: 6,
+      currentPage: 1
+  };
+
   mymyvSearchForm!: FormGroup;
   searchInfo: MymyvSearchModel = new MymyvSearchModel();
 
@@ -32,6 +38,7 @@ export class MymyvSearchComponent implements OnInit {
   noResults: boolean = false;
 
   keys = keys;
+
   
   constructor(private formBuilder: FormBuilder, private databaseService: DatabaseService, private cardService: CardService, private storageService: StorageService) { 
     this.storageService.deleteSessionValue(keys.session_storage_individual_card);
