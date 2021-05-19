@@ -20,21 +20,29 @@
     </div>
   </div>
 </div>
-<div class="text-center">
+
+<div class="text-center hor-aligment max-content">
   <ul class="list-inline">
-    <li role="button" class="list-inline-item index-arrow-button txt_light_blue" (click)="subtractDay()">
-      <i class="fas fa-arrow-circle-left fa-3x"></i>
-      <div>{{keys.index_arrows_text}} {{dateBack}}</div>
-    </li>
-    <li role="button" class="list-inline-item index-arrow-button txt_very_light_blue" (click)="reloadToCurrentDay()">
-      <i class="fas fa-redo-alt fa-3x"></i>
-      <div [innerHTML]="keys.index_arrow_reload"></div>
-    </li>
-    <li role="button" class="list-inline-item index-arrow-button txt_light_blue" (click)="addDay()">
-      <i class="fas fa-arrow-circle-right fa-3x"></i>
-      <div>{{keys.index_arrows_text}} {{dateNext}}</div>
-    </li>
+    <span class="va-s">
+      <li role="button" class="list-inline-item index-arrow-button txt_light_blue" (click)="subtractDay()">
+        <i class="fas fa-arrow-circle-left fa-3x"></i>
+        <div>{{keys.index_arrows_text}} {{dateBack}}</div>
+      </li>
+    </span>
+    <span class="va-s">
+      <li role="button" class="list-inline-item index-arrow-button txt_very_light_blue" (click)="reloadToCurrentDay()">
+        <i class="fas fa-redo-alt fa-3x"></i>
+        <div [innerHTML]="keys.index_arrow_reload"></div>
+      </li>
+    </span>
+    <span class="va-s">
+      <li role="button" class="list-inline-item index-arrow-button txt_light_blue" (click)="addDay()">
+        <i class="fas fa-arrow-circle-right fa-3x"></i>
+        <div>{{keys.index_arrows_text}} {{dateNext}}</div>
+      </li>
+    </span>
   </ul>
 </div>
+
 <app-error-modal></app-error-modal>
 <app-info-modal></app-info-modal>

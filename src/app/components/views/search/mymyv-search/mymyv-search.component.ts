@@ -20,7 +20,7 @@ declare var $: any;
 export class MymyvSearchComponent implements OnInit {
 
   public config = {
-      id!: 'custom',
+      id: 'custom',
       itemsPerPage: 6,
       currentPage: 1
   };
