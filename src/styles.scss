@@ -648,8 +648,18 @@ input:checked+.slider:before {
   width: 20px;
 }
 
+.pagination-arrow-button {
+  width: 70px;
+  transition: .1s;
+}
+
+.pagination-button:hover {
+  font-size: .85em;
+  transition: .1s;
+}
+
 .page-number-disabled {
-  width: 100px;
+  width: 70px;
   color: $color-light-grey;
   transition: .1s !important;
 }
