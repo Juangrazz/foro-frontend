@@ -3,8 +3,10 @@
     <div class="text-center">
       <p class="search-title mb-5" [innerHTML]="keys.search_title"></p>
     </div>
-    <div class="mb-3">
-      <label class="mr-2" [innerHTML]="keys.search_mymyv_txt"></label>
+    <div class="mb-3 va-f">
+      <div class="va-s">
+        <label class="mr-2 mb-1" [innerHTML]="keys.search_mymyv_txt"></label>
+      </div>
       <label class="switch">
         <input id="checkboxMymyv" type="checkbox" (change)="checkbox($event.target)">
         <span class="slider round"></span>
