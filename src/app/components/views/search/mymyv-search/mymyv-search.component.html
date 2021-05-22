@@ -59,50 +59,36 @@
     </div>
 </div>
 <pagination-template #p="paginationApi" [id]="config.id" (pageChange)="config.currentPage = $event">
-
-    <!--
-
-    <div class="text-center">
-        <ul class="list-group list-group-horizontal-md">
-            <li role="button" class="list-inline-item index-arrow-button txt_light_blue pagination-previous" [class.disabled]="p.isFirstPage()">
-                <a *ngIf="!p.isFirstPage()" (click)="p.previous()"><i class="fas fa-arrow-circle-left fa-3x"></i></a>
-              </li>
-            <li class="list-group-item" *ngFor="let page of p.pages" [class.current]="p.getCurrent() === page.value">
-                <a (click)="p.setCurrent(page.value)" *ngIf="p.getCurrent() !== page.value">
+  <div *ngIf="cards.length > 1" class="text-center hor-aligment max-content">
+    <ul class="list-inline">
+      <span class="va-s">
+        <li role="button" class="list-inline-item index-arrow-button txt_light_blue" [ngClass]="{'index-arrow-button': !p.isFirstPage()}">
+          <i (click)="!p.isFirstPage() && p.previous()" class="fas fa-arrow-circle-left fa-3x" [ngClass]="{'page-number-disabled': p.isFirstPage()}"></i>
+        </li>
+      </span>
+      <span class="va-s">
+        <div *ngIf="subPagination" class="txt_light_blue">
+            <span>
+                {{p.getCurrent()}}
+            </span>
+            <span>
+                de {{p.getLastPage()}}
+            </span>
+        </div>
+        <span *ngIf="!subPagination">
+            <li (click)="p.setCurrent(page.value)" role="button" class="list-inline-item txt_light_blue number-item" *ngFor="let page of p.pages" [class.current]="p.getCurrent() === page.value">
+                <a class="other-pages" *ngIf="p.getCurrent() !== page.value">
                     <span>{{ page.label }}</span>
                 </a>
-                <div *ngIf="p.getCurrent() === page.value">
+                <div class="current-page animate__animated animate__fadeInUp fast" *ngIf="p.getCurrent() === page.value">
                     <span>{{ page.label }}</span>
                 </div>
             </li>
-            <li role="button" class="list-inline-item index-arrow-button txt_light_blue pagination-next" [class.disabled]="p.isLastPage()">
-                <a *ngIf="!p.isLastPage()" (click)="p.next()"> <i class="fas fa-arrow-circle-right fa-3x"></i> </a>
-              </li>
-          </ul>
-      </div>
-
-  -->
-
-  <div class="text-center hor-aligment max-content">
-    <ul class="list-inline">
-      <span class="va-s">
-        <li role="button" class="list-inline-item index-arrow-button txt_light_blue">
-          <i *ngIf="!p.isFirstPage()" (click)="p.previous()" class="fas fa-arrow-circle-left fa-3x"></i>
-        </li>
+        </span>
       </span>
-      <span class="va-s">
-        <li (click)="p.setCurrent(page.value)" role="button" class="list-inline-item index-arrow-button txt_light_blue number-item" *ngFor="let page of p.pages" [class.current]="p.getCurrent() === page.value">
-            <a *ngIf="p.getCurrent() !== page.value">
-                <span>{{ page.label }}</span>
-            </a>
-            <div *ngIf="p.getCurrent() === page.value">
-                <span>{{ page.label }}</span>
-            </div>
-        </li>
-      </span>
-      <span class="va-s">
-        <li role="button" class="list-inline-item index-arrow-button txt_light_blue">
-          <i *ngIf="!p.isLastPage()" (click)="p.next()" class="fas fa-arrow-circle-right fa-3x"></i>
+      <span class="va-s transition-03">
+        <li role="button" class="list-inline-item txt_light_blue" [ngClass]="{'index-arrow-button': !p.isLastPage()}">
+          <i (click)="!p.isLastPage() && p.next()" class="fas fa-arrow-circle-right fa-3x" [ngClass]="{'page-number-disabled': p.isLastPage()}"></i>
         </li>
       </span>
     </ul>
