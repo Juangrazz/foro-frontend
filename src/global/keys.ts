@@ -99,10 +99,10 @@ const keys = {
     inst_sub_3_cont_1_l_3: "El tipo de relación que buscas exactamente",
 
     // Derechos
-    inst_sub_4: "Derechos de publicación",
+    inst_sub_4: "Derechos",
     // Derechos contents
     inst_sub_4_cont_1: "Recalcar que queda reservado el derecho a publicar o no un mensaje, así como las razones sobre ello.",
-    inst_sub_4_cont_2: "Además, también queda reservado la manipulación de la información enviada para que haya un orden.",
+    inst_sub_4_cont_2: "Además, también queda reservado la manipulación de la ubicación enviada para que haya un orden.",
 
     // ---------------------------------------------------------
 
