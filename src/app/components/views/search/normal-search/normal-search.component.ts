@@ -20,6 +20,12 @@ declare var $: any;
 })
 export class NormalSearchComponent implements OnInit {
 
+  public config = {
+    id: 'custom',
+    itemsPerPage: 6,
+    currentPage: 1,
+};
+
   normalSearchForm!: FormGroup;
   searchInfo: NormalSearchModel = new NormalSearchModel();
 
@@ -29,6 +35,7 @@ export class NormalSearchComponent implements OnInit {
 
   cards: CardModel[];
   noResults: boolean = false;
+  subPagination: boolean = false;
 
   keys = keys;
 
@@ -115,6 +122,23 @@ export class NormalSearchComponent implements OnInit {
     }
 
     this.normalSearchForm.reset({ date: "", place: "" });
+  }
+
+  onWindowResize(){
+    
+    if($(window).width() < 576){
+      this.subPagination = true;
+    } else {
+      this.subPagination = false;
+    }
+
+    $( window ).resize(() => {
+      if($(window).width() < 576){
+        this.subPagination = true;
+      } else {
+        this.subPagination = false;
+      }
+    });
   }
 
 

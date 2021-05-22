@@ -36,6 +36,7 @@ import { ModifyCardComponent } from './components/share/modals/modify-card/modif
 import { AuthGuard } from './auth.guard';
 import { TokenInterceptorService } from './services/token-interceptor.service';
 import { WarningModalComponent } from './components/share/modals/warning-modal/warning-modal.component';
+import {NgxPaginationModule} from 'ngx-pagination';
 
 @NgModule({
   declarations: [
@@ -74,7 +75,8 @@ import { WarningModalComponent } from './components/share/modals/warning-modal/w
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
-    ChartsModule
+    ChartsModule,
+    NgxPaginationModule
   ],
   providers: [
     AuthGuard,

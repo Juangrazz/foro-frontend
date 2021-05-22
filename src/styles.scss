@@ -12,6 +12,14 @@ body {
 
 /* UTILS */
 
+a {
+  text-decoration: none !important;
+}
+
+.max-content {
+  width: max-content;
+}
+
 .padre {
   display: flex;
   align-items: center;
@@ -633,6 +641,34 @@ input:checked+.slider:before {
 .create-admin-subtitle {
   font-size: 2em;
 }
+
+/* PAGINATION */
+
+.number-item {
+  width: 20px;
+}
+
+.page-number-disabled {
+  width: 100px;
+  color: $color-light-grey;
+  transition: .1s !important;
+}
+
+.current-page {
+  color: $color-blue;
+  font-size: 1.5em;
+  transition: .1s !important;
+}
+
+.other-pages {
+  color: $color-light-blue;
+}
+
+.other-pages :hover {
+  font-size: .8em;
+  color: $color-light-blue;
+}
+
 
 /*
 @media (max-width: 450px) {

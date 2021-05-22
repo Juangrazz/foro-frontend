@@ -19,6 +19,12 @@ declare var $: any;
 })
 export class MymyvSearchComponent implements OnInit {
 
+  public config = {
+      id: 'custom',
+      itemsPerPage: 6,
+      currentPage: 1,
+  };
+
   mymyvSearchForm!: FormGroup;
   searchInfo: MymyvSearchModel = new MymyvSearchModel();
 
@@ -30,8 +36,10 @@ export class MymyvSearchComponent implements OnInit {
 
   cards: MymyvCardModel[];
   noResults: boolean = false;
+  subPagination: boolean = false;
 
   keys = keys;
+
   
   constructor(private formBuilder: FormBuilder, private databaseService: DatabaseService, private cardService: CardService, private storageService: StorageService) { 
     this.storageService.deleteSessionValue(keys.session_storage_individual_card);
@@ -40,6 +48,7 @@ export class MymyvSearchComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.onWindowResize();
   }
 
   createFrom() {
@@ -112,6 +121,23 @@ export class MymyvSearchComponent implements OnInit {
         $('#errorModal').modal('show');
       }
     );
+  }
+
+  onWindowResize(){
+
+    if($(window).width() < 576){
+      this.subPagination = true;
+    } else {
+      this.subPagination = false;
+    }
+
+    $( window ).resize(() => {
+      if($(window).width() < 576){
+        this.subPagination = true;
+      } else {
+        this.subPagination = false;
+      }
+    });
   }
 
 }
