@@ -62,7 +62,7 @@
   <div *ngIf="cards.length > 1" class="text-center hor-aligment max-content">
     <ul class="list-inline">
       <span class="va-s">
-        <li role="button" class="list-inline-item index-arrow-button txt_light_blue" [ngClass]="{'index-arrow-button': !p.isFirstPage()}">
+        <li role="button" class="list-inline-item pagination-arrow-button txt_light_blue" [ngClass]="{'pagination-arrow-button': !p.isFirstPage()}">
           <i (click)="!p.isFirstPage() && p.previous()" class="fas fa-arrow-circle-left fa-3x" [ngClass]="{'page-number-disabled': p.isFirstPage()}"></i>
         </li>
       </span>
@@ -87,7 +87,7 @@
         </span>
       </span>
       <span class="va-s transition-03">
-        <li role="button" class="list-inline-item txt_light_blue" [ngClass]="{'index-arrow-button': !p.isLastPage()}">
+        <li role="button" class="list-inline-item txt_light_blue" [ngClass]="{'pagination-arrow-button': !p.isLastPage()}">
           <i (click)="!p.isLastPage() && p.next()" class="fas fa-arrow-circle-right fa-3x" [ngClass]="{'page-number-disabled': p.isLastPage()}"></i>
         </li>
       </span>
