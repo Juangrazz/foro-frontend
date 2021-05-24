@@ -130,6 +130,7 @@ export class CheckMessagesComponent implements OnInit {
     this.cardService.newPlace = "";
     $("#newPlace").val("");
     $('#oldPlace').val(this.card.place);
+    $('#modifyCard').modal('dispose');
     $('#modifyCard').modal('show');
     $("#modifyCard").on("hidden.bs.modal", () => {
       this.changePlace();

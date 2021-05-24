@@ -33,10 +33,12 @@
             [innerHTML]="keys.msg_credentials_error"></div>
         </div>
         <div class="text-center mt-4">
-          <a href="#" class="blue_link" [innerHTML]="keys.dashboard_recovery_pass"></a>
+          <a role="button" class="blue_link" [innerHTML]="keys.dashboard_recovery_pass" (click)="openResetPasswordModal()"></a>
         </div>
       </div>
     </div>
   </div>
 </div>
+<app-correct-modal></app-correct-modal>
 <app-error-modal></app-error-modal>
+<app-reset-password-modal></app-reset-password-modal>

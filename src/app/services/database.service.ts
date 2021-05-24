@@ -149,4 +149,8 @@ export class DatabaseService {
     return this.http.delete<MessageModel>(`${keys.db_host}${keys.db_server_path}/admin/deleteadminbyemail/${email}`).toPromise();
   }
 
+  resetPassword(email: string) {
+    return this.http.get<MessageModel>(`${keys.db_host}${keys.db_server_path}/admin/resetpassword/${email}`).toPromise();
+  }
+
 }

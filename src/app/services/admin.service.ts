@@ -7,6 +7,7 @@ import { AdminModel } from '../models/admin.model';
 export class AdminService {
 
   adminLogged: AdminModel = new AdminModel();
+  emailToResetPassword: string = "";
 
   constructor() { }
 }

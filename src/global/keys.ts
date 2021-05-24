@@ -251,6 +251,7 @@ const keys = {
     correct_modal_place_updated: "Lugar modificado correctamente",
     correct_modal_update_admin_data: "Información actualizada correctamente",
     correct_modal_update_admin_password: "Contraseña actualizada correctamente",
+    correct_modal_reset_password: "Si el correo es válido, habrá llegado un mensaje a la bandeja de entrada. <br><br> Si no lo ves, puede ser que esté en la carpeta de <i>spam</i>.",
 
     // INFO MODAL
     info_modal_button: `Vale <i class="fas fa-smile fa-lg"></i>`,
@@ -268,6 +269,12 @@ const keys = {
     warning_modal_text: "Si borras tu cuenta, no podrás volver a acceder a no ser que te den de alta de nuevo",
     warning_modal_text_2: "Si borras esta cuenta, el usuario correspondiente no podrá acceder de nuevo",
     warning_modal_button: "Eliminar",
+
+    // RESET PASSWORD
+    reset_password_modal_title: "Restaurar contraseña",
+    reset_password_modal_text: "Email de la cuenta",
+    reset_password_modal_accept_button: "Aceptar",
+    reset_password_modal_cancel_button: "Cancelar",
 
     // ---------------------------------------------------------
 

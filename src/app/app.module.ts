@@ -37,6 +37,7 @@ import { AuthGuard } from './auth.guard';
 import { TokenInterceptorService } from './services/token-interceptor.service';
 import { WarningModalComponent } from './components/share/modals/warning-modal/warning-modal.component';
 import {NgxPaginationModule} from 'ngx-pagination';
+import { ResetPasswordModalComponent } from './components/share/modals/reset-password-modal/reset-password-modal.component';
 
 @NgModule({
   declarations: [
@@ -69,6 +70,7 @@ import {NgxPaginationModule} from 'ngx-pagination';
     NoPostToCheckComponent,
     ModifyCardComponent,
     WarningModalComponent,
+    ResetPasswordModalComponent,
   ],
   imports: [
     BrowserModule,

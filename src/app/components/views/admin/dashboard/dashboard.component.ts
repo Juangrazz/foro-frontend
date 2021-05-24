@@ -112,4 +112,38 @@ export class DashboardComponent implements OnInit {
     this.passwordError = false;
     this.credentialsError = false;
   }
+
+  openResetPasswordModal() {
+    this.adminService.emailToResetPassword = "";
+    $("#emailToResetPassword").val("");
+    $('#resetPasswordModal').modal('dispose');
+    $('#resetPasswordModal').modal('show');
+    $("#resetPasswordModal").on("hidden.bs.modal", () => {
+      this.resetPassword();
+    });
+  }
+
+  resetPassword(){
+    let email = this.adminService.emailToResetPassword;
+    
+    if(email !== "" && email !== null){
+      this.databaseService.checkEmail(email)
+      .then(resp => {
+        if(resp.status === keys.ctrl_successful_result){
+          this.databaseService.resetPassword(email)
+          .catch(err => {
+            $("#errorModalMessage").html(keys.error_modal_message);
+            $('#errorModal').modal('show');
+          })
+        }
+        
+      })
+      .catch(err => {
+        $("#errorModalMessage").html(keys.error_modal_message);
+        $('#errorModal').modal('show');
+      })
+      $("#correctModalMessage").html(keys.correct_modal_reset_password);
+      $('#correctModal').modal('show');
+    }
+  }
 }
