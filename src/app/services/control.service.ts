@@ -66,7 +66,7 @@ export class ControlService {
         if (word.charAt(0) === "@") {
           let match = word.match(keys.ctrl_instagram_pattern);
           let lastCharacters = word.replace(match![0], "").replace("@", "");
-          finalString += `<a href="https://instagram.com/${match![0]}/" class="red-link">@${match![0]}</a>${lastCharacters} `
+          finalString += `<a href="https://instagram.com/${match![0]}/" class="purple-link">@${match![0]}</a>${lastCharacters} `
         } else {
           finalString += word + " ";
         }

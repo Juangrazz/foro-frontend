@@ -1,9 +1,9 @@
 <nav id="navbar"
   class="navbar navbar-expand-xl navbar-dark navbar-style zindex-1 animate__animated animate__fadeIn slow">
   <a *ngIf="!isAdmin" class="navbar-brand mr-4" [routerLink]="['index']"><img src="../../../../assets/img/logo.ico"
-    class="navbar-ico">{{keys.nav_title}}</a>
+    class="navbar-ico mr-2">{{keys.nav_title}}</a>
   <a *ngIf="isAdmin" class="navbar-brand mr-4" [routerLink]="['admin_dashboard/home']"><img src="../../../../assets/img/logo.ico"
-    class="navbar-ico">{{keys.nav_title}}</a>
+    class="navbar-ico mr-2">{{keys.nav_title}}</a>
   <button class="navbar-toggler navbar-button" type="button" data-toggle="collapse"
     data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
     aria-label="Toggle navigation">

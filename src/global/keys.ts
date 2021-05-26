@@ -53,7 +53,7 @@ const keys = {
     // ---------------------------------------------------------
 
     // NAVBAR
-    nav_title: "Tinder Unizar",
+    nav_title: "People Finder",
     nav_option_1: "Inicio",
     nav_option_2: "Instrucciones",
     nav_option_3: "Mensajes",
