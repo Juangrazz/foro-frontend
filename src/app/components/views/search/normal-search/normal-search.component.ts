@@ -68,6 +68,7 @@ export class NormalSearchComponent implements OnInit {
         this.searchInfo.date = this.normalSearchForm.controls.date.value;
         this.searchInfo.place = this.normalSearchForm.controls.place.value;
 
+        this.config.currentPage = 1;
         this.normalSearch();
 
       } else {

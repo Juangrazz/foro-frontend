@@ -76,6 +76,7 @@ export class MymyvSearchComponent implements OnInit {
         this.searchInfo.kind = this.mymyvSearchForm.controls.kind.value;
         this.searchInfo.look_for = this.mymyvSearchForm.controls.look_for.value;
         
+        this.config.currentPage = 1;
         this.mymyvSearch();
     
       } else {
