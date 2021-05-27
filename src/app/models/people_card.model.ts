@@ -1,4 +1,4 @@
-export class MymyvCardModel {
+export class PeopleCardModel {
     id!: number;
     age!: number;
     kind!: string;

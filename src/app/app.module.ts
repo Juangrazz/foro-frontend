@@ -10,7 +10,7 @@ import { IndexComponent } from './components/views/index/index.component';
 import { SearchComponent } from './components/views/search/search.component';
 import { MessagesComponent } from './components/views/messages/messages.component';
 import { InstructionsComponent } from './components/views/instructions/instructions.component';
-import { MymyvComponent } from './components/views/mymyv/mymyv.component';
+import { PeopleComponent } from './components/views/people/people.component';
 import { FooterComponent } from './components/share/footer/footer.component';
 import { NoPostsComponent } from './components/views/index/no-posts/no-posts.component';
 import { StatisticsComponent } from './components/views/statistics/statistics.component';
@@ -27,10 +27,10 @@ import { EditComponent } from './components/views/admin/check-messages/edit/edit
 import { ErrorModalComponent } from './components/share/modals/error-modal/error-modal.component';
 import { CorrectModalComponent } from './components/share/modals/correct-modal/correct-modal.component';
 import { InfoModalComponent } from './components/share/modals/info-modal/info-modal.component';
-import { MymyvCardComponent } from './components/share/cards/mymyv-card/mymyv-card.component';
+import { PeopleCardComponent } from './components/share/cards/people-card/people-card.component';
 import { ChartsModule } from 'ng2-charts';
 import { NoResultsComponent } from './components/views/search/no-results/no-results.component';
-import { MymyvSearchComponent } from './components/views/search/mymyv-search/mymyv-search.component';
+import { PeopleSearchComponent } from './components/views/search/people-search/people-search.component';
 import { NoPostToCheckComponent } from './components/views/admin/check-messages/no-post-to-check/no-post-to-check.component';
 import { ModifyCardComponent } from './components/share/modals/modify-card/modify-card.component';
 import { AuthGuard } from './auth.guard';
@@ -47,7 +47,7 @@ import { ResetPasswordModalComponent } from './components/share/modals/reset-pas
     SearchComponent,
     MessagesComponent,
     InstructionsComponent,
-    MymyvComponent,
+    PeopleComponent,
     FooterComponent,
     NoPostsComponent,
     StatisticsComponent,
@@ -64,9 +64,9 @@ import { ResetPasswordModalComponent } from './components/share/modals/reset-pas
     ErrorModalComponent,
     CorrectModalComponent,
     InfoModalComponent,
-    MymyvCardComponent,
+    PeopleCardComponent,
     NoResultsComponent,
-    MymyvSearchComponent,
+    PeopleSearchComponent,
     NoPostToCheckComponent,
     ModifyCardComponent,
     WarningModalComponent,

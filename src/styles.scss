@@ -125,7 +125,7 @@ hr {
 app-messages,
 app-instructions,
 app-index,
-app-mymyv,
+app-people,
 app-search,
 app-statistics,
 app-card-view,
@@ -544,17 +544,17 @@ input:checked+.slider:before {
   margin: 0;
 }
 
-.search-mymyv-control {
+.search-people-control {
   width: 2em;
   transition: 0.3s;
 }
 
-/* Mymyv SECTION */
-.mymyv-main-div {
+/* People SECTION */
+.people-main-div {
   min-height: 85.5vh;
 }
 
-.mymyv-title {
+.people-title {
   font-size: 2.5em;
   font-weight: bold;
   color: $color-grey;
@@ -580,7 +580,7 @@ input:checked+.slider:before {
   min-height: 15em;
 }
 
-.div_mymyv_card_desc_princ {
+.div_people_card_desc_princ {
   background-color: $color-purple;
   padding: 2em;
   color: $color-white;

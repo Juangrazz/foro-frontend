@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { MymyvSearchComponent } from './mymyv-search.component';
+import { PeopleComponent } from './people.component';
 
-describe('MymyvSearchComponent', () => {
-  let component: MymyvSearchComponent;
-  let fixture: ComponentFixture<MymyvSearchComponent>;
+describe('PeopleComponent', () => {
+  let component: PeopleComponent;
+  let fixture: ComponentFixture<PeopleComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ MymyvSearchComponent ]
+      declarations: [ PeopleComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(MymyvSearchComponent);
+    fixture = TestBed.createComponent(PeopleComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

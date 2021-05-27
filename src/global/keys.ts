@@ -21,7 +21,7 @@ const keys = {
     ctrl_fail_result: "NOK",
     ctrl_successful_result: "OK",
     ctrl_model_card_normal_type: "normal",
-    ctrl_model_card_mymyv_type: "mymyv",
+    ctrl_model_card_people_type: "people",
 
     // ---------------------------------------------------------
 
@@ -90,9 +90,9 @@ const keys = {
     // Privacidad contents
     inst_sub_2_cont_1: "Los mensajes son completamente anónimos, aunque se da la opción de dejar la cuenta de instagram para que te puedan localizar más facilmente.",
 
-    // Mymyv
+    // People
     inst_sub_3: "MyMyV",
-    // Mymyv contents
+    // People contents
     inst_sub_3_cont_1: "Intenta ser breve pero conciso. Tendrás que proporcionar los siguientes datos:",
     inst_sub_3_cont_1_l_1: "Una breve descripción de ti (altura, aficiones, gusto, personalidad...)",
     inst_sub_3_cont_1_l_2: "En lo que estás interesado esencialmente de la otra persona(el perfil que buscas)",
@@ -120,7 +120,7 @@ const keys = {
 
     // BÚSQUEDA SECTION
     search_title: "Búsqueda",
-    search_mymyv_txt: "MyMyV",
+    search_people_txt: "MyMyV",
 
     // Búsqueda normal form
     search_input_1: "Fecha",
@@ -134,22 +134,22 @@ const keys = {
     // ---------------------------------------------------------
 
     // MyMyV SECTION
-    mymyv_title: "Mozos y mozas y viceversa",
-    mymyv_input_1: "Edad",
-    mymyv_input_2: "Tipo de relación",
-    mymyv_input_3: "¿Qué buscas?",
-    mymyv_input_4: "Instagram (opcional)",
-    mymyv_input_5: "Añade una descripción",
-    mymyv_input_6: "Edad mínima",
-    mymyv_input_7: "Edad máxima",
-    mymyv_empty_option: "-- Selecciona una opción --",
-    mymyv_indiferent_option: "Indiferente",
-    mymyv_rel_option_1: "Algo serio",
-    mymyv_rel_option_2: "Nada serio",
-    mymyv_rel_option_3: "Amistad",
-    mymyv_lookfor_option_1: "Chico",
-    mymyv_lookfor_option_2: "Chica",
-    mymyv_send_button: "Enviar",
+    people_title: "Mozos y mozas y viceversa",
+    people_input_1: "Edad",
+    people_input_2: "Tipo de relación",
+    people_input_3: "¿Qué buscas?",
+    people_input_4: "Instagram (opcional)",
+    people_input_5: "Añade una descripción",
+    people_input_6: "Edad mínima",
+    people_input_7: "Edad máxima",
+    people_empty_option: "-- Selecciona una opción --",
+    people_indiferent_option: "Indiferente",
+    people_rel_option_1: "Algo serio",
+    people_rel_option_2: "Nada serio",
+    people_rel_option_3: "Amistad",
+    people_lookfor_option_1: "Chico",
+    people_lookfor_option_2: "Chica",
+    people_send_button: "Enviar",
 
     // ---------------------------------------------------------
 
@@ -284,8 +284,8 @@ const keys = {
     statistic_thirty_days_title: "Cantidad de post por lugar últimos 30 días",
     statistic_cards_seven_days_title: "Cantidad de post por categoría últimos 7 días",
     statistic_cards_seven_days_normal_label: "Normales",
-    statistic_cards_seven_days_mymyv_label: "Mymyv",
-    statistic_cards_seven_days_mymyv_text_label: "Día",
+    statistic_cards_seven_days_people_label: "People",
+    statistic_cards_seven_days_people_text_label: "Día",
 
     // ---------------------------------------------------------
 

@@ -4,7 +4,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { IndexComponent } from "./components/views/index/index.component";
 import { InstructionsComponent } from './components/views/instructions/instructions.component';
 import { MessagesComponent } from './components/views/messages/messages.component';
-import { MymyvComponent } from './components/views/mymyv/mymyv.component';
+import { PeopleComponent } from './components/views/people/people.component';
 import { SearchComponent } from './components/views/search/search.component';
 import { StatisticsComponent } from './components/views/statistics/statistics.component';
 import { CardViewComponent } from './components/views/card-view/card-view.component';
@@ -14,16 +14,16 @@ import { CheckMessagesComponent } from './components/views/admin/check-messages/
 import { AdminConfigComponent } from './components/views/admin/admin-config/admin-config.component';
 import { ModAdminInfoComponent } from './components/views/admin/mod-admin-info/mod-admin-info.component';
 import { EditComponent } from './components/views/admin/check-messages/edit/edit.component';
-import { MymyvSearchComponent } from './components/views/search/mymyv-search/mymyv-search.component';
+import { PeopleSearchComponent } from './components/views/search/people-search/people-search.component';
 import { AuthGuard } from './auth.guard';
 
 const routes: Routes = [
   { path: 'index', component: IndexComponent },
   { path: 'instructions', component: InstructionsComponent },
   { path: 'messages', component: MessagesComponent },
-  { path: 'mymyv', component: MymyvComponent },
+  { path: 'people', component: PeopleComponent },
   { path: 'search', component: SearchComponent },
-  { path: 'mymyv-search', component: MymyvSearchComponent },
+  { path: 'people-search', component: PeopleSearchComponent },
   { path: 'statistics', component: StatisticsComponent },
   { path: 'card_view', component: CardViewComponent },
   { path: 'admin_dashboard', component: DashboardComponent},

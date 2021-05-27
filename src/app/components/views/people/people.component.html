@@ -1,35 +1,35 @@
-<div class="va-f mymyv-main-div hor-aligment container animate__animated animate__fadeIn slow">
+<div class="va-f people-main-div hor-aligment container animate__animated animate__fadeIn slow">
   <div class="p-5 va-s">
     <div class="text-center">
-      <p class="mymyv-title mb-5" [innerHTML]="keys.mymyv_title"></p>
+      <p class="people-title mb-5" [innerHTML]="keys.people_title"></p>
     </div>
-    <form [formGroup]="mymyvCardForm" (ngSubmit)="validateForm()">
+    <form [formGroup]="peopleCardForm" (ngSubmit)="validateForm()">
       <div class="form-row">
         <div class="form-group col-lg-6">
-          <label [innerHTML]="keys.mymyv_input_1"></label>
+          <label [innerHTML]="keys.people_input_1"></label>
           <input type="number" class="form-control" min="18" max="100" value="18" formControlName="age">
         </div>
         <div class="form-group col-lg-6">
-          <label [innerHTML]="keys.mymyv_input_2"></label>
+          <label [innerHTML]="keys.people_input_2"></label>
           <select class="form-control" formControlName="kind">
-            <option value="" [innerHTML]="keys.mymyv_empty_option"></option>
-            <option value={{keys.mymyv_rel_option_1}} [innerHTML]="keys.mymyv_rel_option_1"></option>
-            <option value={{keys.mymyv_rel_option_2}} [innerHTML]="keys.mymyv_rel_option_2"></option>
-            <option value={{keys.mymyv_rel_option_3}} [innerHTML]="keys.mymyv_rel_option_3"></option>
-            <option value={{keys.mymyv_indiferent_option}} [innerHTML]="keys.mymyv_indiferent_option"></option>
+            <option value="" [innerHTML]="keys.people_empty_option"></option>
+            <option value={{keys.people_rel_option_1}} [innerHTML]="keys.people_rel_option_1"></option>
+            <option value={{keys.people_rel_option_2}} [innerHTML]="keys.people_rel_option_2"></option>
+            <option value={{keys.people_rel_option_3}} [innerHTML]="keys.people_rel_option_3"></option>
+            <option value={{keys.people_indiferent_option}} [innerHTML]="keys.people_indiferent_option"></option>
           </select>
         </div>
         <div class="form-group col-lg-6">
-          <label [innerHTML]="keys.mymyv_input_3"></label>
+          <label [innerHTML]="keys.people_input_3"></label>
           <select class="form-control" formControlName="lookFor">
-            <option value="" [innerHTML]="keys.mymyv_empty_option"></option>
-            <option value={{keys.mymyv_lookfor_option_1}} [innerHTML]="keys.mymyv_lookfor_option_1"></option>
-            <option value={{keys.mymyv_lookfor_option_2}} [innerHTML]="keys.mymyv_lookfor_option_2"></option>
-            <option value={{keys.mymyv_indiferent_option}} [innerHTML]="keys.mymyv_indiferent_option"></option>
+            <option value="" [innerHTML]="keys.people_empty_option"></option>
+            <option value={{keys.people_lookfor_option_1}} [innerHTML]="keys.people_lookfor_option_1"></option>
+            <option value={{keys.people_lookfor_option_2}} [innerHTML]="keys.people_lookfor_option_2"></option>
+            <option value={{keys.people_indiferent_option}} [innerHTML]="keys.people_indiferent_option"></option>
           </select>
         </div>
         <div class="form-group col-lg-6">
-          <label [innerHTML]="keys.mymyv_input_4"></label>
+          <label [innerHTML]="keys.people_input_4"></label>
           <div class="input-group mb-2">
             <div class="input-group-prepend">
               <div class="input-group-text">@</div>
@@ -38,7 +38,7 @@
           </div>
         </div>
       </div>
-      <label [innerHTML]="keys.mymyv_input_5"></label>
+      <label [innerHTML]="keys.people_input_5"></label>
       <textarea class="form-control text-area-format" formControlName="description"
         (input)="countCharacters()"></textarea>
       <div class="text-right">
@@ -46,7 +46,7 @@
           {{keys.msg_count_text}}</small>
       </div>
       <div class="text-right">
-        <button class="mt-4 purple-button-simply font-weight-bold" [innerHTML]="keys.mymyv_send_button"></button>
+        <button class="mt-4 purple-button-simply font-weight-bold" [innerHTML]="keys.people_send_button"></button>
       </div>
     </form>
     <div class="mt-4">

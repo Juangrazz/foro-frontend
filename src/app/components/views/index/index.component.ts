@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { MymyvCardModel } from '../../../models/mymyv_card.model';
+import { PeopleCardModel } from '../../../models/people_card.model';
 import { CardModel } from 'src/app/models/card.model';
 
 import { CardService } from '../../../services/card.service';
@@ -24,7 +24,7 @@ export class IndexComponent implements OnInit {
 
   noPosts: boolean = false;
   cards: CardModel[] = [];
-  mymyvCards: MymyvCardModel[] = [];
+  peopleCards: PeopleCardModel[] = [];
   allCards: any[] = [];
   showNavAndFoot: boolean = true;
 
@@ -63,10 +63,10 @@ export class IndexComponent implements OnInit {
           $('#errorModal').modal('show');
         }
       );
-    await this.databaseService.getMymyvCards(this.dateToShow)
+    await this.databaseService.getPeopleCards(this.dateToShow)
     .then(res => {
-        const mymyvCards = res;
-        for (const card of mymyvCards) {
+        const peopleCards = res;
+        for (const card of peopleCards) {
           this.allCards.push(card);
         }
       })

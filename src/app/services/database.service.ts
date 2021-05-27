@@ -3,12 +3,12 @@ import { HttpClient } from '@angular/common/http';
 
 import { CardModel } from '../models/card.model';
 import { MessageModel } from '../models/message.model';
-import { MymyvCardModel } from '../models/mymyv_card.model';
+import { PeopleCardModel } from '../models/people_card.model';
 import { CommentModel } from '../models/comment.model';
 import { StatisticsModel } from '../models/statistics.model';
 import { StatisticsCardsModel } from '../models/statistics_cards.model';
 import { NormalSearchModel } from '../models/normal_search.model';
-import { MymyvSearchModel } from '../models/mymyv_search_model';
+import { PeopleSearchModel } from '../models/people_search_model';
 import { AdminModel } from '../models/admin.model';
 import { CardAcceptRejectModel } from '../models/card-accept-reject.model';
 import { adminCredentialsModel } from '../models/admin_credentials.model';
@@ -29,24 +29,24 @@ export class DatabaseService {
     return this.http.post<MessageModel>(`${keys.db_host}${keys.db_server_path}/cards/createcard`, card);
   }
 
-  createMymyvCard(mymyVCard: MymyvCardModel) {
-    return this.http.post<MessageModel>(`${keys.db_host}${keys.db_server_path}/cards/createmymyvcard`, mymyVCard);
+  createPeopleCard(mymyVCard: PeopleCardModel) {
+    return this.http.post<MessageModel>(`${keys.db_host}${keys.db_server_path}/cards/createpeoplecard`, mymyVCard);
   }
 
   getCards(date: string) {
     return this.http.get<CardModel[]>(`${keys.db_host}${keys.db_server_path}/cards/getcards/${date}`).toPromise();
   }
 
-  getMymyvCards(date: string) {
-    return this.http.get<MymyvCardModel[]>(`${keys.db_host}${keys.db_server_path}/cards/getmymyvcards/${date}`).toPromise();
+  getPeopleCards(date: string) {
+    return this.http.get<PeopleCardModel[]>(`${keys.db_host}${keys.db_server_path}/cards/getpeoplecards/${date}`).toPromise();
   }
 
   getCardComments(id_card: number) {
     return this.http.get<CommentModel[]>(`${keys.db_host}${keys.db_server_path}/cards/getcardcomments/${id_card}`).toPromise();
   }
 
-  getMymyvCardComments(id_card: number) {
-    return this.http.get<CommentModel[]>(`${keys.db_host}${keys.db_server_path}/cards/getmymyvcardcomments/${id_card}`).toPromise();
+  getPeopleCardComments(id_card: number) {
+    return this.http.get<CommentModel[]>(`${keys.db_host}${keys.db_server_path}/cards/getpeoplecardcomments/${id_card}`).toPromise();
   }
 
   getStatisticsPlacesAllTime() {
@@ -57,8 +57,8 @@ export class DatabaseService {
     return this.http.get<StatisticsModel[]>(`${keys.db_host}${keys.db_server_path}/cards/getstatisticsplacesthirtydays`).toPromise();
   }
 
-  getStatisticsMymyvCardsSevenDays() {
-    return this.http.get<StatisticsModel[]>(`${keys.db_host}${keys.db_server_path}/cards/getstatisticsmymyvcardssevendays`).toPromise();
+  getStatisticsPeopleCardsSevenDays() {
+    return this.http.get<StatisticsModel[]>(`${keys.db_host}${keys.db_server_path}/cards/getstatisticspeoplecardssevendays`).toPromise();
   }
 
   getStatisticsCardsSevenDays() {
@@ -69,16 +69,16 @@ export class DatabaseService {
     return this.http.post<MessageModel>(`${keys.db_host}${keys.db_server_path}/cards/sendCardComment`, comment);
   }
 
-  sendMymyvCardComment(comment: CommentModel) {
-    return this.http.post<MessageModel>(`${keys.db_host}${keys.db_server_path}/cards/sendMymyvCardComment`, comment);
+  sendPeopleCardComment(comment: CommentModel) {
+    return this.http.post<MessageModel>(`${keys.db_host}${keys.db_server_path}/cards/sendPeopleCardComment`, comment);
   }
 
   normalSearch(search: NormalSearchModel) {
     return this.http.post<CardModel[]>(`${keys.db_host}${keys.db_server_path}/cards/normalSearch`, search);
   }
 
-  mymyvSearch(search: MymyvSearchModel) {
-    return this.http.post<MymyvCardModel[]>(`${keys.db_host}${keys.db_server_path}/cards/mymyvSearch`, search);
+  peopleSearch(search: PeopleSearchModel) {
+    return this.http.post<PeopleCardModel[]>(`${keys.db_host}${keys.db_server_path}/cards/peopleSearch`, search);
   }
 
   createAdmin(admin: AdminModel) {
@@ -93,16 +93,16 @@ export class DatabaseService {
     return this.http.put<MessageModel>(`${keys.db_host}${keys.db_server_path}/admin/acceptcard`, infoToSend);
   }
 
-  acceptMymyvCard(infoToSend: CardAcceptRejectModel) {
-    return this.http.put<MessageModel>(`${keys.db_host}${keys.db_server_path}/admin/acceptmymyvcard`, infoToSend);
+  acceptPeopleCard(infoToSend: CardAcceptRejectModel) {
+    return this.http.put<MessageModel>(`${keys.db_host}${keys.db_server_path}/admin/acceptpeoplecard`, infoToSend);
   }
 
   rejectCard(infoToSend: CardAcceptRejectModel) {
     return this.http.delete<MessageModel>(`${keys.db_host}${keys.db_server_path}/admin/rejectcard/${infoToSend.card_id}`);
   }
 
-  rejectMymyvCard(infoToSend: CardAcceptRejectModel) {
-    return this.http.delete<MessageModel>(`${keys.db_host}${keys.db_server_path}/admin/rejectmymyvcard/${infoToSend.card_id}`);
+  rejectPeopleCard(infoToSend: CardAcceptRejectModel) {
+    return this.http.delete<MessageModel>(`${keys.db_host}${keys.db_server_path}/admin/rejectpeoplecard/${infoToSend.card_id}`);
   }
 
   updateCardPlace(card: CardModel) {

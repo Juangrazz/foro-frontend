@@ -1,5 +1,5 @@
 export class StatisticsCardsModel {
     date!: string;
     cards!: number;
-    mymyv_cards!: number;
+    people_cards!: number;
 }

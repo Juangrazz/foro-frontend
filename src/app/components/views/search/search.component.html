@@ -5,15 +5,15 @@
     </div>
     <div class="mb-3 va-f">
       <div class="va-s">
-        <label class="mr-2 mb-1" [innerHTML]="keys.search_mymyv_txt"></label>
+        <label class="mr-2 mb-1" [innerHTML]="keys.search_people_txt"></label>
       </div>
       <label class="switch">
-        <input id="checkboxMymyv" type="checkbox" (change)="checkbox($event.target)">
+        <input id="checkboxPeople" type="checkbox" (change)="checkbox($event.target)">
         <span class="slider round"></span>
       </label>
     </div>
-    <app-normal-search *ngIf="!mymyvActived"></app-normal-search>
-    <app-mymyv-search *ngIf="mymyvActived"></app-mymyv-search>
+    <app-normal-search *ngIf="!peopleActived"></app-normal-search>
+    <app-people-search *ngIf="peopleActived"></app-people-search>
   </div>
 </div>
 <app-error-modal></app-error-modal>
