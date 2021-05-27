@@ -1,6 +1,6 @@
 <div class="mt-5">
   <app-card *ngIf="card.model_type === keys.ctrl_model_card_normal_type" [card]="card"></app-card>
-  <app-mymyv-card *ngIf="card.model_type === keys.ctrl_model_card_mymyv_type" [card]="card"></app-mymyv-card>
+  <app-people-card *ngIf="card.model_type === keys.ctrl_model_card_people_type" [card]="card"></app-people-card>
 </div>
 
 <div id="card-container" class="container pr-2 pl-2 mt-5 mb-5 animate__animated animate__fadeIn slow">
@@ -16,17 +16,26 @@
             <div class="input-group-prepend">
               <div class="input-group-text">@</div>
             </div>
-            <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="Nombre de usuario" formControlName="instagram">
+            <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="Nombre de usuario"
+              formControlName="instagram">
           </div>
+          <small>
+            <p class="mt-3" [innerHTML]=keys.cards_txt_info_comment>
+            </p>
+          </small>
+
           <textarea id="commentArea" class="text-area-format br-15" formControlName="comment"></textarea>
           <div class="text-right">
-            <input type="submit" class="red-button-simply" value="Enviar">
+            <input type="submit" class="purple-button-simply" value="Enviar">
           </div>
-        </form>    
+        </form>
         <div class="mt-4">
-          <div *ngIf="commentError" class="msg msg-error animate__animated animate__fadeIn slow" [innerHTML]="keys.msg_comment_error"></div>
-          <div *ngIf="instaError" class="msg msg-error animate__animated animate__fadeIn slow" [innerHTML]="keys.msg_insta_error"></div>
-          <div *ngIf="formError" class="msg msg-error animate__animated animate__fadeIn slow" [innerHTML]="keys.msg_form_error"></div>
+          <div *ngIf="commentError" class="msg msg-error animate__animated animate__fadeIn slow"
+            [innerHTML]="keys.msg_comment_error"></div>
+          <div *ngIf="instaError" class="msg msg-error animate__animated animate__fadeIn slow"
+            [innerHTML]="keys.msg_insta_error"></div>
+          <div *ngIf="formError" class="msg msg-error animate__animated animate__fadeIn slow"
+            [innerHTML]="keys.msg_form_error"></div>
         </div>
       </div>
     </div>

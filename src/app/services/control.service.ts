@@ -63,10 +63,10 @@ export class ControlService {
       let words = comment.comment.split(" ");
       let finalString = "";
       words.forEach(word => {
-        if (word.charAt(0) === "@") {
+        if (word.charAt(0) === "@" && word.length > 1) {
           let match = word.match(keys.ctrl_instagram_pattern);
           let lastCharacters = word.replace(match![0], "").replace("@", "");
-          finalString += `<a href="https://instagram.com/${match![0]}/" class="red-link">@${match![0]}</a>${lastCharacters} `
+          finalString += `<a href="https://instagram.com/${match![0]}/" class="purple-link">@${match![0]}</a>${lastCharacters} `
         } else {
           finalString += word + " ";
         }

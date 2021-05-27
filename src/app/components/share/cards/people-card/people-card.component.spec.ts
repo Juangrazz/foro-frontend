@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { MymyvCardComponent } from './mymyv-card.component';
+import { PeopleCardComponent } from './people-card.component';
 
-describe('MymyvCardComponent', () => {
-  let component: MymyvCardComponent;
-  let fixture: ComponentFixture<MymyvCardComponent>;
+describe('PeopleCardComponent', () => {
+  let component: PeopleCardComponent;
+  let fixture: ComponentFixture<PeopleCardComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ MymyvCardComponent ]
+      declarations: [ PeopleCardComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(MymyvCardComponent);
+    fixture = TestBed.createComponent(PeopleCardComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -42,7 +42,7 @@ export class MessagesComponent implements OnInit {
 
   createFrom() {
     this.cardForm = this.formBuilder.group({
-      date: ['', [Validators.required, this.controlService.validateDate()]],
+      date: ['', [Validators.required]],
       time: ['', Validators.required],
       place: ['', [Validators.required, Validators.minLength(keys.ctrl_place_min_length), Validators.maxLength(keys.ctrl_place_max_length)]],
       instagram: ['', this.controlService.validateInstagram()],

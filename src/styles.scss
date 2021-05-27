@@ -38,16 +38,24 @@ a {
   vertical-align: middle;
 }
 
-.border-red {
-  border: $color-red 2px solid;
+.border-purple {
+  border: $color-purple 2px solid;
 }
 
-.red-link {
-  color: $color-red;
+.white-link {
+  color: $color-five-transparent-white;
 }
 
-.red-link:hover {
-  color: $color-red-semi-dark;
+.white-link:hover {
+  color: $color-seven-transparent-white;
+}
+
+.purple-link {
+  color: $color-purple;
+}
+
+.purple-link:hover {
+  color: $color-purple-semi-dark;
   text-decoration: none;
   cursor: pointer;
 }
@@ -62,6 +70,10 @@ a {
 
 .txt-red {
   color: $color-red;
+}
+
+.txt-purple {
+  color: $color-purple;
 }
 
 .txt-yellow {
@@ -113,7 +125,7 @@ hr {
 app-messages,
 app-instructions,
 app-index,
-app-mymyv,
+app-people,
 app-search,
 app-statistics,
 app-card-view,
@@ -225,6 +237,16 @@ app-edit {
   transition: .3s;
 }
 
+.purple-button {
+  background-color: $color-purple;
+  color: $color-white;
+  border-radius: 5px;
+  height: 3em;
+  min-width: 8em;
+  transition: .3s;
+  border: none
+}
+
 .red-button {
   background-color: $color-red;
   color: $color-white;
@@ -245,6 +267,16 @@ app-edit {
   border: none
 }
 
+.purple-button-simply {
+  background-color: transparent;
+  color: $color-purple;
+  border: $color-purple 2px solid;
+  border-radius: 5px;
+  height: 3em;
+  min-width: 8em;
+  transition: .3s;
+}
+
 .red-button-simply {
   background-color: transparent;
   color: $color-red;
@@ -260,10 +292,17 @@ app-edit {
   color: $color-white;
 }
 
+.purple-button-simply:hover {
+  background-color: $color-purple;
+  color: $color-white;
+}
+
 .red-button-simply:focus,
+.purple-button-simply:focus,
 .blue-button-simply:focus,
 .green-button:focus,
 .red-button:focus,
+.purple-button:focus,
 .yellow-button:focus {
   outline: none;
 }
@@ -365,7 +404,7 @@ app-edit {
 }
 
 input:checked+.slider {
-  background-color: $color-red;
+  background-color: $color-purple;
 }
 
 input:focus+.slider {
@@ -389,7 +428,7 @@ input:checked+.slider:before {
 
 /* NAVBAR */
 .navbar-style {
-  background-color: $color-red;
+  background-color: $color-purple;
 }
 
 .navbar-button {
@@ -431,7 +470,7 @@ input:checked+.slider:before {
 
 /* FOOTER */
 .footer-style {
-  background-color: $color-red;
+  background-color: $color-purple;
   width: 100%;
   height: 5em;
   color: $color-white;
@@ -469,7 +508,7 @@ input:checked+.slider:before {
 }
 
 .inst-card-header {
-  background-color: $color-red;
+  background-color: $color-purple;
   color: $color-white;
 }
 
@@ -505,17 +544,17 @@ input:checked+.slider:before {
   margin: 0;
 }
 
-.search-mymyv-control {
+.search-people-control {
   width: 2em;
   transition: 0.3s;
 }
 
-/* Mymyv SECTION */
-.mymyv-main-div {
+/* People SECTION */
+.people-main-div {
   min-height: 85.5vh;
 }
 
-.mymyv-title {
+.people-title {
   font-size: 2.5em;
   font-weight: bold;
   color: $color-grey;
@@ -541,8 +580,8 @@ input:checked+.slider:before {
   min-height: 15em;
 }
 
-.div_mymyv_card_desc_princ {
-  background-color: $color-red;
+.div_people_card_desc_princ {
+  background-color: $color-purple;
   padding: 2em;
   color: $color-white;
   min-height: 15em;

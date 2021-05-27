@@ -1,9 +1,9 @@
 <nav id="navbar"
   class="navbar navbar-expand-xl navbar-dark navbar-style zindex-1 animate__animated animate__fadeIn slow">
   <a *ngIf="!isAdmin" class="navbar-brand mr-4" [routerLink]="['index']"><img src="../../../../assets/img/logo.ico"
-    class="navbar-ico">{{keys.nav_title}}</a>
+    class="navbar-ico mr-2">{{keys.nav_title}}</a>
   <a *ngIf="isAdmin" class="navbar-brand mr-4" [routerLink]="['admin_dashboard/home']"><img src="../../../../assets/img/logo.ico"
-    class="navbar-ico">{{keys.nav_title}}</a>
+    class="navbar-ico mr-2">{{keys.nav_title}}</a>
   <button class="navbar-toggler navbar-button" type="button" data-toggle="collapse"
     data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
     aria-label="Toggle navigation">
@@ -27,7 +27,7 @@
             <div class="navbar-icon-container"><i class="fas fa-paper-plane fa-lg mr-1"></i></div>
             {{keys.nav_drop_option_1}}
           </a>
-          <a class="nav-link navbar-options" [routerLink]="['mymyv']">
+          <a class="nav-link navbar-options" [routerLink]="['people']">
             <div class="navbar-icon-container"><i class="fas fa-fire fa-lg mr-1"></i></div>{{keys.nav_drop_option_2}}
           </a>
           <a class="nav-link navbar-options" [routerLink]="['search']">
@@ -58,8 +58,10 @@
         </a>
       </li>
     </ul>
-    <span *ngIf="isAdmin" class="navbar-text navbar-close-session" (click)="closeSession()">
-      <div class="navbar-icon-container"><i class="fas fa-sign-out-alt fa-lg mr-1"></i></div>{{keys.nav_option_8}}
+    <span *ngIf="isAdmin" class="navbar-close-session" (click)="closeSession()">
+      <a class="white-link">
+        <div class="navbar-icon-container"><i class="fas fa-sign-out-alt fa-lg mr-1"></i></div>{{keys.nav_option_8}}
+      </a>
     </span>
   </div>
 </nav>

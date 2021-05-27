@@ -56,7 +56,7 @@ export class CheckMessagesComponent implements OnInit {
     if (typeof (this.card.place) !== "undefined") {
       this.card.model_type = keys.ctrl_model_card_normal_type;
     } else {
-      this.card.model_type = keys.ctrl_model_card_mymyv_type;
+      this.card.model_type = keys.ctrl_model_card_people_type;
     }
 
     this.card.publication_date = moment(this.card.publication_date, "DD-MM-YYYY").format("DD-MM-YYYY");
@@ -84,7 +84,7 @@ export class CheckMessagesComponent implements OnInit {
       this.infoToSend.card_id = this.card.id;
       this.infoToSend.current_date = moment().format("YYYY-MM-DD HH:mm:ss.SSS");
 
-      this.dataBaseService.acceptMymyvCard(this.infoToSend).subscribe(
+      this.dataBaseService.acceptPeopleCard(this.infoToSend).subscribe(
         resp => {
           this.getOlderCard();
         },
@@ -114,7 +114,7 @@ export class CheckMessagesComponent implements OnInit {
       this.infoToSend.card_id = this.card.id;
       this.infoToSend.current_date = moment().format("YYYY-MM-DD HH:mm:ss");
 
-      this.dataBaseService.rejectMymyvCard(this.infoToSend).subscribe(
+      this.dataBaseService.rejectPeopleCard(this.infoToSend).subscribe(
         resp => {
           this.getOlderCard();
         },

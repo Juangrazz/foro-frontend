@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 
 import { CardModel } from '../models/card.model';
-import { MymyvCardModel } from '../models/mymyv_card.model';
+import { PeopleCardModel } from '../models/people_card.model';
 
 import { StorageService } from './storage.service';
 
@@ -19,7 +19,7 @@ export class CardService {
   individualCard: any = {};
   dateToShow!: string;
   normalSearch: CardModel[] = [];
-  mymyvSearch: MymyvCardModel[] = [];
+  peopleSearch: PeopleCardModel[] = [];
   newPlace: string = "";
 
   constructor(private storageService: StorageService) {

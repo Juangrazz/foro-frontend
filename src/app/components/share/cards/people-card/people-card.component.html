@@ -3,9 +3,9 @@
     <div class="card br-15">
       <div class="row no-gutters">
         <div class="col-md-7">
-          <div class="card-body div_mymyv_card_desc_princ va-f div_description text-break">
+          <div class="card-body div_people_card_desc_princ va-f div_description text-break">
             <div class="va-s">
-              <p class="card-text text-justify">{{mymyvCard.description}}</p>
+              <p class="card-text text-justify">{{peopleCard.description}}</p>
             </div>
           </div>
         </div>
@@ -15,21 +15,21 @@
               <div class="txt_light_blue">
                 <div>
                   <span class="navbar-icon-container"><i class="fas fa-birthday-cake"></i></span>
-                  {{mymyvCard.age}}
+                  {{peopleCard.age}}
                 </div>
                 <div class="mt-3">
                   <span class="navbar-icon-container"><i class="fas fa-heart"></i></span>
-                  {{mymyvCard.kind}}
+                  {{peopleCard.kind}}
                 </div>
                 <div class="mt-3">
                   <span class="navbar-icon-container"><i class="fas fa-venus-mars"></i></span>
-                  {{mymyvCard.look_for}}
+                  {{peopleCard.look_for}}
                 </div>
                 <div class="mt-3">
                   <span class="navbar-icon-container"><i class="fab fa-instagram"></i></span>
-                  <a class="light_blue_link" *ngIf='mymyvCard.instagram !== keys.cards_txt_anonymous'
-                    href="https://instagram.com/{{mymyvCard.instagram}}/"> {{mymyvCard.instagram}}</a>
-                  <span *ngIf='mymyvCard.instagram === keys.cards_txt_anonymous'> {{mymyvCard.instagram}}</span>
+                  <a class="light_blue_link" *ngIf='peopleCard.instagram !== keys.cards_txt_anonymous'
+                    href="https://instagram.com/{{peopleCard.instagram}}/"> {{peopleCard.instagram}}</a>
+                  <span *ngIf='peopleCard.instagram === keys.cards_txt_anonymous'> {{peopleCard.instagram}}</span>
                 </div>
               </div>
             </div>

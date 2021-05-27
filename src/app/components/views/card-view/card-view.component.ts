@@ -59,7 +59,7 @@ export class CardViewComponent implements OnInit {
           $('#errorModal').modal('show');
         });
     } else {
-      await this.databaseService.getMymyvCardComments(this.card.id)
+      await this.databaseService.getPeopleCardComments(this.card.id)
         .then(res => {
           this.comments = res;
           this.comments = this.controlService.commentsFormatter(this.comments);
@@ -105,7 +105,7 @@ export class CardViewComponent implements OnInit {
       if (this.card.model_type === keys.ctrl_model_card_normal_type) {
         this.sendNormalCardComment();
       } else {
-        this.sendMymyvCardComment();
+        this.sendPeopleCardComment();
       }
 
 
@@ -155,8 +155,8 @@ export class CardViewComponent implements OnInit {
     );
   }
 
-  sendMymyvCardComment() {
-    this.databaseService.sendMymyvCardComment(this.commentToSend).subscribe(
+  sendPeopleCardComment() {
+    this.databaseService.sendPeopleCardComment(this.commentToSend).subscribe(
       (resp) => {
         if (resp.status === keys.ctrl_fail_result) {
           $("#errorModalMessage").text(keys.error_modal_message);

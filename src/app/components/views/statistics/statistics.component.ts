@@ -72,7 +72,7 @@ export class StatisticsComponent implements OnInit {
     },
     {
       data: [],
-      label: keys.statistic_cards_seven_days_mymyv_label,
+      label: keys.statistic_cards_seven_days_people_label,
       borderWidth: 2,
       backgroundColor: "rgba(255, 102, 102, .5)",
       borderColor: 'rgb(255, 102, 102)',
@@ -139,12 +139,12 @@ export class StatisticsComponent implements OnInit {
         let maxCounter = 0;
 
         for (const statistics of resp) {
-          this.lineChartLabelsSevenDaysCards.push(keys.statistic_cards_seven_days_mymyv_text_label + " " + statistics.date);
+          this.lineChartLabelsSevenDaysCards.push(keys.statistic_cards_seven_days_people_text_label + " " + statistics.date);
           this.lineChartDataSevenDaysCards[0].data?.push(statistics.cards);
-          this.lineChartDataSevenDaysCards[1].data?.push(statistics.mymyv_cards);
+          this.lineChartDataSevenDaysCards[1].data?.push(statistics.people_cards);
 
           if (statistics.cards > maxCounter) maxCounter = statistics.cards;
-          if (statistics.mymyv_cards > maxCounter) maxCounter = statistics.mymyv_cards;
+          if (statistics.people_cards > maxCounter) maxCounter = statistics.people_cards;
         }
 
         this.lineChartOptionsSevenDaysCards = this.createLineChartOptions(this.lineChartOptionsSevenDaysCards, maxCounter);

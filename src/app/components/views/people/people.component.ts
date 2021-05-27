@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
-import { MymyvCardModel } from '../../../models/mymyv_card.model';
+import { PeopleCardModel } from '../../../models/people_card.model';
 
 import { DatabaseService } from '../../../services/database.service';
 import { ControlService } from '../../../services/control.service';
@@ -13,16 +13,16 @@ import * as moment from 'moment';
 declare var $: any;
 
 @Component({
-  selector: 'app-mymyv',
-  templateUrl: './mymyv.component.html',
-  styleUrls: ['./mymyv.component.scss']
+  selector: 'app-people',
+  templateUrl: './people.component.html',
+  styleUrls: ['./people.component.scss']
 })
-export class MymyvComponent implements OnInit {
+export class PeopleComponent implements OnInit {
 
   keys = keys;
 
-  mymyvCardForm!: FormGroup;
-  mymyvCard: MymyvCardModel = new MymyvCardModel();
+  peopleCardForm!: FormGroup;
+  peopleCard: PeopleCardModel = new PeopleCardModel();
   characters: number = 0;
 
   ageError: boolean = false;
@@ -40,7 +40,7 @@ export class MymyvComponent implements OnInit {
   }
 
   createFrom() {
-    this.mymyvCardForm = this.formBuilder.group({
+    this.peopleCardForm = this.formBuilder.group({
       age: [keys.ctrl_min_age, [Validators.required, Validators.min(keys.ctrl_min_age), Validators.max(keys.ctrl_max_age)]],
       kind: ['', Validators.required],
       lookFor: ['', Validators.required],
@@ -51,32 +51,32 @@ export class MymyvComponent implements OnInit {
 
   validateForm(){
     this.resetErrors();
-    if (this.mymyvCardForm.valid) {
-      this.mymyvCard.age = this.mymyvCardForm.controls.age.value;
-      this.mymyvCard.kind = this.mymyvCardForm.controls.kind.value;
-      this.mymyvCard.look_for = this.mymyvCardForm.controls.lookFor.value;
-      this.mymyvCard.instagram = this.mymyvCardForm.controls.instagram.value;
-      this.mymyvCard.description = this.mymyvCardForm.controls.description.value;
-      this.mymyvCard.sending_date = moment().format("YYYY-MM-DD HH:mm:ss.SSS");
-      this.mymyvCard.publicated = 0;
+    if (this.peopleCardForm.valid) {
+      this.peopleCard.age = this.peopleCardForm.controls.age.value;
+      this.peopleCard.kind = this.peopleCardForm.controls.kind.value;
+      this.peopleCard.look_for = this.peopleCardForm.controls.lookFor.value;
+      this.peopleCard.instagram = this.peopleCardForm.controls.instagram.value;
+      this.peopleCard.description = this.peopleCardForm.controls.description.value;
+      this.peopleCard.sending_date = moment().format("YYYY-MM-DD HH:mm:ss.SSS");
+      this.peopleCard.publicated = 0;
 
-      if (this.mymyvCard.instagram === "" || this.mymyvCard.instagram === null) {
-        this.mymyvCard.instagram = "Anónimo";
+      if (this.peopleCard.instagram === "" || this.peopleCard.instagram === null) {
+        this.peopleCard.instagram = "Anónimo";
       }
       
-      this.createMymyvCard();
+      this.createPeopleCard();
       
     } else {
-      if (this.mymyvCardForm.controls.description.invalid) this.descriptionError = true;
-      if (this.mymyvCardForm.controls.age.invalid) this.ageError = true;
-      if (this.mymyvCardForm.controls.kind.invalid) this.kindError = true;
-      if (this.mymyvCardForm.controls.lookFor.invalid) this.lookForError = true;
-      if (this.mymyvCardForm.controls.instagram.invalid) this.instaError = true;
+      if (this.peopleCardForm.controls.description.invalid) this.descriptionError = true;
+      if (this.peopleCardForm.controls.age.invalid) this.ageError = true;
+      if (this.peopleCardForm.controls.kind.invalid) this.kindError = true;
+      if (this.peopleCardForm.controls.lookFor.invalid) this.lookForError = true;
+      if (this.peopleCardForm.controls.instagram.invalid) this.instaError = true;
       if (
-        this.mymyvCardForm.controls.description.value === "" &&
-        this.mymyvCardForm.controls.age.value === "" &&
-        this.mymyvCardForm.controls.kind.value === "" &&
-        this.mymyvCardForm.controls.lookFor.value === ""
+        this.peopleCardForm.controls.description.value === "" &&
+        this.peopleCardForm.controls.age.value === "" &&
+        this.peopleCardForm.controls.kind.value === "" &&
+        this.peopleCardForm.controls.lookFor.value === ""
       ) {
         this.formError = true;
         this.descriptionError = false;
@@ -99,11 +99,11 @@ export class MymyvComponent implements OnInit {
   }
 
   countCharacters() {
-    this.characters = this.controlService.countCharacters(this.mymyvCardForm.controls.description);
+    this.characters = this.controlService.countCharacters(this.peopleCardForm.controls.description);
   }
 
-  createMymyvCard(){
-    this.databaseService.createMymyvCard(this.mymyvCard).subscribe(
+  createPeopleCard(){
+    this.databaseService.createPeopleCard(this.peopleCard).subscribe(
       (resp) => {      
         if(resp.status === keys.ctrl_fail_result){
           $("#errorModalMessage").text(keys.error_modal_message);
@@ -112,7 +112,7 @@ export class MymyvComponent implements OnInit {
           $("#correctModalMessage").text(keys.correct_modal_message);
           $('#correctModal').modal('show');
           $('#correctModal').on('hidden.bs.modal', () => {
-            this.mymyvCardForm.reset();
+            this.peopleCardForm.reset();
           });
         }
       },

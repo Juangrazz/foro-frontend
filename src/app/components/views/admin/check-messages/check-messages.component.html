@@ -7,8 +7,8 @@
       <div *ngIf="effectController" >
         <app-card *ngIf="card !== undefined && card.model_type === keys.ctrl_model_card_normal_type" [card]="card">
         </app-card>
-        <app-mymyv-card *ngIf="card !== undefined && card.model_type === keys.ctrl_model_card_mymyv_type" [card]="card">
-        </app-mymyv-card>
+        <app-people-card *ngIf="card !== undefined && card.model_type === keys.ctrl_model_card_people_type" [card]="card">
+        </app-people-card>
         <app-no-post-to-check *ngIf="card === undefined"></app-no-post-to-check>
       </div>
     </div>
@@ -25,8 +25,8 @@
           </div>
           <div class="col-md-4 mt-1">
             <button class="btn btn-block" [innerHTML]=keys.check_messages_btn_edit (click)="modify()"
-              [ngClass]="{'disabled_button': card.model_type === keys.ctrl_model_card_mymyv_type, 'blue-button-simply': card.model_type === keys.ctrl_model_card_normal_type}"
-              [disabled]="card.model_type === keys.ctrl_model_card_mymyv_type"></button>
+              [ngClass]="{'disabled_button': card.model_type === keys.ctrl_model_card_people_type, 'blue-button-simply': card.model_type === keys.ctrl_model_card_normal_type}"
+              [disabled]="card.model_type === keys.ctrl_model_card_people_type"></button>
           </div>
         </div>
       </div>

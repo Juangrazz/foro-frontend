@@ -14,7 +14,7 @@ declare var $: any;
 export class SearchComponent implements OnInit {
 
   keys = keys;
-  mymyvActived = false;
+  peopleActived = false;
   
   constructor(private storageService: StorageService) { 
     this.storageService.deleteSessionValue(keys.session_storage_individual_card);
@@ -25,9 +25,9 @@ export class SearchComponent implements OnInit {
 
   checkbox(target: any){
     if(target.checked) {
-      this.mymyvActived = true;
+      this.peopleActived = true;
     } else {
-      this.mymyvActived = false;
+      this.peopleActived = false;
     }
   }
 }
