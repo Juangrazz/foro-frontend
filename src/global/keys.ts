@@ -58,7 +58,7 @@ const keys = {
     nav_option_2: "Instrucciones",
     nav_option_3: "Mensajes",
     nav_drop_option_1: "Mándanos un mensaje",
-    nav_drop_option_2: "MyMyV",
+    nav_drop_option_2: "People",
     nav_drop_option_3: "Búsqueda",
     nav_option_4: "Estadísticas",
     nav_option_5: "Verificar mensajes",
@@ -91,7 +91,7 @@ const keys = {
     inst_sub_2_cont_1: "Los mensajes son completamente anónimos, aunque se da la opción de dejar la cuenta de instagram para que te puedan localizar más facilmente.",
 
     // People
-    inst_sub_3: "MyMyV",
+    inst_sub_3: "People",
     // People contents
     inst_sub_3_cont_1: "Intenta ser breve pero conciso. Tendrás que proporcionar los siguientes datos:",
     inst_sub_3_cont_1_l_1: "Una breve descripción de ti (altura, aficiones, gusto, personalidad...)",
@@ -120,7 +120,7 @@ const keys = {
 
     // BÚSQUEDA SECTION
     search_title: "Búsqueda",
-    search_people_txt: "MyMyV",
+    search_people_txt: "People",
 
     // Búsqueda normal form
     search_input_1: "Fecha",
@@ -133,8 +133,8 @@ const keys = {
 
     // ---------------------------------------------------------
 
-    // MyMyV SECTION
-    people_title: "Mozos y mozas y viceversa",
+    // PEOPLE SECTION
+    people_title: "People",
     people_input_1: "Edad",
     people_input_2: "Tipo de relación",
     people_input_3: "¿Qué buscas?",
