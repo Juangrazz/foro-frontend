@@ -167,6 +167,7 @@ const keys = {
     cards_txt_new_comment: "Deja un comentario",
     cards_txt_publicated: "Publicado el día",
     cards_txt_no_comments: "No hay comentarios todavía. ¡Sé el primero en escribir!",
+    cards_txt_info_comment: `Para nombrar a alguien, tan solo introduce un <span class="txt-purple">@</span> seguido de su cuenta de Instagram.`,
 
     // ---------------------------------------------------------
 
