@@ -42,6 +42,14 @@ a {
   border: $color-purple 2px solid;
 }
 
+.white-link {
+  color: $color-five-transparent-white;
+}
+
+.white-link:hover {
+  color: $color-seven-transparent-white;
+}
+
 .purple-link {
   color: $color-purple;
 }

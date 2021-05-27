@@ -58,8 +58,10 @@
         </a>
       </li>
     </ul>
-    <span *ngIf="isAdmin" class="navbar-text navbar-close-session" (click)="closeSession()">
-      <div class="navbar-icon-container"><i class="fas fa-sign-out-alt fa-lg mr-1"></i></div>{{keys.nav_option_8}}
+    <span *ngIf="isAdmin" class="navbar-close-session" (click)="closeSession()">
+      <a class="white-link">
+        <div class="navbar-icon-container"><i class="fas fa-sign-out-alt fa-lg mr-1"></i></div>{{keys.nav_option_8}}
+      </a>
     </span>
   </div>
 </nav>
