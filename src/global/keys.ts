@@ -1,7 +1,7 @@
 const keys = {
 
     // DATABASE SERVICE
-    db_host: "http://localhost:4000",
+    db_host: "https://peoplefinderapi.glitch.me",
     db_server_path: "/server",
 
     // ---------------------------------------------------------
