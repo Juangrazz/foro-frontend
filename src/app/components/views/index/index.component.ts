@@ -48,14 +48,14 @@ export class IndexComponent implements OnInit {
   }
 
   async getAllCards() {
-    this.allCards = [];
+    let databaseCards: any = [];
 
     await this.databaseService.getCards(this.dateToShow)
       .then(res => {
           const cards = res;
           
           for (const card of cards) {
-            this.allCards.push(card);
+            databaseCards.push(card);
           }
         })
       .catch(err => {
@@ -67,7 +67,7 @@ export class IndexComponent implements OnInit {
     .then(res => {
         const peopleCards = res;
         for (const card of peopleCards) {
-          this.allCards.push(card);
+          databaseCards.push(card);
         }
       })
       .catch(err => {
@@ -76,9 +76,10 @@ export class IndexComponent implements OnInit {
         }
       );
 
-      this.checkCards();
+      databaseCards.sort((a: any, b: any) => new Date(b.publication_date).getTime() - new Date(a.publication_date).getTime());
+      this.allCards = databaseCards;
 
-    this.allCards.sort((a, b) => new Date(b.publication_date).getTime() - new Date(a.publication_date).getTime());
+      this.checkCards();
   }
 
 
