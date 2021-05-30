@@ -1,7 +1,7 @@
 const keys = {
 
     // DATABASE SERVICE
-    db_host: "https://peoplefinderapi.glitch.me",
+    db_host: "https://peoplefinderapi.herokuapp.com",
     db_server_path: "/server",
 
     // ---------------------------------------------------------
