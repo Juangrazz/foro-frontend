@@ -1,5 +1,12 @@
 # People finder
 
+## Preview
+
+Para acceder a la demo del proyecto, se hace mediante el siguiente enlace:
+- https://peoplefinder-34847.web.app
+
+## Descripción
+
 People finder es un foro social basado en la publicación de posts, en los que una persona puede dejar una publicación mencionando dónde y cuándo ha visto a una persona que haya visto y quiera conocer.
 
 ## Secciones
